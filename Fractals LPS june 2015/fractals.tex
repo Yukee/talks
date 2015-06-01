@@ -12,6 +12,8 @@
 \usepackage{amsmath}
 \usepackage{nicefrac}
 
+\usepackage{color}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
@@ -40,6 +42,9 @@
 \renewcommand{\)}{\end{columns}}
 \newcommand{\<}[1]{\begin{column}{#1}}
 \renewcommand{\>}{\end{column}}
+
+\definecolor{BostonBlue}{HTML}{00688B}
+\definecolor{Complementary}{HTML}{8B2300}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{braket}
@@ -66,11 +71,6 @@
 	June 2, 2015
 }
 \titlepage
-\end{frame}
-
-
-\begin{frame}{Outline}
-    \tableofcontents[hideallsubsections]
 \end{frame}
 
 \section{Fractals and their geometry}
@@ -340,28 +340,85 @@
 
 \end{frame}
 
-\begin{frame}{Black body spectrum: the spectral dimension}
 
-\begin{itemize}
-	\item Euclidean cavity (manifold)
-	\begin{itemize}
-		\item number of spectral modes independant of the cavity shape
-		\[ N(k) \propto V k^d\]
-	\end{itemize}
-	
-	\item Fractal cavity
-	\begin{itemize}
-		\item number of spectral modes independant of the cavity shape
-		\[ N(k) \propto V_s k^{d_M} \]
-	\end{itemize}
-\end{itemize}
-    
-\end{frame}
-
-\begin{frame}{The Fibonacci chain: hidden fractals}
+\begin{frame}{Hidden fractals: the Fibonacci chain}
     \begin{itemize}
-    	\item Fibonacci chain: no obvious fractal nature, but...
+    	\item The Fibonacci sequence: \\
+    \only<1>{\textcolor{Complementary}{B}\\}
+	\only<1>{\textcolor{BostonBlue}{A}\\}
+	\only<1>{\textcolor{BostonBlue}{A}\textcolor{Complementary}{B}}
+	\only<2>{\textcolor{Complementary}{A}\\}
+	\only<2>{\textcolor{BostonBlue}{AB}\\}
+	\only<2>{\textcolor{BostonBlue}{AB}\textcolor{Complementary}{A}}
+	\only<3>{\textcolor{Complementary}{AB}\\}
+	\only<3>{\textcolor{BostonBlue}{ABA}\\}
+	\only<3>{\textcolor{BostonBlue}{ABA}\textcolor{Complementary}{AB}}
+	\only<4>{\textcolor{Complementary}{ABA}\\}
+	\only<4>{\textcolor{BostonBlue}{ABAAB}\\}
+	\only<4>{\textcolor{BostonBlue}{ABAAB}\textcolor{Complementary}{ABA}}
+	\only<5>{\textcolor{Complementary}{ABAAB}\\}
+	\only<5>{\textcolor{BostonBlue}{ABAABABA}\\}
+	\only<5>{\textcolor{BostonBlue}{ABAABABA}\textcolor{Complementary}{ABAAB}}
+	\only<6>{\textcolor{Complementary}{ABAABABA}\\}
+	\only<6>{\textcolor{BostonBlue}{ABAABABAABAAB}\\}
+	\only<6>{\textcolor{BostonBlue}{ABAABABAABAAB}\textcolor{Complementary}{ABAABABA}}
+	\only<7>{\textcolor{Complementary}{ABAABABAABAAB}\\}
+	\only<7>{\textcolor{BostonBlue}{ABAABABAABAABABAABABA}\\}
+	\only<7>{\textcolor{BostonBlue}{ABAABABAABAABABAABABA}\textcolor{Complementary}{ABAABABAABAAB}}
+	
+	\item The Fibonacci (tight binding) chain:
+	\begin{tikzpicture}[scale=.7]
+    		\newcommand{\orig}{-1.5}
+    		\newcommand{\trans}{1.5}
+    		\newcommand{\vertspac}{-2.}
+    	
+    		% initial chain
+    	
+    		% bonds 
+        	\draw[-] (\orig+\trans,0) -- (\orig+2*\trans,0) node [midway, above] {$t_A$};
+			\draw[-,double] (\orig+2*\trans,0) -- (\orig+3*\trans,0) node [midway, above] {$t_B$};	
+			\draw[-] (\orig+3*\trans,0) -- (\orig+4*\trans,0) node [midway, above] {$t_A$};
+			\draw[-] (\orig+4*\trans,0) -- (\orig+5*\trans,0) node [midway, above] {$t_A$};
+			\draw[-,double] (\orig+5*\trans,0) -- (\orig+6*\trans,0) node [midway, above] {$t_B$};
+			\draw[-] (\orig+6*\trans,0) -- (\orig+7*\trans,0) node [midway, above] {$t_A$};
+			\draw[-,double] (\orig+7*\trans,0) -- (\orig+8*\trans,0) node [midway, above] {$t_B$};
+			\draw[-] (\orig+8*\trans,0) -- (\orig+9*\trans,0) node [midway, above] {$t_A$};
+    	
+    	
+    		% sites
+		    \filldraw (\orig+1*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+2*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+3*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+4*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+5*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+6*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+7*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+8*\trans,0) circle (0.05) node [right] {};
+		    \filldraw (\orig+9*\trans,0) circle (0.05) node [right] {...};
+		      
+		\end{tikzpicture}
+	\item Whenever $t_A \neq t_B$, the chain is quasiperiodic.
+		\begin{itemize}
+			\item Spectral properties? 
+		\end{itemize}
+	\end{itemize}
+\end{frame}
+	
+\begin{frame}{Hidden fractals: the Fibonacci chain}
+
+	\begin{itemize}
+	\item No obvious fractal nature, but...
     \end{itemize}
+     {\centering
+    	\includegraphics[scale=.9]{idos.pdf}
+    	
+     }
+     ... the graph of the density of states is a fractal!
+     
+     \begin{itemize}
+     	\item What can we say about a scale invariant function?
+      \end{itemize}
+	
 \end{frame}
 
 \begin{frame}{Interlude: discrete and continuous scale invariance}
@@ -391,41 +448,42 @@ A tool to analyze scale invariant functions: the Mellin tranform.
 $\rightarrow$ the scaling factor(s) of a function are given by the poles of its Mellin transform.
 \end{frame}
 
+\begin{frame}{Fibonacci and $\log$--periodic oscillations}
+	
+	{\centering
+    	\includegraphics[scale=.35]{idoslog.pdf}
+    	
+    }
+    \begin{itemize}
+	\item A \textit{discretely} scale invariant function exhibits $\log$--periodic oscillations...
+
+    {\centering
+    	\includegraphics[scale=.15]{thiem.png}
+    	
+    	\scriptsize
+    
+    [\textit{Origin of the $\log$--periodic oscillations in the quantum dynamics [...]} Thiem (2015)]
+    	
+     }
+\end{itemize}
+
+\end{frame}
+
 \section{Summary}
 \subsection{Dummy}
 
 \begin{frame}{Summary}
 
     \begin{itemize}
-        \item 4 $\mathbb{Z}_2$ invariants $\Rightarrow$ 16 classes
-        \item weak $\leftrightarrow$ strong
-        \item general description of any crystaline surface by Miller indices
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Outlook}
-    Experimental realizations
-
-    Materials
-    \begin{itemize}
-        \item Bi$_{x}$Sb$_{1 - x}$
-        \item Bi$_2$Se$_3$
-        \item Bi$_2$Te$_3$
-        \item HgTe - under strain
+        \item Fractal manifolds and the study of discrete scaling symmetry is a fasinating mathematical topic in itself
+        \item Fractals arise in surprisingly diverse areas of physics
+        \item ... but, always, they are beautiful!
     \end{itemize}
     
-    
-\end{frame}
-
-\begin{frame}{References}
-
-    \begin{itemize}
-        \item Fu, Kane, Mele ``Topological Insulators in Three Dimensions'' (2007) PhysRevLett.98.106803
-        \item Moore, Balents ``Topological invariants of time-reversal-invariant band structures'' (2007) PhysRevB.75.121306
-        \item Bernevig, Hughes ``Topological Insulators and Topological Superconductors'' (2013) Princeton University Press
-        \item Franz, Molenkamp ``Topological Insulators'' (2013) Springer
-    \end{itemize}
-
+     {\centering
+    	\includegraphics[scale=.15]{dragon.png}
+    	
+     }
 \end{frame}
 
 \end{document}
