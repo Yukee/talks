@@ -1,0 +1,189 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      6054,        180]
+NotebookOptionsPosition[      5632,        161]
+NotebookOutlinePosition[      5967,        176]
+CellTagsIndexPosition[      5924,        173]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Tau]", "=", 
+    RowBox[{"N", "[", "GoldenRatio", "]"}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "Fourier", " ", "coefficients", " ", "of", " ", "the", " ", "diffraction",
+      " ", "spectrum", " ", "of", " ", "the", " ", "Fibonacci", " ", 
+     "chain"}], ";", " ", 
+    RowBox[{"k", " ", "takes", " ", "values", " ", "in", " ", 
+     RowBox[{
+      RowBox[{"\[CapitalZeta]", "[", "\[Tau]", "]"}], "/", 
+      SqrtBox["5"]}]}]}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"a", "[", "k_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Exp", "[", 
+    RowBox[{"Pi", " ", "I", " ", "k", " ", 
+     RowBox[{"(", 
+      RowBox[{"\[Tau]", "-", "2"}], ")"}]}], "]"}], 
+   FractionBox[
+    RowBox[{"\[Tau]", "+", "2"}], "5"], 
+   RowBox[{"Sinc", "[", 
+    RowBox[{"\[Pi]", " ", "\[Tau]", " ", "k"}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.643265119369974*^9, 3.6432651277387733`*^9}, {
+  3.643265577907148*^9, 3.6432655907784863`*^9}, {3.643265809496831*^9, 
+  3.6432658386422997`*^9}, {3.64326966730722*^9, 3.643269738453445*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"sample", " ", 
+    RowBox[{
+     RowBox[{"\[CapitalZeta]", "[", "\[Tau]", "]"}], "/", 
+     SqrtBox["5"]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"kVal", "=", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{
+      RowBox[{"Table", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"p", "+", 
+           RowBox[{"\[Tau]", " ", "q"}]}], ")"}], "/", 
+         SqrtBox["5"]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"q", ",", 
+          RowBox[{"-", "10"}], ",", "10"}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"p", ",", 
+          RowBox[{"-", "10"}], ",", "q"}], "}"}]}], "]"}], ",", "1"}], 
+     "]"}]}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.643265976988915*^9, 3.643265992347537*^9}, {
+   3.643266188131988*^9, 3.6432662253730097`*^9}, {3.643266324387066*^9, 
+   3.6432663665078707`*^9}, {3.6432694218880043`*^9, 3.643269423578519*^9}, {
+   3.643269592684876*^9, 3.643269645224125*^9}, {3.6432697135766*^9, 
+   3.643269801653613*^9}, {3.643270896317299*^9, 3.643270919870104*^9}, {
+   3.643270965106246*^9, 3.643270969891643*^9}, 3.6432715766186647`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "intensity", " ", "weigth", " ", "at", " ", "reciprocal", " ", "vector", 
+    " ", "k"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"i", "[", "k_", "]"}], ":=", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"\[Tau]", "+", "2"}], "5"], 
+        RowBox[{"Sinc", "[", 
+         RowBox[{"\[Pi]", " ", "\[Tau]", " ", "k"}], "]"}]}], ")"}], "2"]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "representation", " ", "of", " ", "the", " ", "Dirac", " ", 
+     "distribution"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"dirac", "[", 
+      RowBox[{"k_", ",", "\[Epsilon]_"}], "]"}], ":=", 
+     FractionBox["\[Epsilon]", 
+      RowBox[{"\[Pi]", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["k", "2"], "+", 
+         SuperscriptBox["\[Epsilon]", "2"]}], ")"}]}]]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"dirac", "[", "k_", "]"}], ":=", 
+     RowBox[{"If", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "0.01"}], "\[LessEqual]", "k", "\[LessEqual]", "0.01"}], 
+       ",", "1", ",", "0"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{"diffraction", " ", "fucntion"}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"diff", "[", "k0_", "]"}], ":=", 
+     RowBox[{"Total", "[", 
+      RowBox[{"ParallelTable", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"dirac", "[", 
+          RowBox[{"k0", "-", "k"}], "]"}], 
+         RowBox[{"i", "[", "k", "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"k", ",", "kVal"}], "}"}]}], "]"}], "]"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.6432700564371853`*^9, 3.643270074831147*^9}, {
+  3.643270355793909*^9, 3.6432705514416513`*^9}, {3.6432710991112328`*^9, 
+  3.643271103920117*^9}, {3.643271274655262*^9, 3.643271275948349*^9}, {
+  3.6432713074742947`*^9, 3.643271323898321*^9}, {3.643271606437302*^9, 
+  3.643271619793754*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d0", "=", 
+  RowBox[{"diff", "[", "0", "]"}]}]], "Input",
+ CellChangeTimes->{{3.643270579602274*^9, 3.6432705883944607`*^9}, {
+   3.643270934643467*^9, 3.64327093839506*^9}, 3.64327099968015*^9, {
+   3.643271328715022*^9, 3.643271328921097*^9}}],
+
+Cell[BoxData["0.5236067977499791`"], "Output",
+ CellChangeTimes->{{3.643270579993775*^9, 3.643270588956126*^9}, {
+   3.64327092241615*^9, 3.643270938886888*^9}, {3.643270975094919*^9, 
+   3.643271000208955*^9}, 3.643271106024427*^9, {3.643271326198636*^9, 
+   3.643271329332178*^9}, 3.643271622462677*^9}]
+}, Open  ]]
+},
+WindowSize->{1920, 1021},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1132, 28, 123, "Input"],
+Cell[1693, 50, 1182, 30, 83, "Input"],
+Cell[2878, 82, 2136, 61, 236, "Input"],
+Cell[CellGroupData[{
+Cell[5039, 147, 269, 5, 32, "Input"],
+Cell[5311, 154, 305, 4, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
