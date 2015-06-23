@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="200pt"
+   height="200pt"
+   viewBox="0 0 200 200"
+   version="1.1"
+   id="svg5250"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="Penrose_dart_0.svg">
+  <metadata
+     id="metadata5270">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1021"
+     id="namedview5268"
+     showgrid="false"
+     inkscape:zoom="3.308"
+     inkscape:cx="71.644498"
+     inkscape:cy="125"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="surface0" />
+  <defs
+     id="defs5252">
+    <clipPath
+       id="clip0">
+      <rect
+         width="200"
+         height="200"
+         id="rect5255" />
+    </clipPath>
+  </defs>
+  <g
+     id="surface0"
+     clip-path="url(#clip0)">
+    <path
+       style="stroke:none;fill-rule:nonzero;fill:#00688b;opacity:1;fill-opacity:1"
+       d="M 46 154 L 11.623062 48.198654 L 157.246124 154 "
+       id="path5258" />
+    <path
+       style="fill: none; stroke-width: 0.05; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(50%,0%,20%); opacity: 1;stroke-miterlimit: 10;"
+       d="M 0 -0 L -0.190983 0.587785 L 0.618034 -0 "
+       transform="matrix(180,0,0,-180,46,154)"
+       id="path5260" />
+    <path
+       style="fill: none; stroke-width: 0.005; stroke-linecap: round; stroke-linejoin: round; stroke: rgb(50%,0%,20%); opacity: 1;stroke-miterlimit: 10;"
+       d="M 0.618034 -0 L 0 -0 "
+       transform="matrix(180,0,0,-180,46,154)"
+       id="path5262" />
+  </g>
+</svg>
