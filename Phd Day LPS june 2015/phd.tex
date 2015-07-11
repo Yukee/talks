@@ -83,6 +83,11 @@
 
 \begin{frame}{Geometry of quasicrystals: the Fibonacci sequence}
 
+\begin{itemize}
+	\item Quasicrystal: lives on a tiling with no translational symmetry but with long range order.
+	\item A recipe for qp tilings: inflation rules for the tiles.
+\end{itemize}
+
 \newcommand{\s}{.13}
   	\centering
     \includegraphics[scale=\s]{B_A.pdf}~~~~
@@ -154,7 +159,7 @@
 		    \filldraw (\orig+9*\trans,0) circle (0.05) node [right] {...};
 		      
 		\end{tikzpicture}
-	\item Whenever $t_A \neq t_B$, the chain is quasiperiodic.
+	\item Whenever $\rho = t_A / t_B \neq 1$, the chain is quasiperiodic.
 		\begin{itemize}
 			\item Electron dynamics?
 		\end{itemize}
@@ -166,8 +171,10 @@
 	\begin{itemize}
 		\item Electron dynamics?
 		\begin{itemize}
-			\item No translational invariance: no Bloch theorem.
-			\item But scale invariance: renormalization group approach!
+			\item No translational invariance $\rightarrow$ no Bloch theorem.
+			\item But scale invariance $\rightarrow$ renormalization group approach 
+			
+			{(\scriptsize Niu \& Nori 90, Kalugin, Kitaev \& Levitov 89)}
 		\end{itemize}
 		
 		\begin{tikzpicture}[scale=.7]
@@ -268,18 +275,23 @@
 \end{frame}
 
 \begin{frame}{Fractal spectrum, fractal wavefunctions}
-    {\centering
-    	\includegraphics[scale=.9]{idos.pdf}
+    \centering
+    	\includegraphics[scale=.8]{idos.pdf}
     	
-     }
+    	\scriptsize
+    	Integrated density of states as a function of the energy.
+    	
+    	\includegraphics[scale=.45]{amplitude_wf.pdf}
+    	
+    	\scriptsize 
+    	Electronic density in the $E=0$ mode.
      
-     {\centering
-    	\includegraphics[scale=.5]{amplitude_wf.pdf}
-    	
-     }
 \end{frame}
 
 \begin{frame}{Multifractal analysis}
+
+\begin{itemize}
+	\item Characterize the structure of the electron states: multifractal analysis.
 
 	\begin{columns}
 	\begin{column}{5cm}
@@ -297,6 +309,8 @@
      }
     \end{column}
    \end{columns}
+   \item What's next: physical properties (transport, susceptibility)
+   \end{itemize}
 \end{frame}
 
 \end{document}

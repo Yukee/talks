@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[      9985,        267]
-NotebookOptionsPosition[      9343,        240]
-NotebookOutlinePosition[      9678,        255]
-CellTagsIndexPosition[      9635,        252]
+NotebookDataLength[     13872,        375]
+NotebookOptionsPosition[     13004,        340]
+NotebookOutlinePosition[     13339,        355]
+CellTagsIndexPosition[     13296,        352]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -29,6 +29,106 @@ Cell[BoxData[{
   RowBox[{"new", "=", 
    RowBox[{"RGBColor", "[", "\"\<#7f0033\>\"", "]"}]}], ";"}]}], "Input",
  CellChangeTimes->{{3.6440630827323713`*^9, 3.644063086376502*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Blend", "[", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"BostonBlue", ",", "comp"}], "}"}], ",", "x"}], "]"}], ",", 
+      RowBox[{"Disk", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"8", "x"}], ",", "0"}], "}"}], "]"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "0", ",", "1", ",", 
+      RowBox[{"1", "/", "8"}]}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.644125213753187*^9, 3.644125220159959*^9}, {
+  3.644125294679966*^9, 3.644125322696959*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0., 0.40784313725490196`, 0.5450980392156862], 
+    DiskBox[{0, 0}]}, 
+   {RGBColor[0.06813725490196078, 0.37401960784313726`, 0.47696078431372546`],
+     DiskBox[{1, 0}]}, 
+   {RGBColor[0.13627450980392156`, 0.34019607843137256`, 0.4088235294117647], 
+    DiskBox[{2, 0}]}, 
+   {RGBColor[0.20441176470588235`, 0.30637254901960786`, 0.3406862745098039], 
+    DiskBox[{3, 0}]}, 
+   {RGBColor[0.2725490196078431, 0.27254901960784317`, 0.2725490196078431], 
+    DiskBox[{4, 0}]}, 
+   {RGBColor[0.3406862745098039, 0.23872549019607844`, 0.20441176470588235`], 
+    DiskBox[{5, 0}]}, 
+   {RGBColor[0.4088235294117647, 0.20490196078431372`, 0.13627450980392153`], 
+    DiskBox[{6, 0}]}, 
+   {RGBColor[0.47696078431372546`, 0.17107843137254902`, 0.06813725490196076],
+     DiskBox[{7, 0}]}, 
+   {RGBColor[0.5450980392156862, 0.13725490196078433`, 0.], 
+    DiskBox[{8, 0}]}}]], "Output",
+ CellChangeTimes->{{3.644125310721724*^9, 3.644125323364956*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["BostonBlue"], "Input",
+ CellChangeTimes->{{3.6441253510878973`*^9, 3.6441253543092127`*^9}, {
+  3.6441254022723217`*^9, 3.6441254135824842`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  ButtonBox[
+   TooltipBox[
+    GraphicsBox[{
+      {GrayLevel[0], RectangleBox[{0, 0}]}, 
+      {GrayLevel[0], RectangleBox[{1, -1}]}, 
+      {RGBColor[0., 0.40784313725490196`, 0.5450980392156862], 
+       RectangleBox[{0, -1}, {2, 1}]}},
+     AspectRatio->1,
+     Frame->True,
+     FrameStyle->RGBColor[0., 0.27189542483660134`, 0.3633986928104575],
+     FrameTicks->None,
+     ImageSize->
+      Dynamic[{Automatic, 1.35 CurrentValue["FontCapHeight"]/
+        AbsoluteCurrentValue[Magnification]}],
+     PlotRangePadding->None,
+     ImageCache->GraphicsData["CompressedBitmap", "\<\
+eJzzTSzJSM1NLMlMTlRwL0osyMhMLlZwyy8CCjEzMjAw8ICwAgOI/R/IhBHM
+DP//A5musWDMCWEhi2Z0M3CASMaRI4UICB6IIAMjAF2aUik=\
+\>"]],
+    "RGBColor[0., 0.40784313725490196, 0.5450980392156862]"],
+   Appearance->None,
+   BaseStyle->{},
+   BaselinePosition->Baseline,
+   ButtonFunction:>With[{Typeset`box$ = EvaluationBox[]}, 
+     If[
+      Not[
+       AbsoluteCurrentValue["Deployed"]], 
+      SelectionMove[Typeset`box$, All, Expression]; 
+      FrontEnd`Private`$ColorSelectorInitialAlpha = 1; 
+      FrontEnd`Private`$ColorSelectorInitialColor = 
+       RGBColor[0., 0.40784313725490196`, 0.5450980392156862]; 
+      FrontEnd`Private`$ColorSelectorUseMakeBoxes = True; 
+      MathLink`CallFrontEnd[
+        FrontEnd`AttachCell[Typeset`box$, 
+         FrontEndResource["RGBColorValueSelector"], {0, {Left, Bottom}}, {
+         Left, Top}, 
+         "ClosingActions" -> {
+          "SelectionDeparture", "ParentChanged", "EvaluatorQuit"}]]]],
+   DefaultBaseStyle->{},
+   Evaluator->Automatic,
+   Method->"Preemptive"],
+  RGBColor[0., 0.40784313725490196`, 0.5450980392156862],
+  Editable->False,
+  Selectable->False]], "Output",
+ CellChangeTimes->{{3.644125405210908*^9, 3.6441254141350107`*^9}}]
+}, Open  ]],
 
 Cell[CellGroupData[{
 
@@ -256,18 +356,26 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 403, 10, 77, "Input"],
 Cell[CellGroupData[{
-Cell[986, 34, 647, 17, 55, "Input"],
-Cell[1636, 53, 185, 2, 32, "Output"]
-}, Open  ]],
-Cell[1836, 58, 1296, 36, 108, "Input"],
-Cell[3135, 96, 1383, 34, 32, "Input"],
-Cell[CellGroupData[{
-Cell[4543, 134, 1264, 32, 99, "Input"],
-Cell[5810, 168, 2813, 49, 66, "Output"]
+Cell[986, 34, 633, 18, 32, "Input"],
+Cell[1622, 54, 988, 20, 99, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8660, 222, 380, 8, 32, "Input"],
-Cell[9043, 232, 284, 5, 32, "Output"]
+Cell[2647, 79, 159, 2, 32, "Input"],
+Cell[2809, 83, 1801, 46, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4647, 134, 647, 17, 55, "Input"],
+Cell[5297, 153, 185, 2, 32, "Output"]
+}, Open  ]],
+Cell[5497, 158, 1296, 36, 108, "Input"],
+Cell[6796, 196, 1383, 34, 32, "Input"],
+Cell[CellGroupData[{
+Cell[8204, 234, 1264, 32, 99, "Input"],
+Cell[9471, 268, 2813, 49, 66, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12321, 322, 380, 8, 32, "Input"],
+Cell[12704, 332, 284, 5, 32, "Output"]
 }, Open  ]]
 }
 ]
