@@ -96,22 +96,65 @@
 	\item Atomic deflation \subfile{atomic_deflation.tex}
 	\item Molecular deflation \subfile{molecular_deflation.tex}
 	\end{itemize}
-	RG transformation $(\ham_n, t_s, t_w) \rightarrow (\ham_{n-3}, \ham_{n-2}, \ham_{n-2}, t_s', t_w')$
+	\begin{flushright}
+	(Niu \& Nori 1986, Kalugin, Kitaev \& Levitov 1986)
+	\end{flushright}
 \end{frame}
 
 \begin{frame}{Renormalization group}
-\end{frame}
-
-\begin{frame}{Recursive construction of the spectrum}
+\begin{itemize}
+	\item Exact RG transformation $(\ham_n) \rightarrow (\ham_{n-2}, \ham_{n-2}, \ham_{n-3})$
+	\begin{flushright}
+	(Zhong \emph{et al} 1991)
+	\end{flushright}
+	\item RG equations are linear in the strong modulation limit ($\rho = t_w/t_s \ll 1$) \\ $\rightarrow$ simple recursive construction of the spectrum
+	\begin{flushright}
+	(Niu \& Nori 1986)
+	\end{flushright}
+\end{itemize}
+	\centering
+	\includegraphics[scale=.7]{recursive_construction_spectrum.pdf}
 \end{frame}
 
 \begin{frame}{Fractal dimensions}
+	Characterize the spectrum: multifractal analysis (Halsey \emph{et al} 1986)
+	\[
+	\text{Stat. properties of the bands:~} 
+	\begin{cases}
+	\Delta_n^a \sim (1/L_n)^{1/\alpha_a} \\
+	\#\{\text{bands of scaling~} \alpha \} \sim L_n^{f(\alpha)} 
+	\end{cases}
+	\]
+	Fractal dimensions of the spectrum: $(q-1)D_q = \min_\alpha(\alpha q - f(\alpha))$
+	\begin{flushright}
+	(Piéchon \emph{et al} 1995)
+	\end{flushright}
+	\centering
+	\includegraphics[scale=.45]{x_stat_th_comp.pdf}
 \end{frame}
 
 \begin{frame}{Fractal dimensions of the wavefunctions}
+\begin{itemize}
+	\item The wavefunctions are also known to be multifractal (numerical: Kohmoto?)
+	\item Our work:
+	\begin{itemize}
+		\item Extend the perturbative RG of Niu \& Nori to describe the wavefunctions
+		\item Compute the fractal dimensions of the wavefunctions
+	\end{itemize}
+	\item Note that work has already been done in this direction (Piéchon 1995, Thiem \& Schreiber 2013)
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Multifractality of the Fibonacci chain}
+\begin{columns}
+	\begin{column}{5cm}
+		
+	\end{column}
+	\begin{column}{5cm}
+		\centering
+		\includegraphics[scale=.5]{falpha05.pdf}
+	\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Local multifractality}
