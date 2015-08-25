@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     52985,       1127]
-NotebookOptionsPosition[     51979,       1088]
-NotebookOutlinePosition[     52313,       1103]
-CellTagsIndexPosition[     52270,       1100]
+NotebookDataLength[     53523,       1144]
+NotebookOptionsPosition[     52404,       1101]
+NotebookOutlinePosition[     52739,       1116]
+CellTagsIndexPosition[     52696,       1113]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -199,8 +199,7 @@ Cell[TextData[Cell[BoxData[
    RowBox[{
     SubscriptBox["pF", 
      RowBox[{"n", "-", "1"}]], "+", 
-    SubscriptBox["qF", "n"]}]}], TraditionalForm]],
- FormatType->"TraditionalForm"]], "Text",
+    SubscriptBox["qF", "n"]}]}], TraditionalForm]]]], "Text",
  CellChangeTimes->{{3.642147346900807*^9, 3.642147359462512*^9}, {
   3.6421474048715353`*^9, 3.6421474083586597`*^9}}],
 
@@ -798,12 +797,26 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"Export", "[", 
+  RowBox[{"\"\<~/idos_rho_05.pdf\>\"", ",", "%"}], "]"}]], "Input",
+ CellChangeTimes->{{3.642168515308072*^9, 3.642168556216201*^9}, {
+  3.6421732330547543`*^9, 3.642173233573063*^9}, {3.645614562655344*^9, 
+  3.645614600161394*^9}}],
+
+Cell[BoxData["\<\"~/idos_rho_05.pdf\"\>"], "Output",
+ CellChangeTimes->{3.6456146011085052`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
   RowBox[{
    RowBox[{
     RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<idoslog.pdf\>\""}], 
    ",", "%"}], "]"}]], "Input",
  CellChangeTimes->{{3.642168515308072*^9, 3.642168556216201*^9}, {
-  3.6421732330547543`*^9, 3.642173233573063*^9}}],
+  3.6421732330547543`*^9, 3.642173233573063*^9}, {3.645614562655344*^9, 
+  3.645614573801375*^9}}],
 
 Cell[BoxData["\<\"/home/nicolas/git/talks/Fractals LPS june \
 2015/idoslog.pdf\"\>"], "Output",
@@ -1086,7 +1099,7 @@ Cell[BoxData["\<\"/home/nicolas/git/talks/Fractals LPS june \
  CellChangeTimes->{3.6421685376461773`*^9}]
 }, Open  ]]
 },
-WindowSize->{1280, 965},
+WindowSize->{1920, 1021},
 WindowMargins->{{0, Automatic}, {Automatic, 0}},
 FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
@@ -1104,30 +1117,34 @@ CellTagsIndex->{}
 Notebook[{
 Cell[558, 20, 2626, 68, 165, "Input"],
 Cell[3187, 90, 3589, 100, 354, "Input"],
-Cell[6779, 192, 417, 12, 33, "Text"],
+Cell[6779, 192, 385, 11, 33, "Text"],
 Cell[CellGroupData[{
-Cell[7221, 208, 4171, 110, 380, "Input"],
-Cell[11395, 320, 28215, 473, 239, "Output"]
+Cell[7189, 207, 4171, 110, 380, "Input"],
+Cell[11363, 319, 28215, 473, 239, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[39647, 798, 287, 7, 32, "Input"],
-Cell[39937, 807, 161, 2, 32, "Output"]
+Cell[39615, 797, 272, 5, 32, "Input"],
+Cell[39890, 804, 96, 1, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[40135, 814, 2257, 67, 187, "Input"],
-Cell[42395, 883, 6012, 108, 236, "Output"]
+Cell[40023, 810, 336, 8, 32, "Input"],
+Cell[40362, 820, 161, 2, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48444, 996, 234, 6, 32, "Input"],
-Cell[48681, 1004, 135, 2, 32, "Output"]
+Cell[40560, 827, 2257, 67, 187, "Input"],
+Cell[42820, 896, 6012, 108, 236, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[48853, 1011, 381, 9, 32, "Input"],
-Cell[49237, 1022, 2315, 48, 238, "Output"]
+Cell[48869, 1009, 234, 6, 32, "Input"],
+Cell[49106, 1017, 135, 2, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[51589, 1075, 234, 6, 32, "Input"],
-Cell[51826, 1083, 137, 2, 32, "Output"]
+Cell[49278, 1024, 381, 9, 32, "Input"],
+Cell[49662, 1035, 2315, 48, 238, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[52014, 1088, 234, 6, 32, "Input"],
+Cell[52251, 1096, 137, 2, 32, "Output"]
 }, Open  ]]
 }
 ]

@@ -141,23 +141,71 @@
 		\item Extend the perturbative RG of Niu \& Nori to describe the wavefunctions
 		\item Compute the fractal dimensions of the wavefunctions
 	\end{itemize}
-	\item Note that work has already been done in this direction (Piéchon 1995, Thiem \& Schreiber 2013)
+	\item Work has already been done in this direction (Piéchon 1995, Thiem \& Schreiber 2013)
+\end{itemize}
+	\[
+	\text{Stat. properties of $\psi$:~} 
+	\int_{L_n} |\psi_n|^{2q} \sim (1/L_n)^{(q-1)D_q^\psi} 
+	\]
+\end{frame}
+
+\begin{frame}{RG for the wavefunctions}
+We relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{n-3}$.
+\begin{itemize}
+	\item We find a simple linear relation in the $\rho \ll 1$ limit: 
+	\[
+	\begin{cases}
+		|\psi_n|^2 = \lb |\psi_{n-3}|^2 \text{~or}\\
+		|\psi_n|^2 = \lambda |\psi_{n-2}|^2
+	\end{cases}
+	\]
+	\item Similar relations for some states of the Penrose \& Amman-Beenker tight-binding Hamiltonians (Sutherland, Repetowick)
+	\item When $\rho \rightarrow 1$, we obtain the exact expressions $\lambda \rightarrow 2 \omega^2$, $\lb \rightarrow \omega^3$, well outside the validity domain of the perturbation theory.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Multifractality of the Fibonacci chain}
+\begin{frame}{Multifractality of the wavefunctions}
+\begin{itemize}
+	\item Starting from the wavefunction at energy $E_n$, on the chain $n$:
+		\[ |\psi_n(E_n)|^{2q} = \lambda^q \lb^q \lb^q \lambda^q ... |\psi_0(E_0)| \]
+	\item The sequence $\lambda \lb \lb \lambda ...$ depends on the \emph{renormalization path} of the state $\psi$:
+	\[ E_n \rightarrow E_{n-1} \rightarrow E_{n-2} \rightarrow ... \]
+	\item We encode it in a number $x(\psi) \in [0,1/2)$
+	\item We obtain straightforwardly the fractal dimensions:
+	\[ D_q^\psi - D_q^{\psi,(0)} = - \frac{q}{q-1} \left( x(\psi) \frac{\log 2 \lambda}{\log \omega^{-1}} + \frac{1-2x(\psi)}{3}\frac{\log \lb}{\log \omega^{-1}} \right). \]
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Multifractality of the wavefunctions (II)}
 \begin{columns}
 	\begin{column}{5cm}
-		
+		\centering
+  		%\includegraphics[width=.45\textwidth]{local_wf_inset.pdf}
 	\end{column}
 	\begin{column}{5cm}
-		\centering
-		\includegraphics[scale=.5]{falpha05.pdf}
+		\begin{itemize}
+			\item States are all critical
+			\item Their multifractal character is captured by our description
+			\item $x$ is the master parameter in the $\rho \ll 1$ limit
+		\end{itemize}
 	\end{column}
 \end{columns}
 \end{frame}
 
-\begin{frame}{Local multifractality}
+\begin{frame}{Global multifractality}
+\begin{columns}
+	\begin{column}{5cm}
+		\centering
+		\includegraphics[scale=.5]{falpha05.pdf}
+	\end{column}
+	\begin{column}{5cm}
+		This is the \emph{global} fractal dimensions of the wavefunctions
+		\begin{itemize}
+			\item Multifractality
+			\item Quantitative agreement even for $\rho$ of order 1.
+		\end{itemize}
+	\end{column}
+\end{columns}
 \end{frame}
 
 \begin{frame}{Conumbering}
