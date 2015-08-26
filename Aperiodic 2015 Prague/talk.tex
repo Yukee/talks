@@ -71,11 +71,11 @@
 
 
 \begin{frame}
-\title{Fractal dimensions of the Fibonacci chain}
+\title{Multifractality of the Fibonacci Hamiltonian}
 %\subtitle{SUBTITLE}
-\author{ Nicolas Macé, Anuradha Jagannathan, Frédéric Piéchon }
+\author{ Nicolas Macé, Anuradha Jagannathan, Frédéric Piéchon \\ LPS, Paris-Sud University}
 \date{
-	June 24, 2015
+	September 4, 2015
 }
 \titlepage
 \end{frame}
@@ -156,11 +156,11 @@ We relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{n-3}
 	\[
 	\begin{cases}
 		|\psi_n|^2 = \lb |\psi_{n-3}|^2 \text{~or}\\
-		|\psi_n|^2 = \lambda |\psi_{n-2}|^2
+		|\psi_n|^2 = (\lambda/2) |\psi_{n-2}|^2
 	\end{cases}
 	\]
 	\item Similar relations for some states of the Penrose \& Amman-Beenker tight-binding Hamiltonians (Sutherland, Repetowick)
-	\item When $\rho \rightarrow 1$, we obtain the exact expressions $\lambda \rightarrow 2 \omega^2$, $\lb \rightarrow \omega^3$, well outside the validity domain of the perturbation theory.
+	\item When $\rho \rightarrow 1$, we obtain the exact expressions $\lambda \rightarrow \omega^2$, $\lb \rightarrow \omega^3$, well outside the validity domain of the perturbation theory.
 \end{itemize}
 \end{frame}
 
@@ -172,7 +172,8 @@ We relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{n-3}
 	\[ E_n \rightarrow E_{n-1} \rightarrow E_{n-2} \rightarrow ... \]
 	\item We encode it in a number $x(\psi) \in [0,1/2)$
 	\item We obtain straightforwardly the fractal dimensions:
-	\[ D_q^\psi - D_q^{\psi,(0)} = - \frac{q}{q-1} \left( x(\psi) \frac{\log 2 \lambda}{\log \omega^{-1}} + \frac{1-2x(\psi)}{3}\frac{\log \lb}{\log \omega^{-1}} \right). \]
+	\[ D_q^\psi - D_q^{\psi,(0)} = - \frac{q}{q-1} \left( x(\psi) \frac{\log \lambda}{\log \omega^{-1}} + \frac{1-2x(\psi)}{3}\frac{\log \lb}{\log \omega^{-1}} \right) \]
+	\[  D_q^{\psi,(0)} = x(\psi) \frac{\log 2}{\log \omega}. \]
 \end{itemize}
 \end{frame}
 
@@ -184,7 +185,7 @@ We relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{n-3}
 	\end{column}
 	\begin{column}{5cm}
 		\begin{itemize}
-			\item States are all critical
+			\item States are all critical ($D_{q} < 1$ for $q > 0$)
 			\item Their multifractal character is captured by our description
 			\item $x$ is the master parameter in the $\rho \ll 1$ limit
 		\end{itemize}
