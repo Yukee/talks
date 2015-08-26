@@ -1,4 +1,4 @@
-\documentclass[../fractal_dimensions_quasicrystals.tex]{subfiles}
+\documentclass[talk.tex]{subfiles}
 \begin{document}
 
 
@@ -32,9 +32,11 @@
 			\draw[-] (\orig+7*\trans,0) -- (\orig+8*\trans,0) node [midway, above] {$t_w$};
     	
     		% sites
-			\foreach \x in {0,...,8}
+			\foreach \x in {0,...,7}
 		      \filldraw (\orig+\x*\trans,0) circle (\rad); % node [below] {$\ket{\x}$};
-		      
+		    % last site with chain step attached
+		    \filldraw (\orig+8*\trans,0) circle (\rad) node [right] {~~~$n$};
+		    
 		    % rectangles around atoms
 %		    \draw [rounded corners] (\orig-\vertsize,-\vertsize) rectangle (\orig+\vertsize,\vertsize);
 %		    \draw [rounded corners] (\orig-\vertsize+5*\trans,-\vertsize) rectangle (\orig+\vertsize+5*\trans,\vertsize);
@@ -47,12 +49,12 @@
 		      
 		    % atomic chain
 		    
-        	\draw[-] (\orig, \vertspac)  node [left] {}  -- (\orig+5*\trans, \vertspac)  node [midway, above] {$t_w'$};
-			\draw[strong] (\orig+5*\trans,\vertspac) -- (\orig+8*\trans,\vertspac) node [midway, above] {$t_s'$};
+        	\draw[-] (\orig, \vertspac)  node [left] {}  -- (\orig+5*\trans, \vertspac)  node [midway, above] {\only<1>{$t_w'$} \only<2>{$\zb t_w$}};
+			\draw[strong] (\orig+5*\trans,\vertspac) -- (\orig+8*\trans,\vertspac) node [midway, above] {\only<1>{$t_s'$} \only<2>{$\zb t_s$}};
 			
 			\filldraw (\orig,\vertspac) circle (\rad); % node [below] {$\ket{\x}$};
 			\filldraw (\orig+5*\trans,\vertspac) circle (\rad); % node [below] {$\ket{\x}$};
-			\filldraw (\orig+8*\trans,\vertspac) circle (\rad); % node [below] {$\ket{\x}$};
+			\filldraw (\orig+8*\trans,\vertspac) circle (\rad) node [right] {~~~$n-3$};
 		\end{tikzpicture}
 
 \end{document}

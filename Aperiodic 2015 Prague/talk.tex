@@ -23,6 +23,8 @@
 
 \setbeamertemplate{navigation symbols}{}%remove navigation symbols
 
+\newcommand{\btVFill}{\vskip0pt plus 1filll}%place an element at the bottom of the page
+
 \usepackage{libertine}
 \usepackage[T1]{fontenc}
 
@@ -71,51 +73,109 @@
 
 
 \begin{frame}
-\title{Multifractality of the Fibonacci Hamiltonian}
-%\subtitle{SUBTITLE}
-\author{ Nicolas Macé, Anuradha Jagannathan, Frédéric Piéchon \\ LPS, Paris-Sud University}
-\date{
-	September 4, 2015
+\title{Multifractality of the tight-binding eigenstates on the Fibonacci chain}
+%\subtitle{\includegraphics[width=0.2\textwidth]{illustration.pdf}}
+
+%\titlegraphic{\includegraphics[width=0.4\textwidth]{illustration.pdf}}
+
+\author{ Nicolas Macé, Anuradha Jagannathan, Frédéric Piéchon}
+
+\institute % (optional)
+{
+  Laboratoire de Physique des Solides\\
+  Université Paris-Sud
 }
+
+\date{September 4, 2015}
+
 \titlepage
+
+\btVFill
+\begin{columns}
+\begin{column}{2cm}
+~\\
+~\\
+~\\
+~\\
+\raggedright
+\includegraphics[scale=.15]{LogoUPSUD.png}
+\end{column}
+\begin{column}{6cm}
+\centering
+\includegraphics[width=.5\textwidth]{illustration.pdf}
+\end{column}
+\begin{column}{2cm}
+~\\
+~\\
+~\\
+~\\
+\raggedleft
+\includegraphics[scale=.15]{logo-lps.jpg}
+\end{column}
+\end{columns}
 \end{frame}
 
-\section{Electronic properties of the Fibonacci chain.}
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{The pure hopping Fibonacci Hamiltonian.}
 %Each section needs a subsection for the small points on top to show up
 \subsection{Dummy}
 
-\begin{frame}{The model: the Fibonacci chain}
+\begin{frame}{The pure hopping Fibonacci Hamiltonian}
+\begin{columns}
+\begin{column}{8.5cm}
 	\centering
-	\includegraphics[scale=.7]{cut_and_project.pdf}
-	\[ \ham_n = - \sum t_i^{(n)} \ket{i} \bra{i} \]
+	\includegraphics[scale=.65]{cut_and_project.pdf}
+\end{column}
+
+\begin{column}{3cm}
+\begin{align*}
+\omega_n &= \frac{F_{n-1}}{F_{n}} \\
+\omega_n &\rightarrow \omega = \frac{\sqrt{5}-1}{2}
+\end{align*}
+\begin{align*}
+\rho &= \frac{t_w}{t_s} < 1 \\
+\rho &\rightarrow 1 \scriptsize{\text{ (weak modulation)}} \\
+\rho &\ll 1 \scriptsize{\text{ (strong modulation)}}
+\end{align*}
+\end{column}
+\end{columns}
+
+	\[ \ham_n = - \sum_i t_i^{(n)} \ket{i} \bra{i+1} + \text{h.c.} \]
 \end{frame}
 
-\begin{frame}{Atoms \& molecules; deflation}
+\begin{frame}{Atoms \& molecules; decimation}
 	\centering
 	\begin{itemize}
-	\item Atomic deflation \subfile{atomic_deflation.tex}
-	\item Molecular deflation \subfile{molecular_deflation.tex}
+	\item Atomic RG step \subfile{atomic_deflation.tex}
+	\item Molecular RG step \subfile{molecular_deflation.tex}
 	\end{itemize}
 	\begin{flushright}
 	(Niu \& Nori 1986, Kalugin, Kitaev \& Levitov 1986)
 	\end{flushright}
 \end{frame}
 
-\begin{frame}{Renormalization group}
-\begin{itemize}
-	\item Exact RG transformation $(\ham_n) \rightarrow (\ham_{n-2}, \ham_{n-2}, \ham_{n-3})$
-	\begin{flushright}
-	(Zhong \emph{et al} 1991)
-	\end{flushright}
-	\item RG equations are linear in the strong modulation limit ($\rho = t_w/t_s \ll 1$) \\ $\rightarrow$ simple recursive construction of the spectrum
-	\begin{flushright}
-	(Niu \& Nori 1986)
-	\end{flushright}
-\end{itemize}
+\begin{frame}{Renormalization group \& construction of the spectrum}
+ \[ H_n = \underbrace{\left( z H_{n-2} - t_s \right)}_{\text{molecular sites}} \oplus \underbrace{\left( \zb H_{n-3} \right)}_{\text{atomic sites}} \oplus \underbrace{\left( z H_{n-2} + t_s \right)}_{\text{molecular sites}} + \mathcal{O}(\rho^4)\]
+	$\rightarrow$ simple recursive construction of the spectrum (Niu \& Nori 1986, Piéchon \emph{et al} 1995)
+	
+	\begin{columns}
+	\begin{column}{6cm}
 	\centering
-	\includegraphics[scale=.7]{recursive_construction_spectrum.pdf}
+	\includegraphics[scale=.45]{recursive_construction_spectrum.pdf}
+	\end{column}
+	\begin{column}{6cm}
+	\subfile{energy_tree.tex}
+	Renormalization paths characterized by
+	\[ x(E) = \frac{n_+ + n_-}{n} \]
+	\end{column}
+	\end{columns}
 \end{frame}
 
+\section{The fractal dimensions of the spectrum.}
 \begin{frame}{Fractal dimensions}
 	Characterize the spectrum: multifractal analysis (Halsey \emph{et al} 1986)
 	\[
@@ -133,6 +193,7 @@
 	\includegraphics[scale=.45]{x_stat_th_comp.pdf}
 \end{frame}
 
+\section{The fractal dimensions of the wavefunctions.}
 \begin{frame}{Fractal dimensions of the wavefunctions}
 \begin{itemize}
 	\item The wavefunctions are also known to be multifractal (numerical: Kohmoto?)
