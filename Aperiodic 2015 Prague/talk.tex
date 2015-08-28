@@ -147,19 +147,19 @@
 	\[ \ham_n = - \sum_i t_i^{(n)} \ket{i} \bra{i+1} + \text{h.c.} \]
 \end{frame}
 
-\begin{frame}{Atoms \& molecules; decimation}
+\begin{frame}{Perturbative renormalization group on the Fibonacci chain}
 	\centering
 	\begin{itemize}
-	\item Atomic RG step \subfile{atomic_deflation.tex}
-	\item Molecular RG step \subfile{molecular_deflation.tex}
+	\item Atomic RG step (decimation of molecules) \subfile{atomic_deflation.tex}
+	\item Molecular RG step (decimation of atoms) \subfile{molecular_deflation.tex}
 	\end{itemize}
 	\begin{flushright}
-	(Niu \& Nori 1986, Kalugin, Kitaev \& Levitov 1986)
+	\onslide<2>{$z= \rho/2$, $\zb = \rho^2$} (Niu \& Nori 1986, Kalugin, Kitaev \& Levitov 1986)
 	\end{flushright}
 \end{frame}
 
 \begin{frame}{Renormalization group \& construction of the spectrum}
- \[ H_n = \underbrace{\left( z H_{n-2} - t_s \right)}_{\text{molecular sites}} \oplus \underbrace{\left( \zb H_{n-3} \right)}_{\text{atomic sites}} \oplus \underbrace{\left( z H_{n-2} + t_s \right)}_{\text{molecular sites}} + \mathcal{O}(\rho^4)\]
+ \[ H_n = \underbrace{\left( z H_{n-2} - t_s \right)}_{\text{bonding levels}} \oplus \underbrace{\left( \zb H_{n-3} \right)}_{\text{atomic levels}} \oplus \underbrace{\left( z H_{n-2} + t_s \right)}_{\text{antibonding levels}} + \mathcal{O}(\rho^4)\]
 	$\rightarrow$ simple recursive construction of the spectrum (Niu \& Nori 1986, Piéchon \emph{et al} 1995)
 	
 	\begin{columns}
@@ -175,7 +175,7 @@
 	\end{columns}
 \end{frame}
 
-\section{The spectrum and its multifractality.}
+\section{The energy spectrum and its multifractal properties.}
 \subsection{Dummy}
 \begin{frame}{Fractal dimensions}
 	Characterize the spectrum: multifractal analysis (Halsey \emph{et al} 1986)
@@ -196,9 +196,13 @@
 	\begin{flushright}
 	(Piéchon \emph{et al} 1995, Rüdinger \& Piéchon 1998)
 	\end{flushright}
+	\[ D_0 = \log(\sqrt{2}-1) / \log \omega \]
+	\begin{flushright}
+	(Piéchon \emph{et al} 1995, Damanik 2008)
+	\end{flushright}
 \end{frame}
 
-\section{The wavefunctions and their multifractality.}
+\section{The wavefunctions and their multifractal properties.}
 \subsection{Dummy}
 \begin{frame}{Fractal dimensions of the wavefunctions}
 	\[
@@ -207,16 +211,17 @@
 	\]
 \begin{itemize}
 	\item Wavefunctions at the center and the edges of the spectrum are multifractal (Kohmoto)
-	\item Averaged multifractal dimensions of the wavefunction known perturbatively (Thiem \& Schreiber 2013)
-	\item Our work:
+	\item Averaged fractal dimensions of the wavefunction known to lowest order  (Thiem \& Schreiber 2013)
+	\item Our work: use the RG approach to:
 	\begin{itemize}
-		\item Use the RG approach to determine perturbatively all wavefunctions
-		\item Compute their fractal dimensions
+		\item  determine individual wavefunction properties,
+		\item compute their fractal dimensions,
+		\item compute the averaged fractal dimensions at higher order.
 	\end{itemize}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{RG for the wavefunctions}
+\begin{frame}{Perturbative RG for the wavefunctions}
 We can relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{n-3}$:
 	
 	\centering
@@ -247,8 +252,9 @@ We can relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{
 	\item Fractal dimensions of the wavefunction of energy $E$:
 	\[ \sum_i |\psi_i^{(n)}(E)|^{2q} \sim (1/F_n)^{(q-1)D_q^\psi(E)}  \]
 	\item Using the RG:
-		\[ |\psi_i^{(n)}(E)|^{2q} = \lambda^q |\psi_{i'}^{(n-2)}(E')| \]
-	\item $D_q^\psi(E)$ is a function of the renormalization path
+		\[ |\psi_i^{(n)}(E)|^{2q} = \lambda^q |\psi_{i'}^{(n-2)}(E')|^{2q} \]
+		and neglecting sites with small amplitudes,
+	\item we express $D_q^\psi(E)$ as a function of the renormalization path
 	\[ E \rightarrow E' \rightarrow E'' \rightarrow ... \]
 	\item and actually only of x(E):
 	\[ D_q^\psi(x) = x \frac{\log 1/2}{\log \omega} + \frac{q}{q-1} \left( x \frac{\log \lambda}{\log \omega} + \frac{1-2x}{3}\frac{\log \lb}{\log \omega} \right) \]
@@ -265,10 +271,14 @@ We can relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{
 	\end{column}
 	\begin{column}{5cm}
 		\begin{itemize}
+			\item Multifractal behaviour well described
 			\item All states are critical in the strong modulation limit
 			\item Their multifractal character is captured by our description
-			\item $x$ is the relevant parameter
+			\item $x$ is the relevant parameter to describe the properties of the states
 		\end{itemize}
+		\begin{flushright}
+		(Macé, Jagannathan, Piéchon, to be submitted)
+		\end{flushright}
 	\end{column}
 \end{columns}
 \end{frame}
@@ -289,20 +299,40 @@ We can relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{
 \end{columns}
 		\begin{itemize}
 			\item Multifractality
-			\item Quantitative agreement even for $\rho \simeq 0.5$.
+			\item Quantitative agreement with numerical data even for large $\rho$.
 		\end{itemize}
 
 \end{frame}
 
+\begin{frame}{Conumbering}
+\begin{columns}
+	\begin{column}{7cm}
+		\centering
+		\includegraphics[scale=.55]{ldos_reordered.pdf}
+		
+		\scriptsize{Amplitude of the wavefunctions as a function of the position and the energy, computed numerically.}	
+	\end{column}
+	\begin{column}{5cm}
+		\begin{itemize}
+			\item Conumbering (a relabelling of the positions along the chain) is used (Mosseri 1988).
+			\item The fractal structure stemming from the deflation symmetry is clear.
+			\item Energy/position symmetry is made evident by conumbering.
+		\end{itemize}
+	\end{column}
+\end{columns}
+\end{frame}
+
 \section{Conclusion}
 \subsection{Dummy}
-\begin{frame}{Conclusion}
+\begin{frame}{Conclusion and perspectives}
 \begin{itemize}
-	\item Computation of the wavefunctions of the Fibonacci tight-binding chain , in the strong modulation limit, exploiting the deflation symmetry of the chain.
-	\item First analytical computation of the fractal exponents of the wavefunctions, in that limit.
-	\[\phantom{ ~}\]
-	\item Fractal dimensions characterize the wavefunctions (critical), and are involved in the computation of transport and susceptibility properties.
+	\item Fractal dimensions are important for physical properties such as transport and susceptibility.
+	\item We have characterized the wavefunctions of the Fibonacci tight-binding chain, in the strong modulation limit, using a perturbative RG.
+	\item We have presented for the first time analytical expressions for the fractal exponents of the full set of wavefunctions. These compare well with numerical data.
+	\item Work in progress: consequences for the diffusion and transport properties.
 \end{itemize}
+	\centering
+	\includegraphics[scale=.55]{E0_wavefunction.pdf}
 \end{frame}
 
 \end{document}
