@@ -12,21 +12,21 @@
     	 \tikzstyle{vertex}=[circle,fill,scale=0.7]
     	 
 			\node [vertex] {}
-				child {node [vertex] {}
+				child {node [vertex, label=left:$-$] {}
 					child {node [vertex] {}
 						child {node {$--$} edge from parent[draw=none] }}
 					child {node [vertex] {}
 						child {node {$-0$} edge from parent[draw=none] }}
 					child {node [vertex] {}
 						child {node {$-+$} edge from parent[draw=none] }}}
-				child {node [vertex] {}
+				child {node [vertex, label=right:0] {}
 					child {node [vertex] {}
 						child {node {$0-$} edge from parent[draw=none] }}
 					child {node [vertex] {}
 						child {node {$00$} edge from parent[draw=none] }}
 					child {node [vertex] {}
 						child {node {$0+$} edge from parent[draw=none] }}}
-				child {node [vertex] {}
+				child {node [vertex, label=right:$+$] {}
 					child {node [vertex] {}
 						child {node {$+-$} edge from parent[draw=none] }}
 					child {node [vertex] {}

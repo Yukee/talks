@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     27104,        695]
-NotebookOptionsPosition[     26409,        667]
-NotebookOutlinePosition[     26743,        682]
-CellTagsIndexPosition[     26700,        679]
+NotebookDataLength[     27709,        707]
+NotebookOptionsPosition[     27011,        679]
+NotebookOutlinePosition[     27348,        694]
+CellTagsIndexPosition[     27305,        691]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -221,7 +221,7 @@ Cell[BoxData[
    3.6494879651455517`*^9}, {3.6494881358889523`*^9, 
    3.6494881922692537`*^9}, {3.649488228180766*^9, 3.6494882701593733`*^9}, 
    3.6494922446331673`*^9, 3.6494936258718987`*^9, 3.649579608619907*^9, 
-   3.649590769375276*^9}]
+   3.649590769375276*^9, 3.650211021967311*^9}]
 }, Open  ]],
 
 Cell[BoxData[
@@ -425,54 +425,60 @@ Cell[BoxData[{
   ";"}], "\[IndentingNewLine]", 
  RowBox[{"g", "=", 
   RowBox[{"Graphics", "[", 
-   RowBox[{"{", 
-    RowBox[{"zzb", ",", "s3", ",", 
-     RowBox[{"Translate", "[", 
-      RowBox[{"s4", ",", 
-       RowBox[{"{", 
-        RowBox[{"0", ",", 
-         RowBox[{"-", "d"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Translate", "[", 
-      RowBox[{"s5", ",", 
-       RowBox[{"{", 
-        RowBox[{"0", ",", 
-         RowBox[{
-          RowBox[{"-", "2"}], "d"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Translate", "[", 
-      RowBox[{"s6", ",", 
-       RowBox[{"{", 
-        RowBox[{"0", ",", 
-         RowBox[{
-          RowBox[{"-", "3"}], "d"}]}], "}"}]}], "]"}], ",", "around3", ",", 
-     "around2", ",", 
-     RowBox[{"Translate", "[", 
-      RowBox[{
-       RowBox[{"Scale", "[", 
-        RowBox[{"around3", ",", 
-         RowBox[{"{", 
-          RowBox[{"zb", ",", "1"}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{"0", ",", 
-         RowBox[{
-          RowBox[{"-", "3"}], "d"}]}], "}"}]}], "]"}], ",", 
-     RowBox[{"Translate", "[", 
-      RowBox[{
-       RowBox[{"Scale", "[", 
-        RowBox[{"around2", ",", 
-         RowBox[{"{", 
-          RowBox[{"z", ",", "1"}], "}"}]}], "]"}], ",", 
-       RowBox[{"{", 
-        RowBox[{
-         RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"zzb", ",", "s3", ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{"s4", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"-", "d"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{"s5", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
           RowBox[{
-           RowBox[{"-", "ts"}], ",", 
+           RowBox[{"-", "2"}], "d"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{"s6", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"-", "3"}], "d"}]}], "}"}]}], "]"}], ",", "around3", ",", 
+      "around2", ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{
+        RowBox[{"Scale", "[", 
+         RowBox[{"around3", ",", 
+          RowBox[{"{", 
+           RowBox[{"zb", ",", "1"}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"-", "3"}], "d"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{
+        RowBox[{"Scale", "[", 
+         RowBox[{"around2", ",", 
+          RowBox[{"{", 
+           RowBox[{"z", ",", "1"}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
            RowBox[{
-            RowBox[{"-", "2"}], "d"}]}], "}"}], ",", 
-         RowBox[{"{", 
-          RowBox[{"ts", ",", 
-           RowBox[{
-            RowBox[{"-", "2"}], "d"}]}], "}"}]}], "}"}]}], "]"}]}], "}"}], 
-   "]"}]}]}], "Input",
+            RowBox[{"-", "ts"}], ",", 
+            RowBox[{
+             RowBox[{"-", "2"}], "d"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"ts", ",", 
+            RowBox[{
+             RowBox[{"-", "2"}], "d"}]}], "}"}]}], "}"}]}], "]"}]}], "}"}], 
+    ",", 
+    RowBox[{"PlotLabel", "\[Rule]", 
+     RowBox[{"Style", "[", 
+      RowBox[{"\"\<Energy spectrum\>\"", ",", "Large", ",", 
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+      "]"}]}]}], "]"}]}]}], "Input",
  CellChangeTimes->{{3.649490453622651*^9, 3.649490534293253*^9}, {
    3.649490664663046*^9, 3.649490707142205*^9}, {3.649490788533073*^9, 
    3.649490860039275*^9}, {3.649490894855893*^9, 3.649491025721126*^9}, {
@@ -486,7 +492,8 @@ Cell[BoxData[{
    3.649579901432885*^9, 3.6495799136936274`*^9}, {3.649580051882079*^9, 
    3.64958005996154*^9}, {3.649580097978388*^9, 3.6495801445861893`*^9}, {
    3.649580188155954*^9, 3.649580272817836*^9}, {3.649580308349691*^9, 
-   3.649580312909374*^9}, {3.649590767816184*^9, 3.649590768296471*^9}}],
+   3.649580312909374*^9}, {3.649590767816184*^9, 3.649590768296471*^9}, {
+   3.650211014433387*^9, 3.650211085988934*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{{InsetBox[
@@ -624,8 +631,11 @@ Cell[BoxData[
      {Opacity[0], EdgeForm[GrayLevel[0]], 
       GeometricTransformationBox[
        RectangleBox[{-1.45, -0.145}, {1.45, 0.145}], {0, -0.6}]}, {{{
-       0.25, 0}, {0., 1}}, Center}], {{{-1, -1.2}}, {{1, -1.2}}}]}]], "Output",\
-
+       0.25, 0}, {0., 1}}, Center}], {{{-1, -1.2}}, {{1, -1.2}}}]},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Energy spectrum\"", Large, FontFamily -> "Linux Libertine", 
+     StripOnInput -> False], TraditionalForm]]], "Output",
  CellChangeTimes->{{3.6494904882522793`*^9, 3.649490495012623*^9}, {
    3.6494905305657682`*^9, 3.649490534559643*^9}, 3.649490867500663*^9, {
    3.649490912912043*^9, 3.6494910261264343`*^9}, 3.649491230866506*^9, {
@@ -642,7 +652,8 @@ Cell[BoxData[
    3.649493681596243*^9, 3.649579608728511*^9, 3.649579658452046*^9, {
    3.649579703688086*^9, 3.649579731275394*^9}, {3.6495801176873627`*^9, 
    3.6495801451917257`*^9}, {3.6495801898213577`*^9, 3.649580249080702*^9}, 
-   3.6495803137554293`*^9, 3.649590769536139*^9}]
+   3.6495803137554293`*^9, 3.649590769536139*^9, {3.650211022087129*^9, 
+   3.650211086473618*^9}}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -662,11 +673,12 @@ Prague/recursive_construction_spectrum.pdf\"\>"], "Output",
   3.649492952992041*^9, {3.64949300563109*^9, 3.649493026835318*^9}, 
    3.649493127523247*^9, 3.6494931982384653`*^9, 3.649493402233541*^9, 
    3.6494936263377047`*^9, 3.649493683554707*^9, 3.6495796093922873`*^9, 
-   3.6495797386766653`*^9, 3.649580327086563*^9, 3.649590769952778*^9}]
+   3.6495797386766653`*^9, 3.649580327086563*^9, 3.649590769952778*^9, 
+   3.6502110222751083`*^9, 3.650211120338402*^9}]
 }, Open  ]]
 },
 WindowSize->{1280, 965},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{-10, Automatic}, {Automatic, -8}},
 FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
 ]
@@ -685,17 +697,17 @@ Cell[558, 20, 2583, 68, 99, "Input"],
 Cell[3144, 90, 3249, 92, 231, "Input"],
 Cell[CellGroupData[{
 Cell[6418, 186, 606, 14, 32, "Input"],
-Cell[7027, 202, 1173, 21, 56, "Output"]
+Cell[7027, 202, 1195, 21, 56, "Output"]
 }, Open  ]],
-Cell[8215, 226, 874, 18, 32, "Input"],
-Cell[9092, 246, 2329, 69, 99, "Input"],
+Cell[8237, 226, 874, 18, 32, "Input"],
+Cell[9114, 246, 2329, 69, 99, "Input"],
 Cell[CellGroupData[{
-Cell[11446, 319, 5945, 169, 341, "Input"],
-Cell[17394, 490, 8269, 154, 242, "Output"]
+Cell[11468, 319, 6276, 176, 363, "Input"],
+Cell[17747, 497, 8468, 158, 271, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25700, 649, 264, 7, 32, "Input"],
-Cell[25967, 658, 426, 6, 32, "Output"]
+Cell[26252, 660, 264, 7, 32, "Input"],
+Cell[26519, 669, 476, 7, 32, "Output"]
 }, Open  ]]
 }
 ]

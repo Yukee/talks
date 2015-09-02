@@ -158,9 +158,9 @@
 	\end{flushright}
 \end{frame}
 
-\begin{frame}{Renormalization group \& construction of the spectrum}
+\begin{frame}{RG reconstruction of the energy spectrum}
  \[ H_n = \underbrace{\left( z H_{n-2} - t_s \right)}_{\text{bonding levels}} \oplus \underbrace{\left( \zb H_{n-3} \right)}_{\text{atomic levels}} \oplus \underbrace{\left( z H_{n-2} + t_s \right)}_{\text{antibonding levels}} + \mathcal{O}(\rho^4)\]
-	$\rightarrow$ simple recursive construction of the spectrum (Niu \& Nori 1986, Piéchon \emph{et al} 1995)
+	$\rightarrow$ simple recursive construction of the spectrum (Piéchon \emph{et al} 1995)
 	
 	\begin{columns}
 	\begin{column}{6cm}
@@ -171,34 +171,41 @@
 	\subfile{energy_tree.tex}
 	Renormalization paths characterized by
 	\[ x(E) = \frac{n_+ + n_-}{n} \]
+	\[
+		x(\text{\scriptsize{central band}}) = 0, x(\text{\scriptsize{edge bands}}) = 1/2
+	\]
 	\end{column}
 	\end{columns}
 \end{frame}
 
 \section{The energy spectrum and its multifractal properties.}
 \subsection{Dummy}
-\begin{frame}{Fractal dimensions}
-	Characterize the spectrum: multifractal analysis (Halsey \emph{et al} 1986)
-	\[
-	\text{Stat. properties of the bands:~} 
+\begin{frame}{Multifractal analysis of the spectrum}
+
+	\begin{itemize}
+		\item 	Statistical properties of the bands
+		\[
 	\begin{cases}
 	\Delta_n^a \sim (1/F_n)^{1/\alpha_a} \\
 	\#\{\text{bands of scaling~} \alpha \} \sim F_n^{f(\alpha)} 
 	\end{cases}
 	\]
-	Fractal dimensions of the spectrum: $(q-1)D_q = \min_\alpha(\alpha q - f(\alpha))$
 	
-	\begin{align*}
+		\begin{align*}
 		\alpha(x) &= \log \omega/\left( x \log z/\zb^{2/3} + \log \zb^{1/3} \right) \\
-		f(\alpha(x)) &= \frac{x \log \left(\frac{3 x}{2}\right)- (x+1) \log (x+1)^{1/3}+ (1-2 x) \log (1-2 x)^{1/3}}{\log \omega}
+		f(x) &= \frac{x \log \left(\frac{3 x}{2}\right)- (x+1) \log (x+1)^{1/3}+ (1-2 x) \log (1-2 x)^{1/3}}{\log \omega}
 	\end{align*}
-	
 	\begin{flushright}
 	(Piéchon \emph{et al} 1995, Rüdinger \& Piéchon 1998)
 	\end{flushright}
+		\item Fractal dimensions $D_q$
+			\[
+				(q-1)D_q = \min_\alpha(\alpha q - f(\alpha))
+			\]
+	\end{itemize}
 	\[ D_0 = \log(\sqrt{2}-1) / \log \omega \]
 	\begin{flushright}
-	(Piéchon \emph{et al} 1995, Damanik 2008)
+	(Damanik 2008)
 	\end{flushright}
 \end{frame}
 
@@ -222,11 +229,14 @@
 \end{frame}
 
 \begin{frame}{Perturbative RG for the wavefunctions}
-We can relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{n-3}$:
-	
-	\centering
-	\subfile{rg_atomic_wavefunctions_main_txt.tex}
-	\subfile{rg_molecular_wavefunctions_main_txt.tex}
+%We relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{n-3}$:
+	\begin{itemize}
+
+		\item Atomic RG
+			\subfile{rg_atomic_wavefunctions_main_txt.tex}
+		\item Molecular RG
+			\subfile{rg_molecular_wavefunctions_main_txt.tex}
+	\end{itemize}
 \begin{columns}
 	\begin{column}{9cm}
 	\[
@@ -251,12 +261,9 @@ We can relate the wavefunctions of $H_n$ to the wavefunctions of $H_{n-2}$, $H_{
 \begin{itemize}
 	\item Fractal dimensions of the wavefunction of energy $E$:
 	\[ \sum_i |\psi_i^{(n)}(E)|^{2q} \sim (1/F_n)^{(q-1)D_q^\psi(E)}  \]
-	\item Using the RG:
+	\item RG step neglecting sites with small amplitudes:
 		\[ |\psi_i^{(n)}(E)|^{2q} = \lambda^q |\psi_{i'}^{(n-2)}(E')|^{2q} \]
-		and neglecting sites with small amplitudes,
-	\item we express $D_q^\psi(E)$ as a function of the renormalization path
-	\[ E \rightarrow E' \rightarrow E'' \rightarrow ... \]
-	\item and actually only of x(E):
+	\item $D_q^\psi(E)$ depends on the renormalization path $x(E)$:
 	\[ D_q^\psi(x) = x \frac{\log 1/2}{\log \omega} + \frac{q}{q-1} \left( x \frac{\log \lambda}{\log \omega} + \frac{1-2x}{3}\frac{\log \lb}{\log \omega} \right) \]
 \end{itemize}
 \end{frame}
