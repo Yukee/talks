@@ -45,7 +45,7 @@
 \newcommand{\<}[1]{\begin{column}{#1}}
 \renewcommand{\>}{\end{column}}
 
-\newcommand{\om}{\ensuremath{\omega}}
+\newcommand{\om}{\ensuremath{\tau^{-1}}}
 \newcommand{\lb}{\ensuremath{\overline{\lambda}}}
 \newcommand{\zb}{\ensuremath{\overline{z}}}
 \newcommand{\ham}{\ensuremath{H}}
@@ -134,7 +134,7 @@
 \begin{column}{3cm}
 \begin{align*}
 \omega_n &= \frac{F_{n-1}}{F_{n}} \\
-\omega_n &\rightarrow \omega = \frac{\sqrt{5}-1}{2}
+\omega_n &\rightarrow \tau^{-1} = \frac{\sqrt{5}-1}{2}
 \end{align*}
 \begin{align*}
 \rho &= \frac{t_w}{t_s} < 1 \\
@@ -182,6 +182,20 @@
 \subsection{Dummy}
 \begin{frame}{Multifractal analysis of the spectrum}
 
+%\begin{center}
+%\includegraphics[scale=.9]{1_spectrum.pdf}
+%\end{center}
+%\begin{columns}
+%	\begin{column}{6cm}
+%	Hausdorff dimension: characterizing 
+%	\end{column}
+%	
+%	\begin{column}{6cm}
+%	\end{column}
+%\end{columns}
+%
+%	\framebreak
+
 	\begin{itemize}
 		\item 	Statistical properties of the bands
 		\[
@@ -192,8 +206,8 @@
 	\]
 	
 		\begin{align*}
-		\alpha(x) &= \log \omega/\left( x \log z/\zb^{2/3} + \log \zb^{1/3} \right) \\
-		f(x) &= \frac{x \log \left(\frac{3 x}{2}\right)- (x+1) \log (x+1)^{1/3}+ (1-2 x) \log (1-2 x)^{1/3}}{\log \omega}
+		\alpha(x) &= \log \tau^{-1}/\left( x \log z/\zb^{2/3} + \log \zb^{1/3} \right) \\
+		f(x) &= \frac{x \log \left(\frac{3 x}{2}\right)- (x+1) \log (x+1)^{1/3}+ (1-2 x) \log (1-2 x)^{1/3}}{\log \tau^{-1}}
 	\end{align*}
 	\begin{flushright}
 	(Piéchon \emph{et al} 1995, Rüdinger \& Piéchon 1998)
@@ -203,7 +217,7 @@
 				(q-1)D_q = \min_\alpha(\alpha q - f(\alpha))
 			\]
 	\end{itemize}
-	\[ D_0 = \log(\sqrt{2}-1) / \log \omega \]
+	\[ D_0 = \log(\sqrt{2}-1) / \log \tau^{-1} \]
 	\begin{flushright}
 	(Damanik 2008)
 	\end{flushright}
@@ -233,28 +247,51 @@
 	\begin{itemize}
 
 		\item Atomic RG
-			\subfile{rg_atomic_wavefunctions_main_txt.tex}
+			\begin{columns}
+			\begin{column}{9cm}
+				\subfile{rg_atomic_wavefunctions_main_txt.tex}
+			\end{column}
+			\begin{column}{2cm}
+			\[ \lb \sim \frac{1}{1+2\rho^2}
+			\]
+			\end{column}
+			\end{columns}
 		\item Molecular RG
-			\subfile{rg_molecular_wavefunctions_main_txt.tex}
+			\begin{columns}
+			\begin{column}{9cm}
+				\subfile{rg_molecular_wavefunctions_main_txt.tex}
+			\end{column}
+			\begin{column}{2cm}
+			\[ \lambda \sim \frac{1}{2+\rho^2}
+			\]
+			\end{column}
+			\end{columns}
 	\end{itemize}
-\begin{columns}
-	\begin{column}{9cm}
-	\[
+%\begin{columns}
+%	\begin{column}{9cm}
+%	\[
+%	\begin{cases}
+%		|\psi_i^{(n)}(E)|^2 = \lb |\psi_{i'}^{(n-3)}(E')|^2 \text{~if $E$ is in the central cluster}\\
+%		|\psi_i^{(n)}(E)|^2 = \lambda |\psi_{i'}^{(n-2)}(E')|^2 \text{~if }E\text{~is in the edge clusters}
+%	\end{cases}
+%	\]
+%	\end{column}
+%	\begin{column}{3cm}
+%	\[
+%	\begin{cases}
+%		\lb \sim  1/(1+\rho^2/2) \\
+%		\lambda \sim 1/(2+\rho^2)
+%	\end{cases}
+%	\]
+%	\end{column}
+%\end{columns}
+
+\[
 	\begin{cases}
 		|\psi_i^{(n)}(E)|^2 = \lb |\psi_{i'}^{(n-3)}(E')|^2 \text{~if $E$ is in the central cluster}\\
 		|\psi_i^{(n)}(E)|^2 = \lambda |\psi_{i'}^{(n-2)}(E')|^2 \text{~if }E\text{~is in the edge clusters}
 	\end{cases}
 	\]
-	\end{column}
-	\begin{column}{3cm}
-	\[
-	\begin{cases}
-		\lb \sim  1/(1+\rho^2/2) \\
-		\lambda \sim 1/(2+\rho^2)
-	\end{cases}
-	\]
-	\end{column}
-\end{columns}
 \end{frame}
 
 \begin{frame}{Renormalization paths and fractal dimensions of the wavefunctions}
@@ -262,9 +299,12 @@
 	\item Fractal dimensions of the wavefunction of energy $E$:
 	\[ \sum_i |\psi_i^{(n)}(E)|^{2q} \sim (1/F_n)^{(q-1)D_q^\psi(E)}  \]
 	\item RG step neglecting sites with small amplitudes:
-		\[ |\psi_i^{(n)}(E)|^{2q} = \lambda^q |\psi_{i'}^{(n-2)}(E')|^{2q} \]
+		\begin{align*}
+			\text{molecular RG step:~} &|\psi_i^{(n)}(E)|^{2q} = \lambda^q |\psi_{i'}^{(n-2)}(E')|^{2q} \\
+			\text{atomic RG step:~} &|\psi_i^{(n)}(E)|^{2q} = \lb^q |\psi_{i'}^{(n-3)}(E')|^{2q}
+		\end{align*}
 	\item $D_q^\psi(E)$ depends on the renormalization path $x(E)$:
-	\[ D_q^\psi(x) = x \frac{\log 1/2}{\log \omega} + \frac{q}{q-1} \left( x \frac{\log \lambda}{\log \omega} + \frac{1-2x}{3}\frac{\log \lb}{\log \omega} \right) \]
+	\[ D_q^\psi(x) = x \frac{\log 1/2}{\log \tau^{-1}} + \frac{q}{q-1} \left( x \frac{\log \lambda}{\log \tau^{-1}} + \frac{1-2x}{3}\frac{\log \lb}{\log \tau^{-1}} \right) \]
 \end{itemize}
 \end{frame}
 
@@ -294,16 +334,24 @@
 \[ 
 	\frac{1}{F_n} \sum_E \sum_i |\psi_i^{(n)}(E)|^{2q}  \sim (1/F_n)^{(q-1)\bar{D}_q^\psi}
 \]
-\begin{columns}
-	\begin{column}{5cm}
-		\centering
-		\includegraphics[scale=.4]{dq_av.pdf}
-	\end{column}
-	\begin{column}{5cm}
-		\centering
-		\includegraphics[scale=.6]{falpha_av.pdf}
-	\end{column}
-\end{columns}
+
+{
+\centering
+
+		\includegraphics[scale=.55]{dq_av.pdf}		
+		
+}
+
+%\begin{columns}
+%	\begin{column}{5cm}
+%		\centering
+%		\includegraphics[scale=.4]{dq_av.pdf}
+%	\end{column}
+%	\begin{column}{5cm}
+%		\centering
+%		\includegraphics[scale=.6]{falpha_av.pdf}
+%	\end{column}
+%\end{columns}
 		\begin{itemize}
 			\item Multifractality
 			\item Quantitative agreement with numerical data even for large $\rho$.
@@ -340,6 +388,16 @@
 \end{itemize}
 	\centering
 	\includegraphics[scale=.55]{E0_wavefunction.pdf}
+\end{frame}
+
+\begin{frame}
+Nonperturbative expression for the renormalization factors:
+\begin{align*}
+\label{eq:lb}
+	\lb(\rho) &= \frac{\sqrt{(1+\rho^2)^4+4\rho^4}-(1+\rho^2)^2}{2\rho^4}\\
+	\lambda(\rho) &= \frac{1+\rho^2 \gamma(\rho) - \sqrt{1+(\rho^2 \gamma(\rho))^2}}{2 \rho^2\gamma(\rho)} \\
+	\gamma(\rho) &= \frac{1}{1+\rho}
+\end{align*}
 \end{frame}
 
 \end{document}
