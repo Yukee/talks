@@ -1,0 +1,6 @@
+souligner dépendance en n, expliquer la notion d'approximant
+mentionner que termes de sauts = probabilités
+enlever somme directe
+mentionner invariance d'échelle -> exposants fractals
+mettre exemple fonction d'onde pour montrer invariance d'échelle
+numerical data -> simulations (direct diagonalization for some n)
