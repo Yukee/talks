@@ -189,30 +189,14 @@
 
 \section{The energy spectrum and its multifractal properties.}
 \subsection{Dummy}
+
 \begin{frame}{Multifractal analysis of the spectrum}
 
-%\begin{center}
-%\includegraphics[scale=.9]{1_spectrum.pdf}
-%\end{center}
-%\begin{columns}
-%	\begin{column}{6cm}
-%	Hausdorff dimension: characterizing 
-%	\end{column}
-%	
-%	\begin{column}{6cm}
-%	\end{column}
-%\end{columns}
-%
-%	\framebreak
-
 	\begin{itemize}
-		\item 	Statistical properties of the bands
-		\[
-	\begin{cases}
-	\Delta_n^a \sim (1/F_n)^{1/\alpha_a} \\
-	\#\{\text{bands of scaling~} \alpha \} \sim F_n^{f(\alpha)} 
-	\end{cases}
-	\]
+		\item Scale-invariant spectrum/ldos
+		\includegraphics[scale=.4]{ldos.pdf}
+		
+		\item $\implies$ locally, the ldos is a scaling law of exponent $\alpha$
 	
 		\begin{align*}
 		\alpha(x) &= \log \tau^{-1}/\left( x \log z/\zb^{2/3} + \log \zb^{1/3} \right) \\
@@ -221,15 +205,7 @@
 	\begin{flushright}
 	(Piéchon \emph{et al} 1995, Rüdinger \& Piéchon 1998)
 	\end{flushright}
-		\item Fractal dimensions $D_q$
-			\[
-				(q-1)D_q = \min_\alpha(\alpha q - f(\alpha))
-			\]
 	\end{itemize}
-	\[ D_0 = \log(\sqrt{2}-1) / \log \rho \]
-	\begin{flushright}
-	(Damanik 2008)
-	\end{flushright}
 \end{frame}
 
 \section{The wavefunctions and their multifractal properties.}
@@ -277,24 +253,6 @@
 			\end{column}
 			\end{columns}
 	\end{itemize}
-%\begin{columns}
-%	\begin{column}{9cm}
-%	\[
-%	\begin{cases}
-%		|\psi_i^{(n)}(E)|^2 = \lb |\psi_{i'}^{(n-3)}(E')|^2 \text{~if $E$ is in the central cluster}\\
-%		|\psi_i^{(n)}(E)|^2 = \lambda |\psi_{i'}^{(n-2)}(E')|^2 \text{~if }E\text{~is in the edge clusters}
-%	\end{cases}
-%	\]
-%	\end{column}
-%	\begin{column}{3cm}
-%	\[
-%	\begin{cases}
-%		\lb \sim  1/(1+\rho^2/2) \\
-%		\lambda \sim 1/(2+\rho^2)
-%	\end{cases}
-%	\]
-%	\end{column}
-%\end{columns}
 
 \[
 	\begin{cases}
@@ -318,7 +276,7 @@
 \end{itemize}
 \end{frame}
 
-\begin{frame}{Comparison with numerical data}
+\begin{frame}{Comparison with exact diagonalisation}
 \begin{columns}
 	\begin{column}{5cm}
 		\centering
@@ -342,7 +300,7 @@
 		\end{itemize}
 		
 		\begin{flushright}
-		\scriptsize{(Macé, Jagannathan, Piéchon, to be submitted)}
+		\scriptsize{(Macé, Jagannathan, Piéchon, in preparation)}
 		\end{flushright}
 	\end{column}
 \end{columns}
@@ -378,21 +336,30 @@
 \end{frame}
 
 \begin{frame}{Seeing the fractality: conumbering}
-\begin{columns}
+		{\centering
+		\includegraphics[scale=.85]{inclined_cut_and_project.pdf}
+		
+		}
+		
+		\begin{flushright}
+		(Mosseri 1988)
+		\end{flushright}
+		
+		\begin{columns}
 	\begin{column}{7cm}
 		\centering
-		\includegraphics[scale=.55]{ldos_reordered.pdf}
+		\includegraphics[scale=.4]{ldos_reordered.pdf}
 		
-		\scriptsize{Amplitude of the wavefunctions as a function of the position and the energy, computed numerically.}	
+		\scriptsize{Amplitude of the wavefunctions}	
 	\end{column}
-	\begin{column}{5cm}
+	\begin{column}{6cm}
 		\begin{itemize}
-			\item Conumbering (a relabelling of the positions along the chain) is used (Mosseri 1988).
-			\item The fractal structure stemming from the deflation symmetry is clear.
-			\item Energy/position symmetry is made evident by conumbering.
+			\item The fractal structure is now obvious.
+			\item Energy/position symmetry appears clearly.
 		\end{itemize}
 	\end{column}
 \end{columns}
+		
 \end{frame}
 
 \section{Conclusion}
