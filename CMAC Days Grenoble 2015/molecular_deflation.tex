@@ -52,10 +52,10 @@
 			
 			\foreach \x in {1}
 			{
-				\draw[-] (\orig, \x*\vertspac) node [left] {} -- (\orig+1.5*\trans, \x*\vertspac) node [midway, above] {\only<1>{$t_w''$} \only<2>{$z t_w$}};
-				\draw[strong] (\orig+1.5*\trans, \x*\vertspac) -- (\orig+3.5*\trans, \x*\vertspac) node [midway, above] {\only<1>{$t_s''$} \only<2>{$z t_s$}};
-				\draw[-] (\orig+3.5*\trans, \x*\vertspac) -- (\orig+6.5*\trans, \x*\vertspac) node [midway, above] {\only<1>{$t_w''$} \only<2>{$z t_w$}};
-				\draw[strong] (\orig+6.5*\trans, \x*\vertspac) -- (\orig+8*\trans, \x*\vertspac) node [midway, above] {\only<1>{$t_s''$} \only<2>{$z t_s$}};
+				\draw[-] (\orig, \x*\vertspac) node [left] {} -- (\orig+1.5*\trans, \x*\vertspac) node [midway, above] {$z t_w$};
+				\draw[strong] (\orig+1.5*\trans, \x*\vertspac) -- (\orig+3.5*\trans, \x*\vertspac) node [midway, above] {$z t_s$};
+				\draw[-] (\orig+3.5*\trans, \x*\vertspac) -- (\orig+6.5*\trans, \x*\vertspac) node [midway, above] {$z t_w$};
+				\draw[strong] (\orig+6.5*\trans, \x*\vertspac) -- (\orig+8*\trans, \x*\vertspac) node [midway, above] {$z t_s$};
 				
 				\filldraw (\orig,\x*\vertspac) circle (\rad);
 				\filldraw (\orig+1.5*\trans,\x*\vertspac) circle (\rad);

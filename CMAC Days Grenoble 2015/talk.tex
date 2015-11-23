@@ -128,7 +128,7 @@
 \begin{columns}
 \begin{column}{8.5cm}
 	\centering
-	\includegraphics[scale=.65]{cut_and_project.pdf}
+	\includegraphics[scale=.7]{cut_and_project.pdf}
 \end{column}
 
 \begin{column}{3cm}
@@ -144,6 +144,7 @@
 \end{column}
 \end{columns}
 
+	Hamiltonian of the n$^\text{th}$ approximant:
 	\[ \ham_n = - \sum_i t_i^{(n)} \ket{i} \bra{i+1} + \text{h.c.} \]
 \end{frame}
 
@@ -154,12 +155,12 @@
 	\item Molecular RG step (decimation of atoms) \subfile{molecular_deflation.tex}
 	\end{itemize}
 	\begin{flushright}
-	\onslide<2>{$z= \rho/2$, $\zb = \rho^2$} (Niu \& Nori 1986, Kalugin, Kitaev \& Levitov 1986)
+	$z= \rho/2$, $\zb = \rho^2$ (Niu \& Nori 1986, Kalugin, Kitaev \& Levitov 1986)
 	\end{flushright}
 \end{frame}
 
 \begin{frame}{RG reconstruction of the energy spectrum}
- \[ H_n = \underbrace{\left( z H_{n-2} - t_s \right)}_{\text{bonding levels}} \oplus \underbrace{\left( \zb H_{n-3} \right)}_{\text{atomic levels}} \oplus \underbrace{\left( z H_{n-2} + t_s \right)}_{\text{antibonding levels}} + \mathcal{O}(\rho^4)\]
+ \[ H_n = \underbrace{\left( z H_{n-2} - t_s \right)}_{\text{bonding levels}} + \underbrace{\left( \zb H_{n-3} \right)}_{\text{atomic levels}} + \underbrace{\left( z H_{n-2} + t_s \right)}_{\text{antibonding levels}} + \mathcal{O}(\rho^4)\]
 	$\rightarrow$ simple recursive construction of the spectrum (Piéchon \emph{et al} 1995)
 	
 	\begin{columns}
@@ -169,7 +170,7 @@
 	\end{column}
 	\begin{column}{6cm}
 	%\subfile{energy_tree.tex}
-	\includegraphics[scale=.35]{renormalization_paths_spectrum.pdf}
+	\includegraphics[scale=.3]{renormalization_paths_spectrum.pdf}
 	%Renormalization paths characterized by
 	%\[ x(E) = \frac{n_+ + n_-}{n} \]
 	%\[
@@ -177,8 +178,12 @@
 	%\]
 	\end{column}
 	\end{columns}
+	Renormalization paths characterized by
 	\[ 
 		x(E) = \frac{n_+ + n_-}{n} 
+	\]
+	\[ 
+		x(\text{\scriptsize{central band}}) = 0, x(\text{\scriptsize{edge bands}}) = 1/2
 	\]
 \end{frame}
 
@@ -221,7 +226,7 @@
 				(q-1)D_q = \min_\alpha(\alpha q - f(\alpha))
 			\]
 	\end{itemize}
-	\[ D_0 = \log(\sqrt{2}-1) / \log \tau^{-1} \]
+	\[ D_0 = \log(\sqrt{2}-1) / \log \rho \]
 	\begin{flushright}
 	(Damanik 2008)
 	\end{flushright}
@@ -230,19 +235,20 @@
 \section{The wavefunctions and their multifractal properties.}
 \subsection{Dummy}
 \begin{frame}{Fractal dimensions of the wavefunctions}
+	\centering
+	\includegraphics[scale=.55]{E0_wavefunction.pdf}
 	\[
-	\text{Stat. properties of $\psi$:~} 
+	\text{Scaling properties of $\psi$:~} 
 	\sum_i |\psi_i^{(n)}(E)|^{2q} \sim (1/F_n)^{(q-1)D_q^\psi(E)} 
 	\]
+	\begin{align*}
+	D_q(E) = 0/1 &\implies \text{extended/localized state}  \\
+	0 < D_q(E) < 1 &\implies \text{critial state}
+	\end{align*}
 \begin{itemize}
-	\item Wavefunctions at the center and the edges of the spectrum are multifractal (Kohmoto)
-	\item Averaged fractal dimensions of the wavefunction known to lowest order  (Thiem \& Schreiber 2013)
-	\item Our work: use the RG approach to:
-	\begin{itemize}
-		\item  determine individual wavefunction properties,
-		\item compute their fractal dimensions,
-		\item compute the averaged fractal dimensions at higher order.
-	\end{itemize}
+	\item Wavefunctions at $E=0$ are critical (Kohmoto)
+%	\item Averaged fractal dimensions of the wavefunction known to lowest order  (Thiem \& Schreiber 2013)
+	\item Our work: use the RG approach to determine individual wavefunctions, and compute their fractal dimensions
 \end{itemize}
 \end{frame}
 
@@ -328,7 +334,7 @@
 		%	\item $x$ is the relevant parameter to describe the properties of the states
 		%\end{itemize}
 		
-		\includegraphics[scale=.4]{renorm_th_num.pdf}
+		\includegraphics[scale=.5]{renorm_th_num.pdf}
 		
 		\begin{itemize}
 			\item All states are critical in the strong modulation limit
@@ -371,7 +377,7 @@
 
 \end{frame}
 
-\begin{frame}{Conumbering}
+\begin{frame}{Seeing the fractality: conumbering}
 \begin{columns}
 	\begin{column}{7cm}
 		\centering
