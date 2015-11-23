@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    395009,       8380]
-NotebookOptionsPosition[    389241,       8194]
-NotebookOutlinePosition[    389577,       8209]
-CellTagsIndexPosition[    389534,       8206]
+NotebookDataLength[    395104,       8383]
+NotebookOptionsPosition[    389336,       8197]
+NotebookOutlinePosition[    389672,       8212]
+CellTagsIndexPosition[    389629,       8209]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -7009,7 +7009,7 @@ Cell[BoxData[
    RowBox[{"AxesStyle", "\[Rule]", 
     RowBox[{"Directive", "[", 
      RowBox[{
-      RowBox[{"FontSize", "\[Rule]", "Large"}], ",", 
+      RowBox[{"FontSize", "\[Rule]", "15"}], ",", 
       RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine Display\>\""}]}], 
      "]"}]}]}], "]"}]], "Input",
  CellChangeTimes->{{3.656829159859724*^9, 3.656829223529351*^9}, {
@@ -7018,7 +7018,8 @@ Cell[BoxData[
    3.656851865995111*^9, 3.656851876402793*^9}, {3.6568519677232*^9, 
    3.65685200429105*^9}, {3.656852202323662*^9, 3.656852247475355*^9}, {
    3.6568542850308733`*^9, 3.656854285193421*^9}, 3.657264343864213*^9, {
-   3.657264467680689*^9, 3.657264493784266*^9}}],
+   3.657264467680689*^9, 3.657264493784266*^9}, {3.657264982761005*^9, 
+   3.657264982960638*^9}}],
 
 Cell[BoxData[
  TemplateBox[{GraphicsBox[{{{}, {}, {
@@ -7143,7 +7144,7 @@ Wa9ISeL/KS2fnJ+nEX73299ULlP4P4nh8UQ=
      AxesLabel -> {
        FormBox["\"\[Rho]\"", TraditionalForm], None}, AxesOrigin -> {0, 0.2}, 
      AxesStyle -> 
-     Directive[FontSize -> Large, FontFamily -> "Linux Libertine Display"], 
+     Directive[FontSize -> 15, FontFamily -> "Linux Libertine Display"], 
      DisplayFunction :> Identity, Epilog -> {{
         PointSize[0.018], {
          PointBox[{{0.1, 0.5006133942618795}, {0.2, 0.5008977167741769}, {
@@ -7369,7 +7370,8 @@ Wa9ISeL/KS2fnJ+nEX73299ULlP4P4nh8UQ=
        RowBox[{"Placed", "[", 
          RowBox[{#2, ",", "After"}], "]"}]}], "]"}]& )]], "Output",
  CellChangeTimes->{
-  3.6572643445825987`*^9, {3.657264464727448*^9, 3.657264494149889*^9}}]
+  3.6572643445825987`*^9, {3.657264464727448*^9, 3.657264494149889*^9}, 
+   3.657264983534788*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -7384,7 +7386,8 @@ Cell[BoxData[
 
 Cell[BoxData["\<\"/home/nicolas/git/talks/CMAC Days Grenoble \
 2015//renorm_th_num.pdf\"\>"], "Output",
- CellChangeTimes->{3.656854373702783*^9, 3.657264506583725*^9}]
+ CellChangeTimes->{3.656854373702783*^9, 3.657264506583725*^9, 
+  3.657264987458967*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8359,26 +8362,26 @@ Cell[265217, 5819, 2446, 62, 67, "Input"],
 Cell[267666, 5883, 62379, 1075, 235, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[330082, 6963, 2246, 57, 67, "Input"],
-Cell[332331, 7022, 18261, 349, 237, "Output"]
+Cell[330082, 6963, 2293, 58, 67, "Input"],
+Cell[332378, 7023, 18284, 350, 235, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[350629, 7376, 244, 6, 32, "Input"],
-Cell[350876, 7384, 167, 2, 32, "Output"]
+Cell[350699, 7378, 244, 6, 32, "Input"],
+Cell[350946, 7386, 192, 3, 32, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[351080, 7391, 2726, 75, 94, "Input"],
-Cell[353809, 7468, 19073, 361, 235, "Output"]
+Cell[351175, 7394, 2726, 75, 94, "Input"],
+Cell[353904, 7471, 19073, 361, 235, "Output"]
 }, Open  ]],
-Cell[372897, 7832, 417, 7, 47, "Text"],
-Cell[373317, 7841, 3513, 103, 144, "Input"],
+Cell[372992, 7835, 417, 7, 47, "Text"],
+Cell[373412, 7844, 3513, 103, 144, "Input"],
 Cell[CellGroupData[{
-Cell[376855, 7948, 1211, 32, 32, "Input"],
-Cell[378069, 7982, 10711, 190, 234, "Output"]
+Cell[376950, 7951, 1211, 32, 32, "Input"],
+Cell[378164, 7985, 10711, 190, 234, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[388817, 8177, 159, 4, 32, "Input"],
-Cell[388979, 8183, 222, 6, 32, "Output"]
+Cell[388912, 8180, 159, 4, 32, "Input"],
+Cell[389074, 8186, 222, 6, 32, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
