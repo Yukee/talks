@@ -47,6 +47,8 @@
 
 \definecolor{BostonBlue}{HTML}{00688B}
 \definecolor{Complementary}{HTML}{8B2300}
+
+\renewcommand{\ss}[1]{\scriptsize{\text{#1}}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \usepackage{braket}
@@ -61,43 +63,93 @@
 \begin{document}
 
 \begin{frame}
-\title{Multifractality of the tight-binding eigenstates on the Fibonacci chain}
+\title{Fractal states on quasicrystals}
 
-\author{ Nicolas Macé, Anuradha Jagannathan, Frédéric Piéchon}
+\author{ Nicolas Macé}
 
 \institute % (optional)
 {
-  Laboratoire de Physique des Solides\\
-  Université Paris-Sud
+  Laboratoire de Physique des Solides
 }
 
-\date{November 25, 2015}
+\date{January 19, 2016}
 
 \titlepage
 
 \btVFill
-\begin{columns}
-\begin{column}{2cm}
-~\\
-~\\
-~\\
-~\\
-\raggedright
-\includegraphics[scale=.15]{img/Ho-Mg-ZnQuasicrystal _Ian_Fisher_Paul_Canfield.jpg}
-\end{column}
-\begin{column}{6cm}
 \centering
-\includegraphics[width=.5\textwidth]{illustration.pdf}
-\end{column}
-\begin{column}{2cm}
-~\\
-~\\
-~\\
-~\\
-\raggedleft
-\includegraphics[scale=.15]{img/Ho-Mg-ZnQuasicrystal _Ian_Fisher_Paul_Canfield.jpg}
-\end{column}
-\end{columns}
+\includegraphics[scale=0.12]{img/frontpage_Penrose_tiling.png}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Outline}
+\tableofcontents[hideallsubsections]
+\end{frame}
+
+\section{Quasicrystals and their physical properties}
+%Each section needs a subsection for the small points on top to show up
+\subsection{Dummy}
+\begin{frame}{Quasicrystal?}
+A crystalline structure based on a quasiperiodic tiling. 
+
+A qp tiling is required to:
+\begin{itemize}
+	\item fill space (tiling)
+	\item be \textbf{aperiodic} (a translate of the tiling does not superpose with the tiling itself)
+	\item have \textbf{some kind of long range order} (diffraction reveals sharp peaks)
+\end{itemize}
+
+\(
+	\<{6cm}
+		\centering
+		\includegraphics[scale=0.1]{img/frontpage_Penrose_tiling.png}
+		
+		\ss{A patch of the Penrose tiling,} \ss{which has an order 5 rotational symmetry}
+	\>
+	\<{6cm}
+		\centering
+		\includegraphics[scale=0.1]{img/diffraction_tenfold.png}
+		
+		\ss{Experimental diffraction pattern of AlPdMn} \ss{(Conradin Beeli group)}
+	\>
+\)
+\end{frame}
+
+\begin{frame}{A recipe for bulding quasicrystals}
+Take a \textbf{periodic lattice}, cut a slice in it, project the selected points on a ``physical'' hyperplane.
+\begin{figure}[htp]
+\centering
+\includegraphics[scale=.6]{img/cut_and_project_Fibonacci.pdf}
+
+\ss{A one dimensional quasicrystal, built from a periodic $D=2$ square lattice.}
+
+\(
+	\<{6cm}
+		\centering
+		\includegraphics[scale=0.035]{img/ammann_beenker.png}
+		
+		\ss{The Ammann-Beenker eight-fold symmetric tiling}
+	\>
+	\<{6cm}
+		\centering
+		\includegraphics[scale=0.112]{img/ammann_beenker_perpspace.png}
+		
+		\ss{The selection window for this tiling}
+	\>
+\)
+\end{figure}
+\end{frame}
+
+\section{Diffraction}
+\subsection{Dummy}
+\begin{frame}
+\end{frame}
+
+\section{Electron states}
+\subsection{Dummy}
+\begin{frame}
+dfdf
 \end{frame}
 
 \end{document}
