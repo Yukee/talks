@@ -41,7 +41,7 @@
 
 \begin{document}
 
-\title{Gap structure of quantum cut and project chains.}
+\title{Gap structure of 1D cut and project Hamiltonians.}
 \author{Nicolas Macé, Anuradha Jagannathan and Frédéric Piéchon}
 \address{Laboratoire de Physique des Solides, Université Paris-Saclay, 91400 Orsay, France}
 \ead{nicolas.mace@u-psud.fr}
@@ -60,7 +60,7 @@ We also show that there is a direct relation between the gap size and the gap la
 
 \section*{Introduction}
 
-The gap labeling theorem (GLT) is one of the few exact results known about electronic properties of quasicrystals.
+The gap labeling theorem (GLT) \cite{bellissard} is one of the few exact results known about electronic properties of quasicrystals.
 It concerns the \emph{integrated density of states} (IDOS), which is defined as $\id(E) = \text{fraction of energy states below energy~}E$.
 Inside a spectral gap, the IDOS is of course constant, and the theorem constrains the value it can take.
 In the case of canonical cut and project chains, the theorem states that
@@ -72,7 +72,8 @@ where $\alpha$ is the irrational involved in the construction of the quasiperiod
 $m$ and $n$ are integers, $n$ is the label of the gap, and $m(n)$ is such that the IDOS satisfies $0 \leq \id \leq  1$.
 
 The GLT can appear mysterious and profound. However, it has a simple derivation, making use of the approximants.
-Let $\alpha_l = p_l/q_l$ be a convergent of $\alpha$. Consider the periodic approximant build with $\alpha$.
+Let $\alpha_l = p_l/q_l$ be a convergent of $\alpha$. 
+Consider the periodic approximant built with $\alpha$.
 Its spectrum consists in general of $N_l = p_l + q_l$ energy bands \cite{diffractionLuck, codimSire}, and thus the IDOS inside a gap is given by
 \begin{equation}
 	\id(E \in \text{gap}) = \frac{j(E)}{N_l}
@@ -84,11 +85,11 @@ We let $n = a-b$ and we remark that
 \label{eq:glapprox}
 	\id(E \in \text{gap}) = n \frac{q_l}{N_l} \mod 1
 \end{equation}
-Taking the quasiperiodic limit $l \to \infty$ we recover the GLT.
+Taking the quasiperiodic limit $l \to \infty$ at fixed $n$, we recover the GLT.
 Moreover, the formula \eqref{eq:glapprox} extends the GLT to approximants, which, as we will see, provides useful insight into the gap structure.
 
-In itself, the theorem contains very few information: it only constrains the set of values the IDOS can take inside the gaps, but does not tell anything about the energy location of the gaps, or about their width.
-Nevertheless, as we shall see, the gap label $n$ contains extra information the GLT doesn't tell us about.
+As such, the theorem contains little information: it only constrains the set of values the IDOS can take inside the gaps, but does not tell anything about the energy location of the gaps, or about their width.
+Nevertheless, as we shall see, the gap label $n$ contains additional information the GLT does not explicitly tell us about.
 
 
 \section{Nearest neighbors tight-binding model on quasiperiodic chains}
@@ -103,7 +104,7 @@ Once the irrational is fixed, the only free parameter in the model is the ratio 
 
 This model can be realized experimentally with light \cite{light} or cavity polaritons \cite{polaritons}.
 In the latter case, the details of the energy spectrum could be accurately measured, leading the authors to observe subtle phenomena such as the energy displacement of an edge state within a spectral gap.
-Such observation makes the theoretical study of the spectral gaps particularly relevant.
+Such observation makes theoretical studies of the spectral gaps particularly relevant.
 
 \section{Application: the Fibonacci quasicrystal}
 
@@ -123,7 +124,7 @@ Such observation makes the theoretical study of the spectral gaps particularly r
 	\end{minipage}
 \end{figure}
 
-We now examine in details the special case of the Fibonacci chain, which will give us more insights.
+We now examine in detail the special case of the Fibonacci chain, which will give us more insights.
 It is characterized by $\alpha = \omega$, where $\omega = (\sqrt{5}-1)/2$ is the inverse of the golden ratio.
 The gap labeling is thus
 \begin{equation}
@@ -159,12 +160,12 @@ and $\sub$ is the geometrical substitution matrix
 		1 & 0\\
 	\end{bmatrix}
 \end{equation}
-that can be used to generates the Fibonacci sequence.
+that can be used to generate the Fibonacci sequence.
 
 This recursive relation provides us with a very simple geometrical interpretation of the GLT, in the simple case of the Fibonacci chain.
-Moreover, it proves that the transient gaps are the iterates of the $E=0$ gap, while the stable gaps are the iterates of the two main gaps.
+Moreover, the construction shows that the transient gaps are the iterates of the $E=0$ gap, while the stable gaps are the iterates of the two main gaps.
 
-We have shown on this example that the GLT can be extended to the approximants, at the price of introducing transient gaps that are not present in the spectrum of the quasiperiodic system. 
+This example shows that the GLT can be extended to the approximants, at the price of introducing transient gaps that are not present in the spectrum of the quasiperiodic system. 
 Fortunately, we are able to pinpoint them.
 We now turn to the general characterization of the transient and stable gaps in the case of an arbitrary cut and project chain.
 \section{Transient and stable gaps}
@@ -189,44 +190,51 @@ We now turn to the general characterization of the transient and stable gaps in 
 		\caption{\small{Chain $\alpha = \sqrt{3}-1$.}}
 		\label{fig:width3}
 	\end{minipage}
-	\center{Gap width as a function of gap label for several quasiperiodic chains. Blue: stable gap, red: transient gaps, according to criterion \eqref{eq:overlapcriterion}.}
+	\center{\small{Gap width as a function of gap label for several quasiperiodic chains. Blue: stable gap, red: transient gaps, according to criterion \eqref{eq:overlapcriterion}.}}
 \end{figure}
 
 
-In the previous part, we had considered a gap of label $n$ to be transient if its width $\Delta_l(n) \to 0$ as $l \to \infty$.
-We introduce here a more amenable criterion, that we will turn out to be equivalent.
-Let $\Delta_l(n)$ be the width of the gap of label $n$, and let $\overline{E}_l(n)$ be the mean energy inside the gap $n$.
+In the previous part, we considered a gap of label $n$ to be transient if its width $\Delta_l(n)$ vanished:
+\begin{equation}
+\label{eq:limitcriterion}
+	\Delta_l(n) \xrightarrow[l \to \infty]{} 0
+\end{equation}
+We introduce here a more practical criterion.
+Let $\overline{E}_l(n)$ be the mean energy inside the gap $n$.
 Define the displacement of a gap as $D_l(n) = |\overline{E}_{l+1}(n) - \overline{E}_l(n)| $
-We say the gap labeled by $n$ at step $l$ is stable if overlaps its counterpart at step $l+1$, ie if 
+We say the gap $n$ at step $l$ is transient if does not overlaps its counterpart at step $l+1$, ie if 
 \begin{equation}
 \label{eq:overlapcriterion}
-	0.5 \Delta_l(n) > D_l(n),
+	0.5 \Delta_l(n) < D_l(n),
 \end{equation}
-and transient otherwise.
-This criterion, applied to the Fibonacci chain, yields the same stable and transient gaps as the previous one.
-Evidence that the two criteria coincide in general is supported by numerical experiments, as is argued below.
+and stable otherwise.
+It is easy to see that criterion \eqref{eq:overlapcriterion}, applied to the Fibonacci chain, yields the same stable and transient gaps as criterion \eqref{eq:limitcriterion}.
+It is not trivial that these two criteria are in general equivalent.
+However, it does appear to be the case for all the quasiperiodic chains we tested numerically. 
+We will therefore consider them equivalent from now.
 
 Figures \eqref{fig:width1} \eqref{fig:width2} \eqref{fig:width3} show the widths of the gaps as a function of their label, for various quasiperiodic chains.
 The global structure is similar in every case: the gap width is a globally decreasing function of the gap index. 
 The width decreases as a power-law of the index.
-In the case of the Fibonacci chain, we notice log-periodic oscillations, stemming from the scale invariance of the Fibonacci chain.
+In the case of the Fibonacci chain, we notice log-periodic oscillations, stemming from the scale invariance of the Fibonacci Hamiltonian.
+In all cases, there is a critical label above which all gaps are transient, and below which all gaps are stable.
 
-Going to the next approximant doesn't significantly change the width and label of previously stable gaps.
-It is therefore impossible for stable gaps to have vanishing width, implying that they must satisfy the first stability criterion.
-Moreover, the transient gaps are always the gaps of largest index.
-Since the width is a decreasing function of the index, we conclude that their width vanishes. They thus also satisfy the first stability criterion.
-All numerical evidences are therefore in favor of the two criteria being equivalent.
+%Going to the next approximant does not significantly change the width and label of previously stable gaps.
+%It is therefore impossible for stable gaps to have vanishing width, implying that they must satisfy the first stability criterion.
+%Moreover, the transient gaps are always the gaps of largest index.
+%Since the width is a decreasing function of the index, we conclude that their width vanishes. They thus also satisfy the first stability criterion.
+%All numerical evidences are therefore in favor of the two criteria being equivalent.
 
 
 \section*{Conclusion and perspectives}
 
-We have shown that the well known GLT extends from the quasiperiodic chains to their approximants.
+We have shown that the well known GLT is applicable not just to quasiperiodic chains but also to their approximants.
 The price to pay is the introduction of \emph{transient gaps}, which vanish in the quasiperiodic limit. 
 Fortunately, these gaps are easy to spot: they always have the highest gap index.
 Moreover, we show that the gap label contains relevant physical information: it globally orders the gaps by decreasing width, and separate stable from transient gaps.
 
 The gap label, which had \emph{a priori} no physical content, thus appears physically relevant.
-It has also been shown the gap label can be considered as a topological number, and used to characterize edge states \cite{silberberg2015, Levy2015}.
+It has also been shown the gap label can be considered as a topological number, and used to characterize edge states \cite{Levy2015}.
 
 Open problems include more finely describing the behavior of the gap width with the index and extending this description to higher dimensional quasicrystals, which are also known to have gaps \cite{Zijlstra, penrosegaps}.
 
