@@ -1,12 +1,6 @@
 \documentclass[a4paper]{jpconf}
 
-\usepackage[natbib=true, backend=biber, style=numeric, doi=false, isbn=false, url=false, sorting=none, firstinits=true]{biblatex}
-
-\DeclareNameAlias{sortname}{last-first}
-\DeclareNameAlias{default}{last-first}
-
-\usepackage{fullwidth}
-
+\usepackage[natbib=true, backend=biber, style=numeric, doi=false,isbn=false,url=false]{biblatex}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[english, french]{babel} %français
@@ -24,6 +18,15 @@
 \usetikzlibrary{positioning}
 \usepackage{ dsfont } % hollow letters
 
+% compile child files with separate preambles, and include them in the document
+\usepackage{standalone}
+
+% subfigure
+%\usepackage{subcaption}
+
+% the equal sign I use to define something
+\newcommand{\define}{\ensuremath{ \overset{\text{def}}{=} }}
+
 % bold g letter in math mode
 \newcommand{\gv}{\ensuremath{\mathbf{g}}}
 % the symbol used for the Fibonacci substitution matrix
@@ -34,7 +37,7 @@
 \newcommand{\id}{\ensuremath{\text{idos}}}
 
 % bibliography
-\addbibresource{bib}
+\bibliography{bib}
 
 \begin{document}
 
@@ -227,7 +230,7 @@ In all cases, there is a critical label above which all gaps are transient, and 
 
 We have shown that the well known GLT is applicable not just to quasiperiodic chains but also to their approximants.
 The price to pay is the introduction of \emph{transient gaps}, which vanish in the quasiperiodic limit. 
-Fortunately, these gaps are easy to spot: they always have the highest gap label.
+Fortunately, these gaps are easy to spot: they always have the highest gap index.
 Moreover, we show that the gap label contains relevant physical information: it globally orders the gaps by decreasing width, and separate stable from transient gaps.
 
 The gap label, which had \emph{a priori} no physical content, thus appears physically relevant.
@@ -235,9 +238,5 @@ It has also been shown the gap label can be considered as a topological number, 
 
 Open problems include more finely describing the behavior of the gap width with the index and extending this description to higher dimensional quasicrystals, which are also known to have gaps \cite{Zijlstra, penrosegaps}.
 
-\begin{fullwidth}
-\bibhang=50pt
 \printbibliography
-\end{fullwidth}
-
 \end{document}
