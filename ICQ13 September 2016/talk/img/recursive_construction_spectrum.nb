@@ -1,0 +1,859 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     34050,        851]
+NotebookOptionsPosition[     33134,        815]
+NotebookOutlinePosition[     33461,        830]
+CellTagsIndexPosition[     33418,        827]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"takes", " ", "spectra", " ", "at", " ", "step", " ", "n"}], "-", 
+     RowBox[{"3", " ", 
+      RowBox[{"(", "g3", ")"}]}]}], ",", " ", 
+    RowBox[{"n", "-", 
+     RowBox[{"2", " ", 
+      RowBox[{"(", "g2", ")"}], " ", "and", " ", "n"}], "-", 
+     RowBox[{"1", " ", 
+      RowBox[{"(", "g1", ")"}], " ", "and", " ", "return", " ", "spectra", 
+      " ", "at", " ", "step", " ", "n"}], "-", "2"}], ",", " ", 
+    RowBox[{"n", "-", 
+     RowBox[{"1", " ", "and", " ", "n"}]}]}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"recur", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"g3_", ",", "g2_", ",", "g1_"}], "}"}], ",", "ts_", ",", 
+     "tw_"}], "]"}], ":=", 
+   RowBox[{"Block", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"z", "=", 
+        RowBox[{"tw", "/", 
+         RowBox[{"(", 
+          RowBox[{"2", "ts"}], ")"}]}]}], ",", 
+       RowBox[{"zb", "=", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"tw", "/", "ts"}], ")"}], "^", "2"}]}], ",", "g"}], "}"}], 
+     ",", "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"g", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Scale", "[", 
+          RowBox[{"g3", ",", 
+           RowBox[{"{", 
+            RowBox[{"zb", ",", "1"}], "}"}]}], "]"}], ",", 
+         RowBox[{"Translate", "[", 
+          RowBox[{
+           RowBox[{"Scale", "[", 
+            RowBox[{"g2", ",", 
+             RowBox[{"{", 
+              RowBox[{"z", ",", "1"}], "}"}]}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"-", "ts"}], ",", "0"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"ts", ",", "0"}], "}"}]}], "}"}]}], "]"}]}], "}"}]}], 
+      ";", "\[IndentingNewLine]", 
+      RowBox[{"{", 
+       RowBox[{"g2", ",", "g1", ",", "g"}], "}"}]}]}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.649484222267083*^9, 3.649484245285768*^9}, {
+  3.649484331168355*^9, 3.6494843364024363`*^9}, {3.649484385360133*^9, 
+  3.64948445650303*^9}, {3.649484562113161*^9, 3.649484616578264*^9}, {
+  3.649484790770994*^9, 3.649484900788135*^9}, {3.649485038068301*^9, 
+  3.64948504022766*^9}, {3.6494853331248407`*^9, 3.6494853853008223`*^9}, {
+  3.649485674868556*^9, 3.6494857241161346`*^9}, {3.6494875135248623`*^9, 
+  3.649487629750407*^9}, {3.649487694438472*^9, 3.6494877023421907`*^9}, {
+  3.649487846727404*^9, 3.649487875686256*^9}, {3.6494879835426683`*^9, 
+  3.649488031700027*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"height", " ", "of", " ", "the", " ", "rectangles"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Delta]", "=", "0.2"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "rounding", " ", "radii", " ", "of", " ", "the", " ", "rectangles"}], " ",
+     "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"rr", "=", " ", "0"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"ts", "=", "1"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"tw", "=", "0.5"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+     RowBox[{
+     "first", " ", "three", " ", "spectra", " ", "corresponding", " ", "resp",
+       " ", "to", " ", "approximants", " ", "ts"}], ",", " ", 
+     RowBox[{"tw", " ", "and", " ", "twts"}]}], " ", "*)"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g0", "=", 
+     RowBox[{"Rectangle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "2"}], "ts"}], ",", 
+         RowBox[{
+          RowBox[{"-", "\[Delta]"}], "/", "2"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"2", "ts"}], ",", 
+         RowBox[{"\[Delta]", "/", "2"}]}], "}"}], ",", 
+       RowBox[{"RoundingRadius", "\[Rule]", "rr"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g1", "=", 
+     RowBox[{"Rectangle", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "2"}], "tw"}], ",", 
+         RowBox[{
+          RowBox[{"-", "\[Delta]"}], "/", "2"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"2", "tw"}], ",", 
+         RowBox[{"\[Delta]", "/", "2"}]}], "}"}], ",", 
+       RowBox[{"RoundingRadius", "\[Rule]", "rr"}]}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"g2", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Rectangle", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "ts"}], "-", "tw"}], ",", 
+           RowBox[{
+            RowBox[{"-", "\[Delta]"}], "/", "2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "ts"}], "+", "tw"}], ",", 
+           RowBox[{"\[Delta]", "/", "2"}]}], "}"}], ",", 
+         RowBox[{"RoundingRadius", "\[Rule]", "rr"}]}], "]"}], ",", 
+       RowBox[{"Rectangle", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"ts", "-", "tw"}], ",", 
+           RowBox[{
+            RowBox[{"-", "\[Delta]"}], "/", "2"}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"ts", "+", "tw"}], ",", 
+           RowBox[{"\[Delta]", "/", "2"}]}], "}"}], ",", 
+         RowBox[{"RoundingRadius", "\[Rule]", "rr"}]}], "]"}]}], "}"}]}], 
+    ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.649484949364563*^9, 3.6494851277955513`*^9}, {
+   3.649485212355837*^9, 3.649485264964562*^9}, 3.649487807351803*^9, {
+   3.64948804819762*^9, 3.64948811379956*^9}, {3.64948816115898*^9, 
+   3.649488225529709*^9}, {3.649488256617119*^9, 3.649488269240624*^9}, {
+   3.649492218444605*^9, 3.649492223112973*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{
+   RowBox[{"Nest", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"recur", "[", 
+       RowBox[{"#", ",", "1.", ",", "0.5"}], "]"}], "&"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"g0", ",", "g1", ",", "g2"}], "}"}], ",", "3"}], "]"}], "[", 
+   RowBox[{"[", "3", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.649485268456852*^9, 3.649485278832697*^9}, {
+  3.649485408530283*^9, 3.649485412513597*^9}, {3.64948765910781*^9, 
+  3.649487734227541*^9}, {3.6494879163406754`*^9, 3.649487964964806*^9}, {
+  3.649488135142911*^9, 3.6494881426606092`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+      RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+      RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, Center}], 
+   GeometricTransformationBox[
+    GeometricTransformationBox[{
+      GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+        RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+         RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], {{{-1., 0}}, {{
+         1., 0}}}]}, {{{0.25, 0}, {0., 1}}, Center}], {{{-1., 0}}, {{
+      1., 0}}}]}]], "Output",
+ CellChangeTimes->{
+  3.6494852791639423`*^9, {3.649485367220015*^9, 3.6494854137136717`*^9}, {
+   3.64948753892894*^9, 3.6494875555842037`*^9}, {3.649487633714768*^9, 
+   3.649487639364051*^9}, 3.649487734902573*^9, {3.649487910601747*^9, 
+   3.6494879651455517`*^9}, {3.6494881358889523`*^9, 
+   3.6494881922692537`*^9}, {3.649488228180766*^9, 3.6494882701593733`*^9}, 
+   3.6494922446331673`*^9, 3.6494936258718987`*^9, 3.649579608619907*^9, 
+   3.649590769375276*^9, 3.650211021967311*^9, 3.650282860402999*^9, {
+   3.682770718000983*^9, 3.6827707386044207`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"step", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   RowBox[{"Nest", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"recur", "[", 
+       RowBox[{"#", ",", "1.", ",", "0.5"}], "]"}], "&"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"g0", ",", "g1", ",", "g2"}], "}"}], ",", "n"}], "]"}], "[", 
+   RowBox[{"[", "3", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6494903613178587`*^9, 3.649490373205139*^9}, {
+  3.6494925471910877`*^9, 3.649492742711595*^9}, {3.6494927968563967`*^9, 
+  3.649492810983904*^9}, {3.649492879896381*^9, 3.649492885320401*^9}, {
+  3.6494929960913153`*^9, 3.64949300111392*^9}, {3.6494930997554083`*^9, 
+  3.64949309989581*^9}, {3.6494932718489122`*^9, 3.649493305705638*^9}, {
+  3.649493362345686*^9, 3.64949339805647*^9}, {3.649493662136115*^9, 
+  3.649493678728307*^9}, {3.6495795979107027`*^9, 3.649579605252705*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"s3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"step", "[", "3", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Text", "[", 
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<n-3\>\"", ",", "Large", ",", 
+          RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+         "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"2", "-", "0.2"}], ",", "0"}], "}"}]}], "]"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s4", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"step", "[", "4", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Text", "[", 
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<n-2\>\"", ",", "Large", ",", 
+          RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+         "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"2", "-", "0.2"}], ",", "0"}], "}"}]}], "]"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s5", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"step", "[", "5", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"Text", "[", 
+       RowBox[{
+        RowBox[{"Style", "[", 
+         RowBox[{"\"\<n-1\>\"", ",", "Large", ",", 
+          RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+         "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"2", "-", "0.2"}], ",", "0"}], "}"}]}], "]"}], "}"}]}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"s6", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"step", "[", "6", "]"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"Text", "[", 
+        RowBox[{
+         RowBox[{"Style", "[", 
+          RowBox[{"\"\<n\>\"", ",", "Large", ",", 
+           RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+          "]"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"2", "-", "0.2"}], ",", "0"}], "}"}]}], "]"}], "}"}]}], 
+     "}"}]}], ";"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.649490376261949*^9, 3.649490449413516*^9}, {
+  3.649490566900403*^9, 3.6494905707725773`*^9}, {3.649493307111127*^9, 
+  3.649493307894383*^9}, {3.6495796130611486`*^9, 3.6495796570307007`*^9}, {
+  3.649579719179167*^9, 3.649579730054529*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"d", "=", "0.6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"edg", "=", 
+   RowBox[{
+    RowBox[{"ts", 
+     RowBox[{"(", 
+      RowBox[{"1", "+", 
+       RowBox[{"ts", "/", "tw"}]}], ")"}]}], "-", 
+    RowBox[{"2", "ts"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"s", "=", "1.45"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zb", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"tw", "/", "ts"}], ")"}], "^", "2"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"z", "=", 
+    RowBox[{"tw", "/", 
+     RowBox[{"(", 
+      RowBox[{"2", "ts"}], ")"}]}]}], ";"}], "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{"reclangole", " ", "around", " ", "the", " ", "spectra"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"rectaround", "=", 
+   RowBox[{"Rectangle", "[", 
+    RowBox[{
+     RowBox[{"s", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "edg"}], ",", 
+        RowBox[{
+         RowBox[{"-", "\[Delta]"}], "/", "2"}]}], "}"}]}], ",", 
+     RowBox[{"s", 
+      RowBox[{"{", 
+       RowBox[{"edg", ",", 
+        RowBox[{"\[Delta]", "/", "2"}]}], "}"}]}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"around3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"EdgeForm", "[", 
+      RowBox[{"Directive", "[", "Dashed", "]"}], "]"}], ",", 
+     RowBox[{"Opacity", "[", "0", "]"}], ",", "rectaround"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"around2", "=", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"EdgeForm", "[", 
+       RowBox[{"Directive", "[", "]"}], "]"}], ",", 
+      RowBox[{"Opacity", "[", "0", "]"}], ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{"rectaround", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"-", "d"}]}], "}"}]}], "]"}]}], "}"}]}], ";"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "text", " ", "showing", " ", "the", " ", "z", " ", "and", " ", "zbar", " ",
+     "contraction", " ", "factors"}], " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zzb", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{
+         RowBox[{"OverBar", "[", "\"\<z\>\"", "]"}], ",", "Large", ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+        "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"\[Delta]", "-", 
+          RowBox[{"3", "d"}], "+", "0.08"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<z\>\"", ",", "Large", ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+        "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "ts"}], ",", 
+         RowBox[{"\[Delta]", "-", 
+          RowBox[{"3", "d"}], "+", "0.08"}]}], "}"}]}], "]"}], ",", 
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<z\>\"", ",", "Large", ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+        "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"ts", ",", 
+         RowBox[{"\[Delta]", "-", 
+          RowBox[{"3", "d"}], "+", "0.08"}]}], "}"}]}], "]"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"g", "=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"zzb", ",", "s3", ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{"s4", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{"-", "d"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{"s5", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"-", "2"}], "d"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{"s6", ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"-", "3"}], "d"}]}], "}"}]}], "]"}], ",", "around3", ",", 
+      "around2", ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{
+        RowBox[{"Scale", "[", 
+         RowBox[{"around3", ",", 
+          RowBox[{"{", 
+           RowBox[{"zb", ",", "1"}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"0", ",", 
+          RowBox[{
+           RowBox[{"-", "3"}], "d"}]}], "}"}]}], "]"}], ",", 
+      RowBox[{"Translate", "[", 
+       RowBox[{
+        RowBox[{"Scale", "[", 
+         RowBox[{"around2", ",", 
+          RowBox[{"{", 
+           RowBox[{"z", ",", "1"}], "}"}]}], "]"}], ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "ts"}], ",", 
+            RowBox[{
+             RowBox[{"-", "2"}], "d"}]}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"ts", ",", 
+            RowBox[{
+             RowBox[{"-", "2"}], "d"}]}], "}"}]}], "}"}]}], "]"}]}], "}"}], 
+    ",", 
+    RowBox[{"PlotLabel", "\[Rule]", 
+     RowBox[{"Style", "[", 
+      RowBox[{"\"\<Energy spectrum\>\"", ",", "Large", ",", 
+       RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+      "]"}]}]}], "]"}]}]}], "Input",
+ CellChangeTimes->{{3.649490453622651*^9, 3.649490534293253*^9}, {
+   3.649490664663046*^9, 3.649490707142205*^9}, {3.649490788533073*^9, 
+   3.649490860039275*^9}, {3.649490894855893*^9, 3.649491025721126*^9}, {
+   3.649491205752426*^9, 3.649491228889488*^9}, {3.64949206714612*^9, 
+   3.649492144105748*^9}, {3.649492185322585*^9, 3.649492188520954*^9}, {
+   3.649492260026114*^9, 3.649492416603827*^9}, {3.649492452267907*^9, 
+   3.64949250380593*^9}, {3.649492925930303*^9, 3.6494929275302963`*^9}, {
+   3.649493021485795*^9, 3.649493024523739*^9}, 3.649493195551326*^9, {
+   3.649493484315482*^9, 3.6494934862667418`*^9}, {3.649579670569971*^9, 
+   3.649579702569684*^9}, {3.649579828713229*^9, 3.649579871209136*^9}, {
+   3.649579901432885*^9, 3.6495799136936274`*^9}, {3.649580051882079*^9, 
+   3.64958005996154*^9}, {3.649580097978388*^9, 3.6495801445861893`*^9}, {
+   3.649580188155954*^9, 3.649580272817836*^9}, {3.649580308349691*^9, 
+   3.649580312909374*^9}, {3.649590767816184*^9, 3.649590768296471*^9}, {
+   3.650211014433387*^9, 3.650211085988934*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{InsetBox[
+     StyleBox[
+      OverscriptBox["\<\"z\"\>", "_"],
+      StripOnInput->False,
+      FontFamily->"Linux Libertine",
+      FontSize->Large], {0, -1.5199999999999998}], InsetBox[
+     StyleBox["\<\"z\"\>",
+      StripOnInput->False,
+      FontFamily->"Linux Libertine",
+      FontSize->Large], {-1, -1.5199999999999998}], InsetBox[
+     StyleBox["\<\"z\"\>",
+      StripOnInput->False,
+      FontFamily->"Linux Libertine",
+      FontSize->Large], {1, -1.5199999999999998}]}, {{
+     GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+        RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+        RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, Center}], 
+     GeometricTransformationBox[
+      GeometricTransformationBox[{
+        GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+          RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+        GeometricTransformationBox[
+         GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+           RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+           Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+        Center}], {{{-1., 0}}, {{1., 0}}}]}, InsetBox[
+     StyleBox["\<\"n-3\"\>",
+      StripOnInput->False,
+      FontFamily->"Linux Libertine",
+      FontSize->Large], {1.8, 0}]}, 
+   GeometricTransformationBox[{{
+      GeometricTransformationBox[{
+        GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+          RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+        GeometricTransformationBox[
+         GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+           RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+           Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+        Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[{
+         GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+           RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+         GeometricTransformationBox[
+          GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+             RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+             RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, 
+            Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+         Center}], {{{-1., 0}}, {{1., 0}}}]}, InsetBox[
+      StyleBox["\<\"n-2\"\>",
+       StripOnInput->False,
+       FontFamily->"Linux Libertine",
+       FontSize->Large], {1.8, 0}]}, {0, -0.6}], 
+   GeometricTransformationBox[{{
+      GeometricTransformationBox[{
+        GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+          RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+        GeometricTransformationBox[
+         GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+            RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+            RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, 
+           Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+        Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[{
+         GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+            RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+            RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, Center}], 
+         GeometricTransformationBox[
+          GeometricTransformationBox[{
+            GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+              RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+            GeometricTransformationBox[
+             GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+               RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+               Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+            Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+         Center}], {{{-1., 0}}, {{1., 0}}}]}, InsetBox[
+      StyleBox["\<\"n-1\"\>",
+       StripOnInput->False,
+       FontFamily->"Linux Libertine",
+       FontSize->Large], {1.8, 0}]}, {0, -1.2}], 
+   GeometricTransformationBox[{{
+      GeometricTransformationBox[{
+        GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+           RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+           RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, Center}], 
+        GeometricTransformationBox[
+         GeometricTransformationBox[{
+           GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+             RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+           GeometricTransformationBox[
+            GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+              RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+              Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+           Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+        Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[{
+         GeometricTransformationBox[{
+           GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+             RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+           GeometricTransformationBox[
+            GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+              RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+              Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+           Center}], 
+         GeometricTransformationBox[
+          GeometricTransformationBox[{
+            GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+              RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+            GeometricTransformationBox[
+             GeometricTransformationBox[{
+               RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+                RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+                RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, 
+               Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+            Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+         Center}], {{{-1., 0}}, {{1., 0}}}]}, InsetBox[
+      StyleBox["\<\"n\"\>",
+       StripOnInput->False,
+       FontFamily->"Linux Libertine",
+       FontSize->Large], {1.8, 0}]}, {0, -1.7999999999999998`}], 
+   {Opacity[0], EdgeForm[Dashing[{Small, Small}]], 
+    RectangleBox[{-1.45, -0.145}, {1.45, 0.145}]}, 
+   {Opacity[0], EdgeForm[GrayLevel[0]], 
+    GeometricTransformationBox[RectangleBox[{-1.45, -0.145}, {1.45, 0.145}], {
+     0, -0.6}]}, GeometricTransformationBox[GeometricTransformationBox[
+     {Opacity[0], EdgeForm[Dashing[{Small, Small}]], 
+      RectangleBox[{-1.45, -0.145}, {1.45, 0.145}]}, {{{0.25, 0}, {0., 1}}, 
+      Center}], {0, -1.7999999999999998`}], 
+   GeometricTransformationBox[GeometricTransformationBox[
+     {Opacity[0], EdgeForm[GrayLevel[0]], 
+      GeometricTransformationBox[
+       RectangleBox[{-1.45, -0.145}, {1.45, 0.145}], {0, -0.6}]}, {{{
+       0.25, 0}, {0., 1}}, Center}], {{{-1, -1.2}}, {{1, -1.2}}}]},
+  PlotLabel->FormBox[
+    StyleBox[
+    "\"Energy spectrum\"", Large, FontFamily -> "Linux Libertine", 
+     StripOnInput -> False], TraditionalForm]]], "Output",
+ CellChangeTimes->{{3.6494904882522793`*^9, 3.649490495012623*^9}, {
+   3.6494905305657682`*^9, 3.649490534559643*^9}, 3.649490867500663*^9, {
+   3.649490912912043*^9, 3.6494910261264343`*^9}, 3.649491230866506*^9, {
+   3.649492067660623*^9, 3.64949208255621*^9}, 3.6494921143952103`*^9, 
+   3.6494921455309277`*^9, 3.649492188971377*^9, 3.649492246810916*^9, {
+   3.649492299389723*^9, 3.649492337772152*^9}, 3.64949241788089*^9, {
+   3.64949245517624*^9, 3.649492504112672*^9}, {3.649492589935295*^9, 
+   3.649492596476935*^9}, {3.649492627554818*^9, 3.6494926342455273`*^9}, 
+   3.64949271393261*^9, 3.649492744403624*^9, 3.64949281270399*^9, {
+   3.649492882285561*^9, 3.649492887383609*^9}, 3.649492928490244*^9, {
+   3.649492997983485*^9, 3.649493024958115*^9}, 3.6494931039787197`*^9, 
+   3.6494931960610228`*^9, {3.649493297763194*^9, 3.649493309308784*^9}, {
+   3.649493383757666*^9, 3.649493400151078*^9}, 3.649493625994074*^9, 
+   3.649493681596243*^9, 3.649579608728511*^9, 3.649579658452046*^9, {
+   3.649579703688086*^9, 3.649579731275394*^9}, {3.6495801176873627`*^9, 
+   3.6495801451917257`*^9}, {3.6495801898213577`*^9, 3.649580249080702*^9}, 
+   3.6495803137554293`*^9, 3.649590769536139*^9, {3.650211022087129*^9, 
+   3.650211086473618*^9}, 3.650282860471593*^9, {3.6827707182207747`*^9, 
+   3.68277073883715*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<recursive_construction_spectrum.pdf\>\""}], ",", "g"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.649492920529997*^9, 3.649492951317554*^9}}],
+
+Cell[BoxData["\<\"/home/nicolas/git/talks/ICQ13 September \
+2016/talk/img/recursive_construction_spectrum.pdf\"\>"], "Output",
+ CellChangeTimes->{
+  3.649492952992041*^9, {3.64949300563109*^9, 3.649493026835318*^9}, 
+   3.649493127523247*^9, 3.6494931982384653`*^9, 3.649493402233541*^9, 
+   3.6494936263377047`*^9, 3.649493683554707*^9, 3.6495796093922873`*^9, 
+   3.6495797386766653`*^9, 3.649580327086563*^9, 3.649590769952778*^9, 
+   3.6502110222751083`*^9, 3.650211120338402*^9, 3.6502828606805363`*^9, {
+   3.682770718469886*^9, 3.6827707390104437`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g2", "=", 
+  RowBox[{"Graphics", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Arrowheads", "[", ".03", "]"}], ",", 
+       RowBox[{"Arrow", "[", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1.5"}], ",", "0"}], "}"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"1.6", ",", "0"}], "}"}]}], "}"}], "]"}]}], "}"}], ",", 
+     RowBox[{
+      RowBox[{"Nest", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"recur", "[", 
+          RowBox[{"#", ",", "1.", ",", "0.5"}], "]"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"g0", ",", "g1", ",", "g2"}], "}"}], ",", "8"}], "]"}], "[", 
+      
+      RowBox[{"[", "3", "]"}], "]"}], ",", 
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"Style", "[", 
+        RowBox[{"\"\<E\>\"", ",", "Medium", ",", 
+         RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+        "]"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1.7", ",", "0."}], "}"}]}], "]"}]}], "}"}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.650282876931251*^9, 3.65028300833535*^9}, {
+  3.6502830976525173`*^9, 3.6502831326481256`*^9}, {3.6502831980900917`*^9, 
+  3.650283292488205*^9}, {3.6827707285034723`*^9, 3.682770728686762*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Arrowheads[0.03], ArrowBox[{{-1.5, 0}, {1.6, 0}}]}, {
+    GeometricTransformationBox[{
+      GeometricTransformationBox[{
+        GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+          RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+        GeometricTransformationBox[
+         GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+            RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+            RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, 
+           Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+        Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[{
+         GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+            RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+            RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, Center}], 
+         GeometricTransformationBox[
+          GeometricTransformationBox[{
+            GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+              RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+            GeometricTransformationBox[
+             GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+               RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+               Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+            Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+         Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, Center}],
+     GeometricTransformationBox[
+     GeometricTransformationBox[{
+       GeometricTransformationBox[{
+         GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+            RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+            RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, Center}], 
+         GeometricTransformationBox[
+          GeometricTransformationBox[{
+            GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+              RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+            GeometricTransformationBox[
+             GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+               RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+               Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+            Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+         Center}], 
+       GeometricTransformationBox[
+        GeometricTransformationBox[{
+          GeometricTransformationBox[{
+            GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+              RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+            GeometricTransformationBox[
+             GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+               RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+               Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+            Center}], 
+          GeometricTransformationBox[
+           GeometricTransformationBox[{
+             GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+               RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+             GeometricTransformationBox[
+              GeometricTransformationBox[{
+                RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+                 RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+                 RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, 
+                Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+             Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+          Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+       Center}], {{{-1., 0}}, {{1., 0}}}]}, InsetBox[
+    StyleBox["\<\"E\"\>",
+     StripOnInput->False,
+     FontFamily->"Linux Libertine",
+     FontSize->Medium], {1.7, 0.}]}]], "Output",
+ CellChangeTimes->{{3.650282882126157*^9, 3.650283008583521*^9}, {
+  3.650283121863245*^9, 3.650283133225453*^9}, {3.650283245989873*^9, 
+  3.650283292933838*^9}, {3.68277071855357*^9, 3.682770739089353*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", "\"\<1_spectrum.pdf\>\""}],
+    ",", "g2"}], "]"}]], "Input",
+ CellChangeTimes->{{3.650283302209529*^9, 3.650283305787773*^9}}],
+
+Cell[BoxData["\<\"/home/nicolas/git/talks/ICQ13 September \
+2016/talk/img/1_spectrum.pdf\"\>"], "Output",
+ CellChangeTimes->{
+  3.6502833061311817`*^9, {3.682770718714499*^9, 3.6827707392839413`*^9}}]
+}, Open  ]]
+},
+WindowSize->{1920, 1131},
+WindowMargins->{{0, Automatic}, {0, 42}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 2583, 68, 95, "Input"],
+Cell[3144, 90, 3249, 92, 208, "Input"],
+Cell[CellGroupData[{
+Cell[6418, 186, 606, 14, 32, "Input"],
+Cell[7027, 202, 1269, 22, 56, "Output"]
+}, Open  ]],
+Cell[8311, 227, 874, 18, 33, "Input"],
+Cell[9188, 247, 2329, 69, 92, "Input"],
+Cell[CellGroupData[{
+Cell[11542, 320, 6276, 176, 290, "Input"],
+Cell[17821, 498, 8538, 159, 272, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26396, 662, 264, 7, 33, "Input"],
+Cell[26663, 671, 560, 8, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27260, 684, 1317, 37, 32, "Input"],
+Cell[28580, 723, 4058, 73, 51, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32675, 801, 240, 6, 33, "Input"],
+Cell[32918, 809, 200, 3, 32, "Output"]
+}, Open  ]]
+}
+]
+*)
+
