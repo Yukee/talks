@@ -143,10 +143,11 @@ Approximants:
 \end{column}
 \end{columns}
 
-	2 lengths $\to$ 2 jump amplitudes $t_{x,x+1} = t_{1}$ or $t_2$.	
 	$
 		\text{Hamiltonian: } H(\alpha) = \sum_{x \in \mathbf{Z}} t_{x,x+1} \ket{x} \bra{x+1} + \text{h.c.}
 	$
+	
+	2 lengths $\to$ 2 jump amplitudes $t_{x,x+1} = t_{1}$ or $t_2$.	
 \end{frame}
 
 \begin{frame}{The electronic spectrum}
@@ -158,11 +159,13 @@ $\id(E) = $ fraction of states below energy $E$
 {\centering
 \includegraphics[scale=.35]{img/idos_scaling.pdf}
 
+\small{\id~of the Fibonacci Hamiltonian}
+
 }
 
 \begin{itemize}
-	\item Electronic spectrum is scale invariant and complex.
-	\item Gap labeling theorem: predicts to $\id$ value inside the spectral gaps.
+	\item Electronic spectrum of quasiperiodic chains is hard to describe
+	\item Rather: describe the $\id$ in the gaps $\to$ \textbf{gap labeling theorem}
 \end{itemize}
 \[
 	\id(E\in \text{gap}) = n \tau^{-2} \mod 1
@@ -178,6 +181,22 @@ The IDOS inside spectral gaps can be indexed using the irrational involved in th
 \begin{itemize}
 	\item Constrains the spectrum... but is not enough to reconstruct it
 	\item Model independent! (while the spectrum is model dependent) $\to$ a topological invariant
+\end{itemize}
+
+TODO: plot the idos for the diagonal and the on-site potential models
+
+\end{frame}
+
+\begin{frame}{The gap labeling theorem}
+\[
+		\id(E \in \text{gap}) = \frac{n}{1+\alpha} \mod 1
+	\]
+\begin{itemize}
+	\item Has the gap label $n$ a physical interpretation?
+\end{itemize}
+\begin{itemize}
+	\item Can the theorem be applied to approximants? 
+	\item Does it help understanding the quasiperiodic limit?
 \end{itemize}
 
 \end{frame}
@@ -295,6 +314,46 @@ $\small{G_l = \{(m,n)| \id = n/(1+\alpha) + m\}}$
 	\item {\color{Complementary}Transient gaps} are the iterates of the central gap.
 \end{itemize}
 
+\end{frame}
+
+\section{General case}
+\subsection{Dummy}
+\begin{frame}{General case}
+We plot the gapwidth $\Delta_l$ as a function of the label for various quasiperiodic chains:
+
+{\centering
+\newcommand{\s}{.45}
+\includegraphics[scale=\s]{img/loggapwidth_fibonacci_l_17.pdf}\\
+\includegraphics[scale=\s]{img/loggapwidth_sqrt3_l_12.pdf}
+
+}
+\begin{itemize}
+	\item The width decreases as a power-law of the label
+	\item Above a critical label, all gaps are transient
+	\item Recursive gap labeling using the Hofstadter rules?  \small{[Rüdinger, Piéchon 98]}
+\end{itemize}
+
+	
+\end{frame}
+
+\section{Conclusion}
+\subsection{Dummy}
+\begin{frame}{Conclusion and perspectives}
+\begin{itemize}
+	\item The gap labeling theorem can be extended to approximants
+	\item The price to pay is the introduction of transient gaps, absent in the quasiperiodic case
+	\item Gap labels have a physical meaning:
+	\begin{itemize}
+		\item It orders gap by decreasing width
+		\item It separates stable from transient gaps
+		\item It can be interpreted as a Chern number \small{[Levy \emph{et al} 2015]}
+	\end{itemize}
+\end{itemize}
+Perspectives:
+\begin{itemize}
+	\item Understand the gap width behavior with the gap label
+	\item Investigate to 2D quasicrystals, which also have gaps \small{[Prunelé \emph{et al} 2002]}
+\end{itemize}
 \end{frame}
 
 \end{document}
