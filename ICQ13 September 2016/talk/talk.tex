@@ -128,6 +128,7 @@
 \subsection{Dummy}
 
 \begin{frame}{Electrons on quasiperiodic chains}
+Canonical cut-and-project method
 \begin{columns}
 \begin{column}{8.5cm}
 	\centering
@@ -135,9 +136,13 @@
 \end{column}
 
 \begin{column}{3cm}
+Quasiperiodic chain:
+\[
+	\alpha \in \mathbb{R} \mathbb{Q}
+\]
 Approximants:
 \begin{align*}
-\alpha_l &= \frac{p_l}{q_l} \\
+\alpha_l &= \frac{p_l}{q_l} \in \mathbb{Q} \\
 \alpha_l &\rightarrow \alpha
 \end{align*}
 \end{column}
@@ -180,10 +185,10 @@ The IDOS inside spectral gaps can be indexed using the irrational involved in th
 	\]
 \begin{itemize}
 	\item Constrains the spectrum... but is not enough to reconstruct it
-	\item Model independent! (while the spectrum is model dependent) $\to$ a topological invariant
+	\item Model independent! (while the spectrum is model dependent) $\rightarrow$ $n$ is a topological invariant
 \end{itemize}
 
-TODO: plot the idos for the diagonal and the on-site potential models
+%TODO: plot the idos for the diagonal and the on-site potential models
 
 \end{frame}
 
@@ -219,6 +224,7 @@ Letting $l \to \infty$,
 	\]
 
 \only<1>{
+\phantom{aaa}
 }
     
 \only<2>{
@@ -239,38 +245,36 @@ Gaps of successive approximants of the Fibonacci chain.
 \includegraphics[scale=.6]{img/gap_labels.pdf}
 
 }
-Call $\me_l$ the mean energy of a gap, and $\Delta_l(\me)$ its width. 
-I identify two gaps if they overlap:
+\only<1>{
+$\me_l$: mean energy of a gap, $\Delta_l(\me)$: its width. 
+ 
+ Identify two gaps if they overlap:
 \[
 	0.5 \Delta_l(\me) > |\me_l - \mep_{l+1}|
 \]
-\end{frame}
-
-
-\begin{frame}{Stable and transient gaps}
-{\centering
-\includegraphics[scale=.65]{img/gap_labels.pdf}
-
 }
-%We identify a gap by its mean energy $\me$.
+
+\only<2>{
 \begin{itemize}
-	\item {\color{Complementary}Red labeled} gaps closes as $l \to \infty$ $\to$ {\color{Complementary}transient} gaps.
-	\item {\color{BostonBlue}Blue labeled} gaps stay open $\to$ {\color{BostonBlue}stable} gaps.
+	\item {\color{BostonBlue}Blue labeled} gaps have a stable label gap label $\rightarrow$ {\color{BostonBlue}stable} gaps.
+	\item {\color{Complementary}Red labeled} do not $\rightarrow$ {\color{Complementary}transient} gaps.
 \end{itemize}
-
-\end{frame}
-
-\begin{frame}{Stable and transient gaps}
-{\centering
-\includegraphics[scale=.6]{img/gap_labels.pdf}
-
 }
 
+\only<3>{
 \begin{itemize}
-	\item {\color{BostonBlue}Blue gaps} have a well-defined label. The naive proof works!
-	\item {\color{Complementary}Red gaps} have an ill-defined label but disappear.
+	\item {\color{Complementary}Transient} gaps closes as $l \to \infty$
+	\item {\color{BostonBlue}Stable} gaps stay open.
+\end{itemize}
+}
+
+\only<4>{
+\begin{itemize}
+	\item {\color{BostonBlue}Stable gaps:} $n$ independent of $l$ $\rightarrow$ naive proof works.
+	\item {\color{Complementary}Transient gaps:} $n$ depends on $l$, but these gaps disappear.
 \end{itemize}
 $\to$ the naive proof works and correctly labels the gaps.
+}
 \end{frame}
 
 \begin{frame}{Recursive gap labeling}
@@ -354,6 +358,105 @@ Perspectives:
 	\item Understand the gap width behavior with the gap label
 	\item Investigate to 2D quasicrystals, which also have gaps \small{[Prunelé \emph{et al} 2002]}
 \end{itemize}
+\end{frame}
+
+\begin{frame}{The gap labeling theorem: precise statement}
+
+Let $w$ be a cut-and-project word.
+Consider the Hamiltonian:
+\[
+	H(w) = \sum_{x,y} t( T^{-y}w, x-y) \ket{x} \bra{y}
+\]
+Interactions must be local:
+\[
+	\sup_{u \in \text{Hull}(w)} \sum_x |t(u, x)| < \infty
+\]
+Gap labeling theorem:
+
+The $\id$ in a gap is a linear combination of frequencies of local environments of $w$.
+{\flushright
+\small{taken from \textit{The non-commutative geometry of aperiodic solids}, Bellissard 2003.}
+
+}
+\end{frame}
+
+\begin{frame}{Cases where the naive proof fails}
+Consider approximants to the Fibonacci chain.
+Gaps are labeled by
+\[
+	\id(n) = \frac{n}{1+\alpha_l} \mod 1
+\]
+Consider the sequence of gap labels
+\[
+	n_{l = 3k} = \Bigg[ \frac{(2+\sqrt{5})^k}{2 \sqrt{5}}\Bigg]
+\]
+We have $\id(n_l) = 1/2$ (it labels the $E=0$ gap).
+Taking $l \to \infty$, we could -- incorrectly -- conclude that $1/2$ is a gap.
+
+However, there is no finite $n$ such that
+\[
+	\frac{1}{2} = n \tau^{-2} \mod 1
+\]
+
+\end{frame}
+
+\begin{frame}{Conumbering and gap labeling}
+Conumbering: labeling of the atoms according to their internal space position.
+
+{  \centering
+     \includegraphics[scale=.9]{img/cut_and_project_perp_projections.pdf}
+
+}
+{\flushright
+\small{see Mosseri \& Sire 1990.}
+
+}
+\(
+\<{3cm}
+\[
+	\id = \frac{j}{N_l}
+\]
+\>
+
+\<{2cm}
+\begin{align*}
+	\xleftarrow[]{\text{~~~~conumbering~~~~}} \\
+	\xrightarrow[\text{normal numbering}]{}
+\end{align*}
+\>
+
+\<{3cm}
+\[
+	\id = \frac{n}{1+\alpha_l} \mod 1
+\]
+\>
+\)
+%\begin{tabular}{|c|c|c|}
+%\hline 
+% & normal numbering & conumbering \\ 
+%\hline 
+%Atoms & $x_\parallel$ & $x_\perp$ \\ 
+%\hline 
+%Energy levels & gap label $n$ & normal label $j$ \\ 
+%\hline 
+%\end{tabular} 
+
+\end{frame}
+
+\begin{frame}{Conumbering and gap labeling}
+\(
+\<{6cm}
+\centering
+\includegraphics[scale=0.4]{img/ldos_reordered_conumbering.pdf}
+\>
+
+\<{6cm}
+\centering
+\includegraphics[scale=0.4]{img/ldos_reordered_numbering.pdf}
+\>
+\)
+
+Plotting the local density of states makes the symmetry between gap labels and atomic labels evident.
 \end{frame}
 
 \end{document}
