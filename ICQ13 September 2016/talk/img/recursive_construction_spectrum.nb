@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     34050,        851]
-NotebookOptionsPosition[     33134,        815]
-NotebookOutlinePosition[     33461,        830]
-CellTagsIndexPosition[     33418,        827]
+NotebookDataLength[     51022,       1305]
+NotebookOptionsPosition[     49310,       1244]
+NotebookOutlinePosition[     49647,       1259]
+CellTagsIndexPosition[     49604,       1256]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -222,8 +222,436 @@ Cell[BoxData[
    3.6494881922692537`*^9}, {3.649488228180766*^9, 3.6494882701593733`*^9}, 
    3.6494922446331673`*^9, 3.6494936258718987`*^9, 3.649579608619907*^9, 
    3.649590769375276*^9, 3.650211021967311*^9, 3.650282860402999*^9, {
-   3.682770718000983*^9, 3.6827707386044207`*^9}}]
+   3.682770718000983*^9, 3.6827707386044207`*^9}, 3.682924502401093*^9}]
 }, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Styling", "Subsection",
+ CellChangeTimes->{{3.6829287737190313`*^9, 3.68292877476538*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Styling", " ", "of", " ", "the", " ", "text"}], "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"st", "=", 
+     RowBox[{"Directive", "[", 
+      RowBox[{
+       RowBox[{"FontSize", "\[Rule]", "10"}], ",", 
+       RowBox[{"FontFamily", "\[Rule]", "\"\<CMU Serif\>\""}]}], "]"}]}], 
+    ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"stylize", "[", "string_String", "]"}], ":=", 
+     RowBox[{"Style", "[", 
+      RowBox[{"string", ",", "st"}], "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"BostonBlue", "=", 
+     RowBox[{"RGBColor", "[", "\"\<#00688B\>\"", "]"}]}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"comp", "=", 
+     RowBox[{"RGBColor", "[", "\"\<#8B2300\>\"", "]"}]}], ";"}]}]}]], "Input",\
+
+ CellChangeTimes->{{3.682928776481977*^9, 3.6829287798125153`*^9}, {
+  3.6829288336856527`*^9, 3.682928838669812*^9}, {3.682928873331337*^9, 
+  3.682928884551406*^9}, {3.68293093436675*^9, 3.682930934487506*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Consecutive spectra", "Subsection",
+ CellChangeTimes->{{3.68292446193309*^9, 3.6829244710724783`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "Graphics", " ", "instructions", " ", "for", " ", "the", " ", "spectrum", 
+    " ", "at", " ", "step", " ", "n"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"spec", "[", "n_", "]"}], ":=", 
+     RowBox[{
+      RowBox[{"Nest", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"recur", "[", 
+          RowBox[{"#", ",", "1.", ",", "0.5"}], "]"}], "&"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"g0", ",", "g1", ",", "g2"}], "}"}], ",", 
+        RowBox[{"n", "-", "3"}]}], "]"}], "[", 
+      RowBox[{"[", "3", "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"spec", "[", "2", "]"}], "=", "g1"}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"spec", "[", "1", "]"}], "=", "g0"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.6494903613178587`*^9, 3.649490373205139*^9}, {
+  3.6494925471910877`*^9, 3.649492742711595*^9}, {3.6494927968563967`*^9, 
+  3.649492810983904*^9}, {3.649492879896381*^9, 3.649492885320401*^9}, {
+  3.6494929960913153`*^9, 3.64949300111392*^9}, {3.6494930997554083`*^9, 
+  3.64949309989581*^9}, {3.6494932718489122`*^9, 3.649493305705638*^9}, {
+  3.649493362345686*^9, 3.64949339805647*^9}, {3.649493662136115*^9, 
+  3.649493678728307*^9}, {3.6495795979107027`*^9, 3.649579605252705*^9}, {
+  3.6829286028382072`*^9, 3.682928618440584*^9}, {3.682928713213485*^9, 
+  3.682928715352977*^9}, {3.682928748200302*^9, 3.6829287489787893`*^9}, {
+  3.682929669078381*^9, 3.682929734121852*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", "offset", " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{"off", "=", ".2"}], ";"}]}]], "Input",
+ CellChangeTimes->{{3.682930948596175*^9, 3.682930958137989*^9}, {
+  3.6829322442195797`*^9, 3.6829322451774693`*^9}, {3.6829322787836847`*^9, 
+  3.68293227917026*^9}, {3.682932933317358*^9, 3.6829329497035837`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"corresponding", " ", "approximant", " ", "fration"}], " ", "*)"}],
+   "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"posfrac", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"2", "-", "off"}], ",", "0"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"frac", "[", "n_", "]"}], ":=", 
+     RowBox[{"Block", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"num", "=", 
+          RowBox[{"Fibonacci", "[", 
+           RowBox[{"n", "-", "2"}], "]"}]}], ",", 
+         RowBox[{"den", "=", 
+          RowBox[{"Fibonacci", "[", 
+           RowBox[{"n", "-", "1"}], "]"}]}], ",", "str"}], "}"}], ",", 
+       "\[IndentingNewLine]", 
+       RowBox[{
+        RowBox[{"str", "=", 
+         RowBox[{"Row", "[", 
+          RowBox[{"{", 
+           RowBox[{"num", ",", "\"\</\>\"", ",", "den", ",", 
+            RowBox[{"\"\< \[TildeEqual] \>\"", "<>", 
+             RowBox[{"ToString", "[", 
+              RowBox[{"N", "[", 
+               FractionBox["num", "den"], "]"}], "]"}]}]}], "}"}], "]"}]}], 
+        ";", "\[IndentingNewLine]", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"stylize", "@", "str"}], ",", "posfrac", ",", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "]"}]}]}], 
+      "\[IndentingNewLine]", "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{"(*", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"frac", "[", "1", "]"}], "=", 
+      RowBox[{"Text", "[", 
+       RowBox[{
+        RowBox[{"stylize", "@", 
+         RowBox[{"ToString", "@", 
+          RowBox[{"HoldForm", "[", 
+           FractionBox["1", "0"], "]"}]}]}], ",", "posfrac", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"frac", "[", "2", "]"}], "=", 
+      RowBox[{"Text", "[", 
+       RowBox[{
+        RowBox[{"stylize", "@", 
+         RowBox[{"ToString", "@", 
+          RowBox[{"HoldForm", "[", 
+           FractionBox["0", "1"], "]"}]}]}], ",", "posfrac", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "]"}]}], ";", 
+     "\[IndentingNewLine]", 
+     RowBox[{
+      RowBox[{"frac", "[", "3", "]"}], "=", 
+      RowBox[{"Text", "[", 
+       RowBox[{
+        RowBox[{"stylize", "@", 
+         RowBox[{"ToString", "@", 
+          RowBox[{"HoldForm", "[", 
+           FractionBox["1", "1"], "]"}]}]}], ",", "posfrac", ",", 
+        RowBox[{"{", 
+         RowBox[{
+          RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "]"}]}], ";"}], 
+    "*)"}]}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQBWIQ/WHFR/aFBa8d9VKz+UD0nVd35UG0RhCPEoiWkJTQ
+ANGvOoWMQfQiaRcrMP/7/0AQzb1iSzSIvhW8Iw1E53l554DoVZdu1oLoXTsD
+u0H0uXmbJoDod21MU0G06BXJhSB6zjLnZyB6k2EVmN6Xs4hlEZB2amFiA9HO
+nl0SIFp1srAMiJZiU1YC0Yve6INpo5upjiCaT83PFUSLuk8NAtE1TWbRIFpk
+s2YCiC7a8CgRREddN54Gorfsqp0BovOC5eeDaDWxnQtAtLue9jIQ/ZZ/2woQ
+vYZpxxoQXRtzfReI3rY3XmwxkL7WvAtM79mzTA5Ei+j6qIJoADAHqcU=
+  "]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "frac", "]"}]], "Input",
+ CellChangeTimes->{{3.682933036722459*^9, 3.682933039600806*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"corresponding", " ", "chain"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"Sub", "[", 
+      RowBox[{"rule_", ",", "init_String", ",", "l_Integer"}], "]"}], ":=", 
+     RowBox[{"Nest", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"StringReplace", "[", 
+         RowBox[{"#", ",", "rule"}], "]"}], "&"}], ",", "init", ",", "l"}], 
+      "]"}]}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"postext", "=", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], "+", "off"}], ",", "0"}], "}"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"FiboSub", "[", "n_", "]"}], ":=", 
+     RowBox[{"Text", "[", 
+      RowBox[{
+       RowBox[{"stylize", "@", 
+        RowBox[{"Sub", "[", 
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"\"\<A\>\"", "\[Rule]", "\"\<AB\>\""}], ",", 
+            RowBox[{"\"\<B\>\"", "\[Rule]", "\"\<A\>\""}]}], "}"}], ",", 
+          "\"\<B\>\"", ",", 
+          RowBox[{"n", "-", "1"}]}], "]"}]}], ",", "postext", ",", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", "0"}], "}"}]}], "]"}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.68293049111075*^9, 3.682930496893262*^9}, {
+  3.682930593102359*^9, 3.682930618457074*^9}, {3.682930674594077*^9, 
+  3.6829307614674587`*^9}, {3.6829308153110647`*^9, 3.682930826996502*^9}, {
+  3.682930878037787*^9, 3.682930878244331*^9}, {3.6829309645844917`*^9, 
+  3.682930966303146*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{"put", " ", "everything", " ", "together"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"\[Delta]", "=", ".4"}], ";"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"step", "[", "n_", "]"}], ":=", 
+    RowBox[{"Translate", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"FiboSub", "[", "n", "]"}], ",", 
+        RowBox[{"spec", "[", "n", "]"}], ",", 
+        RowBox[{"frac", "[", "n", "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"0", ",", 
+        RowBox[{
+         RowBox[{"-", "\[Delta]"}], " ", "n"}]}], "}"}]}], 
+     "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.682932306235696*^9, 3.682932364491384*^9}, {
+  3.682932417131242*^9, 3.6829324271560297`*^9}, {3.68293306362084*^9, 
+  3.682933064075737*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "a", " ", "large", " ", "approximant", " ", "with", " ", "the", " ", 
+    "energy", " ", "axis"}], " ", "*)"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.682933434149279*^9, 3.6829334470432577`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Graphics", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"step", "[", "n", "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "2", ",", "7"}], "}"}]}], "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"False", ",", "False"}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"True", ",", "False"}], "}"}]}], "}"}]}], ",", 
+   RowBox[{"FrameLabel", "\[Rule]", "\"\<energy\>\""}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.68293236719479*^9, 3.682932394161839*^9}, {
+  3.6829329277270412`*^9, 3.682932928300617*^9}, {3.682933072847639*^9, 
+  3.682933089992731*^9}, {3.682933455425028*^9, 3.682933553420888*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{GeometricTransformationBox[{InsetBox[
+      StyleBox["\<\"A\"\>",
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {-1.8, 0}, {1, 0}], 
+     RectangleBox[{-1., -0.1}, {1., 0.1},
+      RoundingRadius->0], InsetBox[
+      StyleBox[
+       TemplateBox[{"0","\"/\"","1","\" \[TildeEqual] 0.\""},
+        "RowDefault"],
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -0.8}], 
+   GeometricTransformationBox[{InsetBox[
+      StyleBox["\<\"AB\"\>",
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {-1.8, 0}, {1, 0}], {
+      RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+       RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+       RoundingRadius->0]}, InsetBox[
+      StyleBox[
+       TemplateBox[{"1","\"/\"","1","\" \[TildeEqual] 1.\""},
+        "RowDefault"],
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -1.2000000000000002`}], 
+   GeometricTransformationBox[{InsetBox[
+      StyleBox["\<\"ABA\"\>",
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {-1.8, 0}, {1, 0}], {
+      GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+        RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+         RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], {{{-1., 0}}, {{
+         1., 0}}}]}, InsetBox[
+      StyleBox[
+       TemplateBox[{"1","\"/\"","2","\" \[TildeEqual] 0.5\""},
+        "RowDefault"],
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -1.6}], 
+   GeometricTransformationBox[{InsetBox[
+      StyleBox["\<\"ABAAB\"\>",
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {-1.8, 0}, {1, 0}], {
+      GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+        RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+          RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+          RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, 
+         Center}], {{{-1., 0}}, {{1., 0}}}]}, InsetBox[
+      StyleBox[
+       TemplateBox[{"2","\"/\"","3","\" \[TildeEqual] 0.666667\""},
+        "RowDefault"],
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -2.}], 
+   GeometricTransformationBox[{InsetBox[
+      StyleBox["\<\"ABAABABA\"\>",
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {-1.8, 0}, {1, 0}], {
+      GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+         RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+         RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[{
+         GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+           RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+         GeometricTransformationBox[
+          GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+            RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+            Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+         Center}], {{{-1., 0}}, {{1., 0}}}]}, InsetBox[
+      StyleBox[
+       TemplateBox[{"3","\"/\"","5","\" \[TildeEqual] 0.6\""},
+        "RowDefault"],
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -2.4000000000000004`}], 
+   GeometricTransformationBox[{InsetBox[
+      StyleBox["\<\"ABAABABAABAAB\"\>",
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {-1.8, 0}, {1, 0}], {
+      GeometricTransformationBox[{
+        GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
+          RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+        GeometricTransformationBox[
+         GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+           RoundingRadius->0], {{{0.25, 0}, {0., 1}}, 
+           Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+        Center}], 
+      GeometricTransformationBox[
+       GeometricTransformationBox[{
+         GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
+           RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
+         GeometricTransformationBox[
+          GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
+             RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
+             RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, 
+            Center}], {{{-1., 0}}, {{1., 0}}}]}, {{{0.25, 0}, {0., 1}}, 
+         Center}], {{{-1., 0}}, {{1., 0}}}]}, InsetBox[
+      StyleBox[
+       TemplateBox[{"5","\"/\"","8","\" \[TildeEqual] 0.625\""},
+        "RowDefault"],
+       StripOnInput->False,
+       FontFamily->"CMU Serif",
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -2.8000000000000003`}]},
+  Frame->{{False, False}, {True, False}},
+  FrameLabel->FormBox["\"energy\"", TraditionalForm]]], "Output",
+ CellChangeTimes->{{3.682932380944049*^9, 3.6829324283739347`*^9}, {
+   3.6829329207685537`*^9, 3.682932953775764*^9}, 3.6829330065598097`*^9, {
+   3.6829330438941917`*^9, 3.682933090583514*^9}, 3.682933464881188*^9, 
+   3.682933496751319*^9, {3.6829335300090933`*^9, 3.6829335540408783`*^9}, 
+   3.6829336856636133`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Export", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"NotebookDirectory", "[", "]"}], "<>", 
+    "\"\<energy_bands.pdf\>\""}], ",", "%"}], "]"}]], "Input",
+ CellChangeTimes->{{3.682933579406612*^9, 3.6829335959326973`*^9}, 
+   3.682933683613496*^9}],
+
+Cell[BoxData["\<\"/home/nicolas/git/talks/ICQ13 September \
+2016/talk/img/energy_bands.pdf\"\>"], "Output",
+ CellChangeTimes->{3.682933597397768*^9, 3.682933687039806*^9}]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Recursive algorithm", "Subsection",
+ CellChangeTimes->{{3.682924443103726*^9, 3.68292444946262*^9}}],
 
 Cell[BoxData[
  RowBox[{
@@ -812,10 +1240,11 @@ Cell[BoxData["\<\"/home/nicolas/git/talks/ICQ13 September \
  CellChangeTimes->{
   3.6502833061311817`*^9, {3.682770718714499*^9, 3.6827707392839413`*^9}}]
 }, Open  ]]
+}, Open  ]]
 },
-WindowSize->{1920, 1131},
-WindowMargins->{{0, Automatic}, {0, 42}},
-FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+WindowSize->{1920, 1011},
+WindowMargins->{{-1, Automatic}, {Automatic, -1}},
+FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -829,29 +1258,54 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 2583, 68, 95, "Input"],
-Cell[3144, 90, 3249, 92, 208, "Input"],
+Cell[558, 20, 2583, 68, 99, "Input"],
+Cell[3144, 90, 3249, 92, 231, "Input"],
 Cell[CellGroupData[{
 Cell[6418, 186, 606, 14, 32, "Input"],
-Cell[7027, 202, 1269, 22, 56, "Output"]
-}, Open  ]],
-Cell[8311, 227, 874, 18, 33, "Input"],
-Cell[9188, 247, 2329, 69, 92, "Input"],
-Cell[CellGroupData[{
-Cell[11542, 320, 6276, 176, 290, "Input"],
-Cell[17821, 498, 8538, 159, 272, "Output"]
+Cell[7027, 202, 1291, 22, 56, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[26396, 662, 264, 7, 33, "Input"],
-Cell[26663, 671, 560, 8, 32, "Output"]
+Cell[8355, 229, 96, 1, 44, "Subsection"],
+Cell[8454, 232, 1012, 27, 121, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27260, 684, 1317, 37, 32, "Input"],
-Cell[28580, 723, 4058, 73, 51, "Output"]
+Cell[9503, 264, 108, 1, 44, "Subsection"],
+Cell[9614, 267, 1584, 36, 99, "Input"],
+Cell[11201, 305, 369, 7, 55, "Input"],
+Cell[11573, 314, 3121, 88, 302, "Input"],
+Cell[14697, 404, 127, 2, 32, "Input"],
+Cell[14827, 408, 1559, 43, 99, "Input"],
+Cell[16389, 453, 839, 24, 77, "Input"],
+Cell[17231, 479, 275, 6, 55, "Input"],
+Cell[CellGroupData[{
+Cell[17531, 489, 722, 18, 32, "Input"],
+Cell[18256, 509, 5580, 121, 165, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[32675, 801, 240, 6, 33, "Input"],
-Cell[32918, 809, 200, 3, 32, "Output"]
+Cell[23873, 635, 270, 7, 32, "Input"],
+Cell[24146, 644, 171, 2, 32, "Output"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24366, 652, 106, 1, 44, "Subsection"],
+Cell[24475, 655, 874, 18, 32, "Input"],
+Cell[25352, 675, 2329, 69, 99, "Input"],
+Cell[CellGroupData[{
+Cell[27706, 748, 6276, 176, 319, "Input"],
+Cell[33985, 926, 8538, 159, 271, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42560, 1090, 264, 7, 32, "Input"],
+Cell[42827, 1099, 560, 8, 32, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[43424, 1112, 1317, 37, 32, "Input"],
+Cell[44744, 1151, 4058, 73, 51, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48839, 1229, 240, 6, 32, "Input"],
+Cell[49082, 1237, 200, 3, 32, "Output"]
+}, Open  ]]
 }, Open  ]]
 }
 ]

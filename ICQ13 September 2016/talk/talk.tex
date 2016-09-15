@@ -73,7 +73,9 @@
 \newcommand{\gv}{\ensuremath{\mathbf{g}}}
 % the symbol used for the Fibonacci substitution matrix
 \newcommand{\sub}{\ensuremath{M}}
-
+% letters A and B appearing in the qp chains
+\newcommand{\A}{\textcolor{BostonBlue}{A}}
+\newcommand{\B}{\textcolor{Complementary}{B}}
 
 \begin{document}
 
@@ -81,7 +83,7 @@
 \begin{frame}
 \title{{\fontsize{14}{60}\selectfont Gap structure of 1D cut and project Hamiltonians}}
 
-\author{Nicolas Macé, Anuradha Jagannathan, Frédéric Piéchon}
+\author{Nicolas Macé, Anuradha Jagannathan, Jean-Noël Fuchs, Frédéric Piéchon}
 
 \institute % (optional)
 {
@@ -128,34 +130,94 @@
 \subsection{Dummy}
 
 \begin{frame}{Electrons on quasiperiodic chains}
-Canonical cut-and-project method
-\begin{columns}
-\begin{column}{8.5cm}
-	\centering
-	\includegraphics[scale=.7]{img/cut_and_project.pdf}
-\end{column}
 
-\begin{column}{3cm}
-Quasiperiodic chain:
-\[
-	\alpha \in \mathbb{R} \smallsetminus \mathbb{Q}
-\]
-Approximants:
+Canonical cut and project method of slope $\alpha$ $\rightarrow$ chain of two letters:
+
+{\centering
+\dots\A\B\A\A\B\A\B\A\A\B\A\A\B\A\B\A\A\B\A\B\A\dots
+
+}
+
+Quantum model:
+
+{\centering
+\begin{tikzpicture}[scale=.7]
+    		\newcommand{\orig}{-1.5}
+    		\newcommand{\trans}{1.5}
+    		\newcommand{\vertspac}{-2.}
+    	
+    		% initial chain
+    	
+    		% bonds 
+        	\draw[-] (\orig+\trans,0) -- (\orig+2*\trans,0) node [midway, above] {$t_A$};
+			\draw[-,double] (\orig+2*\trans,0) -- (\orig+3*\trans,0) node [midway, above] {$t_B$};	
+			\draw[-] (\orig+3*\trans,0) -- (\orig+4*\trans,0) node [midway, above] {$t_A$};
+			\draw[-] (\orig+4*\trans,0) -- (\orig+5*\trans,0) node [midway, above] {$t_A$};
+			\draw[-,double] (\orig+5*\trans,0) -- (\orig+6*\trans,0) node [midway, above] {$t_B$};
+			\draw[-] (\orig+6*\trans,0) -- (\orig+7*\trans,0) node [midway, above] {$t_A$};
+			\draw[-,double] (\orig+7*\trans,0) -- (\orig+8*\trans,0) node [midway, above] {$t_B$};
+			\draw[-] (\orig+8*\trans,0) -- (\orig+9*\trans,0) node [midway, above] {$t_A$};
+    	
+    	
+    		% sites
+		    \filldraw (\orig+1*\trans,0) circle (0.05) node [left] {\dots};
+		    \filldraw (\orig+2*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+3*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+4*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+5*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+6*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+7*\trans,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+8*\trans,0) circle (0.05) node [right] {};
+		    \filldraw (\orig+9*\trans,0) circle (0.05) node [right] {\dots};
+		      
+\end{tikzpicture}
+
+}
+
+Hamiltonian:  
+$ H(\alpha)  = \sum_{x \in \mathbb{Z}} t_{x,x+1} \ket{x} \bra{x+1} + \text{h.c.} $ \\where $t_{x,x+1}  = t_A \text{~or~} t_B$.
+
+$t_A/t_B$ is the only parameter of the model.
 \begin{align*}
-\alpha_l &= \frac{p_l}{q_l} \in \mathbb{Q} \\
-\alpha_l &\rightarrow \alpha
+	\alpha = \frac{m}{n} \in \mathbb{Q} &\implies \text{periodic chain of period } N = m + n \\
+	\alpha \in \mathbb{R} \smallsetminus \mathbb{Q} &\implies \text{quasiperiodic chain}
 \end{align*}
-\end{column}
-\end{columns}
 
-	$
-		\text{Hamiltonian: } H(\alpha) = \sum_{x \in \mathbf{Z}} t_{x,x+1} \ket{x} \bra{x+1} + \text{h.c.}
-	$
-	
-	2 lengths $\to$ 2 jump amplitudes $t_{x,x+1} = t_{1}$ or $t_2$.	
+\(
+\<{5cm}
+\flushright
+Experimental realization with cavity polaritons
+
+\small{[Tanese \textit{et al} 2015]}
+\>
+
+\<{7cm}
+\centering
+\includegraphics[scale=.15]{img/tanese.png}
+\>
+\)
+
 \end{frame}
 
-\begin{frame}{The electronic spectrum}
+\begin{frame}{The energy spectrum}
+Well understood: electrons on \emph{periodic} chains (Bloch's theory)
+
+Idea: approach a QP chain $\alpha$ by a sequence of periodic \emph{approximants}:
+\[
+	\alpha_l = \frac{m_l}{n_l} \xrightarrow[l \to \infty]{} \alpha
+\]
+$\rightarrow$ energy spectrum consists of $m_l + n_l$ \emph{energy bands}
+
+{\centering
+\includegraphics[scale=.8]{img/energy_bands.pdf}
+
+}
+
+Fibonacci chain: $\alpha_l = F_{l}/F_{l+1} \xrightarrow[l \to \infty]{} \tau^{-1} = 0.618\dots$
+
+\end{frame}
+
+\begin{frame}{\id~ and gap labeling}
 
 A convenient way to plot the spectrum: the integrated density of states ($\id$).
 
@@ -173,19 +235,25 @@ $\id(E) = $ fraction of states below energy $E$
 	\item Rather: describe the $\id$ in the gaps $\to$ \textbf{gap labeling theorem}
 \end{itemize}
 \[
-	\id(E\in \text{gap}) = n \tau^{-2} \mod 1
+	\id(E\in \text{gap}) = p+ q \tau^{-2} 
 \]
 
 \end{frame}
 
 \begin{frame}{The gap labeling theorem}
-The IDOS inside spectral gaps can be indexed using the irrational involved in the construction of the chain
-	\[
-		\id(E \in \text{gap}) = \frac{n}{1+\alpha} \mod 1
-	\]
+The IDOS inside spectral gaps can be written
+	\begin{align*}
+		\id(E \in \text{gap}) &= p+\frac{q}{1+\alpha} \\
+		\id(E \in \text{gap}) &=  \frac{q}{1+\alpha} \mod 1
+	\end{align*}
+	where $p, q \in \mathbb{Z}$ are the \emph{gap labels}.
 \begin{itemize}
-	\item Constrains the spectrum... but is not enough to reconstruct it
-	\item Model independent! (while the spectrum is model dependent) $\rightarrow$ $n$ is a topological invariant
+	\item The set of labels constrains the spectrum... but is not enough to reconstruct it
+	\item The labels are model independent! 
+	\begin{itemize}
+		\item In particular, independent of $t_A$ and $t_B$
+		\item Gap labels are topological invariants
+	\end{itemize}
 \end{itemize}
 
 %TODO: plot the idos for the diagonal and the on-site potential models
@@ -194,33 +262,31 @@ The IDOS inside spectral gaps can be indexed using the irrational involved in th
 
 \begin{frame}{The gap labeling theorem}
 \[
-		\id(E \in \text{gap}) = \frac{n}{1+\alpha} \mod 1
-	\]
-\begin{itemize}
-	\item Has the gap label $n$ a physical interpretation?
-\end{itemize}
+		\id(E \in \text{gap}) = \frac{q}{1+\alpha} \mod 1
+\]
 \begin{itemize}
 	\item Can the theorem be applied to approximants? 
+	\item Has the gap label $q$ a physical interpretation?
 	\item Does it help understanding the quasiperiodic limit?
 \end{itemize}
 
 \end{frame}
 
-\begin{frame}{A simple, but incorrect proof}
-Let $\alpha_l = \frac{p_l}{q_l} \to \alpha$ be a sequence of approximants.
+\begin{frame}{Gap labeling from Bloch's theory}
+Let $\alpha_l = \frac{m_l}{n_l} \to \alpha$ be a sequence of approximants.
 
-$N_l = p_l + q_l$ is the maximum number of energy bands.
+Bloch's theorem: there are $N_l = m_l + n_l$ energy bands.
 
 \[
 	\id(E \in \text{gap}) = \frac{j(E)}{N_l}
 \]
-We can find integers $n$, $k$ such that $j = n q_l + k N_l$.
+We can find integers $p$, $q$ such that $j = p N_l + q n_l$.
 \[
-	\id(E \in \text{gap}) = \frac{n q_l}{p_l + q_l} \mod 1
+	\id(E \in \text{gap}) = \frac{q n_l}{m_l + n_l} \mod 1
 \]
 Letting $l \to \infty$,
 	\[
-		\id(E \in \text{gap}) = \frac{n}{1+\alpha} \mod 1
+		\id(E \in \text{gap}) = \frac{q}{1+\alpha} \mod 1
 	\]
 
 \only<1>{
@@ -228,8 +294,8 @@ Letting $l \to \infty$,
 }
     
 \only<2>{
-	\begin{alertblock}{Problem}
-$n$ may depend on $l$.
+	\begin{alertblock}{Proof incorrect!}
+$q$ may depend on $l$.
 \end{alertblock}
 }
 
@@ -238,7 +304,7 @@ $n$ may depend on $l$.
 \section{The Fibonacci chain}
 \subsection{Dummy}
 
-\begin{frame}{A concrete example}
+\begin{frame}{Transient and stable gaps}
 Gaps of successive approximants of the Fibonacci chain.
 
 {\centering
@@ -256,25 +322,56 @@ $\me_l$: mean energy of a gap, $\Delta_l(\me)$: its width.
 
 \only<2>{
 \begin{itemize}
-	\item {\color{BostonBlue}Blue labeled} gaps have a stable label gap label $\rightarrow$ {\color{BostonBlue}stable} gaps.
-	\item {\color{Complementary}Red labeled} do not $\rightarrow$ {\color{Complementary}transient} gaps.
+	\item {\color{BostonBlue}Blue labeled} gaps have a fixed label, that does not depend on $l$ $\rightarrow$ {\color{BostonBlue}stable} gaps.
+	\item {\color{Complementary}Red labeled} gaps have a label that is $l$-dependent	 $\rightarrow$ {\color{Complementary}transient} gaps.
 \end{itemize}
 }
 
-\only<3>{
-\begin{itemize}
-	\item {\color{Complementary}Transient} gaps closes as $l \to \infty$
-	\item {\color{BostonBlue}Stable} gaps stay open.
-\end{itemize}
-}
+%\only<3>{
+%\begin{itemize}
+%	\item {\color{Complementary}Transient} gaps closes as $l \to \infty$
+%	\item {\color{BostonBlue}Stable} gaps stay open.
+%\end{itemize}
+%}
+%
+%\only<4>{
+%\begin{itemize}
+%	\item {\color{BostonBlue}Stable gaps:} $n$ independent of $l$ $\rightarrow$ naive proof works.
+%	\item {\color{Complementary}Transient gaps:} $n$ depends on $l$, but these gaps disappear.
+%\end{itemize}
+%$\to$ the naive proof works and correctly labels the gaps.
+%}
+\end{frame}
 
-\only<4>{
+\begin{frame}{Examples of transient and stable gaps}
+
+\(
+\<{6cm}
 \begin{itemize}
-	\item {\color{BostonBlue}Stable gaps:} $n$ independent of $l$ $\rightarrow$ naive proof works.
-	\item {\color{Complementary}Transient gaps:} $n$ depends on $l$, but these gaps disappear.
+	\item The $E=0$ gap 
+	\begin{itemize}
+		\item reappears every $3$ iterations
+		\item has the label $q_l = \Big\lfloor \frac{(2+\sqrt{5})^{l/3}}{2 \sqrt{5}} + \frac{1}{2} \Big\rfloor$
+		\item is transient
+		\item has vanishing width in the quasiperiodic limit. \\
+					\textbf{True for all transient gaps}
+	\end{itemize}
+	\item The two largest gaps 
+	\begin{itemize}
+		\item have label $q = \pm 1$
+		\item are stable
+		\item have a nonzero width in the quasiperiodic limit\\
+					\textbf{True for all stable gaps}
+	\end{itemize}
 \end{itemize}
-$\to$ the naive proof works and correctly labels the gaps.
-}
+\>
+
+\<{6cm}
+\centering
+\includegraphics[scale=.45]{img/main_gap_labels.pdf}
+\>
+\)
+
 \end{frame}
 
 \begin{frame}{Recursive gap labeling}
@@ -334,7 +431,6 @@ We plot the gapwidth $\Delta_l$ as a function of the label for various quasiperi
 \begin{itemize}
 	\item The width decreases as a power-law of the label
 	\item Above a critical label, all gaps are transient
-	\item Recursive gap labeling using the Hofstadter rules?  \small{[Rüdinger, Piéchon 98]}
 \end{itemize}
 
 	
@@ -350,11 +446,12 @@ We plot the gapwidth $\Delta_l$ as a function of the label for various quasiperi
 	\begin{itemize}
 		\item It orders gap by decreasing width
 		\item It separates stable from transient gaps
-		\item It can be interpreted as a Chern number \small{[Levy \emph{et al} 2015]}
+		\item It can be interpreted as a winding number of edge states inside the gaps \small{[Levy \emph{et al} 2015]}
 	\end{itemize}
 \end{itemize}
 Perspectives:
 \begin{itemize}
+	\item Recursive gap labeling using the Hofstadter rules  \small{[Rüdinger, Piéchon 98]}
 	\item Understand the gap width behavior with the gap label
 	\item Investigate to 2D quasicrystals, which also have gaps \small{[Prunelé \emph{et al} 2002]}
 \end{itemize}
@@ -384,18 +481,18 @@ The $\id$ in a gap is a linear combination of frequencies of local environments 
 Consider approximants to the Fibonacci chain.
 Gaps are labeled by
 \[
-	\id(n) = \frac{n}{1+\alpha_l} \mod 1
+	\id(q) = \frac{q}{1+\alpha_l} \mod 1
 \]
 Consider the sequence of gap labels
 \[
-	n_{l = 3k} = \Bigg[ \frac{(2+\sqrt{5})^k}{2 \sqrt{5}}\Bigg]
+	q_{l = 3k} = \Bigg[ \frac{(2+\sqrt{5})^k}{2 \sqrt{5}}\Bigg]
 \]
-We have $\id(n_l) = 1/2$ (it labels the $E=0$ gap).
+We have $\id(q_l) = 1/2$ (it labels the $E=0$ gap).
 Taking $l \to \infty$, we could -- incorrectly -- conclude that $1/2$ is a gap.
 
-However, there is no finite $n$ such that
+However, there is no finite $q$ such that
 \[
-	\frac{1}{2} = n \tau^{-2} \mod 1
+	\frac{1}{2} = q \tau^{-2} \mod 1
 \]
 
 \end{frame}
@@ -427,7 +524,7 @@ Conumbering: labeling of the atoms according to their internal space position.
 
 \<{3cm}
 \[
-	\id = \frac{n}{1+\alpha_l} \mod 1
+	\id = \frac{q}{1+\alpha_l} \mod 1
 \]
 \>
 \)
