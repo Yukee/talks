@@ -380,25 +380,24 @@ $\me_l$: mean energy of a gap, $\Delta_l(\me)$: its width.
 \newcommand{\s}{.2}
 
   \begin{column}{5cm}
-  Recursive construction of the spectrum...
   \centering
-     \includegraphics[scale=.35]{img/recursive_construction_spectrum.pdf}
+     \includegraphics[scale=.4]{img/recursive_construction_spectrum.pdf}
+     
+	\small{Recursive construction of the spectrum}
   \end{column}
 
 
   \begin{column}{5cm}
-  ...translates into recursive construction of the gaps!
-  
+Let $G_l$ be the set of gap labels:
+
+$\small{G_l = \{(p,q)| \id = p+q/(1+\alpha)\}}$
+$G_l$ obeys the recursive relation:
 		\begin{align*}
 			G_{l}^{\text{left}} &= \sub^{-2} G_{l-2} \\
-			G_{l}^0 &= \sub^{-3} G_{l-3} + \gv_1 \\
-			G_{l}^\text{right} &= \sub^{-2} G_{l-2} + \gv_2
+			G_{l}^0 &= \sub^{-3} G_{l-3} + (1, -1) \\
+			G_{l}^\text{right} &= \sub^{-2} G_{l-2} + (0,1)
 		\end{align*}
-
-Where $G_l$ is the set of labels:
-
-$\small{G_l = \{(m,n)| \id = n/(1+\alpha) + m\}}$
-
+$M$ is the \emph{inflation matrix}:
 \[
 			\sub = \begin{bmatrix}
 				1 & 1\\
@@ -406,13 +405,15 @@ $\small{G_l = \{(m,n)| \id = n/(1+\alpha) + m\}}$
 			\end{bmatrix}
 			\]
   \end{column}
-
 \end{columns}
 
-
 \begin{itemize}
-	\item {\color{BostonBlue}Stable gaps} are the iterates of the 2 main gaps
-	\item {\color{Complementary}Transient gaps} are the iterates of the central gap.
+	\item Geometrical interpretation of the Fibonacci gap labeling
+	\item Stable and transient gap are better understood:
+	\begin{itemize}
+		\item {\color{BostonBlue}Stable gaps} are the iterates of the 2 largest gaps
+		\item {\color{Complementary}Transient gaps} are the iterates of the $E=0$ gap.
+	\end{itemize}	 
 \end{itemize}
 
 \end{frame}
@@ -420,19 +421,27 @@ $\small{G_l = \{(m,n)| \id = n/(1+\alpha) + m\}}$
 \section{General case}
 \subsection{Dummy}
 \begin{frame}{General case}
-We plot the gapwidth $\Delta_l$ as a function of the label for various quasiperiodic chains:
+We can still distinguish (numerically) stable and transient gaps for various cut and project chains.
 
+We plot the gapwidth $\Delta_l$ as a function of the label:
+
+\(
+\<{6cm}
 {\centering
 \newcommand{\s}{.45}
 \includegraphics[scale=\s]{img/loggapwidth_fibonacci_l_17.pdf}\\
 \includegraphics[scale=\s]{img/loggapwidth_sqrt3_l_12.pdf}
 
 }
+\>
+\<{6cm}
 \begin{itemize}
 	\item The width decreases as a power-law of the label
 	\item Above a critical label, all gaps are transient
 \end{itemize}
-
+$\rightarrow$ gap labels are physically meaningful for this model!
+\>
+\)
 	
 \end{frame}
 
