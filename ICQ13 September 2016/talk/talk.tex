@@ -83,7 +83,7 @@
 \begin{frame}
 \title{{\fontsize{14}{60}\selectfont Gap structure of 1D cut and project Hamiltonians}}
 
-\author{Nicolas Macé, Anuradha Jagannathan, Jean-Noël Fuchs, Frédéric Piéchon}
+\author{Nicolas Macé, Anuradha Jagannathan, Frédéric Piéchon \\ special thanks to Jean-Noël Fuchs}
 
 \institute % (optional)
 {
@@ -175,20 +175,15 @@ Quantum model:
 }
 
 Hamiltonian:  
-$ H(\alpha)  = \sum_{x \in \mathbb{Z}} t_{x,x+1} \ket{x} \bra{x+1} + \text{h.c.} $ \\where $t_{x,x+1}  = t_A \text{~or~} t_B$.
+$ H(\alpha)  = \sum_{x \in \mathbb{Z}} t_{x,x+1} \ket{x} \bra{x+1} + \text{h.c.} $ \\where $t_{x,x+1}  = t_A \text{~or~} t_B$ {\scriptsize(see [Kohmoto 86])}
 
 $t_A/t_B$ is the only parameter of the model.
-\begin{align*}
-	\alpha = \frac{m}{n} \in \mathbb{Q} &\implies \text{periodic chain of period } N = m + n \\
-	\alpha \in \mathbb{R} \smallsetminus \mathbb{Q} &\implies \text{quasiperiodic chain}
-\end{align*}
-
 \(
 \<{5cm}
 \flushright
 Experimental realization with cavity polaritons
 
-\small{[Tanese \textit{et al} 2015]}
+{\scriptsize[Tanese \textit{et al} 2015]}
 \>
 
 \<{7cm}
@@ -196,6 +191,11 @@ Experimental realization with cavity polaritons
 \includegraphics[scale=.15]{img/tanese.png}
 \>
 \)
+
+\begin{align*}
+	\alpha = \frac{m}{n} \in \mathbb{Q} &\implies \text{periodic chain of period } L = m + n \\
+	\alpha \in \mathbb{R} \smallsetminus \mathbb{Q} &\implies \text{quasiperiodic chain}
+\end{align*}
 
 \end{frame}
 
@@ -208,12 +208,12 @@ Idea: approach a QP chain $\alpha$ by a sequence of periodic \emph{approximants}
 \]
 $\rightarrow$ energy spectrum consists of $m_l + n_l$ \emph{energy bands}
 
+Fibonacci chain: $\alpha_l = F_{l}/F_{l+1} \xrightarrow[l \to \infty]{} \tau^{-1} = 0.618\dots$
+
 {\centering
 \includegraphics[scale=.8]{img/energy_bands.pdf}
 
 }
-
-Fibonacci chain: $\alpha_l = F_{l}/F_{l+1} \xrightarrow[l \to \infty]{} \tau^{-1} = 0.618\dots$
 
 \end{frame}
 
@@ -226,13 +226,13 @@ $\id(E) = $ fraction of states below energy $E$
 {\centering
 \includegraphics[scale=.35]{img/idos_scaling.pdf}
 
-\small{\id~of the Fibonacci Hamiltonian}
+\small{\id~of the Fibonacci Hamiltonian (devil's staircase)}
 
 }
 
 \begin{itemize}
 	\item Electronic spectrum of quasiperiodic chains is hard to describe
-	\item Rather: describe the $\id$ in the gaps $\to$ \textbf{gap labeling theorem}
+	\item Rather: set of $\id$ values in the gaps $\to$ \textbf{gap labeling theorem}
 \end{itemize}
 \[
 	\id(E\in \text{gap}) = p+ q \tau^{-2} 
@@ -246,7 +246,7 @@ The IDOS inside spectral gaps can be written
 		\id(E \in \text{gap}) &= p+\frac{q}{1+\alpha} \\
 		\id(E \in \text{gap}) &=  \frac{q}{1+\alpha} \mod 1
 	\end{align*}
-	where $p, q \in \mathbb{Z}$ are the \emph{gap labels}.
+	where $p, q \in \mathbb{Z}$ are the \emph{gap labels} {\scriptsize see [Bellisard 89]}.
 \begin{itemize}
 	\item The set of labels constrains the spectrum... but is not enough to reconstruct it
 	\item The labels are model independent! 
@@ -265,8 +265,8 @@ The IDOS inside spectral gaps can be written
 		\id(E \in \text{gap}) = \frac{q}{1+\alpha} \mod 1
 \]
 \begin{itemize}
-	\item Can the theorem be applied to approximants? 
 	\item Has the gap label $q$ a physical interpretation?
+	\item Can the theorem be applied to approximants? 
 	\item Does it help understanding the quasiperiodic limit?
 \end{itemize}
 
@@ -275,14 +275,17 @@ The IDOS inside spectral gaps can be written
 \begin{frame}{Gap labeling from Bloch's theory}
 Let $\alpha_l = \frac{m_l}{n_l} \to \alpha$ be a sequence of approximants.
 
-Bloch's theorem: there are $N_l = m_l + n_l$ energy bands.
+Bloch's theorem: there are $L_l = m_l + n_l$ energy bands.
 
 \[
-	\id(E \in \text{gap}) = \frac{j(E)}{N_l}
+	\id(E \in \text{gap}) = \frac{j(E)}{L_l}
 \]
-We can find integers $p$, $q$ such that $j = p N_l + q n_l$.
+We can find integers $p$, $q$ such that $j = p L_l + q n_l$.
 \[
 	\id(E \in \text{gap}) = \frac{q n_l}{m_l + n_l} \mod 1
+\]
+\[
+	\id(E \in \text{gap}) = \frac{q }{1+\alpha_l} \mod 1
 \]
 Letting $l \to \infty$,
 	\[
@@ -294,8 +297,8 @@ Letting $l \to \infty$,
 }
     
 \only<2>{
-	\begin{alertblock}{Proof incorrect!}
-$q$ may depend on $l$.
+	\begin{alertblock}{Problem:}
+At fixed $j$, $q$ depends on $l$.
 \end{alertblock}
 }
 
@@ -308,7 +311,7 @@ $q$ may depend on $l$.
 Gaps of successive approximants of the Fibonacci chain.
 
 {\centering
-\includegraphics[scale=.6]{img/gap_labels.pdf}
+\includegraphics[scale=.8]{img/gap_labels.pdf}
 
 }
 \only<1>{
@@ -322,8 +325,8 @@ $\me_l$: mean energy of a gap, $\Delta_l(\me)$: its width.
 
 \only<2>{
 \begin{itemize}
-	\item {\color{BostonBlue}Blue labeled} gaps have a fixed label, that does not depend on $l$ $\rightarrow$ {\color{BostonBlue}stable} gaps.
-	\item {\color{Complementary}Red labeled} gaps have a label that is $l$-dependent	 $\rightarrow$ {\color{Complementary}transient} gaps.
+	\item {\color{BostonBlue}Stable gaps} have a fixed label, that does not depend on $l$.
+	\item {\color{Complementary}Transient gaps} have a label that is $l$-dependent.
 \end{itemize}
 }
 
@@ -350,16 +353,15 @@ $\me_l$: mean energy of a gap, $\Delta_l(\me)$: its width.
 \begin{itemize}
 	\item The $E=0$ gap 
 	\begin{itemize}
-		\item reappears every $3$ iterations
-		\item has the label $q_l = \Big\lfloor \frac{(2+\sqrt{5})^{l/3}}{2 \sqrt{5}} + \frac{1}{2} \Big\rfloor$
 		\item is transient
-		\item has vanishing width in the quasiperiodic limit. \\
+		\item has the label \[q_l = \Big\lfloor \frac{(2+\sqrt{5})^{l/3}}{2 \sqrt{5}} + \frac{1}{2} \Big\rfloor\]
+		\item has  vanishing width in the quasiperiodic limit. \\
 					\textbf{True for all transient gaps}
 	\end{itemize}
 	\item The two largest gaps 
 	\begin{itemize}
-		\item have label $q = \pm 1$
 		\item are stable
+		\item have label $q = \pm 1$
 		\item have a nonzero width in the quasiperiodic limit\\
 					\textbf{True for all stable gaps}
 	\end{itemize}
@@ -383,7 +385,8 @@ $\me_l$: mean energy of a gap, $\Delta_l(\me)$: its width.
   \centering
      \includegraphics[scale=.4]{img/recursive_construction_spectrum.pdf}
      
-	\small{Recursive construction of the spectrum}
+	\small{Recursive construction of the spectrum {\scriptsize [Niu, Nori 86]}}
+	
   \end{column}
 
 
@@ -393,9 +396,9 @@ Let $G_l$ be the set of gap labels:
 $\small{G_l = \{(p,q)| \id = p+q/(1+\alpha)\}}$
 $G_l$ obeys the recursive relation:
 		\begin{align*}
-			G_{l}^{\text{left}} &= \sub^{-2} G_{l-2} \\
+			G_{l}^{-} &= \sub^{-2} G_{l-2} \\
 			G_{l}^0 &= \sub^{-3} G_{l-3} + (1, -1) \\
-			G_{l}^\text{right} &= \sub^{-2} G_{l-2} + (0,1)
+			G_{l}^+ &= \sub^{-2} G_{l-2} + (0,1)
 		\end{align*}
 $M$ is the \emph{inflation matrix}:
 \[
@@ -403,13 +406,25 @@ $M$ is the \emph{inflation matrix}:
 				1 & 1\\
 				1 & 0\\
 			\end{bmatrix}
+			\rightarrow
+			M
+			\begin{pmatrix}
+			A \\
+			B
+			\end{pmatrix}
+			=
+			\begin{pmatrix}
+			AB \\
+			A
+			\end{pmatrix}
 			\]
+			
   \end{column}
 \end{columns}
 
 \begin{itemize}
 	\item Geometrical interpretation of the Fibonacci gap labeling
-	\item Stable and transient gap are better understood:
+	\item Stable and transient gap are completely characterized:
 	\begin{itemize}
 		\item {\color{BostonBlue}Stable gaps} are the iterates of the 2 largest gaps
 		\item {\color{Complementary}Transient gaps} are the iterates of the $E=0$ gap.
@@ -421,9 +436,11 @@ $M$ is the \emph{inflation matrix}:
 \section{General case}
 \subsection{Dummy}
 \begin{frame}{General case}
-We can still distinguish (numerically) stable and transient gaps for various cut and project chains.
-
-We plot the gapwidth $\Delta_l$ as a function of the label:
+\begin{itemize}
+	\item We can still distinguish (numerically) stable and transient gaps for various C\&P chains.
+$\rightarrow$ the naive argument seem to work.
+	\item We plot the gapwidth $\Delta_l$ as a function of the label:
+\end{itemize}
 
 \(
 \<{6cm}
@@ -436,7 +453,10 @@ We plot the gapwidth $\Delta_l$ as a function of the label:
 \>
 \<{6cm}
 \begin{itemize}
-	\item The width decreases as a power-law of the label
+	\item The label order gaps by width
+	\begin{itemize}
+		\item The width behaves as a power-law of the label
+	\end{itemize}
 	\item Above a critical label, all gaps are transient
 \end{itemize}
 $\rightarrow$ gap labels are physically meaningful for this model!
@@ -451,7 +471,7 @@ $\rightarrow$ gap labels are physically meaningful for this model!
 \begin{itemize}
 	\item The gap labeling theorem can be extended to approximants
 	\item The price to pay is the introduction of transient gaps, absent in the quasiperiodic case
-	\item Gap labels have a physical meaning:
+	\item Gap label has a physical meaning:
 	\begin{itemize}
 		\item It orders gap by decreasing width
 		\item It separates stable from transient gaps
@@ -460,8 +480,10 @@ $\rightarrow$ gap labels are physically meaningful for this model!
 \end{itemize}
 Perspectives:
 \begin{itemize}
-	\item Recursive gap labeling using the Hofstadter rules  \small{[Rüdinger, Piéchon 98]}
-	\item Understand the gap width behavior with the gap label
+	\item Investigate rigorously the general case
+	\begin{itemize}
+		\item Recursive gap labeling using the Hofstadter rules  \small{[Rüdinger, Piéchon 98]}
+	\end{itemize}
 	\item Investigate to 2D quasicrystals, which also have gaps \small{[Prunelé \emph{et al} 2002]}
 \end{itemize}
 \end{frame}
@@ -520,7 +542,7 @@ Conumbering: labeling of the atoms according to their internal space position.
 \(
 \<{3cm}
 \[
-	\id = \frac{j}{N_l}
+	\id = \frac{j}{L_l}
 \]
 \>
 

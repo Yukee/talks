@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     47522,       1210]
-NotebookOptionsPosition[     46121,       1159]
-NotebookOutlinePosition[     46456,       1174]
-CellTagsIndexPosition[     46413,       1171]
+NotebookDataLength[     47589,       1222]
+NotebookOptionsPosition[     46186,       1171]
+NotebookOutlinePosition[     46523,       1186]
+CellTagsIndexPosition[     46480,       1183]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -223,7 +223,7 @@ Cell[BoxData[
    3.6494922446331673`*^9, 3.6494936258718987`*^9, 3.649579608619907*^9, 
    3.649590769375276*^9, 3.650211021967311*^9, 3.650282860402999*^9, {
    3.682770718000983*^9, 3.6827707386044207`*^9}, 3.682924502401093*^9, {
-   3.683019888316886*^9, 3.6830199001894703`*^9}}]
+   3.683019888316886*^9, 3.6830199001894703`*^9}, 3.683258013178967*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -492,40 +492,44 @@ Cell[BoxData[
        RowBox[{"False", ",", "False"}], "}"}], ",", 
       RowBox[{"{", 
        RowBox[{"True", ",", "False"}], "}"}]}], "}"}]}], ",", 
-   RowBox[{"FrameLabel", "\[Rule]", "\"\<energy\>\""}]}], "]"}]], "Input",
+   RowBox[{
+   "FrameLabel", "\[Rule]", 
+    "\"\<energy (in units of \!\(\*SubscriptBox[\(t\), \(B\)]\))\>\""}]}], 
+  "]"}]], "Input",
  CellChangeTimes->{{3.68293236719479*^9, 3.682932394161839*^9}, {
   3.6829329277270412`*^9, 3.682932928300617*^9}, {3.682933072847639*^9, 
-  3.682933089992731*^9}, {3.682933455425028*^9, 3.682933553420888*^9}}],
+  3.682933089992731*^9}, {3.682933455425028*^9, 3.682933553420888*^9}, {
+  3.683258002463847*^9, 3.68325801166335*^9}}],
 
 Cell[BoxData[
  GraphicsBox[{GeometricTransformationBox[{InsetBox[
       StyleBox["\<\"A\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {-1.8, 0}, ImageScaled[{1, Rational[1, 2]}]], 
+       FontSize->10], {-1.8, 0}, {1, 0}], 
      RectangleBox[{-1., -0.1}, {1., 0.1},
       RoundingRadius->0], InsetBox[
       StyleBox["\<\"0/1 \[TildeEqual] 0.\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {1.8, 0}, ImageScaled[{0, Rational[1, 2]}]]}, {
-    0, -0.8}], GeometricTransformationBox[{InsetBox[
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -0.8}], 
+   GeometricTransformationBox[{InsetBox[
       StyleBox["\<\"AB\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {-1.8, 0}, ImageScaled[{1, Rational[1, 2]}]], {
+       FontSize->10], {-1.8, 0}, {1, 0}], {
       RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
        RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
        RoundingRadius->0]}, InsetBox[
       StyleBox["\<\"1/1 \[TildeEqual] 1.\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {1.8, 0}, ImageScaled[{0, Rational[1, 2]}]]}, {
-    0, -1.2000000000000002`}], GeometricTransformationBox[{InsetBox[
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -1.2000000000000002`}], 
+   GeometricTransformationBox[{InsetBox[
       StyleBox["\<\"ABA\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {-1.8, 0}, ImageScaled[{1, Rational[1, 2]}]], {
+       FontSize->10], {-1.8, 0}, {1, 0}], {
       GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
         RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
       GeometricTransformationBox[
@@ -535,12 +539,12 @@ Cell[BoxData[
       StyleBox["\<\"1/2 \[TildeEqual] 0.5\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {1.8, 0}, ImageScaled[{0, Rational[1, 2]}]]}, {
-    0, -1.6}], GeometricTransformationBox[{InsetBox[
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -1.6}], 
+   GeometricTransformationBox[{InsetBox[
       StyleBox["\<\"ABAAB\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {-1.8, 0}, ImageScaled[{1, Rational[1, 2]}]], {
+       FontSize->10], {-1.8, 0}, {1, 0}], {
       GeometricTransformationBox[RectangleBox[{-1., -0.1}, {1., 0.1},
         RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
       GeometricTransformationBox[
@@ -551,12 +555,12 @@ Cell[BoxData[
       StyleBox["\<\"2/3 \[TildeEqual] 0.666667\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {1.8, 0}, ImageScaled[{0, Rational[1, 2]}]]}, {0, -2.}],
-    GeometricTransformationBox[{InsetBox[
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -2.}], 
+   GeometricTransformationBox[{InsetBox[
       StyleBox["\<\"ABAABABA\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {-1.8, 0}, ImageScaled[{1, Rational[1, 2]}]], {
+       FontSize->10], {-1.8, 0}, {1, 0}], {
       GeometricTransformationBox[{RectangleBox[{-1.5, -0.1}, {-0.5, 0.1},
          RoundingRadius->0], RectangleBox[{0.5, -0.1}, {1.5, 0.1},
          RoundingRadius->0]}, {{{0.25, 0}, {0., 1}}, Center}], 
@@ -572,12 +576,12 @@ Cell[BoxData[
       StyleBox["\<\"3/5 \[TildeEqual] 0.6\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {1.8, 0}, ImageScaled[{0, Rational[1, 2]}]]}, {
-    0, -2.4000000000000004`}], GeometricTransformationBox[{InsetBox[
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -2.4000000000000004`}], 
+   GeometricTransformationBox[{InsetBox[
       StyleBox["\<\"ABAABABAABAAB\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {-1.8, 0}, ImageScaled[{1, Rational[1, 2]}]], {
+       FontSize->10], {-1.8, 0}, {1, 0}], {
       GeometricTransformationBox[{
         GeometricTransformationBox[RectangleBox[{-2, -0.1}, {2, 0.1},
           RoundingRadius->0], {{{0.25, 0}, {0., 1}}, Center}], 
@@ -599,16 +603,18 @@ Cell[BoxData[
       StyleBox["\<\"5/8 \[TildeEqual] 0.625\"\>",
        StripOnInput->False,
        FontFamily->"CMU Serif",
-       FontSize->10], {1.8, 0}, ImageScaled[{0, Rational[1, 2]}]]}, {
-    0, -2.8000000000000003`}]},
+       FontSize->10], {1.8, 0}, {-1, 0}]}, {0, -2.8000000000000003`}]},
   Frame->{{False, False}, {True, False}},
-  FrameLabel->FormBox["\"energy\"", TraditionalForm]]], "Output",
+  FrameLabel->FormBox[
+   "\"energy (in units of \\!\\(\\*SubscriptBox[\\(t\\), \\(B\\)]\\))\"", 
+    TraditionalForm]]], "Output",
  CellChangeTimes->{{3.682932380944049*^9, 3.6829324283739347`*^9}, {
    3.6829329207685537`*^9, 3.682932953775764*^9}, 3.6829330065598097`*^9, {
    3.6829330438941917`*^9, 3.682933090583514*^9}, 3.682933464881188*^9, 
    3.682933496751319*^9, {3.6829335300090933`*^9, 3.6829335540408783`*^9}, 
    3.6829336856636133`*^9, {3.683019888905017*^9, 3.6830199007027607`*^9}, 
-   3.683020043362718*^9, {3.683020073502756*^9, 3.6830200772539873`*^9}}]
+   3.683020043362718*^9, {3.683020073502756*^9, 3.6830200772539873`*^9}, 
+   3.683258013285844*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -626,7 +632,7 @@ Cell[BoxData["\<\"/home/nicolas/git/talks/ICQ13 September \
 2016/talk/img/energy_bands.pdf\"\>"], "Output",
  CellChangeTimes->{
   3.682933597397768*^9, 3.682933687039806*^9, {3.683019889197606*^9, 
-   3.683019900914938*^9}, 3.683020078936462*^9}]
+   3.683019900914938*^9}, 3.683020078936462*^9, 3.683258013625392*^9}]
 }, Open  ]]
 }, Open  ]],
 
@@ -765,10 +771,12 @@ Cell[BoxData[{
    RowBox[{"boxes", " ", "around", " ", "the", " ", "spectra"}], " ", 
    "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"bh", "=", "0.2"}], ";", 
+  RowBox[{
+   RowBox[{"bh", "=", "0.2"}], ";"}], 
   RowBox[{"(*", " ", 
-   RowBox[{"height", " ", "of", " ", "the", " ", "boxes"}], " ", "*)"}], 
-  "\[IndentingNewLine]", 
+   RowBox[{"height", " ", "of", " ", "the", " ", "boxes"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"rectaround", "=", 
    RowBox[{"Rectangle", "[", 
     RowBox[{
@@ -852,23 +860,27 @@ Cell[BoxData[{
    "text", " ", "showing", " ", "the", " ", "gap", " ", "label", " ", 
     "sets"}], " ", "*)"}]}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"ord", "=", 
-   RowBox[{"bh", "-", 
-    RowBox[{"4", "d"}], "-", "0.06"}]}], ";", 
+  RowBox[{
+   RowBox[{"ord", "=", 
+    RowBox[{"bh", "-", 
+     RowBox[{"4", "d"}], "-", "0.06"}]}], ";"}], 
   RowBox[{"(*", " ", 
    RowBox[{"y", " ", "position", " ", "of", " ", "the", " ", "gaplabels"}], 
-   " ", "*)"}], "\[IndentingNewLine]", 
+   " ", "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{
-   RowBox[{"labelstyle", "[", "string_String", "]"}], ":=", 
-   RowBox[{"Style", "[", 
-    RowBox[{"string", ",", 
-     RowBox[{"Directive", "[", 
-      RowBox[{"Large", ",", 
-       RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
-      "]"}]}], "]"}]}], ";", " ", 
+   RowBox[{
+    RowBox[{"labelstyle", "[", "string_String", "]"}], ":=", 
+    RowBox[{"Style", "[", 
+     RowBox[{"string", ",", 
+      RowBox[{"Directive", "[", 
+       RowBox[{"Large", ",", 
+        RowBox[{"FontFamily", "\[Rule]", "\"\<Linux Libertine\>\""}]}], 
+       "]"}]}], "]"}]}], ";"}], " ", 
   RowBox[{"(*", " ", 
-   RowBox[{"style", " ", "of", " ", "the", " ", "gaplabels"}], " ", "*)"}], 
-  "\[IndentingNewLine]", 
+   RowBox[{"style", " ", "of", " ", "the", " ", "gaplabels"}], " ", 
+   "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
   RowBox[{"gaplabels", "=", 
    RowBox[{"{", 
     RowBox[{
@@ -1129,7 +1141,7 @@ Cell[BoxData[
    3.683020643595111*^9, {3.68302070223985*^9, 3.6830207125279713`*^9}, {
    3.6830207455187073`*^9, 3.683020766745981*^9}, {3.683020877053548*^9, 
    3.683020926504603*^9}, {3.683021023587267*^9, 3.683021078365135*^9}, {
-   3.683021130153294*^9, 3.683021134361085*^9}}]
+   3.683021130153294*^9, 3.683021134361085*^9}, 3.6832580136953173`*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -1153,13 +1165,13 @@ Cell[BoxData["\<\"/home/nicolas/git/talks/ICQ13 September \
    3.6502110222751083`*^9, 3.650211120338402*^9, 3.6502828606805363`*^9, {
    3.682770718469886*^9, 3.6827707390104437`*^9}, {3.683019889620191*^9, 
    3.6830199013646517`*^9}, 3.683020181850564*^9, 3.68302109141148*^9, 
-   3.683021135649775*^9}]
+   3.683021135649775*^9, 3.683258013824617*^9}]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1920, 1131},
-WindowMargins->{{1, Automatic}, {Automatic, 16}},
-FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+WindowSize->{1920, 1011},
+WindowMargins->{{-1, Automatic}, {Automatic, -1}},
+FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -1173,43 +1185,43 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[558, 20, 2583, 68, 95, "Input"],
-Cell[3144, 90, 3249, 92, 208, "Input"],
+Cell[558, 20, 2583, 68, 99, "Input"],
+Cell[3144, 90, 3249, 92, 231, "Input"],
 Cell[CellGroupData[{
 Cell[6418, 186, 606, 14, 32, "Input"],
-Cell[7027, 202, 1343, 23, 56, "Output"]
+Cell[7027, 202, 1365, 23, 56, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[8407, 230, 96, 1, 45, "Subsection"],
-Cell[8506, 233, 1012, 27, 115, "Input"]
+Cell[8429, 230, 96, 1, 44, "Subsection"],
+Cell[8528, 233, 1012, 27, 121, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9555, 265, 108, 1, 45, "Subsection"],
-Cell[9666, 268, 1584, 36, 95, "Input"],
-Cell[11253, 306, 369, 7, 51, "Input"],
-Cell[11625, 315, 3136, 89, 312, "Input"],
-Cell[14764, 406, 1559, 43, 97, "Input"],
-Cell[16326, 451, 887, 24, 72, "Input"],
+Cell[9577, 265, 108, 1, 44, "Subsection"],
+Cell[9688, 268, 1584, 36, 99, "Input"],
+Cell[11275, 306, 369, 7, 55, "Input"],
+Cell[11647, 315, 3136, 89, 302, "Input"],
+Cell[14786, 406, 1559, 43, 99, "Input"],
+Cell[16348, 451, 887, 24, 77, "Input"],
 Cell[CellGroupData[{
-Cell[17238, 479, 722, 18, 32, "Input"],
-Cell[17963, 499, 5693, 111, 165, "Output"]
+Cell[17260, 479, 831, 22, 32, "Input"],
+Cell[18094, 503, 5470, 113, 167, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23693, 615, 270, 7, 33, "Input"],
-Cell[23966, 624, 246, 4, 32, "Output"]
+Cell[23601, 621, 270, 7, 32, "Input"],
+Cell[23874, 630, 268, 4, 32, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[24261, 634, 106, 1, 45, "Subsection"],
-Cell[24370, 637, 874, 18, 33, "Input"],
-Cell[25247, 657, 2590, 77, 92, "Input"],
+Cell[24191, 640, 106, 1, 44, "Subsection"],
+Cell[24300, 643, 874, 18, 32, "Input"],
+Cell[25177, 663, 2590, 77, 99, "Input"],
 Cell[CellGroupData[{
-Cell[27862, 738, 8197, 229, 381, "Input"],
-Cell[36062, 969, 9046, 162, 240, "Output"]
+Cell[27792, 744, 8286, 235, 433, "Input"],
+Cell[36081, 981, 9070, 162, 240, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[45145, 1136, 264, 7, 33, "Input"],
-Cell[45412, 1145, 681, 10, 32, "Output"]
+Cell[45188, 1148, 264, 7, 32, "Input"],
+Cell[45455, 1157, 703, 10, 32, "Output"]
 }, Open  ]]
 }, Open  ]]
 }
