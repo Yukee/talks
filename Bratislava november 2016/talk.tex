@@ -158,12 +158,16 @@ We want to model:
 	\item in the simplest possible way : tight-binding model with nearest neighbors hoppings only
 \end{itemize}
 \[
-	H = \sum_{\langle i,j \rangle} t_{i,j} \ket{i} \bra{j}
+	i \frac{\partial \phi_m}{\partial t}(t) = \sum_{n \in V(m)} t_{m,n} \phi_n(t) ~\text{with}~ |\phi_m(t)|^2= \text{Prob}\left( \text{on atom $m$ at time $t$} \right)
 \]
 
 [Picture of the hoppings on a tiling]
 
-The challenge now is to find a proper description of these eigenstates... 
+We solve for the stationary states (or eigenstates):
+\[
+	E \psi_m = \sum_{n \in V(m)} t_{m,n} \psi_n
+\]
+Challenge: find a proper description of these eigenstates... 
 \end{frame}
 
 \begin{frame}
@@ -215,23 +219,68 @@ The Schrödinger equation for the eigenstate of energy $E$:
 	 t_{m-1,m} \psi_{m-1} + t_{m,m+1}\psi_{m+1} = E \psi_{m}
 \]
 \[
-	t_{m-1,m} = t_s \text{~or~} t_w
+	t_{m-1,m} = t_s \text{~or~} t_w \text{~and we set $t_s = 1$, $t_w = \rho$}
 \]
 What can be say about the spectrum/eigenstates of this model?
 \end{frame}
 
 \begin{frame}{Spectrum/eigenstates of cut and project chains}
 \begin{itemize}
-	\item spectrum is (multi)fractal
-	\item wavefunctions are generically critical (all of them are for Fibo)
+	\item The spectrum is scale invariant (or multifractal)
+	
+{\centering
+\includegraphics[scale=.5]{img/ldos.pdf}
+
+}
+	\item The eigenstates are generically critical (all of them are for the Fibonacci chain [reference])
+\end{itemize}
+What is the structure of these critical states?
+\end{frame}
+
+\begin{frame}{A special case: the eigenstate at zero energy}
+\begin{itemize}
+	\item Schrödinger equation for the $E=0$ state:
+	\[
+	t_{m-1,m} \psi_{m-1} + t_{m,m+1}\psi_{m+1} = 0
+	\]
+	\item If we know the wavefunction on one site we know it on the next
+	\begin{columns}
+	\<{6cm}
+	\[
+	\psi_{m+1} = -\frac{t_{m-1,m}}{t_{m,m+1}} \psi_{m-1}
+	\]
+	\>
+	\<{5cm}
+	\subfile{img/hop_E0.tex}
+	\>
+	\end{columns}
+	\item Introduce $A_{m-1,m+1}$, the \textbf{arrow} from $m-1$ to $m+1$:
+	\begin{columns}
+	\<{5cm}
+	\centering
+	 \subfile{img/hop_right.tex}
+	 \>
+	 \<{5cm}
+	 Remember that $\rho = t_s/t_w$.
+	 
+	Then, $\boxed{\psi_{m+1} =- \rho^{A_{m-1,m+1}} \psi_{m-1}}$
+	 \>
+	 \end{columns}
 \end{itemize}
 \end{frame}
 
-\begin{frame}{A special case: the eigenstate at the middle of the spectrum}
-\begin{itemize}
-	\item Even and odd sites are decoupled, and if we know the wf on one site we know it everywhere
-	\item Concept of arrows: wf properties stem from the geometrical properties of the field of arrows
-\end{itemize}
+\begin{frame}{The field of arrows and the field of heights}
+From $\psi_{m+1} =- \rho^{A_{m-1,m+1}} \psi_{m-1}$ we deduce that
+\[
+	\psi_{2m} = (-1)^{m} \psi_0 \rho^{h(m)}
+\]
+Where $h$ is \textbf{the field of heights}, the integral of the field of arrows:
+\[
+	h(m) = \sum_{n=0}^m A_{n, n+2}
+\]
+
+
+
 \end{frame}
 
 \begin{frame}{Back to the special cases, with arrows!}
