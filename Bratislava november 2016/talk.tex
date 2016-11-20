@@ -134,7 +134,7 @@ We can we do to access the electronic properties of quasicrystals?
 \begin{itemize}
 	\item Experiments
 	\begin{itemize}
-		\item Measure of physical properties: conductivity, ???
+		\item Measure of physical properties.
 	\end{itemize}
 	\item ``Realistic'' simulations
 	\begin{itemize}
@@ -270,7 +270,7 @@ What is the structure of these critical states?
 \end{frame}
 
 \begin{frame}{The field of arrows and the field of heights}
-From $\psi_{m+1} =- \rho^{A_{m-1,m+1}} \psi_{m-1}$ we deduce that
+Iterating $\psi_{m+1} =- \rho^{A_{m-1,m+1}} \psi_{m-1}$ we can compute the wavefunction on any site:
 \[
 	\psi_{2m} = (-1)^{m} \psi_0 \rho^{h(m)}
 \]
@@ -279,56 +279,116 @@ Where $h$ is \textbf{the field of heights}, the integral of the field of arrows:
 	h(m) = \sum_{n=0}^m A_{n, n+2}
 \]
 
+Example (piece of the Fibonacci chain):
+\subfile{img/field_of_heights.tex}
 
 
 \end{frame}
 
 \begin{frame}{Back to the special cases, with arrows!}
 \begin{itemize}
-	\item Periodic chain: no arrows $\rightarrow$ extended
-	\item Disordered chain: random arrows $\rightarrow$ $\langle h \rangle = 0$: localized
+	\item Periodic chain: 
+	\subfile{img/periodic_chain_arrows.tex}
+	\begin{itemize}
+		\item Arrows $= 0 \implies h(m) = 0 \implies \psi_m = $ cst  
+		\item \textbf{constant} amplitude $\rightarrow$ \textbf{extended states}
+	\end{itemize}
+	\item Disordered chain: 
+	\subfile{img/disordered_chain_arrows.tex}
+	\begin{itemize}
+		\item Arrows randomly distributed $\implies h(m) \sim \langle A \rangle \times m \implies \psi_m \sim e^{- m/\xi}$ with $\xi^{-1} = |\log \rho| \langle A \rangle$
+		\item  \textbf{exponentially decreasing} amplitude $\rightarrow$ \textbf{localized states}
+	\end{itemize}
 \end{itemize}
+The arrows give another interpretation to these well known results.
+
+What happens for a quasiperiodic chain?
 \end{frame}
 
-\begin{frame}{Fibo and the inflation}
+\begin{frame}{Fibonacci chain and the inflation}
+The Fibonacci chain can be constructed by cut and project, but also by \textbf{inflation}
+
+{
+\centering
+\subfile{img/atomic_inflation.tex}
+}
+
+\begin{columns}
+\<{6cm}
+Properties of the height under inflation:
 \begin{itemize}
-	\item Inflation rule $\phi: A \to AB,\dots$
-	\item Concepts of atoms and molecules, spectrum seen as broadening of atomic ($E=0$) and molecular ($E = \pm 1$) levels.
-	\item Atomic inflation ($\phi^3$) should be relevant since we expect the $E=0$ wf to have have mainly weight on the atomic sites
-	\item Indeed yes: $\phi^3$ is an inflation rule for the arrows: $\phi^3: R \to \dots, L \to \dots$
+	\item On the old sites, \textbf{height remains constant}
+	\item On newly created sites \textbf{height increases at most linearly} $\implies$ on a region of size $L$, height increases at most as $\log L$, typically as $\sqrt{\log L}$.
 \end{itemize}
+\>
+
+\<{6cm}
+{\centering
+\includegraphics[scale=.5]{img/heights.pdf}
+
+}
+\>
+\end{columns}
+
 \end{frame}
 
 \begin{frame}{The Fibo arrows and the Fibo wf}
 \begin{itemize}
-	\item On old sites height is constant $\rightarrow$ cannot be localized
-	\item On new sites height increases at most linearly $\rightarrow$ $\log L$ growth, local power law behavior
-	\item Rigorously: $IPR$ computed analytically from the arrow statistics $\rightarrow$ critical wf.
+	\item On old sites the height/ the wavefunction stays constant, and old sites can be arbitrarily far away $\rightarrow$ \textbf{the wavefunction cannot be localized}
+	\item The height is scale invariant, and so is the wavefunction: $\psi(b \times r) = b^\alpha \psi(r) $ $\rightarrow$ \textbf{the wavefunction cannot be extended}: is behaves locally as a power law
 \end{itemize}
+Conclusion: \textbf{the wavefunction is critical.}
+\begin{columns}
+\<{6cm}
+\centering
+\subfile{img/atomic_inflation2.tex}
+\>
+
+\<{6cm}
+{\centering
+\includegraphics[scale=.5]{img/wavefunction.pdf}
+
+}
+\>
+\end{columns}
 \end{frame}
 
-\begin{frame}{Summing up what happens in 1D}
+\begin{frame}{Cut and project chains: a summary}
 \begin{itemize}
-	\item max height $\sim \log L$, typical height $\sim \sqrt{\log L}$
-	\item Arrow is a quasiperiodic function
-	\item Its integral, the height, is not
-	\item As a result, the wf is critical: it behaves locally as a power law
-	\item We will find again all these features in 2D
+	\item The $E=0$ wavefunction of cut and project chains can be described by a \textbf{height field}
+	\item The height field is the integral of an \textbf{arrow field}, which is quasiperiodic
+	\item As a result, \textbf{the wavefunction is critical}: it behaves locally as a power law
+	\item On a patch of the tiling of size $L$, maximal height scales as $\log L$, typical height as $\sqrt{\log L}$
 \end{itemize}
+We will find again all these features in 2D!
 \end{frame}
 
-\begin{frame}{Cut and project 1D models are special!}
+\begin{frame}{Cut and project chains are special!}
+Consider the chain constructed by the substitution
+\begin{align*}
+	A & \to ABBB \\
+	B & \to A
+\end{align*}
+\begin{columns}
+\<{6cm}
 \begin{itemize}
-	\item B3 substitution: a two letters, deterministic chain, that is non-Pisot $\rightarrow$ cannot be built by cut and project.
+	\item This substitution cannot be built by cut and project (because it is non-Pisot).
 	\item Height resembles a random walk, and typical height $\sim \sqrt{L}$
-	\item $\rightarrow$ wf localized 
+	\item As a result, the wavefunction is localized! 
 \end{itemize}
+\>
+\<{6cm}
+\includegraphics[scale=.5]{img/heightsB3.pdf}
+\>
+\end{columns}
+$\rightarrow$ criticality is sensitive to the \textbf{complexity} of the tiling
 \end{frame}
 
 \section{2D case}
 \subsection{Dummy}
 
-\begin{frame}{Construction of the model: Ammann-Beenker and Penrose}
+\begin{frame}{2D cut and project tilings}
+Results stated in this part will be valid for 2 cut and project 2D tilings: the Penrose and the Ammann-Beenker tilings.
 \begin{columns}
 \begin{column}{5cm}
 {\centering
@@ -337,24 +397,30 @@ Where $h$ is \textbf{the field of heights}, the integral of the field of arrows:
 }
 \end{column}
 \begin{column}{5cm}
+We consider start with the model:
 \[
-	-\sum_{n \in V(m)} \psi_n = E \psi_m
+	E \psi_m = t\sum_{n \in V(m)} \psi_n
 \]
-No parameters: the quasiperiodic features are encoded in the adjacency of the vertices.
+The quasiperiodic features are encoded in the adjacency of the vertices.
 \end{column}
 \end{columns}
 \end{frame}
 
 \begin{frame}{What is known}
+
+{\centering
+\includegraphics[scale=.1]{img/idos_AB_small.png}
+
+}
 \begin{itemize}
 	\item Spectrum is more regular: only a few gaps, no apparent fractal structure
-	\item $E = 0$ wfs are localized: too bad!
-	\item The other wf are critical (numerical result)
+	\item $E = 0$ eigenstates are localized: cannot hope to describe them with arrows.
+	\item The other states are critical (numerical result)
 \end{itemize}
-$\rightarrow$ can we introduce a field of arrows to describe some of these critical wfs?
+$\rightarrow$ can we introduce a field of arrows to describe some of these critical wavefunctions?
 \end{frame}
 
-\begin{frame}{The ground state}
+\begin{frame}{A natural field of arrows}
 \begin{itemize}
 	\item Sutherland's idea: introduce local potentials to make the construction of the grounstate simpler.
 	\item Sutherland's groundstates on Penrose and AB tilings is constructed via the introduction of a field of arrows, exactly like the 1D ones

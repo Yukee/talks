@@ -23,25 +23,31 @@
     		% initial chain
     	
     		% bonds 
-        	\draw[-] (\orig, 0)  node [left] {...}  -- (\orig+\trans, 0) node [midway, below] {$t_w$};
-			\draw[strong] (\orig+\trans,0) -- (\orig+2*\trans,0) node [midway, below] {$t_s$};
-			\draw[-] (\orig+2*\trans,0) -- (\orig+3*\trans,0) node [midway, below] {$t_w$};	
-			\draw[strong] (\orig+3*\trans,0) -- (\orig+4*\trans,0) node [midway, below] {$t_s$};
-			\draw[-] (\orig+4*\trans,0) -- (\orig+5*\trans,0) node [midway, below] {$t_w$};
-			\draw[-] (\orig+5*\trans,0) -- (\orig+6*\trans,0) node [midway, below] {$t_w$};
-			\draw[strong] (\orig+6*\trans,0) -- (\orig+7*\trans,0) node [midway, below] {$t_s$};
-			\draw[-] (\orig+7*\trans,0) -- (\orig+8*\trans,0) node [right] {...} node [midway, below] {$t_w$};
+        	\draw[-] (\orig, 0)  node [left] {...}  -- (\orig+\trans, 0) node [midway, below] {};
+			\draw[strong] (\orig+\trans,0) -- (\orig+2*\trans,0) node [midway, below] {};
+			\draw[-] (\orig+2*\trans,0) -- (\orig+3*\trans,0) node [midway, below] {};	
+			\draw[strong] (\orig+3*\trans,0) -- (\orig+4*\trans,0) node [midway, below] {};
+			\draw[-] (\orig+4*\trans,0) -- (\orig+5*\trans,0) node [midway, below] {};
+			\draw[-] (\orig+5*\trans,0) -- (\orig+6*\trans,0) node [midway, below] {};
+			\draw[strong] (\orig+6*\trans,0) -- (\orig+7*\trans,0) node [midway, below] {};
+			\draw[-] (\orig+7*\trans,0) -- (\orig+8*\trans,0) node [right] {...} node [midway, below] {};
     	
     		% sites
-			\filldraw (\orig+0*\trans,0) circle (\rad) node [below] {};
+			\filldraw (\orig+0*\trans,0) circle (\rad) node [below] {$h=0$} node [above] {$\psi=1$};
 			\filldraw (\orig+1*\trans,0) circle (\rad) node [below] {};
-			\filldraw (\orig+2*\trans,0) circle (\rad) node [below] {};
+			\filldraw (\orig+2*\trans,0) circle (\rad) node [below] {$h=1$} node [above] {$\psi=\rho$};
 			\filldraw (\orig+3*\trans,0) circle (\rad) node [below] {};
-			\filldraw (\orig+4*\trans,0) circle (\rad) node [below] {};
+			\filldraw (\orig+4*\trans,0) circle (\rad) node [below] {$h=2$} node [above] {$\psi = \rho^2$};
 			\filldraw (\orig+5*\trans,0) circle (\rad) node [below] {};
-			\filldraw (\orig+6*\trans,0) circle (\rad) node [below] {};
+			\filldraw (\orig+6*\trans,0) circle (\rad) node [below] {$h=2$} node [above] {$\psi = \rho^2$};
 			\filldraw (\orig+7*\trans,0) circle (\rad) node [below] {};
-			\filldraw (\orig+8*\trans,0) circle (\rad) node [below] {};
+			\filldraw (\orig+8*\trans,0) circle (\rad) node [below] {$h=1$} node [above] {$\psi = \rho$};
+			
+			% arrow
+			\path[->] (\orig+0*\trans,0) edge[bend right = 80] node [below] {+1} (\orig+2*\trans,0);
+			\path[->] (\orig+2*\trans,0) edge[bend right = 80] node [below] {+1} (\orig+4*\trans,0);
+			\path[->] (\orig+4*\trans,0) edge[bend right = 80] node [below] {+0} (\orig+6*\trans,0);
+			\path[->] (\orig+6*\trans,0) edge[bend right = 80] node [below] {-1} (\orig+8*\trans,0);
 
 		\end{tikzpicture}
 
