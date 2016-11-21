@@ -1,0 +1,102 @@
+\documentclass[../talk.tex]{subfiles}
+\begin{document}
+
+
+    	\begin{tikzpicture}[scale=.6]
+    		\newcommand{\orig}{-1.5}
+    		\newcommand{\trans}{1.5}
+    		\newcommand{\vertspac}{0.}
+    		\newcommand{\del}{.2}
+    		\newcommand{\rad}{2pt} % radii of the circles
+    	
+    		% set the style of the strong bonds
+    		\tikzset{
+    			strong/.style={
+    				double,
+    				double distance=\rad,
+    				line width=0.5pt
+    				}
+    		}
+    		
+    		% set the style of the selected bonds
+    		\tikzset{
+    			selected/.style={
+    				very thick,
+    				Complementary
+    				}
+    		}
+    		
+    		% initial chain
+    	
+    		% bonds 
+        	\draw[-,selected] (\orig, \vertspac)  node [left] {}  -- (\orig+\trans, \vertspac)  node [midway, above] {};
+			\draw[strong] (\orig+\trans,\vertspac) -- (\orig+2*\trans,\vertspac)  node [midway, above] {};
+			\draw[-] (\orig+2*\trans,\vertspac) -- (\orig+3*\trans,\vertspac) node [midway, above] {};	
+			\draw[strong] (\orig+3*\trans,\vertspac) -- (\orig+4*\trans,\vertspac) node [midway, above] {};
+			\draw[-,selected] (\orig+4*\trans,\vertspac) -- (\orig+5*\trans,\vertspac) node [midway, above] {};
+			\draw[-] (\orig+5*\trans,\vertspac) -- (\orig+6*\trans,\vertspac) node [midway, above] {};
+			\draw[strong] (\orig+6*\trans,\vertspac) -- (\orig+7*\trans,\vertspac) node [midway, above] {};
+			\draw[-] (\orig+7*\trans,\vertspac) -- (\orig+8*\trans,\vertspac) node [midway, above] {};
+    	
+    		% sites
+    		\filldraw[Complementary] (\orig+0*\trans,\vertspac) circle (\rad) node [above] {$h_0$} node [below] {$\psi_0$};
+    		\filldraw[Complementary] (\orig+1*\trans,\vertspac) circle (\rad) node [below] {};
+			\foreach \x in {2,...,3}
+				\filldraw (\orig+\x*\trans,\vertspac) circle (\rad); % node [below] {$\ket{\x}$};
+			\filldraw[Complementary] (\orig+4*\trans,\vertspac) circle (\rad) node [above] {$h_0 + 2$} node [below] {$\rho^2 \psi_0$};
+			\filldraw[Complementary] (\orig+5*\trans,\vertspac) circle (\rad) node [below] {};
+			\filldraw (\orig+6*\trans,\vertspac) circle (\rad) node [below] {};
+			\filldraw (\orig+7*\trans,\vertspac) circle (\rad) node [below] {};
+		    \filldraw (\orig+8*\trans,\vertspac) circle (\rad) node [below] {};
+		      
+		    \filldraw (\orig+5*\trans,0) circle (0) node [shift={(-0.4,0.3)}] {};
+		    
+		    % inflated chain part 1
+		    \renewcommand{\vertspac}{-2.5}
+		    \renewcommand{\orig}{-4}
+		    
+		    % bonds 
+        	\draw[-] (\orig, \vertspac)  node [left] {}  -- (\orig+\trans, \vertspac)  node [midway, above] {};
+			\draw[strong] (\orig+\trans,\vertspac) -- (\orig+2*\trans,\vertspac)  node [midway, above] {};
+			\draw[-] (\orig+2*\trans,\vertspac) -- (\orig+3*\trans,\vertspac) node [midway, above] {};	
+			\draw[strong] (\orig+3*\trans,\vertspac) -- (\orig+4*\trans,\vertspac) node [midway, above] {};
+			\draw[-] (\orig+4*\trans,\vertspac) -- (\orig+5*\trans,\vertspac) node [midway, above] {};
+    	
+    		% sites
+    		\filldraw (\orig+0*\trans,\vertspac) circle (\rad) node [above] {} node [below] {$\psi_0$};
+    		\filldraw (\orig+1*\trans,\vertspac) circle (\rad) node [below] {};
+			\filldraw (\orig+2*\trans,\vertspac) circle (\rad) node [below] {$\psi_2$};
+			\filldraw (\orig+3*\trans,\vertspac) circle (\rad) node [below] {};
+			\filldraw (\orig+4*\trans,\vertspac) circle (\rad) node [below] {$\psi_4$};
+			\filldraw (\orig+5*\trans,\vertspac) circle (\rad) node [right] {\dots};
+		    
+		    % inflated chain part 2
+		    \renewcommand{\vertspac}{-2.5}
+		    \renewcommand{\orig}{5.5}
+		    
+		    % bonds 
+        	\draw[-] (\orig, \vertspac)  node [left] {}  -- (\orig+\trans, \vertspac)  node [midway, above] {};
+			\draw[strong] (\orig+\trans,\vertspac) -- (\orig+2*\trans,\vertspac)  node [midway, above] {};
+			\draw[-] (\orig+2*\trans,\vertspac) -- (\orig+3*\trans,\vertspac) node [midway, above] {};	
+			\draw[strong] (\orig+3*\trans,\vertspac) -- (\orig+4*\trans,\vertspac) node [midway, above] {};
+			\draw[-] (\orig+4*\trans,\vertspac) -- (\orig+5*\trans,\vertspac) node [midway, above] {};
+    	
+    		% sites
+    		\filldraw (\orig+0*\trans,\vertspac) circle (\rad) node [left] {\dots} node [below] {$\rho^2 \psi_0$};
+    		\filldraw (\orig+1*\trans,\vertspac) circle (\rad) node [below] {};
+			\filldraw (\orig+2*\trans,\vertspac) circle (\rad) node [below] {$\rho^2 \psi_2$};
+			\filldraw (\orig+3*\trans,\vertspac) circle (\rad) node [below] {};
+			\filldraw (\orig+4*\trans,\vertspac) circle (\rad) node [below] {$\rho^2 \psi_4$};
+			\filldraw (\orig+5*\trans,\vertspac) circle (\rad) node [right] {};
+		      
+		    \filldraw (\orig+5*\trans,0) circle (0) node [shift={(-0.4,0.3)}] {};
+		    
+		    % arrows
+		    
+		    \draw [->] (\orig+.35*\trans,-\del) -- (\orig+5*\trans,\vertspac+\del) node [midway, right] {};
+		    \draw [->] (\orig-.6*\trans,-\del) -- (\orig+0*\trans,\vertspac+\del) node [midway, right] {};
+		    
+
+		\end{tikzpicture}
+
+\end{document}

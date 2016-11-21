@@ -189,13 +189,13 @@ Challenge: find a proper description of these eigenstates...
 	\item Eigenstates on periodic materials: 
 	\begin{itemize}
 		\item Plane waves 
-		\item \textbf{constant} amplitude $\rightarrow$ \textbf{extended states}
+		\item \textbf{uniform} probability $\rightarrow$ \textbf{extended states}
 	\end{itemize}
 	\subfile{img/periodic_chain.tex}
 	\item Eigenstates on disordered materials: 
 	\begin{itemize}
 		\item Evanescent waves
-		\item  \textbf{exponentially decreasing} amplitude $\rightarrow$ \textbf{localized states}
+		\item  \textbf{exponentially decreasing} probability $\rightarrow$ \textbf{localized states}
 	\end{itemize}
 	\subfile{img/disordered_chain.tex}
 \end{itemize}
@@ -288,13 +288,13 @@ What is the structure of these critical states?
 \end{frame}
 
 \begin{frame}{The field of arrows and the field of heights}
-Iterating $\psi_{m+1} = \rho^{A_{m-1,m+1}} \psi_{m-1}$ we can compute the wavefunction on any site:
+Iterating $\psi_{m+1} = \rho^{A_{m-1,m+1}} \psi_{m-1}$,
 \[
-	\psi_{2m} = \psi_0 \rho^{h(m)}
+	\psi_{m} = \psi_0 \rho^{h(m)}
 \]
 Where $h$ is \textbf{the field of heights}, the integral of the field of arrows:
 \[
-	h(m) = \sum_{n=0}^m A_{n, n+2}
+	h(m) = \sum_{n=1}^{m/2} A_{2n-2, 2n}
 \]
 
 Example (piece of the Fibonacci chain):
@@ -308,58 +308,59 @@ Example (piece of the Fibonacci chain):
 	\item Periodic chain: 
 	\subfile{img/periodic_chain_arrows.tex}
 	\begin{itemize}
-		\item Arrows $= 0 \implies h(m) = 0 \implies \psi_m = $ cst  
-		\item \textbf{constant} amplitude $\rightarrow$ \textbf{extended states}
+		\item Arrows $= 0 \implies h(m) = 0 \implies \psi_m = \psi_0 \rho^{0} = $ cst  
+		\item \textbf{uniform} probability $\rightarrow$ \textbf{extended states}
 	\end{itemize}
 	\item Disordered chain: 
 	\subfile{img/disordered_chain_arrows.tex}
 	\begin{itemize}
-		\item Arrows randomly distributed $\implies h(m) \sim \langle A \rangle \times m \implies \psi_m \sim e^{- m/\xi}$ with $\xi^{-1} = |\log \rho| \langle A \rangle$
+		\item Arrows randomly distributed $\implies h(m) \sim \langle A \rangle \times m \implies \psi_m \sim \rho^{\langle A \rangle \times m} \sim e^{- m/\xi}$ with $\xi^{-1} = |\log \rho| \langle A \rangle$
 		\item  \textbf{exponentially decreasing} amplitude $\rightarrow$ \textbf{localized states}
 	\end{itemize}
 \end{itemize}
-The arrows give another interpretation to these well known results.
+$\rightarrow$ expected behavior in both cases.
 
 What happens for a quasiperiodic chain?
 \end{frame}
 
-\begin{frame}{Fibonacci chain and the inflation}
-The Fibonacci chain can be constructed by cut and project, but also by \textbf{inflation}
-
-{
-\centering
-\subfile{img/atomic_inflation.tex}
-}
-
+\begin{frame}{The $E=0$ state is not localized}
 \begin{columns}
 \<{6cm}
-Properties of the height under inflation:
-\begin{itemize}
-	\item On the old sites, \textbf{height remains constant}
-	\item On newly created sites \textbf{height increases at most linearly} $\implies$ on a region of size $L$, height increases at most as $\log L$, typically as $\sqrt{\log L}$.
-\end{itemize}
+Apply the substitution three times:
+	\[	
+	M^3: \left\{\begin{array}{ll} \A \to & \A \B \A \B \A \\ \B \to & \A \B \A
+	\end{array}\right.	
+	\]
 \>
-
 \<{6cm}
-{\centering
-\includegraphics[scale=.5]{img/heights.pdf}
-
+{
+\centering
+\subfile{img/atomic_inflation_no_localization.tex}
 }
 \>
 \end{columns}
-
+$\rightarrow$ the height is invariant under the substitution $M^3$: it doesn't change on the preexisting sites
+\begin{itemize}
+	\item the wavefunction doesn't change on the preexisting sites
+	\item these preexisting sites get arbitrary far apart as we iterate the substitution 
+\end{itemize}
+$\rightarrow$ we can find the electron with high probability arbitrarily far from the origin: \textbf{the wavefunction cannot be localized.}
 \end{frame}
 
-\begin{frame}{The Fibo arrows and the Fibo wf}
-\begin{itemize}
-	\item On old sites the height/ the wavefunction stays constant, and old sites can be arbitrarily far away $\rightarrow$ \textbf{the wavefunction cannot be localized}
-	\item The height is scale invariant, and so is the wavefunction: $\psi(b \times r) = b^\alpha \psi(r) $ $\rightarrow$ \textbf{the wavefunction cannot be extended}: is behaves locally as a power law
-\end{itemize}
-Conclusion: \textbf{the wavefunction is critical.}
+\begin{frame}{The $E=0$ state is not extended}
+{
+
+\centering
+\subfile{img/atomic_inflation_no_extension.tex}
+}
+
 \begin{columns}
 \<{6cm}
-\centering
-\subfile{img/atomic_inflation2.tex}
+The wavefunction has local scale invariances:
+\[
+	\psi_{a \times m} = \rho^b \times \psi_{m} 
+\]
+$\rightarrow$ far from the origin, it is most of the time arbitrarily small, and thus \textbf{cannot be extended}
 \>
 
 \<{6cm}
@@ -369,6 +370,7 @@ Conclusion: \textbf{the wavefunction is critical.}
 }
 \>
 \end{columns}
+
 \end{frame}
 
 \begin{frame}{Cut and project chains: a summary}
