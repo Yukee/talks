@@ -23,14 +23,14 @@
     		% initial chain
     	
     		% bonds 
-        	\draw[-] (\orig, 0)  node [left] {...}  -- (\orig+\trans, 0) node [midway, below] {$t_w$};
-			\draw[strong] (\orig+\trans,0) -- (\orig+2*\trans,0) node [midway, below] {$t_s$};
-			\draw[-] (\orig+2*\trans,0) -- (\orig+3*\trans,0) node [midway, below] {$t_w$};	
-			\draw[strong] (\orig+3*\trans,0) -- (\orig+4*\trans,0) node [midway, below] {$t_s$};
-			\draw[-] (\orig+4*\trans,0) -- (\orig+5*\trans,0) node [midway, below] {$t_w$};
-			\draw[-] (\orig+5*\trans,0) -- (\orig+6*\trans,0) node [midway, below] {$t_w$};
-			\draw[strong] (\orig+6*\trans,0) -- (\orig+7*\trans,0) node [midway, below] {$t_s$};
-			\draw[-] (\orig+7*\trans,0) -- (\orig+8*\trans,0) node [right] {...} node [midway, below] {$t_w$};
+        	\draw[-] (\orig, 0)  node [left] {...}  -- (\orig+\trans, 0) node [midway, below] {$t_w$} node [midway, above] {\A};
+			\draw[strong] (\orig+\trans,0) -- (\orig+2*\trans,0) node [midway, below] {$t_s$}node [midway, above] {\B};
+			\draw[-] (\orig+2*\trans,0) -- (\orig+3*\trans,0) node [midway, below] {$t_w$}node [midway, above] {\A};
+			\draw[strong] (\orig+3*\trans,0) -- (\orig+4*\trans,0) node [midway, below] {$t_s$}node [midway, above] {\B};
+			\draw[-] (\orig+4*\trans,0) -- (\orig+5*\trans,0) node [midway, below] {$t_w$}node [midway, above] {\A};
+			\draw[-] (\orig+5*\trans,0) -- (\orig+6*\trans,0) node [midway, below] {$t_w$}node [midway, above] {\A};
+			\draw[strong] (\orig+6*\trans,0) -- (\orig+7*\trans,0) node [midway, below] {$t_s$}node [midway, above] {\B};
+			\draw[-] (\orig+7*\trans,0) -- (\orig+8*\trans,0) node [right] {...} node [midway, below] {$t_w$}node [midway, above] {\A};
     	
     		% sites
 			\foreach \x in {0,...,8}

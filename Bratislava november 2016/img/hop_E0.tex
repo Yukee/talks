@@ -1,16 +1,24 @@
 \documentclass[../talk.tex]{subfiles}
 \begin{document}
 
-		\begin{tikzpicture}[->,>=stealth,scale=.7]
+		\begin{tikzpicture}[scale=.7]
     		\newcommand{\orig}{-1.5}
     		\newcommand{\trans}{1.5}
     		\newcommand{\vertspac}{-2.}
-    	
-    		% initial chain
+    		\newcommand{\rad}{2pt} % radii of the circles
+    		
+    		% set the style of the strong bonds
+    		\tikzset{
+    			strong/.style={
+    				double,
+    				double distance=\rad,
+    				line width=0.5pt
+    				}
+    		}
     	
     		% bonds 
         	\draw[-] (\orig+\trans,0) -- (\orig+2*\trans,0) node [midway, below] {$t_{w}$};
-			\draw[-,double] (\orig+2*\trans,0) -- (\orig+3*\trans,0) node [midway, below] {$t_{s}$};	
+			\draw[strong] (\orig+2*\trans,0) -- (\orig+3*\trans,0) node [midway, below] {$t_{s}$};	
     	
     		% sites
 		    \filldraw (\orig+1*\trans,0) circle (0.05) node [left] {...} node [above] {$\psi_ {m-1}$};
@@ -18,7 +26,7 @@
 		    \filldraw (\orig+3*\trans,0) circle (0.05) node [right] {...} node [above] {$\psi_{m+1}$};
 
 			% arrow
-			\path[every node/.style={font=\sffamily\small}]
+			\path[->]
 			(\orig+1*\trans,0) edge[bend right = 80] node [right] {} (\orig+3*\trans,0);
 		      
 		\end{tikzpicture}
