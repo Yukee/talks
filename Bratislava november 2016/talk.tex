@@ -1,4 +1,4 @@
-\documentclass[xcolor=x11names,compress,professionalfonts]{beamer}
+\documentclass[xcolor=x11names,compress,professionalfonts, aspectratio=169]{beamer}
 
 %% General packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \usepackage[utf8]{inputenc}
@@ -104,7 +104,7 @@
   Université Paris-Saclay
 }
 
-\date{September 20, 2016}
+\date{November 23, 2016}
 
 \titlepage
 
@@ -120,7 +120,7 @@
 \end{column}
 \begin{column}{6cm}
 \centering
-\includegraphics[width=.7\textwidth]{img/cover.png}
+\includegraphics[width=.8\textwidth]{img/cover.png}
 \end{column}
 \begin{column}{2cm}
 ~\\
@@ -156,26 +156,25 @@ We want to model:
 \end{itemize}
 
 \begin{columns}
-\<{4cm}
+\<{5cm}
 \[
 	i \frac{\partial \phi_m}{\partial t}(t) = \sum_{n \in V(m)} t_{m,n} \phi_n(t)
 \]
 $|\phi_m(t)|^2= $ proba to be on atom $m$ at time $t$.
 \>
 
-\<{2cm}
-\includegraphics[scale=0.34]{img/ham_example.pdf}
+\<{5cm}
+\centering
+\includegraphics[scale=0.45]{img/ham_example.pdf}
 \>
 
-\<{3cm}
+\<{5cm}
 Solve for the stationary states (or eigenstates):
 \[
 	E \psi_m = \sum_{n \in V(m)} t_{m,n} \psi_n
 \]
 \>
 \end{columns}
-
-Challenge: find a proper description of these eigenstates... 
 \end{frame}
 
 \begin{frame}
@@ -204,7 +203,7 @@ Challenge: find a proper description of these eigenstates...
 \textcolor{Complementary}{We will see on examples their electrons are somewhat \textbf{in between}: the wavefunctions have local power law decay, they are \textbf{critical}}
 \end{frame}
 
-\section{1D models: a ``baby example''}
+\section{1D model (Fibonacci chain): a ``baby example''}
 %Each section needs a subsection for the small points on top to show up
 \subsection{Dummy}
 
@@ -344,7 +343,7 @@ $\rightarrow$ the height is invariant under the substitution $M^3$: it doesn't c
 	\item the wavefunction doesn't change on the preexisting sites
 	\item these preexisting sites get arbitrary far apart as we iterate the substitution 
 \end{itemize}
-$\rightarrow$ we can find the electron with high probability arbitrarily far from the origin: \textbf{the wavefunction cannot be localized.}
+$\rightarrow$ we can find the electron with high probability arbitrarily far from the origin: \textbf{the wavefunction is not localized.}
 \end{frame}
 
 \begin{frame}{The $E=0$ state is not extended}
@@ -355,14 +354,14 @@ $\rightarrow$ we can find the electron with high probability arbitrarily far fro
 }
 
 \begin{columns}
-\<{6cm}
+\<{7cm}
 {\centering
 \includegraphics[scale=.5]{img/wavefunction.pdf}
 
 }
 \>
 
-\<{6cm}
+\<{7cm}
 Local scale invariance:
 \[
 	\psi_{a \times m} = b \times \psi_{m} 
@@ -371,7 +370,7 @@ $\rightarrow$ local \textbf{power law decay}
 \[
 \psi_{r_n} \sim r_n^\alpha, ~(\alpha = \log b/\log a)
 \]
-$\rightarrow$ \textbf{wavefunction cannot be extended}
+$\rightarrow$ \textbf{wavefunction is not extended}
 \>
 \end{columns}
 
@@ -379,15 +378,15 @@ $\rightarrow$ \textbf{wavefunction cannot be extended}
 
 \begin{frame}{Cut and project chains: a summary}
 \begin{itemize}
-	\item The $E=0$ wavefunction of cut and project chains can be described by a \textbf{height field}
+	\item The $E=0$ wavefunction of cut and project chains is described by a \textbf{height field}
 	\item The height field is the integral of an \textbf{arrow field}, which is quasiperiodic
-	\item As a result, \textbf{the wavefunction is critical}: it behaves locally as a power law
-	\item On a patch of the tiling of size $L$, maximal height scales as $\log L$, typical height as $\sqrt{\log L}$
+	\item Geometry of the tiling $\implies$ structural properties of the wavefunction
+	\item $\rightarrow$ \textbf{the wavefunction is critical}: neither localized nor extended, behaves locally as a power law
 \end{itemize}
 We will find again all these features in 2D!
 \end{frame}
 
-\section{2D models: the ``grown-up example''}
+\section{2D models (Penrose and Ammann-Beenker tilings): the ``grown-up example''}
 \subsection{Dummy}
 
 \begin{frame}{2D tilings}
@@ -395,83 +394,170 @@ We consider the Penrose and the Ammann-Beenker tilings.
 \begin{columns}
 \begin{column}{5cm}
 {\centering
-\includegraphics[scale=.08]{img/ammann-beenker.png}
+\includegraphics[scale=.09]{img/penrose.png}
 
 }
 \end{column}
 \begin{column}{5cm}
 {\centering
-\includegraphics[scale=.08]{img/penrose.png}
+\includegraphics[scale=.09]{img/ammann-beenker.png}
 
 }
 \end{column}
-\end{columns}
-Model:
+\<{4cm}
+Model for the electron:
 \[
 	E \psi_m = V_m \psi_m + t\sum_{n \in V(m)} \psi_n
 \]
-The quasiperiodic features are encoded in the adjacency of the vertices.
+\>
+\end{columns}
+
 \end{frame}
 
 \begin{frame}{What is known}
+
+Local density of states [taken from Zijlstra 2014]:
 
 {\centering
 \includegraphics[scale=.1]{img/idos_AB_small.png}
 
 }
 \begin{itemize}
-	\item Spectrum is more regular: only a few gaps, no apparent fractal structure
-	\item $E = 0$ eigenstates are localized: cannot hope to describe them with arrows.
-	\item The other states are critical (numerical result)
+	\item Spectrum: no apparent fractal structure
+	\item States are critical (numerical result, eg [Rieth, Schreiber 1998])
 \end{itemize}
 $\rightarrow$ can we introduce a field of arrows to describe some of these critical wavefunctions?
 \end{frame}
 
 \begin{frame}{A natural field of arrows}
 
-\end{frame}
+In superspace, arrows go from the center to the border of the slice:
 
-\begin{frame}{Inflation and the field of arrows}
-Here we focus on the AB example, but everything works the same for Penrose.
+{\centering
+\includegraphics[scale=.8]{img/cut_and_project_arrows.pdf}
+
+}
+
+\begin{columns}
+\<{7cm}
 \begin{itemize}
-	\item Arrows $\leftrightarrow$ matching rules for the tiles 
-	\item Matching rules are enforced by the inflation rules $\rightarrow$ we should be able to study the properties of the arrows via the inflation (just like in 1D)
-	\item From the inflation rules, we deduce the maximal height $\sim \log L$
-	\item Statistics of the heights $P_\mu^{l}(h)$ obeys a diffusion-like equation where $l$ plays the role of time and $h$ the role of space
-	\item $\rightarrow$ typical height is $\sim \sqrt{\log L}$
+	\item Define arrows in the same way for 2D tilings
+	\item Consider again the height: $h(m) = \sum A$
 \end{itemize}
-So we understand everything about Stutherland's wavefunction, but the model has been built for this wavefunction to exist. 
-Can we use this field of arrows to describe wavefunctions on more realistic models?
-Yes: Pavel.
+	Can we describe states with this arrow field? $\psi_m = \rho^{h(m)}$
+\>
+\<{7cm}
+{\centering
+\includegraphics[scale=.9]{img/arrowed_tiling_excerpt.pdf}
+
+}
+\>
+\end{columns}
+
 \end{frame}
 
-\begin{frame}{Characterization of the groundstate wavefunction}
+\begin{frame}{The groundstate wavefunction}
+Can we find an ``arrowed state'' $\psi_m = \rho^{h(m)}$ ?
 \begin{itemize}
-	\item We go back to the model with no local potentials. 
-	\item From the plot of the groundstate: we see a complicated local structure (role of the local environment) and the phason line (role of the arrow field)
-	\item Indeed, the wf decomposes into a local part and an arrow part (this was guessed from involved algebraic arguments).
-	\item Computation of the IPR scaling and the multifractal exponents: the local part doesn't play any role $\rightarrow$ exponents only sensitive to the arrow part, ie to the quasiperiodicity!
-	\item Remains valid for a larger class of models $H = \sum_{\langle i, j \rangle} \ket{i} \bra{j} + V_i \ket{i} \bra{i} $
+\item Idea [Sutherland 1986]: tune the potential
+\[
+	E \psi_m = V_m \psi_m + t \sum_{n \in V(m)} \psi_n \Longleftrightarrow V_m = E - t\sum_n \beta^{A_{m,n}}
+\]
+Obtain a groundstate which is an arrowed state.
+
+Not very physical! Generically, potential is not finely tuned.
+
+\item ~[Kalugin, Katz 2014] conjecture: state still arrowed, but with a local modulation:
+\[
+	\psi_m = C_{m} \rho^{h(m)}
+\]
+where $C_m$ is local:
+\[
+	C_m \simeq C_n \text{~ if the tiling looks the same around $m$ and $n$}
+\]
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Robustness of the structure}
+
+\begin{columns}
+\<{8cm}
+\includegraphics[scale=.5]{img/gs.png}
+\>
+\<{6cm}
+\begin{itemize}
+\item The groundstate is \textbf{very robust}: 
+
+For any model of the form
+\[
+	E \psi_m = V_m \psi_m + t\sum_{n} \psi_n
+\]
+the groundstate is an ``arrowed state''
+\[
+  \psi_m = C_m \rho^{h(m)}
+\]
+\item Same arguments as in 1D: the state has power law decay, and is critical.
+\end{itemize}
+$\rightarrow$ what can we do now?
+\>
+\end{columns}
+\end{frame}
+
+\begin{frame}{Scaling of the groundstate}
+
+\begin{columns}
+\<{7cm}
+\begin{itemize}
+	\item Participation ratio over a region $\mathcal{R}$:
+	\[
+		\text{PR}(\psi, \mathcal{R}) = \frac{\left( \sum_{m \in \mathcal{R}}|\psi_m|^2 \right)^2}{\left( \sum_{m\in \mathcal{R}} |\psi_m|^4 \right)^4}
+	\]
+	\item Scaling with the region volume $\text{Vol}(\mathcal{R})$:
+	\[
+		\text{PR}(\psi, \mathcal{R}) \sim \text{Vol}(\mathcal{R})^{D(\psi)}
+	\]
+	\begin{itemize}
+		\item $D(\psi) = 0 \implies \psi$ localized
+		\item $D(\psi) = 1 \implies \psi$ extended
+		\item $0 < D(\psi) < 1 \implies \psi$ critical
+ 	\end{itemize}
+\end{itemize}
+\>
+
+\<{7cm}
+We can compute the scaling analytically for the groundstate:
+\[
+\boxed{
+D(\psi) = \log\left( \frac{\omega(\rho^2)^2}{\omega(\rho^4)}\right)/\log \omega(1)
+}
+\]
+with (for Ammann-Beenker)
+\begin{align*}
+\omega(z) &= \frac{a(z)+\sqrt{a(z)^2 - z^2}}{z} \\
+a(z) &= 4 z^2 + 9 z + 4
+\end{align*}
+Scaling only depends on the arrow distribution, only on the \textbf{geometry} of the tiling.
+\>
+\end{columns}
+\end{frame}
+
+\section{Conclusion and perspectives}
+\subsection{Dummy}
 \begin{frame}{Conclusion}
 \begin{itemize}
-	\item Non-interacting eigenstates on quasicrystals are generically critical: here we were able to understand it for some specific states, both in 1D and 2D.
-	\item On our examples, wavefunction construction involves a geometrical quasiperiodic function, the field of arrows.
-	\item Its integral, the height function, has logarithmic growth,
-	\item As a result, the wavefunction is critical: it has a local power law behavior.
+	\item Examples of generic \textbf{critical} eigenstates.
+	\begin{itemize}
+		\item 1D (Fibonacci): the $E=0$ state
+		\item 2D (Penrose and Ammann-Beenker): the groundstate.
+	\end{itemize}
+	\item Geometry $\rightarrow$ quasiperiodic \textbf{arrow function} $\rightarrow$ structure of the state.
+	\item In 2D, structure \textbf{robust to changes in the model} (varying potential, hopping)
+	\item Using this description, we can easily compute physical quantities.
 \end{itemize}
 Perspectives:
 \begin{itemize}
-	\item What happens for the grounstate of other quasicrystals, like the dodecagonal ones?
-	\item For Penrose and AB, the arrow field cannot be used to describe other states. What extra ingredients are required?
-\end{itemize}
-\end{frame}
-
-\begin{frame}{More perpsectives!}
-\begin{itemize}
-	\item A plot of the state just below the gap, with its quasiperiodic array of lines of zeros, that remain to be understood!
+	\item For Penrose and Ammann-Beenker, the arrow field is not enough to describe excited states. Extra ingredients?
+	\item Other 2D quasicrystals: generalized Penrose, dodecagonal \dots
 \end{itemize}
 \end{frame}
 
@@ -497,6 +583,39 @@ Consider the chain constructed by the substitution
 $\rightarrow$ criticality is sensitive to the \textbf{complexity} of the tiling
 \end{frame}
 
+\begin{frame}{Theory/numerics on the 2D groundstate}
+\begin{columns}
+\<{7cm}
+\centering
+\includegraphics[scale=.4]{img/fractal_exponents_groundstate.png}
+\>
+\<{7cm}
+\[
+	t \sum_{n \in V(m)} \psi_n + (t-1)z_m \psi_m = E \psi_m
+\]
+\centering
+\includegraphics[scale=.6]{img/beta_t.pdf}
+\[
+	\psi_m = C_m \beta^{h(m)}
+\]
+\>
+\end{columns}
+\end{frame}
 
+\begin{frame}{Computation of a local observable}
+Compute the local observable $\hat{O}$, in the $\psi$ state: $\braket{\psi | \hat{O} | \psi}$
+
+Assumptions:
+\begin{itemize}
+	\item The observable only depends on the local configuration of the atoms.
+	\item The state is described by an arrow field and a local variation: $\psi_m = C_m \rho^{h(m)}$
+\end{itemize}
+\[
+	\braket{\psi | \hat{O} | \psi} = \sum_{m,n} \psi_m^* \hat{O}_{m,n} \psi_n
+\]
+\[
+\boxed{\braket{\psi | \hat{O} | \psi} = \sum_{\mu, \nu}C_{\mu}^* \hat{O}_{\mu,\nu} C_{\nu} \sum_{h,h'} f(\mu, h; \nu, h') \rho^{h+h'}}
+\]
+\end{frame}
 
 \end{document}
