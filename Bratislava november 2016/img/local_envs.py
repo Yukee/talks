@@ -154,7 +154,7 @@ def arrowed_graph(tiling, l, width):
             arrG.remove_edge(*ed)
     
     # plot the arrowed graph
-    QGraph.plot(arrG, weights=width, s = 30.)
+    QGraph.plot(arrG, weights=width, s = 0.)
             
     return None
 
