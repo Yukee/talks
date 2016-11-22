@@ -158,7 +158,7 @@ We want to model:
 \begin{columns}
 \<{5cm}
 \[
-	i \frac{\partial \phi_m}{\partial t}(t) = \sum_{n \in V(m)} t_{m,n} \phi_n(t)
+	i \frac{\partial \phi_m}{\partial t}(t) = \sum_{n ~\text{NN}~m} t_{m,n} \phi_n(t)
 \]
 $|\phi_m(t)|^2= $ proba to be on atom $m$ at time $t$.
 \>
@@ -171,7 +171,7 @@ $|\phi_m(t)|^2= $ proba to be on atom $m$ at time $t$.
 \<{5cm}
 Solve for the stationary states (or eigenstates):
 \[
-	E \psi_m = \sum_{n \in V(m)} t_{m,n} \psi_n
+	E \psi_m = \sum_{n ~\text{NN}~m} t_{m,n} \psi_n
 \]
 \>
 \end{columns}
@@ -200,7 +200,7 @@ Solve for the stationary states (or eigenstates):
 \end{itemize}
 \textbf{What about quasiperiodic materials?}
 
-\textcolor{Complementary}{We will see on examples their electrons are somewhat \textbf{in between}: the wavefunctions have local power law decay, they are \textbf{critical}}
+\textcolor{Complementary}{We will see on examples their electrons are somewhat \textbf{in between}: the wavefunctions have power law decays, they are \textbf{critical}}
 \end{frame}
 
 \section{1D model (Fibonacci chain): a ``baby example''}
@@ -242,6 +242,7 @@ What can be say about the spectrum/eigenstates of this model?
 {\centering
 \includegraphics[scale=.5]{img/ldos.pdf}
 
+\small{(Spectrum computed for $\rho=0.5$)}
 }
 	\item The eigenstates are all critical (neither localized nor extended)
 \end{itemize}
@@ -341,7 +342,7 @@ Apply the substitution three times:
 $\rightarrow$ the height is invariant under the substitution $M^3$: it doesn't change on the preexisting sites
 \begin{itemize}
 	\item the wavefunction doesn't change on the preexisting sites
-	\item these preexisting sites get arbitrary far apart as we iterate the substitution 
+	\item these preexisting sites get arbitrarily far apart as we iterate the substitution 
 \end{itemize}
 $\rightarrow$ we can find the electron with high probability arbitrarily far from the origin: \textbf{the wavefunction is not localized.}
 \end{frame}
@@ -380,7 +381,7 @@ $\rightarrow$ \textbf{wavefunction is not extended}
 \begin{itemize}
 	\item The $E=0$ wavefunction of cut and project chains is described by a \textbf{height field}
 	\item The height field is the integral of an \textbf{arrow field}, which is quasiperiodic
-	\item Geometry of the tiling $\implies$ structural properties of the wavefunction
+	\item Geometry of the tiling $\implies$ structure of the wavefunction
 	\item $\rightarrow$ \textbf{the wavefunction is critical}: neither localized nor extended, behaves locally as a power law
 \end{itemize}
 We will find again all these features in 2D!
@@ -407,8 +408,10 @@ We consider the Penrose and the Ammann-Beenker tilings.
 \<{4cm}
 Model for the electron:
 \[
-	E \psi_m = V_m \psi_m + t\sum_{n \in V(m)} \psi_n
+	E \psi_m = V_m \psi_m + \sum_{n ~\text{NN}~m} t \psi_n
 \]
+
+Quasiperiodicity encoded in the adjacency of the vertices
 \>
 \end{columns}
 
@@ -441,14 +444,14 @@ In superspace, arrows go from the center to the border of the slice:
 \begin{columns}
 \<{7cm}
 \begin{itemize}
-	\item Define arrows in the same way for 2D tilings
+	\item Define arrows in the same way for 2D tilings (they coincide with the \emph{matching rules})
 	\item Consider again the height: $h(m) = \sum A$
 \end{itemize}
-	Can we describe states with this arrow field? $\psi_m = \rho^{h(m)}$
+	Can we describe states with this arrow field? $\psi_m = \rho^{h(m)}$ (with $\rho$ a constant)
 \>
 \<{7cm}
 {\centering
-\includegraphics[scale=.9]{img/arrowed_tiling_excerpt.pdf}
+\includegraphics[scale=1.]{img/arrowed_tiling_excerpt.pdf}
 
 }
 \>
@@ -457,17 +460,17 @@ In superspace, arrows go from the center to the border of the slice:
 \end{frame}
 
 \begin{frame}{The groundstate wavefunction}
-Can we find an ``arrowed state'' $\psi_m = \rho^{h(m)}$ ?
+Can we find an ``arrowed state'' $\psi_m = \rho^{h(m)}$ ? (with $\rho$ a constant)
 \begin{itemize}
 \item Idea [Sutherland 1986]: tune the potential
 \[
-	E \psi_m = V_m \psi_m + t \sum_{n \in V(m)} \psi_n \Longleftrightarrow V_m = E - t\sum_n \beta^{A_{m,n}}
+	E \psi_m = V_m \psi_m + t \sum_{n ~\text{NN}~m} \psi_n \Longleftrightarrow V_m = E - t\sum_n \rho^{A_{m,n}}
 \]
 Obtain a groundstate which is an arrowed state.
 
 Not very physical! Generically, potential is not finely tuned.
 
-\item ~[Kalugin, Katz 2014] conjecture: state still arrowed, but with a local modulation:
+\item Guess [Kalugin, Katz 2014]: state still arrowed, but with a local modulation:
 \[
 	\psi_m = C_{m} \rho^{h(m)}
 \]
@@ -552,7 +555,7 @@ Scaling only depends on the arrow distribution, only on the \textbf{geometry} of
 	\end{itemize}
 	\item Geometry $\rightarrow$ quasiperiodic \textbf{arrow function} $\rightarrow$ structure of the state.
 	\item In 2D, structure \textbf{robust to changes in the model} (varying potential, hopping)
-	\item Using this description, we can easily compute physical quantities.
+	\item Using this description, we can easily compute physical observables.
 \end{itemize}
 Perspectives:
 \begin{itemize}
@@ -591,7 +594,7 @@ $\rightarrow$ criticality is sensitive to the \textbf{complexity} of the tiling
 \>
 \<{7cm}
 \[
-	t \sum_{n \in V(m)} \psi_n + (t-1)z_m \psi_m = E \psi_m
+	t \sum_{n ~\text{NN}~m} \psi_n + (t-1)z_m \psi_m = E \psi_m
 \]
 \centering
 \includegraphics[scale=.6]{img/beta_t.pdf}
