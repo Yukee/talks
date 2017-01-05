@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     52906,       1424]
+NotebookDataLength[     52895,       1424]
 NotebookOptionsPosition[     51101,       1360]
-NotebookOutlinePosition[     51437,       1375]
-CellTagsIndexPosition[     51394,       1372]
+NotebookOutlinePosition[     51427,       1375]
+CellTagsIndexPosition[     51384,       1372]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1358,9 +1358,9 @@ Cell[BoxData["\<\"/home/nicolas/git/talks/ICQ13 September \
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{960, 1011},
-WindowMargins->{{-1, Automatic}, {Automatic, -1}},
-FrontEndVersion->"10.1 for Linux x86 (64-bit) (March 23, 2015)",
+WindowSize->{960, 1149},
+WindowMargins->{{0, Automatic}, {0, 24}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
@@ -1375,41 +1375,41 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 145, 2, 44, "Subsection"],
-Cell[728, 26, 1030, 28, 121, "Input"]
+Cell[580, 22, 145, 2, 45, "Subsection"],
+Cell[728, 26, 1030, 28, 115, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1795, 59, 130, 1, 44, "Subsection"],
-Cell[1928, 62, 547, 18, 32, "Input"],
-Cell[2478, 82, 2554, 62, 121, "Input"],
-Cell[5035, 146, 1824, 50, 143, "Input"]
+Cell[1795, 59, 130, 1, 45, "Subsection"],
+Cell[1928, 62, 547, 18, 33, "Input"],
+Cell[2478, 82, 2554, 62, 95, "Input"],
+Cell[5035, 146, 1824, 50, 130, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6896, 201, 122, 1, 44, "Subsection"],
-Cell[7021, 204, 831, 26, 121, "Input"],
-Cell[7855, 232, 1644, 44, 143, "Input"],
-Cell[9502, 278, 846, 20, 55, "Input"],
-Cell[10351, 300, 4676, 126, 385, "Input"],
-Cell[15030, 428, 2587, 76, 275, "Input"]
+Cell[6896, 201, 122, 1, 45, "Subsection"],
+Cell[7021, 204, 831, 26, 110, "Input"],
+Cell[7855, 232, 1644, 44, 141, "Input"],
+Cell[9502, 278, 846, 20, 54, "Input"],
+Cell[10351, 300, 4676, 126, 357, "Input"],
+Cell[15030, 428, 2587, 76, 254, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[17654, 509, 112, 1, 44, "Subsection"],
-Cell[17769, 512, 1443, 36, 99, "Input"],
-Cell[19215, 550, 1775, 50, 121, "Input"],
-Cell[20993, 602, 2674, 71, 297, "Input"]
+Cell[17654, 509, 112, 1, 45, "Subsection"],
+Cell[17769, 512, 1443, 36, 95, "Input"],
+Cell[19215, 550, 1775, 50, 115, "Input"],
+Cell[20993, 602, 2674, 71, 273, "Input"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[23704, 678, 111, 1, 44, "Subsection"],
+Cell[23704, 678, 111, 1, 45, "Subsection"],
 Cell[CellGroupData[{
-Cell[23840, 683, 922, 28, 121, "Input"],
+Cell[23840, 683, 922, 28, 112, "Input"],
 Cell[24765, 713, 833, 15, 53, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[25635, 733, 1157, 34, 121, "Input"],
+Cell[25635, 733, 1157, 34, 112, "Input"],
 Cell[26795, 769, 1274, 24, 57, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[28106, 798, 1365, 36, 99, "Input"],
+Cell[28106, 798, 1365, 36, 71, "Input"],
 Cell[29474, 836, 6418, 159, 191, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
@@ -1430,4 +1430,3 @@ Cell[50921, 1354, 152, 2, 32, "Output"]
 ]
 *)
 
-(* End of internal cache information *)

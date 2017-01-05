@@ -119,6 +119,8 @@ Such observation makes theoretical studies of the spectral gaps particularly rel
 		\caption{\small{The a recursive construction of the Fibonacci spectrum.}}
 		\label{fig:fibospec}
 	\end{minipage}
+	%
+	\center{\small{Energy spectra of the first few Fibonacci approximants. Here we took $\rho = 0.5$, and the spectra were approximated using the renormalization group method \cite{Niu90, Piechon95}.}}
 \end{figure}
 
 We now examine in detail the special case of the Fibonacci chain, which will give us more insights.
@@ -145,8 +147,8 @@ Using the recursive spectrum construction of figure \eqref{fig:fibospec} we see 
 We have the following recursive relations \cite{fiboperturbMace}:
 \begin{align}
 	G_{l}^{\text{left}} &= \sub^{-2} G_{l-2} \\
-	G_{l}^0 &= \sub^{-3} G_{l-3} \\
-	G_{l}^\text{right} &= \sub^{-2} G_{l-2}
+	G_{l}^0 &= \sub^{-3} G_{l-3} + \gv_1\\
+	G_{l}^\text{right} &= \sub^{-2} G_{l-2} + \gv_2
 \end{align}
 where $\gv_1 = (1, -1)$ and $\gv_2 = (0, 1)$ are the labels of the two main gaps (corresponding to $n = \pm 1$, see figure \eqref{fig:fibogaps}),
 and $\sub$ is the geometrical substitution matrix
@@ -172,40 +174,46 @@ We now turn to the general characterization of the transient and stable gaps in 
 	\begin{minipage}{0.3\textwidth}
 		\centering
 		\includegraphics[width=1.\textwidth]{img/loggapwidth_Fibonacci_l_16.pdf}
-		\caption{\small{Fibonacci chain}}
+		\caption{\small{Fibonacci chain of $N_{16} = 987$ atoms.}}
 		\label{fig:width1}
 	\end{minipage}~~
 	\begin{minipage}{0.3\textwidth}
 		\centering
 		\includegraphics[width=1.\textwidth]{img/loggapwidth_Silver_l_10.pdf}
-		\caption{\small{Silver mean chain}}
+		\caption{\small{Silver mean chain of $N_{10} = 1393$ atoms.}}
 		\label{fig:width2}
 	\end{minipage}~~
 	\begin{minipage}{0.3\textwidth}
 		\centering
 		\includegraphics[width=1.\textwidth]{img/loggapwidth_sqrt3_l_12.pdf}
-		\caption{\small{Chain $\alpha = \sqrt{3}-1$.}}
+		\caption{\small{Chain $\alpha = \sqrt{3}-1$ of $N_{12} = 989$ atoms.}}
 		\label{fig:width3}
 	\end{minipage}
-	\center{\small{Gap width as a function of gap label for several quasiperiodic chains. Blue: stable gap, red: transient gaps, according to criterion \eqref{eq:overlapcriterion}.}}
+	\center{\small{Gap width as a function of gap label for several quasiperiodic chains. Blue: stable gap, red: transient gaps, according to criterion \eqref{eq:overlapcriterion}. The ratio of the couplings was set arbitrarily to $\rho = 0.5$.}}
 \end{figure}
 
 
-In the previous part, we considered a gap of label $n$ to be transient if its width $\Delta_l(n)$ vanished:
+In the previous part, we considered a gap centered around energy $\overline{E}$ to be transient if its width $\Delta_l(\overline{E})$ vanished:
 \begin{equation}
 \label{eq:limitcriterion}
-	\Delta_l(n) \xrightarrow[l \to \infty]{} 0
+	\Delta_l(\overline{E}) \xrightarrow[l \to \infty]{} 0
 \end{equation}
 We introduce here a more practical criterion.
-Let $\overline{E}_l(n)$ be the mean energy inside the gap $n$.
+Let $\overline{E}_l(n)$ be the mean energy inside the gap of label $n$, for the $l^\text{th}$ approximant.
 Define the displacement of a gap as $D_l(n) = |\overline{E}_{l+1}(n) - \overline{E}_l(n)| $
-We say the gap $n$ at step $l$ is transient if does not overlaps its counterpart at step $l+1$, ie if 
+We say the gap $n$ at step $l$ is transient if its half-width does not overlap significantly its counterpart at step $l+1$, ie if 
 \begin{equation}
 \label{eq:overlapcriterion}
-	0.5 \Delta_l(n) < D_l(n),
+	a(\rho) ( \Delta_l(n) + \Delta_{l+1}(n) ) < D_l(n),
 \end{equation}
 and stable otherwise.
-It is easy to see that criterion \eqref{eq:overlapcriterion}, applied to the Fibonacci chain, yields the same stable and transient gaps as criterion \eqref{eq:limitcriterion}.
+We have introduced the \emph{overlap coefficient} $a(\rho)$, which quantify how much overlap we require for a gap to be considered stable.
+Numerically, we determine $a$ by requiring that any stable gap at step $l$ overlaps their counterpart at step $l+L$ with $L$ arbitrarily large.
+As the ratio of the couplings $\rho$ is decreased, gaps are enlarged and overlap more and more.
+Thus, the value of $a$ also decreases with $\rho$ (we thank the referee for pointing out that fact).
+As an example, we find $a(0.5) = 0.25$ for the Fibonacci chain.
+
+It is easy to see that criterion \eqref{eq:overlapcriterion}, applied to the Fibonacci chain, yields the same stable and transient gaps as criterion \eqref{eq:limitcriterion} 
 It is not trivial that these two criteria are in general equivalent.
 However, it does appear to be the case for all the quasiperiodic chains we tested numerically. 
 We will therefore consider them equivalent from now.
