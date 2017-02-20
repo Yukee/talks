@@ -64,7 +64,7 @@
 \begin{document}
 
 \begin{frame}
-\title{Fractal states on quasicrystals}
+\title{États électroniques fractals sur des quasicristaux}
 
 \author{ Nicolas Macé, Anuradha Jagannathan, \\ Frédéric Piéchon, Rémy Mosseri}
 
@@ -74,7 +74,7 @@
   Laboratoire de Physique Théorique de la Matière Condensée, UPMC
 }
 
-\date{February 21, 2017}
+\date{21 Février 2017}
 
 \titlepage
 
@@ -89,7 +89,7 @@
 \tableofcontents[hideallsubsections]
 \end{frame}
 
-\section{Quasicrystals and their physical properties}
+\section{La structure des quasicristaux}
 %Each section needs a subsection for the small points on top to show up
 \subsection{Dummy}
 \begin{frame}{Les quasicristaux ?}
@@ -135,10 +135,13 @@ Plus précisément, un quasi a les propriétés suivantes :
 
 \begin{itemize}
 	\item De nombreux alliages métalliques sont quasipériodiques sous de bonnes conditions
-	\item Seul un exemple connu dans la nature: la météorite de Khatyrka  (voir \url{doi:10.1126/science.1170827 }). 
+	\item Seul exemple connu dans la nature: la météorite de Khatyrka  (voir \url{doi:10.1126/science.1170827 }). 
 \end{itemize}
 \end{frame}
 
+\section{Un électron sur une chaîne}
+%Each section needs a subsection for the small points on top to show up
+\subsection{Dummy}
 \begin{frame}{Conduction électrique d'une chaîne d'atomes}
 
 
@@ -187,7 +190,7 @@ Plus précisément, un quasi a les propriétés suivantes :
 
 \begin{itemize}
 	\item La fonction flèche est quasipériodique.
-	\item Son intégrale, la fonction de hauteur, croît en $\sqrt{\log L}$.
+	\item Son intégrale, la fonction de hauteur, croît en $\sqrt{\log m}$.
 \end{itemize}
 \end{frame}
 
@@ -200,15 +203,94 @@ Plus précisément, un quasi a les propriétés suivantes :
 
 \end{frame}
 
-\begin{frame}{Recap}
+\begin{frame}{Dimensions fractales}
 
+(voir \emph{Halsey et al., Fractal measures and their singularities (1986)})
+
+{\centering
+\includegraphics[scale=1.]{img/multifractal_spectrum_fibo.pdf}
+
+}
 \begin{itemize}
-	\item Wavefunction construction involves a geometrical quasiperiodic function,
-	\item Its integral, the height function, has logarithmic growth,
-	\item This implies power law behavior of the wavefunction,
-	\item The wavefunction is somewhat inbetween localized and extended.
+	\item État central critique (ni localisé ni étendu).
+	\item ``de moins en moins'' critique à mesure que $\rho \to 1$.
 \end{itemize}
-$\rightarrow$ We will find again all theses features in the Ammann-Beenker case.
+\end{frame}
+
+\begin{frame}{Coefficient de transmission}
+
+$T(L)$ : fraction du courant traversant un morceau $L$ de chaîne.
+
+(voir \emph{Beenakker, Random-matrix theory of quantum transport (1997)})
+
+{\centering
+\includegraphics[scale=.8]{img/harmonic_mean_transmission.pdf}
+
+}
+$\to$ la transmission décroît lentement avec la taille (loi de puissance).
+\end{frame}
+
+\begin{frame}{Récap et questions ouvertes}
+
+Récap
+\begin{itemize}
+	\item État central : \textbf{fonction flèche} quasipériodique,
+	\item croissance lente de son intégrale, la \textbf{fonction de hauteur},
+	\item $\to$ état central \textbf{critique}.
+	\item Fonction de hauteur simple $\to$ accès à des quantités physique (ex. \textbf{transmission}).
+\end{itemize}
+$\rightarrow$ Ces conclusions restent valides pour les modèles 2D.
+
+Questions ouvertes
+\begin{itemize}
+	\item Autres états ? (chaîne périodique perturbée $\to$ période effective $\to$ fonction flèche)
+	\item Qu'est-ce qu'une fonction flèche ? (substitution ? coupe et projection ?)
+	\item Dans quel espace vivent les états électroniques ?
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Coupe et projection : construction par Klötze}
+
+	\centering
+	\includegraphics[scale=0.1]{img/klotz_heights.png}
+	~~~~~~~~~~~~~
+	\includegraphics[scale=0.1]{img/klotz_heights_legend.png}	
+
+Les Klötze du champ de flèches de l'état central.
+
+\flushleft{(voir \emph{Kramer \& Schlottmann, J. Phys. A: Math. Gen. (1989)})}
+\end{frame}
+
+\begin{frame}{Un résultat négatif sur l'état en bord de spectre}
+
+{\centering
+\includegraphics[scale=.8]{img/state_spec_edge.pdf}
+
+}
+$\to$ pas de champ de flèches local.
+
+\end{frame}
+
+\section{Un électron sur un pavage quasipériodique}
+\subsection{Dummy}
+\begin{frame}{Deux pavages quasipériodiques}
+\(
+	\<{6cm}
+		\centering
+		\includegraphics[scale=0.06]{img/penrose.png}
+		
+		\ss{Pavage de Penrose}
+		
+		\includegraphics[scale=0.06]{img/ammann-beenker.png}
+		
+		\ss{Pavage d'Ammann-Beenker}
+	\>
+	\<{6cm}
+		\centering
+		\includegraphics[scale=0.25]{img/inflation_rules}
+		
+	\>
+\)
 \end{frame}
 
 \end{document}
