@@ -1,6 +1,8 @@
-\documentclass[a4paper,10pt]{letter}
+\documentclass[a4paper,10pt]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+%\usepackage{geometry}
+\usepackage{graphicx}
 
 \begin{document}
 
@@ -20,30 +22,31 @@ Nicolas Macé, Anuradha Jagannathan, Frédéric Piéchon $^1$, Rémy Mosseri$^2$
 
 \end{center}
 
-\vspace{2cm}
+\vspace{0cm}
 
 % Abstract
 
-Single-electron properties of 1D quasicrystals are extremely well understood: the spectrum of quasiperiodic chains can be described exactly in many situations [1], and the wavefunctions are also well characterized [2].
-In contrast, even the simplest models of 2 and 3 dimensional quasicrystals resist theoretical investigations. The spectrum of a simple tight-binding model on the Penrose lattice, for instance, is only known numerically, making its physical properties still difficult to reach.
+Single-electron properties of 1D quasicrystals are well understood: the spectrum of quasiperiodic chains can be described exactly for a number of tight-binding models [1], and the wavefunctions are also rather well characterized [2].
+In contrast, even the simplest models of 2 and 3 dimensional quasicrystals resist theoretical investigations.
+The spectrum and corresponding wavefunctions of a simple tight-binding model on the Penrose lattice, for instance, were only known approximately, by numerical computations, until recently.
 
-We consider the recent ansatz of Kalugin and Katz for the ground state of two dimensional quasiperiodic tight-binding models.
-We show that simpler one-dimensional versions of this ansatz exist generally for hopping models on a family of aperiodic chains including the Fibonacci chain. 
-We show how these "critical" states depend on the geometric properties of the tilings via a nonlocal height function. We compute explicitly the multifractal properties of these states. 
-It is seen that the multifractal spectrum for these states has a reflection symmetry for all values of the single parameter of the Hamiltonian.
-We carry out similar calculations for the two dimensional case.
-In particular, we check that the form of the wavefunction is robust under changing the Hamiltonian to include onsite energy terms.
-In the 1D case, analytical expressions for the transport characteristics are given. 
+This situations changed recently when Kalugin and Katz [3] proposed an analytical form for the ground state of two dimensional quasiperiodic tight-binding models and showed that it fitted numerical results on the Penrose and Ammann-Beenker tilings (see figure for Penrose).
+We show that simpler one-dimensional versions of this ansatz exist generally for hopping models on a family of aperiodic chains including the Fibonacci chain.
+We show how these ``critical'' states depend on the geometric properties of the tilings and compute explicitly the multifractal properties of these states. 
+Similar calculations are shown to be possible for the two dimensional case, for a family of Hamiltonians.
+Analytical expressions for the transport characteristics are presented for the 1D case. 
 
-
-Duis massa leo, dignissim quis tristique et, pretium in dui. Pellentesque eleifend gravida rhoncus. Maecenas ut urna nisl, sed convallis est. In justo magna, adipiscing et ornare vel, viverra placerat massa. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In dictum magna sit amet arcu vulputate adipiscing. In iaculis, eros at aliquam malesuada, purus nunc euismod leo, vel suscipit elit lacus id eros. Sed id lectus orci, sit amet convallis mi. Nulla sit amet velit ac tellus rutrum tincidunt non vel diam. Pellentesque vehicula accumsan turpis, ac vulputate magna pulvinar laoreet. Nullam varius dui vitae massa malesuada vestibulum. Aenean eget dolor eros, nec eleifend lectus. Ut id lectus nunc, vel dapibus mauris. Aliquam sed nulla nec mi molestie facilisis. Duis ante tortor, venenatis nec tempus a, aliquam nec odio. Cras et urna ac ligula aliquet condimentum. Nam augue nulla, gravida nec dictum ac, venenatis id nisl. Cras consequat purus a dui iaculis a porta est vulputate.
 
 % Si vous voulez inclure une figure, decommentez les 4 lignes ci-dessous, et
 % envoyez l'ensemble (.tex+figure) sous forme d'une archive .zip ou .tar.gz
 
-%\vspace{1cm}
-%\begin{center}
-%\includegraphics[width=0.6\textwidth]{figure}
-%\end{center}
-
+\vspace{0cm}
+\begin{center}
+\includegraphics[width=0.9\textwidth]{taylor_9_groundstate.png}
+\end{center}
+%\textwidth
+[1] A. Rüdinger, C. Sire, J Phys A, 1996. 
+[2] N. Macé, A. Jagannathan, F. Piéchon, Phys Rev B, 2016.
+[3] P. Kalugin, A. Katz, J Phys A, 2014.
+[4] N. Macé, A. Jagannathan, F. Piéchon, R. Mosseri, In preparation, 2017.
 \end{document}
