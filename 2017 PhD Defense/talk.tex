@@ -9,16 +9,40 @@
 }
 \usepackage{ifthen}
 
-\usepackage{amsmath}
 \usepackage{nicefrac}
 
 \usepackage{color}
-
-% compile child documents using this preamble
-\usepackage{subfiles}
-
-% compile child files with separate preambles, and include them in the document
-\usepackage{standalone}
+\usepackage[english, french]{babel} %français
+\usepackage{amsmath, amssymb, amsfonts, mathtools}
+%\usepackage{makeidx}
+%\usepackage{graphicx}
+%\usepackage{braket} %quantum mechanics
+%\usepackage[usenames,dvipsnames]{xcolor} % colors for text
+%\usepackage[absolute]{textpos} % to place elements in the page
+%\usepackage{tikz} % drawing in LaTeX
+%\usetikzlibrary{positioning}
+%\usepackage{ dsfont } % hollow letters
+%% compile child documents using this preamble
+%\usepackage{subfiles}
+%% compile child files with separate preambles, and include them in the document
+%\usepackage{standalone}
+%% subfigure
+%\usepackage{subcaption}
+%% include pdf pages in the document
+%\usepackage{pdfpages}
+%% hyperlinks
+%\usepackage[colorlinks=true, linkcolor=black, citecolor=black]{hyperref}
+%% BODY command inside new environments
+%\usepackage{environ}
+%% lots of nice custom commands for physicists
+\usepackage{physics}
+%% if structures
+%\usepackage{xifthen}
+%% include figures in text blocs
+%\usepackage{wrapfig}
+%% algorithms
+%\usepackage{algorithmic, algorithm}
+%\usepackage{nicefrac}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -72,24 +96,8 @@
 \newcommand{\<}[1]{\begin{column}{#1}}
 \renewcommand{\>}{\end{column}}
 
-\definecolor{BostonBlue}{HTML}{00688B}
-\definecolor{Complementary}{HTML}{8B2300}
-
-% letters A and B appearing in the qp chains
-\newcommand{\A}{\textcolor{BostonBlue}{A}}
-\newcommand{\B}{\textcolor{Complementary}{B}}
-
-\renewcommand{\ss}[1]{\scriptsize{\text{#1}}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\usepackage{braket}
-% compile child documents using this preamble
-\usepackage{subfiles}
-
-%%%My Math
-
-\newcommand{\pd}[2]{\frac{\displaystyle \partial #1}{\displaystyle\partial #2}} % for partial derivatives
-\renewcommand{\d}[1]{\mathrm{d}#1}
+% custom commands and definitions
+\input{commands}
 
 \begin{document}
 
@@ -133,55 +141,6 @@
 \end{columns}
 \end{frame}
 
-\section{La structure des quasicristaux}
-%Each section needs a subsection for the small points on top to show up
-\subsection{Dummy}
-\begin{frame}{Quasicrystals}
-Aperiodic yet ``ordered'' arrangement of atoms/molecules/colloids
-
-A quasicrystal has the following properties:
-\begin{itemize}
-	\item it is \textbf{aperiodic}
-	\item it is \textbf{long range ordered} (its diffraction pattern exhibits sharp peaks).
-\end{itemize}
-%\textbf{Aperiodic tilings} are used to model quasicrystals.
-\(
-	\<{6cm}
-		\centering
-		\includegraphics[scale=0.1]{img/1_intro/diffraction_tenfold.png}
-		
-		\ss{Figure de diffraction d'un alliage d'AlPdMn} \ss{(groupe de Conradin Beeli)}
-	\>
-	\<{6cm}
-		\centering
-		\includegraphics[scale=0.06]{img/1_intro/penrose.png}
-		
-		\ss{Un morceau du pavage de Penrose,} \ss{souvent utilisé pour modéliser les quasis.}
-	\>
-\)
-\end{frame}
-
-\begin{frame}{Exemples de quasicristaux}
-\(
-	\<{6cm}
-		\centering
-		\includegraphics[scale=0.28]{img/1_intro/homgzn.png}
-		
-		\ss{HoMgZn alloy in its icosahedral phase} \ss{(\url{doi:10.1038/nmat1244})}
-	\>
-	\<{6cm}
-		\centering
-		\includegraphics[scale=0.22]{img/1_intro/wasio.jpg}
-		
-		\ss{A 2D molecular quasicrystal} \ss{(\url{doi:10.1038/nature12993})}
-	\>
-\)
-
-\begin{itemize}
-	\item many intermetallic alloys are quasiperiodic
-	\item a single natural example: Khatyrka meteorite hosts quasicrystals \ss{(\url{doi:10.1126/science.1170827})}. 
-\end{itemize}
-\end{frame}
-
+\input{intro}
 
 \end{document}
