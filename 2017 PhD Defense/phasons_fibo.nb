@@ -1,0 +1,176 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5388,        168]
+NotebookOptionsPosition[      5010,        150]
+NotebookOutlinePosition[      5338,        165]
+CellTagsIndexPosition[      5295,        162]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"p", "[", "l_", "]"}], ":=", 
+   RowBox[{"Fibonacci", "[", 
+    RowBox[{"l", "-", "2"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"q", "[", "l_", "]"}], ":=", 
+   RowBox[{"Fibonacci", "[", 
+    RowBox[{"l", "-", "1"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"n", "[", "l_", "]"}], ":=", 
+   RowBox[{
+    RowBox[{"p", "[", "l", "]"}], "+", 
+    RowBox[{"q", "[", "l", "]"}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"\[Alpha]", "[", "l_", "]"}], ":=", 
+   FractionBox[
+    RowBox[{"p", "[", "l", "]"}], 
+    RowBox[{"q", "[", "l", "]"}]]}], ";"}]}], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+   "number", " ", "of", " ", "A", " ", "letters", " ", "in", " ", "the", " ", 
+    "first", " ", "i"}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"nA", "[", 
+      RowBox[{"\[Alpha]_", ",", "\[Rho]_", ",", "i_"}], "]"}], ":=", 
+     RowBox[{"Floor", "[", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"1", "+", "\[Alpha]"}], ")"}], 
+         RowBox[{"-", "1"}]], " ", 
+        RowBox[{"(", "i", ")"}]}], "-", "\[Rho]"}], "]"}]}], ";"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "generate", " ", "a", " ", "chain", " ", "by", " ", "cut", " ", "and", 
+     " ", "project"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"CPChain", "[", 
+      RowBox[{"l_", ",", "\[Rho]_"}], "]"}], ":=", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"nA", "[", 
+          RowBox[{
+           RowBox[{"\[Alpha]", "[", "l", "]"}], ",", "\[Rho]", ",", "#"}], 
+          "]"}], "-", 
+         RowBox[{"nA", "[", 
+          RowBox[{
+           RowBox[{"\[Alpha]", "[", "l", "]"}], ",", "\[Rho]", ",", 
+           RowBox[{"#", "-", "1"}]}], "]"}]}], ")"}], "&"}], "/@", 
+      RowBox[{"Range", "[", 
+       RowBox[{"Fibonacci", "[", "l", "]"}], "]"}]}]}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.714804451538433*^9, 3.7148044615076942`*^9}, {
+  3.714809310778883*^9, 3.714809315731698*^9}, {3.714809434586996*^9, 
+  3.7148094594415894`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"l", "=", "6"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"CPChain", "[", 
+      RowBox[{"l", ",", "\[Rho]"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[Rho]", ",", "0", ",", 
+       RowBox[{
+        RowBox[{"1", "/", 
+         RowBox[{"(", 
+          RowBox[{"1", "+", 
+           RowBox[{"\[Alpha]", "[", "l", "]"}]}], ")"}]}], "+", "0.3"}], ",", 
+       
+       RowBox[{"1", "/", 
+        RowBox[{"n", "[", "l", "]"}]}]}], "}"}]}], "]"}], "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", "\[Rule]", "\"\<B\>\""}], ",", 
+     RowBox[{"1", "\[Rule]", "\"\<A\>\""}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"StringJoin", "/@", "%"}], "//", "Column"}]}], "Input",
+ CellChangeTimes->{{3.7148044665389547`*^9, 3.7148045220510073`*^9}, {
+  3.714804623562155*^9, 3.71480465106072*^9}, {3.71480929201925*^9, 
+  3.714809328737821*^9}, {3.714809629659398*^9, 3.714809695842058*^9}, {
+  3.714809772394422*^9, 3.7148097952904997`*^9}, {3.714809866234549*^9, 
+  3.714809935939316*^9}, {3.714812137377059*^9, 3.714812181663546*^9}, {
+  3.7148122262867107`*^9, 3.714812237991374*^9}, {3.714812274871909*^9, 
+  3.7148122832147293`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"BABAABAA\"\>"},
+    {"\<\"AABAABAB\"\>"},
+    {"\<\"AABABAAB\"\>"},
+    {"\<\"ABAABAAB\"\>"},
+    {"\<\"ABAABABA\"\>"},
+    {"\<\"ABABAABA\"\>"},
+    {"\<\"BAABAABA\"\>"},
+    {"\<\"BAABABAA\"\>"}
+   },
+   DefaultBaseStyle->"Column",
+   GridBoxAlignment->{"Columns" -> {{Left}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Column"]], "Output",
+ CellChangeTimes->{{3.714804472748735*^9, 3.7148045224880733`*^9}, {
+   3.714804623856176*^9, 3.71480465141293*^9}, 3.714809329111478*^9, 
+   3.714809440682077*^9, {3.714809617465427*^9, 3.714809696065077*^9}, {
+   3.714809774871529*^9, 3.7148097956734257`*^9}, {3.714809876502028*^9, 
+   3.714809936624896*^9}, {3.714812138785281*^9, 3.714812182267748*^9}, {
+   3.7148122326510897`*^9, 3.714812239244409*^9}, {3.714812276164291*^9, 
+   3.7148122835274963`*^9}}]
+}, Open  ]]
+},
+WindowSize->{960, 1149},
+WindowMargins->{{211, Automatic}, {0, 24}},
+FrontEndVersion->"11.0 for Linux x86 (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 694, 22, 139, "Input"],
+Cell[1255, 44, 1569, 44, 103, "Input"],
+Cell[CellGroupData[{
+Cell[2849, 92, 1258, 32, 71, "Input"],
+Cell[4110, 126, 884, 21, 164, "Output"]
+}, Open  ]]
+}
+]
+*)
+
