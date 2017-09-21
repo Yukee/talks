@@ -1,0 +1,119 @@
+\section{Fibonacci chain}
+\subsection{Dummy}
+\begin{frame}{The Fibonacci chain}
+\(
+\<{7cm}{\textbf{Fibonacci numbers}}
+
+A simple rule for generating numbers:
+\begin{align*}
+	F_0 &= 1 \\
+	F_1 &= 1 \\
+	F_2 &= F_1 + F_0 = 2 \\
+	F_3 &= F_2 + F_1 = 3 \\
+	F_4 &= F_3 + F_2 = 5 \\
+	F_5 &= F_4 + F_3 = 8 \\
+	&\vdots
+\end{align*}
+\[
+	F_{l+2} = F_{l+1} + F_l
+\]
+
+\>
+
+\<{7cm}{\textbf{Fibonacci words}}
+
+Letters instead of numbers, same rule:
+\begin{align*}
+	C_0 &= \B \\
+	C_1 &= \A \\
+	C_2 &= C_1C_0 = \lett{AB} \\
+	C_3 &= C_2 C_1 = \lett{ABA} \\
+	C_4 &= C_3 C_2 = \lett{ABAAB} \\
+	C_5 &= C_4 C_3 = \lett{ABAABABA} \\
+	&\vdots
+\end{align*}
+\[
+	C_{l+2} = C_{l+1}C_l
+\]
+\>
+\)
+\end{frame}
+
+% counter has to be defined outside of the frame, otherwise a new counter is created at each iteration of only
+\newcounter{slideno}
+\begin{frame}{Fibonacci word from above}
+(Infinite) Fibonacci word: \ca\cb\ca\ca\cb\ca\cb\ca\ca\cb\ca\ca\cb\dots
+
+\ca{} $\leftrightarrow$ horizontal step, \cb{} $\leftrightarrow$ vertical step
+
+\centering
+\forloop{slideno}{1}{\value{slideno} < 14}{%
+\only<\theslideno>{\includegraphics[width=.7\textwidth]{img/2_part1/CP_fibo_\theslideno}}%
+}
+\end{frame}
+
+\begin{frame}{Quasiperiodicity of the Fibonacci word}
+\(
+\<{9cm}
+\centering
+\includegraphics[width=1.\textwidth]{img/2_part1/CP_fibo_cut}
+\>
+\<{6cm}
+\begin{itemize}
+	\item average slope = inverse of the golden ratio ($\tau \simeq 1.6$)
+	\item bounded fluctuations
+\end{itemize}
+$\to$ similar environments everywhere
+
+$\to$ quasiperiodicity [Duneau, Katz 85]
+\>
+\)
+\end{frame}
+
+\begin{frame}{Cut-and-project}
+\(
+\<{9cm}
+\centering
+\includegraphics[width=1.\textwidth]{img/2_part1/full_cp}
+\>
+\<{6cm}
+The cut-and-project algorithm:
+\begin{enumerate}
+	\item choose a hypercubic lattice (here $\zahl^2$)
+	\item choose a ``physical plane'' $E_\parallel$ (here a slope)
+	\item select points by translating the unit hypercube along $E_\parallel$
+	\item project them onto $E_\parallel$.
+\end{enumerate}
+\>
+\)
+
+\textbf{\cp{} $\to$ quasiperiodic (or periodic) tiling!}
+\end{frame}
+
+\begin{frame}{From letters to atoms}
+\begin{itemize}
+	\item The Fibonacci word:
+	\ca\cb\ca\ca\cb\ca\cb\ca\dots
+	
+	\item The Fibonacci (tight-binding) chain of atoms:
+	
+	{\centering
+	\input{img/2_part1/fibonacci_approximant}%
+	}
+
+\end{itemize}
+Hamiltonian:
+\[
+	\op{H} = - \sum_m t_m \ket{m-1} \bra{m} + \hc
+\]
+Schrödinger equation for the eigenstate of energy $E$:
+\[
+	E \psi(m) = -t_{m}\psi(m-1) -t_{m+1}\psi(m+1)
+\]
+\end{frame}
+
+\begin{frame}{A fractal state}
+\centering
+\includegraphics[width=.7\textwidth]{img/2_part1/heights_fibo}
+
+\end{frame}

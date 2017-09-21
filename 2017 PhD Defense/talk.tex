@@ -21,7 +21,7 @@
 %\usepackage[absolute]{textpos} % to place elements in the page
 %\usepackage{tikz} % drawing in LaTeX
 %\usetikzlibrary{positioning}
-%\usepackage{ dsfont } % hollow letters
+\usepackage{ dsfont } % hollow letters
 %% compile child documents using this preamble
 %\usepackage{subfiles}
 %% compile child files with separate preambles, and include them in the document
@@ -36,6 +36,7 @@
 %\usepackage{environ}
 %% lots of nice custom commands for physicists
 \usepackage{physics}
+\usepackage{forloop}
 %% if structures
 %\usepackage{xifthen}
 %% include figures in text blocs
@@ -103,5 +104,6 @@
 
 \input{title_page}
 \input{intro}
+\input{part1}
 
 \end{document}
