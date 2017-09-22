@@ -112,8 +112,164 @@ Schrödinger equation for the eigenstate of energy $E$:
 \]
 \end{frame}
 
-\begin{frame}{A fractal state}
+\begin{frame}{The broccoli $E=0$ state}
+\(
+\<{6cm}
+\centering
+\includegraphics[width=1.\textwidth]{img/2_part1/state_fibo}
+
+{\ss ``Romanesco broccoli'' fractal state at energy $E=0$}
+\>
+\<{8cm}
+\begin{itemize}
+	\item State at 0 energy verifies
+	\[ t_m \psi(m-1) + t_{m+1}\psi(m+1) = 0 \]
+	\item Fibonacci chain decouples into two chains:
+	
+	{\centering	
+	\input{img/2_part1/field_of_heights}
+	}
+
+	\item Work on groups of two letters:
+	\begin{itemize}
+		\item \ca\cb{} $\leftrightarrow$ R
+		\item \cb\ca{} $\leftrightarrow$ L
+		\item \ca\ca{} $\leftrightarrow$ U
+	\end{itemize}
+	
+\end{itemize}
+\>
+\)
+\end{frame}
+
+\begin{frame}{Structure of the broccoli}
+\(
+\<{8cm}
+\begin{itemize}
+	\item Effective chain
+	\[
+		\underbrace{\ca\cb}_{R}\underbrace{\ca\ca}_{U}\underbrace{\cb\ca}_{L}\underbrace{\cb\ca}_{L}\underbrace{\ca\cb}_{R}\underbrace{\ca\ca}_{U}\dots
+	\]
+	\item \textbf{Arrow function}: $A(R) = +1$, $A(L) = -1$, $A(U) = 0$.
+	\item \textbf{Height function}: $h(m) = \sum_{n \leq m} A_n$
+	\item Let $\rho = t_\cb/t_\ca$.
+	\[
+		\boxed{
+		\psi(m) = (-1)^m \rho^{h(m)}
+		}
+	\]
+\end{itemize}
+\>
+\<{8cm}
 \centering
 \includegraphics[width=.7\textwidth]{img/2_part1/heights_fibo}
 
+\includegraphics[width=.65\textwidth]{img/2_part1/state_fibo}
+\>
+\)
 \end{frame}
+
+\begin{frame}{Geometry and eigenstate properties}
+\(
+\<{8cm}
+\begin{itemize}
+	\item Arbitrary chain \ca\ca\ca\cb\cb\ca\cb\cb\dots{} (not necessarily Fibonacci)
+	\item $E=0$ state: $\psi(m) = (-1)^m \rho^{h(m)}$
+	\item Geometry $\leftrightarrow$ $h(m)$ function
+\end{itemize}
+
+\begin{itemize}
+	\item Periodic chain: \ca\ca\ca\ca\ca\dots
+%	\input{img/2_part1/periodic_chain_arrows}
+	\begin{itemize}
+		\item Arrows $= 0 \implies |\psi(m)| = $ cst  
+		\item \textbf{extended state}
+	\end{itemize}
+	\item Disordered chain: \ca\ca\ca\cb\cb\ca\cb\cb\dots
+%	\input{img/2_part1/disordered_chain_arrows}
+	\begin{itemize}
+		\item Random arrows $\implies |\psi(m)| \sim e^{- m^\alpha/\xi}$
+		\item \textbf{localized state}
+	\end{itemize}
+\end{itemize}
+\>
+\<{8cm}
+\begin{itemize}
+	\item Quasiperiodic chain
+	\begin{itemize}
+		\item Discrete scale invariance:
+	
+		{\centering
+		\includegraphics[width=.7\textwidth]{img/2_part1/power_law_decay}}
+	
+		\item Local power-law behavior $\textcolor{comp}{|\psi(m)| \sim m^{-\alpha}}$
+		\item \textbf{critical state} [Kohmoto \etal{} 87]
+	\end{itemize}
+\end{itemize}
+\>
+\)
+\end{frame}
+
+\begin{frame}{Underlying scale invariance}
+Fibonacci chain \emph{itself} scale invariant?
+
+\(
+\<{7cm}
+\begin{itemize}
+	\item Fibonacci words by concatenation:\\
+	$C_2 = \lett{AB}$ \\
+	$C_3 = \lett{ABA}$ \\
+	$C_4 = C_3 C_2 = \lett{ABAAB}$
+	
+	\item Fibonacci words by \textbf{substitution}:
+	\[
+		\sub: 
+		\begin{cases}
+			\A \to \lett{AB}\\
+			\B \to \A.
+		\end{cases}
+	\]
+	$C_3 = \lett{ABA}$ \\
+	$C_4 = S(C_3) = 
+	\only<1>{\sub(\A)\sub(\B)\sub(\A)}
+	\only<2>{\lett{AB}\sub(\B)\sub(\A)}
+	\only<3>{\lett{AB}\A\sub(\A)}
+	\only<4>{\lett{AB}\A\lett{AB}}
+	$
+\end{itemize}
+\>
+\<{7cm}
+\begin{itemize}
+	\item Infinite chain = fixed point of the substitution: \\
+	$S(\lett{ABAAB}\dots) = \lett{ABAAB}\dots$
+	\item Geometric substitution:
+	
+	{\centering
+	\input{img/2_part1/inflation_fibonacci}
+	}
+	
+	\item \textbf{Infinite chain scale invariant}, scaling factor $1/\tau$.
+	
+\end{itemize}
+\>
+\)
+\end{frame}
+
+\begin{frame}{Height distribution \& multifractality}
+
+
+\end{frame}
+
+\begin{frame}{Beyond quasiperiodicity}
+
+\end{frame}
+
+\begin{frame}{Conclusions}
+
+\end{frame}
+
+\section{Renormalization group}
+\subsection{Dummy}
+
+\section{2D eigenstates}
+\subsection{Dummy}

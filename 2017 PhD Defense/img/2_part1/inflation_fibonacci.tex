@@ -1,0 +1,55 @@
+    	\begin{tikzpicture}[scale=.6]
+    		\newcommand{\orig}{-1.5}
+    		\newcommand{\s}{1.5} % length of short bonds
+    		\renewcommand{\L}{2.4} % length of long bonds
+    		\newcommand{\golden}{1.61}
+    		\newcommand{\rs}{\golden*\s} % length of renormalized short bonds
+    		\newcommand{\rL}{\golden*\L} % length of renormalized long bonds
+    		\newcommand{\vertspac}{2.}    		
+    		\newcommand{\rad}{2pt} % radii of the circles
+    		\newcommand{\del}{0.2}
+    		
+    		% set the style of the strong bonds
+    		\tikzset{
+    			strong/.style={
+    				double,
+    				double distance=\rad,
+    				line width=0.5pt
+    				}
+    		}
+    	
+    		%%%%%%%%%% initial chain
+    		% bonds 
+			\draw[-] (\orig,\vertspac) -- (\orig+\rL,\vertspac) node [midway, below] {$\A$};
+			\draw[strong] (\orig+\rL,\vertspac) -- (\orig+\rs+\rL,\vertspac) node [midway, below] {$\B$};	
+    		% sites
+		    \filldraw (\orig,\vertspac) circle (\rad);% node [below] {6};
+		    \filldraw (\orig+\rL,\vertspac) circle (\rad);% node [below] {3};
+		    \filldraw (\orig+\rs+\rL,\vertspac) circle (\rad) node [right] {\dots};% node [below] {8};
+		        
+    		%%%%%%%%% renormalized chain
+    		% bonds 
+			\draw[-] (\orig,0) -- (\orig+\L,0) node [midway, below] {$\A$};
+			\draw[strong] (\orig+\L,0) -- (\orig+\s+\L,0) node [midway, below] {$\B$};	
+			\draw[-] (\orig+\s+\L,0) -- (\orig+\s+2*\L,0) node [midway, below] {$\A$};
+%			\draw[-] (\orig+2*\s+2*\L,0) -- (\orig+2*\s+3*\L,0) node [midway, below] {$\A$};
+%			\draw[strong] (\orig+2*\s+3*\L,0) -- (\orig+3*\s+3*\L,0) node [midway, below] {$\B$};
+%			\draw[-] (\orig+3*\s+3*\L,0) -- (\orig+3*\s+4*\L,0) node [midway, below] {$\A$};
+%			\draw[strong] (\orig+3*\s+4*\L,0) -- (\orig+4*\s+4*\L,0) node [midway, below] {$\B$};
+    	
+    		% sites
+		    \filldraw (\orig,0) circle (\rad);% node [below] {6};
+		    \filldraw (\orig+\L,0) circle (\rad);% node [below] {3};
+		    \filldraw (\orig+\s+\L,0) circle (\rad);% node [below] {8};
+		    \filldraw (\orig+\s+2*\L,0) circle (\rad) node [right] {\dots};% node [below] {5};
+%		    \filldraw (\orig+2*\s+3*\L,0) circle (\rad);% node [below] {2};
+%		    \filldraw (\orig+3*\s+3*\L,0) circle (\rad);% node [below] {7};
+%		    \filldraw (\orig+3*\s+4*\L,0) circle (\rad);% node [below] {4};
+%		    \filldraw (\orig+4*\s+4*\L,0) circle (\rad);% node [below] {1};
+
+		    % arrows below rectangles
+		    \draw [<-] (\orig,\del) -- (\orig,\vertspac-\del) node [midway, left] {$\times \frac{1}{\tau}$};
+		    \draw [<-] (\orig+\rL,\del) -- (\orig+\rL,\vertspac-\del);
+		    \draw [<-] (\orig+\rs+\rL,\del) -- (\orig+\rs+\rL,\vertspac-\del);
+		      
+		\end{tikzpicture}
