@@ -1,0 +1,121 @@
+\section{Renormalization group}
+\subsection{Dummy}
+
+\begin{frame}{Renormalization group on the Fibonacci chain}
+Focused on the $E=0$ state\dots
+
+{\centering
+\includegraphics[width=.5\textwidth]{img/3_part2/idos_fibo}
+
+{\ss Integrated density of states (IDoS) of the Fibonacci chain}
+
+}
+
+\dots what about the rest of the spectrum?
+\end{frame}
+
+\begin{frame}{Atoms and molecules}
+Fibonacci chain in the limit $\rho = t_\A/t_\B = 0$:
+
+{\centering
+\input{img/3_part2/fibo_atoms_mols}
+
+}
+
+$\to$ collection of decoupled atoms and diatomic molecules
+
+$\rho \neq 0,~\rho \ll 1$ $\to$ lifted degeneracy, atomic and molecular energy clusters:
+
+{\centering
+\includegraphics[width=.4\textwidth]{img/3_part2/fibonacci_spectra_varying_rho}
+
+}
+
+\end{frame}
+
+%\begin{frame}{Renormalization}
+%	\begin{itemize}
+%	\item Atomic RG step (decimation of molecules) 
+%	
+%	{\centering
+%	\input{img/3_part2/atomic_deflation}
+%	}
+%	
+%	\item Molecular RG step (decimation of atoms) 
+%	
+%	{\centering
+%	\input{img/3_part2/molecular_deflation}
+%	}
+%	
+%	\end{itemize}
+%
+%	\flushleft{In the limit $\rho \ll 1$, $z= \rho/2$, $\zb = \rho^2$ [Niu, Nori 86, Kalugin \etal{} 86]}
+%\end{frame}
+
+\begin{frame}{Perturbative RG for the wavefunctions}
+Substitution rule: $C_{l+1} = \sub(C_l)$ $\implies$ real space renormalization [Niu, Nori 86, Kalugin \etal{} 86, Macé \etal{} 16]
+	\begin{itemize}
+
+		\item Atomic RG (decimation of the molecules)
+			\begin{columns}
+			\begin{column}{9cm}
+				\input{img/3_part2/rg_atomic_wavefunctions_main_txt}
+			\end{column}
+			\begin{column}{2cm}
+			\[ \lb \simop{\rho \ll 1} \frac{1}{1+2\rho^2}
+			\]
+			\end{column}
+			\end{columns}
+		\item Molecular RG (decimation of the atoms)
+			\begin{columns}
+			\begin{column}{9cm}
+				\input{img/3_part2/rg_molecular_wavefunctions_main_txt}
+			\end{column}
+			\begin{column}{2cm}
+			\[ \lambda \simop{\rho \ll 1} \frac{1}{2+\rho^2}
+			\]
+			\end{column}
+			\end{columns}
+	\end{itemize}
+%\begin{align*}
+%		|\psi_m^{(l)}(E)|^2 &= \lb |\psi_{m'}^{(l-3)}(E')|^2 \text{~if $E$ is in the central cluster}\\
+%		|\psi_m^{(l)}(E)|^2 &= \lambda |\psi_{m'}^{(l-2)}(E')|^2 \text{~if }E\text{~is in the edge clusters}
+%\end{align*}
+\end{frame}
+
+\begin{frame}{Fractality of the eigenstates}
+RG $\to$ fractal dimensions of \emph{all} the eigenstates
+
+Eigenstate $\leftrightarrow$ RG path (sequence of molecular and atomic RG steps)
+
+\[
+(q-1)D_q(x) = \log \Bigg[ \left( \frac{\lambda(\rho)^q}{\lambda(\rho^q)} \right)^x \left( \frac{\bar{\lambda}(\rho)^q}{\bar{\lambda}(\rho^q)} \right)^{(1-2x)/2} \Bigg]/\log \tau^{-1}
+\]
+
+$x$: fraction of molecular RG steps in a path.
+
+\(
+\<{7cm}
+\centering
+\includegraphics[width=.6\textwidth]{img/3_part2/local_wf}
+
+{\ss Fractal dimensions for $\rho=0.15$: numerics \emph{vs} RG predictions}
+\>
+\<{7cm}
+\centering
+\includegraphics[width=.8\textwidth]{img/3_part2/renorm_th_num}
+
+{\ss Analytical and numerical renormalization factors}
+\>
+\)
+
+\end{frame}
+
+\begin{frame}{Conclusions}
+Focus on the Fibonacci tight-binding chain, in the limit $\rho \ll 1$.
+\begin{itemize}
+	\item Substitution rule $\to$ scale invariance $\to$ renormalization group
+	\item RG $\to$ eigenstates all \emph{fractal}
+	\item Fractal dimensions depend only on $x$
+\end{itemize}
+\end{frame}
