@@ -256,7 +256,37 @@ Fibonacci chain \emph{itself} scale invariant?
 \end{frame}
 
 \begin{frame}{Height distribution \& multifractality}
+\(
+\<{7cm}
+Partition function of the heights:
+\[
+	Z_L(\beta) = \sum_{m \in \reg(L)} e^{-\beta h(m)}
+\]
+Scaling law behavior:
+\[
+	Z_L(\beta) \simop{L \to \infty} L^{\omega(\beta)}
+\]
+with
+\[
+	\om(\beta) = \frac{\sinh^{-1}(1+\cosh(\beta))}{2+\sqrt{5}}
+\]
+$\to$ access the distribution of heights!
+\>
+\<{7cm}
+Height diffuses slowly through the chain:
+\[
+	h_\text{typ}(L) \sim \sqrt{\log L}
+\]
 
+Fractal dimensions of the $E=0$ state:
+\[
+	d_q = \frac{q \om(2\kappa) - \om(2\kappa q)}{q-1},~\text{with }\kappa = |\log \rho|
+\]
+$0 < d_q < 1$ $\to$ fractal state indeed!
+
+\flushright{[Macé \etal{} 17]}
+\>
+\)
 
 \end{frame}
 
