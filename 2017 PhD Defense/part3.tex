@@ -12,7 +12,7 @@
 \<{7cm}
 Hamiltonian:
 \[
-	\op{H} = -t\sum_{\langle m,n\rangle} \ket{m}\bra{n} + \sum_m V_m \ket{m}\bra{m}
+	\op{H} = -t\sum_{\langle m,n\rangle} \ket{m}\bra{n}
 \]
 Quasiperiodicity encoded in adjacency and on-site potentials
 \>
@@ -85,7 +85,9 @@ Height field:
 
 }
 
-Height grows slowly: $h_\text{typ}(L) \simop{L\to \infty} \sqrt{\log L}$
+Partition function: $Z_L(\beta) \simop{L\to\infty} L^{\omega(\beta)}$
+
+$\to$ slow growth: $h_\text{typ}(L) \simop{L\to \infty} \sqrt{\log L}$
 
 $\to$ states $\psi(m) = e^{\kappa h(m)}$ fractal
 
@@ -94,5 +96,112 @@ $\to$ states $\psi(m) = e^{\kappa h(m)}$ fractal
 \end{frame}
 
 \begin{frame}{Groundstate}
+\[
+	\op{H} = -t\sum_{\langle m,n\rangle} \ket{m}\bra{n}
+\]
+Conjecture [Kalugin, Katz 14]:
+\[
+	\psi_\text{groundstate}(m) = C(m) e^{\kappa h(m)}
+\]
+\(
+\<{7cm}
+$C(m)$: \emph{local} function:
+
+{\centering
+\includegraphics[width=.65\textwidth]{img/4_part3/SKK_cake}
+
+}
+\>
+\<{7cm}
+$e^{\kappa h(m)}$: non-local function:
+
+{\centering
+\includegraphics[width=.75\textwidth]{img/4_part3/SKK_exponential_2_para}
+
+}
+
+\>
+\)
+\end{frame}
+
+\begin{frame}{Testing the conjecture}
+Cut-and-project:
+
+{\centering
+\includegraphics[width=.6\textwidth]{img/4_part3/cut_and_project_perp_projections}
+
+{\ss Sites close in internal space have a very similar local environment.}
+
+}
+$\to$ internal space useful to test the local nature of $C$
+
+\(
+\<{5cm}
+\centering
+\includegraphics[width=1.\textwidth]{img/4_part3/SKK_cake}
+\>
+\<{5cm}
+\centering
+\includegraphics[width=1.\textwidth]{img/4_part3/14_SKK_cake_7_perp}
+\>
+\<{5cm}
+\centering
+\includegraphics[width=1.\textwidth]{img/4_part3/15_SKK_cake_slice_7_perp}
+\>
+\)
+\end{frame}
+
+\begin{frame}{Perturbing the Hamiltonian}
+Adding an on-site potential:
+\[
+	\op{H} = -t\sum_{\langle m,n\rangle} \ket{m}\bra{n} + \sum_m V_m \ket{m}\bra{m}
+\]
+\(
+\<{7cm}
+Laplacian-like [Sire, Bellissard 90]:
+$V_m = V z_m$
+
+$\to$ $\psi(m) = C(m) e^{\kappa h(m)}$
+
+{\centering
+\includegraphics[width=.6\textwidth]{img/4_part3/kappa_n_5_6}
+
+{\ss Prefactor $\kappa$ as a function of $V$.}
+
+}
+
+\>
+\<{7cm}
+An ``arbitrary'' potential:
+
+$V_m = V$ if $m$ has 3 neighbors, else $V_m = 0$.
+
+$\to$ $\psi(m) = C(m) e^{\kappa h(m)}$
+
+{\centering
+\includegraphics[width=.6\textwidth]{img/4_part3/beta_customF_ham}
+
+{\ss{$e^{\kappa}$ as a function of $V$.}}
+
+}
+
+\>
+\)
+\end{frame}
+
+\begin{frame}{Conclusions}
+Tight-binding models on a 2D quasiperiodic tiling
+\begin{itemize}
+	\item Height field $h(m)$ $\to$ $\psi_\text{groundstate}(m) = C(m) e^{\kappa h(m)}$
+	\item Slow height growth ($h(L) \sim \sqrt{\log L})$ $\to$ critical, \textbf{fractal} state
+	\item Robust under symmetry-preserving on-site perturbations
+	\item Same conclusions for the 10-fold symmetric Penrose tiling.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{General conclusion}
+\begin{itemize}
+	\item
+\end{itemize}
 
 \end{frame}
