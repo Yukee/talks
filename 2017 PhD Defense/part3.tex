@@ -1,4 +1,4 @@
-\section{2D eigenstates}
+\section{A 2D quasicrystal}
 \subsection{Dummy}
 
 \begin{frame}{Groundstate of the \AB\ tiling}
@@ -10,7 +10,7 @@
 {\ss A patch of the \AB\ tiling}
 \>
 \<{7cm}
-Hamiltonian:
+Pure hopping Hamiltonian:
 \[
 	\op{H} = -t\sum_{\langle m,n\rangle} \ket{m}\bra{n}
 \]
@@ -20,14 +20,14 @@ Quasiperiodicity encoded in adjacency and on-site potentials
 
 \textbf{Fractal} states described by \textbf{height} functions?
 \[
-	\psi(m) = C(m) e^{\kappa h(m)}
+	\psi(m) = e^{\kappa h(m)}
 \]
 \end{frame}
 
 \begin{frame}{Looking for arrows}
 \(
 \<{7cm}
-Like Fibonacci, \AB\ has a substitution rule:
+Like 1D chains, \AB\ has a substitution rule:
 
 {\centering
 \includegraphics[width=.8\textwidth]{img/4_part3/AB_inflation}
@@ -37,8 +37,8 @@ $\to$ scale invariance.
 
 Height requires a field of arrows:
 \begin{itemize}
-	\item irrotational
 	\item invariant under substitution
+	\item irrotational
 \end{itemize}
 \>
 \<{7cm}
@@ -108,7 +108,7 @@ Conjecture [Kalugin, Katz 14]:
 $C(m)$: \emph{local} function:
 
 {\centering
-\includegraphics[width=.65\textwidth]{img/4_part3/SKK_cake}
+\includegraphics[width=.75\textwidth]{img/4_part3/SKK_cake_2_para}
 
 }
 \>
@@ -125,28 +125,26 @@ $e^{\kappa h(m)}$: non-local function:
 \end{frame}
 
 \begin{frame}{Testing the conjecture}
-Cut-and-project:
+Cut-and-project $\to$ physical ($E_\parallel$) and internal ($E_\perp$) space:
 
 {\centering
-\includegraphics[width=.6\textwidth]{img/4_part3/cut_and_project_perp_projections}
-
-{\ss Sites close in internal space have a very similar local environment.}
+\includegraphics[width=.6\textwidth]{img/4_part3/cut_and_project_para_perp}
 
 }
-$\to$ internal space useful to test the local nature of $C$
+Internal space $\to$ sites classified by local environment $\to$ test the local nature of $C$:
 
 \(
-\<{5cm}
+\<{7cm}
 \centering
-\includegraphics[width=1.\textwidth]{img/4_part3/SKK_cake}
+\includegraphics[width=.6\textwidth]{img/4_part3/SKK_cake_7_para}
+
+{\ss{$C$ part in physical space (finite system of $\simeq 3 \times 10^5$ atoms)}}
 \>
-\<{5cm}
+\<{7cm}
 \centering
-\includegraphics[width=1.\textwidth]{img/4_part3/14_SKK_cake_7_perp}
-\>
-\<{5cm}
-\centering
-\includegraphics[width=1.\textwidth]{img/4_part3/15_SKK_cake_slice_7_perp}
+\includegraphics[width=.7\textwidth]{img/4_part3/14_SKK_cake_7_perp}
+
+{\ss The $C$ part in internal space}
 \>
 \)
 \end{frame}
@@ -189,6 +187,10 @@ $\to$ $\psi(m) = C(m) e^{\kappa h(m)}$
 \)
 \end{frame}
 
+%\begin{frame}{Fractal dimensions \& variational method}
+%
+%\end{frame}
+
 \begin{frame}{Conclusions}
 Tight-binding models on a 2D quasiperiodic tiling
 \begin{itemize}
@@ -208,6 +210,7 @@ Simple tight-binding models on 1D and 2D quasiperiodic tilings
 \end{itemize}
 Perspectives
 \begin{itemize}
-	\item
+	\item Topology: the internal space degree of freedom can be used to probe topological properties, for the Fibonacci chain [Tanese \etal{} 14]. What about 2D quasicrystals?
+	\item Interactions: quasiperiodicity can be seen as a form of deterministic disorder. Although non-interacting eigenstates are not localized, many-body quasiperiodic systems seem to localize \dots how?
 \end{itemize}
 \end{frame}

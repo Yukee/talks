@@ -1,4 +1,4 @@
-\section{Renormalization group}
+\section{Renormalization group on the Fibonacci chain}
 \subsection{Dummy}
 
 \begin{frame}{Renormalization group on the Fibonacci chain}
@@ -33,79 +33,99 @@ $\rho \neq 0,~\rho \ll 1$ $\to$ lifted degeneracy, atomic and molecular energy c
 
 \end{frame}
 
-%\begin{frame}{Renormalization}
-%	\begin{itemize}
-%	\item Atomic RG step (decimation of molecules) 
-%	
-%	{\centering
-%	\input{img/3_part2/atomic_deflation}
-%	}
-%	
-%	\item Molecular RG step (decimation of atoms) 
-%	
-%	{\centering
-%	\input{img/3_part2/molecular_deflation}
-%	}
-%	
-%	\end{itemize}
-%
-%	\flushleft{In the limit $\rho \ll 1$, $z= \rho/2$, $\zb = \rho^2$ [Niu, Nori 86, Kalugin \etal{} 86]}
-%\end{frame}
-
-\begin{frame}{Perturbative RG for the wavefunctions}
-Substitution rule: $C_{l+1} = \sub(C_l)$ $\implies$ real space renormalization [Niu, Nori 86, Kalugin \etal{} 86, Macé \etal{} 16]
+\begin{frame}{Renormalization}
+Substitution rule: $C_{l+1} = \sub(C_l)$ $\implies$ renormalization [Niu, Nori 86, Kalugin \etal{} 86]
 	\begin{itemize}
-
-		\item Atomic RG (decimation of the molecules)
-			\begin{columns}
-			\begin{column}{9cm}
-				\input{img/3_part2/rg_atomic_wavefunctions_main_txt}
-			\end{column}
-			\begin{column}{2cm}
-			\[ \lb \simop{\rho \ll 1} \frac{1}{1+2\rho^2}
-			\]
-			\end{column}
-			\end{columns}
-		\item Molecular RG (decimation of the atoms)
-			\begin{columns}
-			\begin{column}{9cm}
-				\input{img/3_part2/rg_molecular_wavefunctions_main_txt}
-			\end{column}
-			\begin{column}{2cm}
-			\[ \lambda \simop{\rho \ll 1} \frac{1}{2+\rho^2}
-			\]
-			\end{column}
-			\end{columns}
+	\item Atomic RG step (decimation of molecules) 
+	
+	{\centering
+	\input{img/3_part2/atomic_deflation}
+	}
+	
+	\item Molecular RG step (decimation of atoms) 
+	
+	{\centering
+	\input{img/3_part2/molecular_deflation}
+	}
+	
 	\end{itemize}
-%\begin{align*}
-%		|\psi_m^{(l)}(E)|^2 &= \lb |\psi_{m'}^{(l-3)}(E')|^2 \text{~if $E$ is in the central cluster}\\
-%		|\psi_m^{(l)}(E)|^2 &= \lambda |\psi_{m'}^{(l-2)}(E')|^2 \text{~if }E\text{~is in the edge clusters}
-%\end{align*}
+
+	\flushleft{In the limit $\rho \ll 1$, $z= \rho/2$, $\zb = \rho^2$}
 \end{frame}
 
+\begin{frame}{RG construction \& renormalization paths}
+ \[ H_l = \underbrace{\left( z H_{l-2} - t_s \right)}_{\text{\textcolor{BostonBlue}{bonding }levels}} + \underbrace{\left( \zb H_{l-3} \right)}_{\text{\textcolor{comp}{atomic} levels}} + \underbrace{\left( z H_{l-2} + t_s \right)}_{\text{\textcolor{BostonBlue}{antibonding} levels}} + \mathcal{O}(\rho^4)\]
+	$\rightarrow$ recursive construction of the spectrum [Piéchon \etal{} 95]
+	
+	\begin{columns}
+	\begin{column}{6cm}
+	\centering
+	\includegraphics[scale=.4]{img/3_part2/recursive_construction_spectrum.pdf}
+	\end{column}
+	\begin{column}{6cm}
+	Eigenstate $\leftrightarrow$ renormalization path:
+	\includegraphics[scale=.3]{img/3_part2/renormalization_paths_spectrum.pdf}
+	\end{column}
+	\end{columns}
+\end{frame}
+
+%\begin{frame}{Perturbative RG for the wavefunctions}
+%Substitution rule: $C_{l+1} = \sub(C_l)$ $\implies$ real space renormalization [Niu, Nori 86, Kalugin \etal{} 86, Macé \etal{} 16]
+%	\begin{itemize}
+%
+%		\item Atomic RG (decimation of the molecules)
+%			\begin{columns}
+%			\begin{column}{9cm}
+%				\input{img/3_part2/rg_atomic_wavefunctions_main_txt}
+%			\end{column}
+%			\begin{column}{2cm}
+%			\[ \lb \simop{\rho \ll 1} \frac{1}{1+2\rho^2}
+%			\]
+%			\end{column}
+%			\end{columns}
+%		\item Molecular RG (decimation of the atoms)
+%			\begin{columns}
+%			\begin{column}{9cm}
+%				\input{img/3_part2/rg_molecular_wavefunctions_main_txt}
+%			\end{column}
+%			\begin{column}{2cm}
+%			\[ \lambda \simop{\rho \ll 1} \frac{1}{2+\rho^2}
+%			\]
+%			\end{column}
+%			\end{columns}
+%	\end{itemize}
+%%\begin{align*}
+%%		|\psi_m^{(l)}(E)|^2 &= \lb |\psi_{m'}^{(l-3)}(E')|^2 \text{~if $E$ is in the central cluster}\\
+%%		|\psi_m^{(l)}(E)|^2 &= \lambda |\psi_{m'}^{(l-2)}(E')|^2 \text{~if }E\text{~is in the edge clusters}
+%%\end{align*}
+%\end{frame}
+
 \begin{frame}{Fractality of the eigenstates}
-RG $\to$ fractal dimensions of \emph{all} the eigenstates
+RG $\to$ renormalization of the eigenstates [Macé \etal{} 16]
+\begin{align*}
+		|\psi_m^{(l)}(E)|^2 &= \textcolor{comp}{\lb} |\psi_{m'}^{(l-3)}(E')|^2 \text{~if $E$ \textcolor{comp}{atomic} level}\\
+		|\psi_m^{(l)}(E)|^2 &= \textcolor{BostonBlue}{\lambda} |\psi_{m'}^{(l-2)}(E')|^2 \text{~if }E\text{~\textcolor{BostonBlue}{molecular} level}
+\end{align*}
 
-Eigenstate $\leftrightarrow$ RG path (sequence of molecular and atomic RG steps)
+%Eigenstate $\leftrightarrow$ RG path
 
-\[
-(q-1)D_q(x) = \log \Bigg[ \left( \frac{\lambda(\rho)^q}{\lambda(\rho^q)} \right)^x \left( \frac{\bar{\lambda}(\rho)^q}{\bar{\lambda}(\rho^q)} \right)^{(1-2x)/2} \Bigg]/\log \tau^{-1}
-\]
-
-$x$: fraction of molecular RG steps in a path.
 
 \(
+\<{7cm}
+Fractal dimensions of the eigenstates:
+\[
+d_q(x) = \frac{\log \Big[ \left( \frac{\lambda(\rho)^q}{\lambda(\rho^q)} \right)^x \left( \frac{\bar{\lambda}(\rho)^q}{\bar{\lambda}(\rho^q)} \right)^{(1-2x)/2} \Big]}{(q-1)\log \tau^{-1}}
+\]
+
+$x$: fraction of molecular RG steps in a path
+
+$d_q(0)$: dimensions of the ``broccoli state''
+\>
 \<{7cm}
 \centering
 \includegraphics[width=.6\textwidth]{img/3_part2/local_wf}
 
 {\ss Fractal dimensions for $\rho=0.15$: numerics \emph{vs} RG predictions}
-\>
-\<{7cm}
-\centering
-\includegraphics[width=.8\textwidth]{img/3_part2/renorm_th_num}
-
-{\ss Analytical and numerical renormalization factors}
 \>
 \)
 

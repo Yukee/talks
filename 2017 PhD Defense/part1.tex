@@ -1,40 +1,31 @@
-\section{Fibonacci chain}
+\section{A 1D quasicrystal: the Fibonacci chain}
 \subsection{Dummy}
-\begin{frame}{The Fibonacci chain}
+\begin{frame}{Constructing the Fibonacci chain}
 \(
-\<{7cm}{\textbf{Fibonacci numbers}}
-
-A simple rule for generating numbers:
-\begin{align*}
-	F_0 &= 1 \\
-	F_1 &= 1 \\
-	F_2 &= F_1 + F_0 = 2 \\
-	F_3 &= F_2 + F_1 = 3 \\
-	F_4 &= F_3 + F_2 = 5 \\
-	F_5 &= F_4 + F_3 = 8 \\
-	&\vdots
-\end{align*}
-\[
-	F_{l+2} = F_{l+1} + F_l
-\]
-
-\>
-
 \<{7cm}{\textbf{Fibonacci words}}
 
-Letters instead of numbers, same rule:
+Concatenate two words to get the next:
 \begin{align*}
 	C_0 &= \B \\
 	C_1 &= \A \\
 	C_2 &= C_1C_0 = \lett{AB} \\
 	C_3 &= C_2 C_1 = \lett{ABA} \\
 	C_4 &= C_3 C_2 = \lett{ABAAB} \\
-	C_5 &= C_4 C_3 = \lett{ABAABABA} \\
 	&\vdots
 \end{align*}
 \[
 	C_{l+2} = C_{l+1}C_l
 \]
+\>
+\<{7cm}{\textbf{Properties of Fibonacci words}}
+\begin{itemize}
+	\item Number of letters follows the Fibonacci sequence:
+	
+	$\# \A \text{ in } C_{1,2,3,4,\dots} = 1,1,2,3,5,\dots$
+	\item 
+	$\# \A / \# \B \simop{l\to\infty} \tau$, where $\tau \simeq 1.61$ is the golden ratio.
+	\item $\tau$ irrational $\to$ infinite word \textbf{aperiodic}
+\end{itemize}
 \>
 \)
 \end{frame}
@@ -70,7 +61,9 @@ $\to$ quasiperiodicity [Duneau, Katz 85]
 \)
 \end{frame}
 
-\begin{frame}{Cut-and-project}
+\begin{frame}{Cut-and-project illustrated in the 1D case}
+\cp{}: general method to construct quasiperiodic tilings
+
 \(
 \<{9cm}
 \centering
@@ -87,7 +80,6 @@ The cut-and-project algorithm:
 \>
 \)
 
-\textbf{\cp{} $\to$ quasiperiodic (or periodic) tiling!}
 \end{frame}
 
 \begin{frame}{From letters to atoms}
@@ -102,14 +94,69 @@ The cut-and-project algorithm:
 	}
 
 \end{itemize}
-Hamiltonian:
+Pure-hopping Hamiltonian:
 \[
 	\op{H} = - \sum_m t_m \ket{m-1} \bra{m} + \hc
 \]
+$\to$ $\rho = t_\A/t_\B$ only free parameter.
+
 Schrödinger equation for the eigenstate of energy $E$:
 \[
 	E \psi(m) = -t_{m}\psi(m-1) -t_{m+1}\psi(m+1)
 \]
+\end{frame}
+
+\begin{frame}{Fibonacci spectrum and eigenstates}
+\(
+\<{7cm}{Numerical results}
+\begin{itemize}
+	\item Spectrum: fractal [Kohmoto \etal{} 83]
+	
+	{\centering
+	\includegraphics[width=1.\textwidth]{img/3_part2/idos}
+
+	}
+	
+	\item Eigenstates: (almost all) fractal [Kohmoto \etal{} 83]
+\end{itemize}
+\>
+\<{7cm}{Analytical results}
+\begin{itemize}
+	\item Gap labeling [Bellissard 86]
+	\item Fractal dimensions of the spectrum
+	\begin{itemize}
+		\item $\rho = t_\A/t_\B \ll 1$: [Piéchon \etal{} 95]
+		\item $\rho \sim 1$: [Rüdinger, Sire 96]
+	\end{itemize}
+	\item Fractal dimensions of the eigenstates, $\rho \ll 1$
+	\begin{itemize}
+		\item leading order [Thiem, Schreiber 12]
+		\item next-to-leading order [Macé \etal{} 16]
+	\end{itemize}
+\end{itemize}
+\>
+\)
+\end{frame}
+
+\begin{frame}{Fractal dimensions}
+\begin{itemize}
+	\item $M(L) \propto L^d$ for a non-fractal $d$-dimensional object\dots What happens for a fractal one?
+	
+	{\centering
+	\includegraphics[width=.4\textwidth]{img/2_part1/sierpinski}
+	
+	{\ss A Sierpiński triangle}
+	
+	}
+	
+	\[
+		M(L) \sim L^{d_0} \text{, with } d_0 = \log 3/\log 2
+	\]
+	
+	\item $d_0$ is the Hausdorff fractal dimension
+	\item $1 < d_0 \simeq 1.58 < 2$, signature of a fractal object
+	\item Probe fractality of the $q$ moment of the mass distribution $\to$ generalized fractal dimension $d_q$.
+\end{itemize}
 \end{frame}
 
 \begin{frame}{The broccoli $E=0$ state}
@@ -135,6 +182,7 @@ Schrödinger equation for the eigenstate of energy $E$:
 		\item \ca\cb{} $\leftrightarrow$ R
 		\item \cb\ca{} $\leftrightarrow$ L
 		\item \ca\ca{} $\leftrightarrow$ U
+		\item \cb\cb{} : never occurs
 	\end{itemize}
 	
 \end{itemize}
@@ -188,7 +236,7 @@ Schrödinger equation for the eigenstate of energy $E$:
 	\item Disordered chain: \ca\ca\ca\cb\cb\ca\cb\cb\dots
 %	\input{img/2_part1/disordered_chain_arrows}
 	\begin{itemize}
-		\item Random arrows $\implies |\psi(m)| \sim e^{- m^\alpha/\xi}$
+		\item Random arrows $\implies$ $h(m) \simop{m\to\infty} \sqrt{m}$ $\implies |\psi(m)| \sim e^{- \sqrt{m}/\xi}$
 		\item \textbf{localized state}
 	\end{itemize}
 \end{itemize}
@@ -262,7 +310,7 @@ Partition function of the heights:
 \[
 	Z_L(\beta) = \sum_{m \in \reg(L)} e^{-\beta h(m)}
 \]
-Scaling law behavior:
+Substitution $\to$ scaling law behavior:
 \[
 	Z_L(\beta) \simop{L \to \infty} L^{\omega(\beta)}
 \]
@@ -273,7 +321,7 @@ with
 $\to$ access to the distribution of heights
 \>
 \<{7cm}
-Height diffuses slowly through the chain:
+Height grows slowly:
 \[
 	h_\text{typ}(L) \sim \sqrt{\log L}
 \]
