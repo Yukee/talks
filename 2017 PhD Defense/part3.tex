@@ -8,20 +8,31 @@
 \includegraphics[width=.8\textwidth]{img/4_part3/ammann}
 
 {\ss A patch of the \AB\ tiling}
-\>
-\<{7cm}
-Pure hopping Hamiltonian:
-\[
-	\op{H} = -t\sum_{\langle m,n\rangle} \ket{m}\bra{n}
-\]
-Quasiperiodicity encoded in adjacency and on-site potentials
-\>
-\)
 
 \textbf{Fractal} states described by \textbf{height} functions?
 \[
 	\psi(m) = e^{\kappa h(m)}
 \]
+\>
+\<{7cm}
+
+\begin{itemize}
+	\item RG description [Sire, Bellissard 90]
+	\item Fractal spectrum [Sire 94]
+	\item \textbf{Exact eigenstates [Sutherland 87], [Grimm, Repetowicz 98]}
+	\item Conductivity [Zijlstra 04]
+	\item \textbf{Exact groundstate}
+	
+		\textbf{[Kalugin, Katz 14], [Macé \etal{} 17]}
+\end{itemize}
+Pure hopping Hamiltonian:
+\[
+	\op{H} = -t\sum_{\langle m,n\rangle} \ket{m}\bra{n}
+\]
+Quasiperiodicity encoded in adjacency
+
+\>
+\)
 \end{frame}
 
 \begin{frame}{Looking for arrows}
@@ -196,6 +207,9 @@ Tight-binding models on a 2D quasiperiodic tiling
 \begin{itemize}
 	\item Geometry (notches) $\to$ \textbf{height field} $h(m)$ $\to$ $\psi_\text{groundstate}(m) = C(m) e^{\kappa h(m)}$
 	\item Slow height growth ($h(L) \sim \sqrt{\log L})$ $\to$ critical, \textbf{fractal} state
+\end{itemize}
+$\to$ Groundstate in 2D $\leftrightarrow$ $E=0$ state in 1D
+\begin{itemize}
 	\item Robust to symmetry-preserving on-site perturbations
 	\item Same conclusions for the 10-fold symmetric Penrose tiling.
 \end{itemize}
@@ -204,13 +218,20 @@ Tight-binding models on a 2D quasiperiodic tiling
 \begin{frame}{General conclusion}
 Simple tight-binding models on 1D and 2D quasiperiodic tilings
 \begin{itemize}
-	\item Quasiperiodic structures: in between periodic and random
+	\item Quasiperiodic structures: in between periodic and random, very close to periodic
 	\item Critical, fractal eigenstates
 	\item Consequence of quasiperiodic geometry
 \end{itemize}
 Perspectives
 \begin{itemize}
+	\item Structure: 1D structures can be sorted by their ``disorder degree'' [Julien 10] (quasiperiodic is the closest to periodic). Systematically study of the link between disorder degree and eigenstate properties could be done for the $E=0$ state.
 	\item Topology: the internal space degree of freedom can be used to probe topological properties, for the Fibonacci chain [Tanese \etal{} 14]. What about 2D quasicrystals?
-	\item Interactions: quasiperiodicity can be seen as a form of deterministic disorder. Although non-interacting eigenstates are not localized, many-body quasiperiodic systems seem to localize \dots how?
+	\item Interactions: quasiperiodicity $\simeq$ deterministic disorder. Non-interacting eigenstates are not localized, yet many-body quasiperiodic systems seem to localize \dots how?
 \end{itemize}
 \end{frame}
+
+%\begin{frame}{Thanks to\dots}
+%
+%Jean-Noël Fuchs
+%
+%\end{frame}

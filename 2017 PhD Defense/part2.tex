@@ -2,16 +2,42 @@
 \subsection{Dummy}
 
 \begin{frame}{Renormalization group on the Fibonacci chain}
+\(
+\<{7cm}
 Focused on the $E=0$ state\dots
 
 {\centering
-\includegraphics[width=.5\textwidth]{img/3_part2/idos_fibo}
+\includegraphics[width=.8\textwidth]{img/3_part2/idos_fibo}
 
 {\ss Integrated density of states (IDoS) of the Fibonacci chain}
 
 }
 
 \dots what about the rest of the spectrum?
+\>
+\<{7cm}{Analytical results}
+\begin{itemize}
+	\item Gap labeling [Bellissard 86]
+	\item Fractal dimensions of the spectrum
+	\begin{itemize}
+		\item $\rho = t_\A/t_\B \ll 1$: [Piéchon \etal{} 95]
+		\item $\rho \sim 1$: [Rüdinger, Sire 96]
+	\end{itemize}
+	\item Fractal dimensions of the eigenstates, $\rho \ll 1$
+	\begin{itemize}
+		\item \textbf{leading order} 
+		
+		\textbf{[Thiem, Schreiber 12]}
+		\item \textbf{higher order} 
+		
+		\textbf{[Macé \etal{} 16]}
+	\end{itemize}
+	\item exact description of the $E=0$ state
+	
+ 	[Kohmoto \etal{} 87], [Macé \etal{} 17]
+\end{itemize}
+\>
+\)
 \end{frame}
 
 \begin{frame}{Atoms and molecules}
@@ -69,6 +95,43 @@ Substitution rule: $C_{l+1} = \sub(C_l)$ $\implies$ renormalization [Niu, Nori 8
 	\end{columns}
 \end{frame}
 
+\begin{frame}{RG for the eigenstates}
+Cut-and-project $\to$ internal space $\to$ sites classified by local environment
+
+{\centering	
+\includegraphics[width=.75\textwidth]{img/3_part2/cut_and_project}
+	
+}
+
+Conumbering: numbering sites in internal space [Mosseri 88], [Mosseri, Sire 90].
+
+\(
+\<{5cm}
+\centering
+\includegraphics[width=.8\textwidth]{img/3_part2/ldos_reordered}
+
+{\ss Fractal electronic density}
+\>
+\<{5cm}
+\centering
+\includegraphics[width=.6\textwidth]{img/3_part2/recursion_idos}
+
+{\ss Electronic density at different RG steps}
+\>
+\<{5cm}
+Renormalization factors:
+
+\textcolor{BostonBlue}{atomic} levels:
+
+$|\psi_m^{(l)}(E)|^2 = \textcolor{BostonBlue}{\lb} |\psi_{m'}^{(l-3)}(E')|^2$
+
+\textcolor{comp}{molecular} levels:
+
+$|\psi_m^{(l)}(E)|^2 = \textcolor{comp}{\lambda} |\psi_{m'}^{(l-2)}(E')|^2$
+\>
+\)
+\end{frame}
+
 %\begin{frame}{Perturbative RG for the wavefunctions}
 %Substitution rule: $C_{l+1} = \sub(C_l)$ $\implies$ real space renormalization [Niu, Nori 86, Kalugin \etal{} 86, Macé \etal{} 16]
 %	\begin{itemize}
@@ -100,32 +163,47 @@ Substitution rule: $C_{l+1} = \sub(C_l)$ $\implies$ renormalization [Niu, Nori 8
 %%\end{align*}
 %\end{frame}
 
+%Fractal dimensions of the eigenstates:
+%\[
+%d_q(x) = \frac{\log \Big[ \left( \frac{\lambda(\rho)^q}{\lambda(\rho^q)} \right)^x \left( \frac{\bar{\lambda}(\rho)^q}{\bar{\lambda}(\rho^q)} \right)^{(1-2x)/2} \Big]}{(q-1)\log \tau^{-1}}
+%\]
+
 \begin{frame}{Fractality of the eigenstates}
-RG $\to$ renormalization of the eigenstates [Macé \etal{} 16]
-\begin{align*}
-		|\psi_m^{(l)}(E)|^2 &= \textcolor{comp}{\lb} |\psi_{m'}^{(l-3)}(E')|^2 \text{~if $E$ \textcolor{comp}{atomic} level}\\
-		|\psi_m^{(l)}(E)|^2 &= \textcolor{BostonBlue}{\lambda} |\psi_{m'}^{(l-2)}(E')|^2 \text{~if }E\text{~\textcolor{BostonBlue}{molecular} level}
-\end{align*}
+\(
+\<{7cm}{Leading order [Thiem, Schreiber 12]}
 
-%Eigenstate $\leftrightarrow$ RG path
+$\lb = 1$
 
+$\lambda = 1/2$
+\>
+\<{7cm}{Higher order [Macé \etal{} 16]}
+
+$\lb = \frac{1}{1+2\rho^2}$
+
+$\lambda = \frac{1}{2+\rho^2}$
+\>
+\)
 
 \(
 \<{7cm}
-Fractal dimensions of the eigenstates:
-\[
-d_q(x) = \frac{\log \Big[ \left( \frac{\lambda(\rho)^q}{\lambda(\rho^q)} \right)^x \left( \frac{\bar{\lambda}(\rho)^q}{\bar{\lambda}(\rho^q)} \right)^{(1-2x)/2} \Big]}{(q-1)\log \tau^{-1}}
-\]
 
-$x$: fraction of molecular RG steps in a path
+{\centering
 
-$d_q(0)$: dimensions of the ``broccoli state''
+\includegraphics[width=.65\textwidth]{img/3_part2/fractal_dims_broccoli}
+
+{\ss Fractal dimensions of the ``broccoli state'', $rho = 0.1$}
+
+}
+
+$\to$ higher order: captures multifractality
 \>
 \<{7cm}
 \centering
-\includegraphics[width=.6\textwidth]{img/3_part2/local_wf}
+\includegraphics[width=.8\textwidth]{img/3_part2/average_wf_dimension}
 
-{\ss Fractal dimensions for $\rho=0.15$: numerics \emph{vs} RG predictions}
+{\ss Fractal dimensions averaged over all states: numerics \emph{vs} RG}
+
+$\to$ higher order accurate for large $\rho$ 
 \>
 \)
 
@@ -134,8 +212,8 @@ $d_q(0)$: dimensions of the ``broccoli state''
 \begin{frame}{Conclusions}
 Focus on the Fibonacci tight-binding chain, in the limit $\rho \ll 1$.
 \begin{itemize}
-	\item Substitution rule $\to$ scale invariance $\to$ renormalization group
-	\item RG $\to$ eigenstates all \emph{fractal}
-	\item Fractal dimensions depend only on $x$
+	\item Substitution rule $\to$ \textbf{scale invariance} $\to$ renormalization group
+	\item RG $\to$ eigenstates all \textbf{multifractal}
+	\item Higher order in $\rho$: captures this multifractality
 \end{itemize}
 \end{frame}
