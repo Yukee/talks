@@ -4,18 +4,48 @@
 \(
 \<{7cm}{\textbf{Fibonacci words}}
 
-Concatenate two words to get the next:
-\begin{align*}
-	C_0 &= \B \\
-	C_1 &= \A \\
-	C_2 &= C_1C_0 = \lett{AB} \\
-	C_3 &= C_2 C_1 = \lett{ABA} \\
-	C_4 &= C_3 C_2 = \lett{ABAAB} \\
-	&\vdots
-\end{align*}
+Substitution rule:
 \[
-	C_{l+2} = C_{l+1}C_l
+	\sub: 
+	\begin{cases}
+		\A \to \lett{AB}\\
+		\B \to \A.
+	\end{cases}
 \]
+Generate a sequence of words $C_l$
+\[
+	C_{l+1} = \sub(C_l)
+\]
+	\only<1>{
+	$C_0 = \B$ \\
+	$C_1 = S(C_0) = S(\B) = \A$
+	}
+	\only<2>{
+	$C_0 = \B$ \\
+	$C_1 = \A$ \\
+	$C_2 = S(C_1) = S(\A) = \A\B$
+	}
+	\only<3>{
+	$C_0 = \B$ \\
+	$C_1 = \A$ \\
+	$C_2 = \A\B$ \\
+	$C_3 = S(C_2) = S(\A)S(\B) = \A\B\A$
+	}
+	\only<4>{
+	$C_0 = \B$ \\
+	$C_1 = \A$ \\
+	$C_2 = \A\B$ \\
+	$C_3 = S(C_2) = S(\A)S(\B) = \A\B\A$
+	\dots $C_6 = \lett{ABAABABAABAAB}$
+	}
+%	\only<4-8>{
+%	$C_3 = \lett{ABA}$ \\
+%	$C_4 = S(C_3) = }
+%	\only<5>{\sub(\A)\sub(\B)\sub(\A)}
+%	\only<6>{\lett{AB}\sub(\B)\sub(\A)}
+%	\only<7>{\lett{AB}\A\sub(\A)}
+%	\only<8>{\lett{AB}\A\lett{AB}}
+%	$
 \>
 \<{7cm}{\textbf{Properties of Fibonacci words}}
 \begin{itemize}
@@ -23,7 +53,7 @@ Concatenate two words to get the next:
 	
 	$\# \A \text{ in } C_{1,2,3,4,\dots} = 1,1,2,3,5,\dots$
 	\item 
-	$\# \A / \# \B \simop{l\to\infty} \tau$, where $\tau \simeq 1.61$ is the golden ratio.
+	$\# \A / \# \B \simop{l\to\infty} \tau$, where $\tau = \frac{1+\sqrt{5}}{2} \simeq 1.61$ is the golden ratio.
 	\item $\tau$ irrational $\to$ infinite word \textbf{aperiodic}
 \end{itemize}
 \>
@@ -140,27 +170,6 @@ Schrödinger equation for the eigenstate of energy $E$:
 \)
 \end{frame}
 
-\begin{frame}{Fractal dimensions}
-\begin{itemize}
-	\item $M(L) \propto L^d$ for a non-fractal $d$-dimensional object\dots What happens for a fractal one?
-	
-	{\centering
-	\includegraphics[width=.4\textwidth]{img/2_part1/sierpinski}
-	
-	{\ss A Sierpiński triangle}
-	
-	}
-	
-	\[
-		M(L) \sim L^{d_0} \text{, with } d_0 = \log 3/\log 2
-	\]
-	
-	\item $d_0$ is the Hausdorff fractal dimension
-	\item $1 < d_0 \simeq 1.58 < 2$, signature of a fractal object
-	\item Probe fractality of the $q$ moment of the mass distribution $\to$ generalized fractal dimension $d_q$.
-\end{itemize}
-\end{frame}
-
 \begin{frame}{The broccoli $E=0$ state}
 \(
 \<{6cm}
@@ -253,6 +262,7 @@ Schrödinger equation for the eigenstate of energy $E$:
 		\includegraphics[width=.7\textwidth]{img/2_part1/power_law_decay}}
 	
 		\item Local power-law behavior $\textcolor{comp}{|\psi(m)| \sim m^{-\alpha}}$
+		\item Red points show such a local power-law, $\alpha = 2|\log \rho|/(3\log \tau)$
 		\item \textbf{critical state}
 	\end{itemize}
 \end{itemize}
@@ -260,50 +270,50 @@ Schrödinger equation for the eigenstate of energy $E$:
 \)
 \end{frame}
 
-\begin{frame}{Underlying scale invariance}
-Fibonacci chain \emph{itself} scale invariant?
-
-\(
-\<{7cm}
-\begin{itemize}
-	\item Fibonacci words by concatenation:\\
-	$C_2 = \lett{AB}$ \\
-	$C_3 = \lett{ABA}$ \\
-	$C_4 = C_3 C_2 = \lett{ABAAB}$
-	
-	\item Fibonacci words by \textbf{substitution}:
-	\[
-		\sub: 
-		\begin{cases}
-			\A \to \lett{AB}\\
-			\B \to \A.
-		\end{cases}
-	\]
-	$C_3 = \lett{ABA}$ \\
-	$C_4 = S(C_3) = 
-	\only<1>{\sub(\A)\sub(\B)\sub(\A)}
-	\only<2>{\lett{AB}\sub(\B)\sub(\A)}
-	\only<3>{\lett{AB}\A\sub(\A)}
-	\only<4>{\lett{AB}\A\lett{AB}}
-	$
-\end{itemize}
-\>
-\<{7cm}
-\begin{itemize}
-	\item Infinite chain = fixed point of the substitution: \\
-	$S(\lett{ABAAB}\dots) = \lett{ABAAB}\dots$
-	\item Geometric substitution:
-	
-	{\centering
-	\input{img/2_part1/inflation_fibonacci}
-	}
-	
-	\item \textbf{Infinite chain scale invariant}, scaling factor $1/\tau$.
-	
-\end{itemize}
-\>
-\)
-\end{frame}
+%\begin{frame}{Underlying scale invariance}
+%Fibonacci chain \emph{itself} scale invariant?
+%
+%\(
+%\<{7cm}
+%\begin{itemize}
+%	\item Fibonacci words by concatenation:\\
+%	$C_2 = \lett{AB}$ \\
+%	$C_3 = \lett{ABA}$ \\
+%	$C_4 = C_3 C_2 = \lett{ABAAB}$
+%	
+%	\item Fibonacci words by \textbf{substitution}:
+%	\[
+%		\sub: 
+%		\begin{cases}
+%			\A \to \lett{AB}\\
+%			\B \to \A.
+%		\end{cases}
+%	\]
+%	$C_3 = \lett{ABA}$ \\
+%	$C_4 = S(C_3) = 
+%	\only<1>{\sub(\A)\sub(\B)\sub(\A)}
+%	\only<2>{\lett{AB}\sub(\B)\sub(\A)}
+%	\only<3>{\lett{AB}\A\sub(\A)}
+%	\only<4>{\lett{AB}\A\lett{AB}}
+%	$
+%\end{itemize}
+%\>
+%\<{7cm}
+%\begin{itemize}
+%	\item Infinite chain = fixed point of the substitution: \\
+%	$S(\lett{ABAAB}\dots) = \lett{ABAAB}\dots$
+%	\item Geometric substitution:
+%	
+%	{\centering
+%	\input{img/2_part1/inflation_fibonacci}
+%	}
+%	
+%	\item \textbf{Infinite chain scale invariant}, scaling factor $1/\tau$.
+%	
+%\end{itemize}
+%\>
+%\)
+%\end{frame}
 
 \begin{frame}{Height distribution \& multifractality}
 \(
@@ -357,7 +367,7 @@ B3 chain:
 	\end{cases}
 \]
 
-Unbounded fluctuations
+Unbounded fluctuations (non-Pisot inflation factor)
 
 $\to$ \textbf{not quasiperiodic}
 
@@ -372,14 +382,15 @@ $\to$ \textbf{not quasiperiodic}
 \<{7cm}
 
 {\centering
-\includegraphics[width=.7\textwidth]{img/2_part1/7_height_b3}
+\includegraphics[width=.7\textwidth]{img/2_part1/height_b3}
 
 }
 
 Height: power-law growth [Dumont 89]
 \[
-h(m) = C(m)m^\alpha
+h(m) \sim m^\alpha
 \]
+$\alpha = \log 3/\left(3\log(\frac{1+\sqrt{13}}{2})\right)$
 %$C$: log-periodic function.
 
 $\to$ \textbf{non-fractal, localized state}
