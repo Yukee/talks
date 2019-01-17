@@ -21,6 +21,7 @@
 * KPZ
 ###### Questions
 * Numerics for the NPRG (non-linear PDE solving...), lattice methods?
+* Rk: numerics with the LEGI (Guillaume Balarac ), HPC.
 ###### For the talk
 * KPZ in random circuits, (MBL ?)
 
