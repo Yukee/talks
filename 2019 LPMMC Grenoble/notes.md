@@ -58,6 +58,7 @@
 * Groundstates, chiral spin liquids, SU(N), SU(N), SU(N)
 ###### Questions
 * Tensor methods in more than 1D
+* SU(N) + disorder -> random singlet phase?
 * ED more than 4*4 with symmetries?
 * TDVP for Floquet, perhaps 2D?
 ###### Talk

@@ -1,0 +1,6 @@
+[submodule "2018 eniqma Lyon/reveal.js"]
+	path = 2018 eniqma Lyon/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
+[submodule "2019 LPMMC Grenoble/reveal.js"]
+	path = 2019 LPMMC Grenoble/reveal.js
+	url = https://github.com/hakimel/reveal.js.git
