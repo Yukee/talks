@@ -8,12 +8,10 @@
     >=latex
 }
 \usepackage{ifthen}
-
 \usepackage{nicefrac}
-
 \usepackage{color}
 \usepackage{amsmath, amssymb, amsfonts, mathtools}
-%% lots of nice custom commands for physicists
+\usepackage{libertine}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -47,9 +45,6 @@
 
 \newcommand{\btVFill}{\vskip0pt plus 1filll}%place an element at the bottom of the page
 
-%\usepackage{libertine} %TODO
-\usepackage[T1]{fontenc}
-
 \setbeamerfont{title like}{shape=\scshape}
 \setbeamerfont{frametitle}{shape=\scshape}
 
@@ -70,10 +65,10 @@
 \begin{document}
 
 \input{title_page}
-\input{intro}
 \begin{frame}{Content}
 \tableofcontents[hideallsubsections]
 \end{frame}
+\input{intro}
 \input{part1}
 
 \end{document}
