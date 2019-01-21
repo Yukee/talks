@@ -1,12 +1,33 @@
+<style>
+.container{
+    display: flex;
+}
+.col{
+    flex: 1;
+}
+</style>
+
 ## Introduction
 
-* A list!
-* Hooray!
-* `$E = m c^2$`
+<div class="container">
 
-`$$ H = \sum_{j} S_j^x S_{j+1}^x + \Delta \sum_j S_j^z S_{j+1}^z $$`
+  <div class="col">
+    Column 1 Content
 
-![An image?](/slides/img/Imabalance_Choi.png)
+    `$$ H = \sum_{j} S_j^x S_{j+1}^x + \Delta \sum_j S_j^z S_{j+1}^z $$`
+  </div>
+
+  <div class="col">
+    Column 2 Content
+
+    <img src="../talk.js/slides/img/Imbalance_Choi_thermal.png" alt="thermal" width="400"/>
+
+    <img src="../talk.js/slides/img/Imbalance_Choi.png" alt="mbl" width="400"/>
+  </div>
+
+</div>
+
+
 
 notes:Speaker notes are here
 
