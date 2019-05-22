@@ -1,0 +1,66 @@
+Intro
+
+Je m'appelle Nicolas Macé, je suis chercheur en théorie de la matière condensée, j'étudie la physique critique des électrons dans les quasicristaux, et ainsi que la modélisation numérique de systèmes désordonnés à N corps en interaction.
+
+J'ai suivi un cursus universitaire, à Orsay puis à Paris.
+Ma thèse, encadrée par Anuradha Jagannathan au LPS d'Orsay, a porté sur l'étude des électrons dans les quasicristaux. J'ai en particulier décrit leur nature fractalité dans des systèmes uni- et bidimensionnels, et je me suis également intéressé à la réalisation de structures quasipériodiques d'atomes froids.
+En postdoc au LPT de Toulouse, j'ai effectué un virage thématique, puisque je m'intéresse à la localisation à N corps dans des systèmes en interaction forte, à haute énergie, ainsi qu'un virage technique, puisque j'utilise et je développe des méthodes numériques pour les problèmes à N corps.
+J'ai notamment montré qu'on pouvait induire de la localisation en prenant en compte les interactions dans les systèmes que j'étudiais en thèse : les quasicristaux. J'ai aussi montré que la phase localisée à N corps possède un caractère multifractal.
+
+Dans les transparents qui vont suivre, je vais vous parler un peu plus en détail de mes activités de recherche. Je vous exposerai ensuite le projet de recherche que je souhaite porter, et terminerai avec mon projet d'enseignement.
+
+*Activités de recherche*
+
+Je vous montre ici deux copies d'un pavage. Vous pouvez vous apercevoir qu'il est quasipériodique, car la superposition entre les deux copies est presque parfaite : on a une presque invariance par translation. Ces structures quasipériodiques sont réalisées par exemple dans des alliages métalliques, des systèmes d'atomes froids ou des bicouches de graphène.
+On pourrait donc s'attendre à ce que les propriétés physique des quasicristaux soient très proches de celles des cristaux périodiques. 
+
+Il n'en est rien : les fonctions d'ondes d'un électron sur un pavage quasipériodique ont une structure fractale, et sont dites "critiques". J'ai caractérisé de façon analytique ce caractère critique dans des systèmes en une dimension : par exemple la chaîne de Fibonacci. Vous voyez ici la probabilité de présence d'une électron le long de cette chaîne, et l'invariance d'échelle, la fractalité en est manifeste.
+Je me suis également intéressé à des systèmes bidimensionnels, comme le pavage octogonal, dont j'ai représenté ici une fonction d'onde fractal.
+
+Un résultat important de ma thèse a la caractérisation de ces propriétés critiques par le calcul exacte des dimensions fractales de certains états, pour des modèles génériques, en une et deux dimensions.
+En une dimension, une conséquence immédiate de ce résultat est la nature anormale de transport dans la chaîne : en guise d'illustration, vous voyez ici la probabilité de transmission d'un électron au travers d'une chaîne, en fonction de sa longueur.
+Les perspectives de cette recherche incluent l'étude des propriétés topologiques des quasicristaux, ainsi que la robustesse de la criticalité au désordre et aux interactions.
+
+Et je vais justement vous parler maintenant de mon travail de postdoc, qui porte sur l'étude numérique de systèmes à N particules en interaction, et en présence de désordre.
+En guise d'exemple, considérons la dynamique d'un gaz de bosons piégés dans un disque. Initialement, on prépare le système dans un état non-thermal : toutes les particules sont rassemblées dans la moitié gauche de système.
+Ensuite on laisse le système évoluer. Il y a deux scénarios possible.
+Génériquement, on s'attend à ce que le système thermalise, ce qui ici correspond aux vignettes du haut : sur ces images prises à des instants différents, on voit que les particules explorent rapidement tout l'espace disponible. 
+De façon remarquable, en présence de fort désordre, il est possible que la thermalisation soit empêchée : c'est le mécanisme de la localisation à N corps, que vous voyez illustré en bas : ici les bosons restent majoritairement confinés dans la partie gauche du système, et ont donc un comportement non-ergodique.
+La localisation à N corps peut être réalisée dans des systèmes d'atomes froids, et pourrait aussi se manifester dans des systèmes réalisés ici à Grenoble, comme des fils supraconducteurs ou des réseaux de jonctions Josephson.
+J'ai pour ma part étudié la transition de phase entre le régime thermal et localisé à N corps, et j'ai aussi donné une caractérisation plus précise de la phase localisée.
+Je développe pour cela des méthodes numériques de diagonalisation exacte, qui permettent d'accéder aux propriétés de systèmes de tailles record sans faire d'approximations.
+
+Un modèle paradigmatique de cette physique, que j'étudie en postdoc, est la chaîne de fermions en interaction.
+Le schéma que vous voyez illustre le rôle des trois termes qui dictent la dynamique de ces fermions.
+h est la largeur du potentiel désordonné -- décrit par le dernier terme -- dans lequel ces particules évoluent.
+J est la fréquence de saut d'un minimum de potentiel à un autre, et Delta est la force des interactions : le coût énergétique de la présence de deux particules voisines.
+Ce modèle est générique puisqu'il décrit aussi bien la physique des fermions que de spins ou de bosons de coeur dur.
+On a une transition entre une phase thermale faiblement désordonnée et une phase localisé à fort désordre.
+
+Naïvement, on pourrait s'attendre à ce que les états propres du systèmes soient localisés dans la phase localisée à N corps.
+En réalité, j'ai montré qu'ils possédaient une structure fractale. Cette multifractalité est différente de celle mentionnée dans le contexte des quasicristaux, puisqu'elle atteste de l'invariance d'échelle de la fonction d'onde non pas dans l'espace réel, mais dans l'espace de Hilbert à N corps, qui forme un graphe complexe dont le volume croît exponentiellement vite avec la taille physique du système.
+Nous avons pu observer le caractère multifractal des fonctions d'ondes dans cet espace de très grand volume grâce au développement de méthodes numériques, qui nous permettent de simuler un grand nombre de particules.
+Nous avons utilisé une analyse d'échelle, pour sonder plus en détail les propriétés des deux phases. En particulier, nous avons constaté que le point de transition était lui aussi multifractal et appartenait donc à la phase localisée à N corps.
+Ce travail concernait plutôt l'exploration de la phase localisée, mais la nature de la phase thermale au voisinage de la transition fait encore débat, ainsi que l'existence même d'une transition en 2D.
+De manière plus générale, on peut aussi se demander quelles sont les conditions de brisure de la thermalisation dans un système quantique.
+
+*Projet de recherche*
+
+Mon projet concerne l'ingénierie de systèmes cohérents, robustes à la thermalisation, ainsi que la compréhension du couplage à l'environnement et de la thermalisation qui s'en suit.
+Je pense que ce projet s'inscrit bien dans le contexte grenoblois : puisqu'il y a une activité expérimentale très importante concernant la conception et la manipulation de qubits robustes, ainsi qu'une activité théorique pour la compréhension de ces systèmes.
+En guise d'illustration, le groupe NanoSpin à l'institut Néel a récemment opéré des manipulations cohérentes d'un qudit à 4 niveau au sein d'une boîte quantique, avec en particulier une mesure de son temps de cohérence.
+Je propose d'apporter à ces thématiques mon expertise numérique en modélisation de systèmes quantiques en interactions, et je propose également l'emploi de méthodes analytiques pour comprendre la dynamique de l'information quantique, dans le contexte des circuits quantiques dont je reparlerai.
+
+Je vous présente tout d'abord un projet portant sur un système robuste à la thermalisation.
+J'ai sous-entendu jusqu'à présent qu'il y avait une dichotomie entre d'une part des systèmes thermaux, et d'autre part des systèmes qui préservent leur cohérence même à autre énergie.
+C'est en effet ce que l'on pensait, jusqu'à découvrir l'existence des cicatrices quantiques : ce sont des états non-thermaux qui coexistent avec les états ergodiques habituels d'un système thermal. Ces états anormaux sont en petit nombre : ce sont les points numérotés sur cette figure qui montre une mesure du caractère thermal des états propres du système. 
+Malgré leur petit nombre, il est possible d'observer ces cicatrices quantiques expérimentalement : vous voyez ici la mesure expérimentale d'une observable locale en fonction du temps. Le système étant initialement préparé dans l'un de ces états "cicatrice", il présente des oscillations cohérentes sur des temps très longs.
+On sait peut de choses sur ces états anormaux : on ignore même leurs conditions d'existence, et on ne connaît pas non plus leur robustesse au couplage à un environnement. Ce sont des questions que je propose d'explorer, avec des chercheurs au LPMMC.
+
+Le formalisme des circuits quantiques à été introduit pour décrire le fonctionnement d'un ordinateur quantique idéal. 
+Un circuit quantique décrit l'évolution d'un ensemble de qubits (ici une chaîne, en abscisse) auquel on applique des portes logiques : des opérations unitaires locales représentées ici par des rectangles.
+On s'est aperçu ces dernières années que ces circuits étaient aptes à décrire la physique de nombre de systèmes : des chaînes de spins isolées aux systèmes ouverts, en passant par les systèmes de Floquet, périodiquement excités.
+L'intérêt de ces modèles est qu'ils sont très simples, ce qui permet souvent une description exacte de leurs propriétés, par exemple de propagation de l'information quantique.
+De plus, dans le régime hydrodynamique, c'est-à-dire aux grandes échelles de temps et de distance, il semble que cette description soit universelle et permette non seulement de comprendre la physique de ces modèles jouets, mais aussi celles de systèmes plus réalistes.
+Je pense que la communauté commence tout juste à exploiter la puissance de ce formalisme, et de nombreuses questions sont ouverte : peut-on modéliser un système au voisinage d'une transition de phase avec ces méthodes, que se passe-t-il en présence de désordre ? En plus d'une dimension ? Quels sont les liens entre la dynamique de l'information quantique dans ces systèmes et l'efficacité des algorithmes quantiques ?
+Je propose d'explorer ces questions avec des chercheurs du LPMMC mais aussi de l'institut Néel et du laboratoire d'informatique de Grenoble.
