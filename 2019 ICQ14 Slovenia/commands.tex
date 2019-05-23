@@ -1,0 +1,171 @@
+%------------------ General setup ------------------%
+\definecolor{darkblue}{rgb}{0.0,0.0,0.4}
+\hypersetup
+{
+bookmarksopen=true,
+pdftitle=Nicolas Macé - Electronic properties of quasicrytals,
+pdfauthor=Nicolas Macé, 
+pdfsubject=Electronic properties of quasicrytals, %subject of the document
+%pdftoolbar=false, % toolbar hidden
+pdfmenubar=true, %menubar shown
+pdfhighlight=/O, %effect of clicking on a link
+colorlinks=true, %couleurs sur les liens hypertextes
+pdfpagemode=None, %aucun mode de page
+pdfpagelayout=SinglePage, %ouverture en simple page
+pdffitwindow=true, %pages ouvertes entierement dans toute la fenetre
+linkcolor=darkblue, %couleur des liens hypertextes internes
+citecolor=RoyalBlue, %couleur des liens pour les citations
+urlcolor=darkblue %couleur des liens pour les url
+}
+
+%---------------- Commands ---------------------------%
+
+%%%%%%%%%%%%%% COLORS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\definecolor{BostonBlue}{HTML}{00688B}
+\definecolor{comp}{rgb}{0.78, 0.14, 0}
+% colored letters
+\newcommand{\ca}{\ensuremath{\text{\textcolor{BostonBlue}{A}}}}
+\newcommand{\cb}{\ensuremath{\text{\textcolor{comp}{B}}}}
+
+%%%%%%%%%%%%%% TYPOGRAPHY %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% id est
+\newcommand{\ie}{i.e.}
+% eg
+\newcommand{\eg}{e.g.}
+% small font size
+\renewcommand{\ss}[1]{\scriptsize{\text{#1}}}
+% copyleft
+\newcommand{\copyleft}{\reflectbox{\copyright}}
+
+%%%%%%%%%%%%%% MISC %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% et al
+\newcommand{\etal}{\textit{et~al.}\xspace}
+% vector notation
+\renewcommand{\vec}[1]{\mathbf{#1}}
+% the equal sign I use to define something
+\newcommand{\define}{\ensuremath{ \overset{\text{def}}{=} }}
+% card sine
+\DeclareMathOperator{\sinc}{sinc}
+% differential element
+\renewcommand{\d}[1]{\mathrm{d}#1}
+% similar symbol with a limit underneath
+\newcommand{\simlim}[1]{\ensuremath{ \underset{#1}{\sim} }}
+% alias for omega
+\newcommand{\om}{\ensuremath{\omega}}
+% local part of the KK wavefunction
+\DeclareMathOperator{\loc}{C}
+% idos
+\newcommand{\idos}{\ensuremath{\text{idos}}}
+% hermitian conjugate
+\newcommand{\hc}{\ensuremath{\text{H.c}}}
+% region on the tiling
+\newcommand{\reg}{\ensuremath{\mathcal{R}}}
+% generating function of the height stat
+\newcommand{\gen}{\ensuremath{Z}}
+% volume of a region
+\newcommand{\vol}{\ensuremath{\text{Vol}}}
+% Ammann-Beenker alias
+\newcommand{\AB}{Ammann-Beenker}
+% SKK alias
+\newcommand{\SKK}{SKK}
+% sim symbol with a limit underneath
+\newcommand{\simop}[1]{\ensuremath{\underset{#1}{\sim}}}
+
+% differential element
+\renewcommand{\d}[1]{\mathrm{d}#1}
+
+\newcommand{\lb}{\ensuremath{\overline{\lambda}}}
+\newcommand{\zb}{\ensuremath{\overline{z}}}
+% wavefunction dimensions
+\newcommand{\wf}{\ensuremath{d^\psi}}
+% averaged wavefunction dimensions
+\newcommand{\avwf}{\ensuremath{\overline{D^\psi}}}
+% local spectral dimensions
+\newcommand{\locspec}{\ensuremath{D^\mu}}
+% averaged local spectral dimensions
+\newcommand{\avspec}{\ensuremath{D^\mu}}
+% bold g letter in math mode
+\newcommand{\gv}{\ensuremath{\mathbf{g}}}
+
+% log derivative of the wavefunction
+\newcommand{\dlogpsi}{\ensuremath{\d \log \psi}}
+% average potential
+\newcommand{\meanv}{\ensuremath{\langle V \rangle}}
+% ceiling function
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
+% floor function
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+% irrational number
+\newcommand{\irr}{\ensuremath{\alpha}}
+% cut-and-project
+\renewcommand{\cp}{C\&P}
+% set of the integers
+\newcommand{\zahl}{\ensuremath{\mathds{Z}}}
+% fractional part function
+\DeclarePairedDelimiter{\fpart}{\{}{\}}
+% normalized perp position
+\newcommand{\nperp}[2]%
+	{%
+		\ifthenelse{\isempty{#1}}{\ensuremath{\widetilde{x}_\perp}}{\ensuremath{\widetilde{x}_\perp(#1,#2)}}%
+	}
+% average with angled brackets
+\DeclarePairedDelimiter{\avg}{\langle}{\rangle}
+% sturmian fucntion (generate a sturmian sequence)
+\newcommand{\sturm}[2]{\ensuremath{S_{#1}\left(#2\right)}}
+% Heaviside function
+\DeclareMathOperator{\heaviside}{Y}
+% support of the multifractal spectrum
+\newcommand{\supp}{\ensuremath{\Delta_f}}
+% variational groundstate
+\newcommand{\psivar}{\ensuremath{\psi_\text{var}}}
+% preexponential factor for the variational groundstate
+\newcommand{\locvar}{\ensuremath{C_\text{var}}}
+
+%%%%%%%%%%%%%%%%% COMMENTS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\nico}[1]{\textcolor{BrickRed}{#1}}
+\newcommand{\anu}[1]{\textcolor{NavyBlue}{#1}}
+\newcommand{\fred}[1]{\textcolor{OliveGreen}{#1}}
+
+%%%%%%%%%%%%%%%% QUANTUM MECHANICS %%%%%%%%%%%%%%%%%
+% energy
+\newcommand{\en}{\ensuremath{\varepsilon}}
+% Operator
+\renewcommand{\op}[1]{\hat{#1}}
+% density of states
+\DeclareMathOperator{\dos}{\rho}
+
+%%%%%%%%%%%%%%%% ALPHABETS AND WORDS %%%%%%%%%%%
+% the A letter
+\newcommand{\A}{\ensuremath{\text{A}}}
+% the B letter
+\newcommand{\B}{\ensuremath{\text{B}}}
+% any sequence of letters
+\newcommand{\lett}[1]{\ensuremath{\text{#1}}}
+% letter couting function: #1 is the word we count in, #2 is the sequence of letters counted
+\newcommand{\nb}[2]{\ensuremath{|#1|_{#2}}}
+% substitution
+\DeclareMathOperator{\sub}{S}
+% word (infinite)
+\newcommand{\word}{\ensuremath{w}}
+% word complexity
+\newcommand{\cmplx}[2]%
+	{%
+		\ifthenelse{\isempty{#1}}{\ensuremath{\Omega}}{\ensuremath{\Omega(#1,#2)}}%
+	}
+
+%%%%%%%%%%%%%%% PERIODIC CRYSTALS %%%%%%%%%%%%%%
+\newcommand{\kvec}{\ensuremath{\mathbf{k}}}
+
+%%%%%%%%%%%%%%% MULTIFRACTAL ANALYSIS %%%%%%%%%%
+\newcommand{\bc}{box-counting}
+% mass (or probability measure) defining a fractal set
+\DeclareMathOperator{\mass}{\mu}
+% q weight
+\DeclareMathOperator{\qweight}{\text{M}}
+% partition into a set of boxes
+\DeclareMathOperator{\boxset}{\mathcal{B}}
+% pointwise Hölder exponent
+\DeclareMathOperator{\hold}{\alpha}
+
