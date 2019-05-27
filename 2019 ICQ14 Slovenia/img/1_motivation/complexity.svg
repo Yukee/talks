@@ -20,6 +20,48 @@
    sodipodi:docname="complexity.svg">
   <defs
      id="defs14377">
+    <marker
+       inkscape:stockid="Arrow2Lend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Lend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1772"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(1.1) rotate(180) translate(1,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow2Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow2Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1778"
+         style="fill-rule:evenodd;stroke-width:0.625;stroke-linejoin:round;stroke:#000000;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         d="M 8.7185878,4.0337352 L -2.2072895,0.016013256 L 8.7185884,-4.0017078 C 6.9730900,-1.6296469 6.9831476,1.6157441 8.7185878,4.0337352 z "
+         transform="scale(0.6) rotate(180) translate(0,0)" />
+    </marker>
+    <marker
+       inkscape:stockid="Arrow1Mend"
+       orient="auto"
+       refY="0.0"
+       refX="0.0"
+       id="Arrow1Mend"
+       style="overflow:visible;"
+       inkscape:isstock="true">
+      <path
+         id="path1760"
+         d="M 0.0,0.0 L 5.0,-5.0 L -12.5,0.0 L 5.0,5.0 L 0.0,0.0 z "
+         style="fill-rule:evenodd;stroke:#000000;stroke-width:1pt;stroke-opacity:1;fill:#000000;fill-opacity:1"
+         transform="scale(0.4) rotate(180) translate(10,0)" />
+    </marker>
     <pattern
        inkscape:collect="always"
        xlink:href="#pattern4692"
@@ -121,11 +163,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.979899"
-     inkscape:cx="174.61479"
-     inkscape:cy="-9.0992708"
+     inkscape:zoom="2.8"
+     inkscape:cx="253.48916"
+     inkscape:cy="-22.460762"
      inkscape:document-units="mm"
-     inkscape:current-layer="g4179"
+     inkscape:current-layer="layer1"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -145,7 +187,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -155,7 +197,7 @@
      id="layer1"
      transform="translate(-33.600056,-135.74043)">
     <path
-       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.30000001;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Send)"
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow2Lend)"
        d="M 35.641989,141.55038 H 161.52594"
        id="path815"
        inkscape:connector-curvature="0" />
@@ -175,8 +217,8 @@
        id="rect4666" />
     <rect
        style="fill:url(#pattern4698);stroke:none;stroke-width:2.37102079"
-       width="49.724476"
-       height="3.2687912"
+       width="41.138439"
+       height="3.2687836"
        x="103.98161"
        y="140.10149"
        id="rect4696" />
@@ -923,9 +965,10 @@
        ns1:pdfconverter="pdf2svg"
        ns1:texconverter="pdflatex"
        ns1:version="0.9.1"
-       transform="matrix(0.352778,0,0,0.352778,92.780926,99.251047)">
+       transform="matrix(0.352778,0,0,0.352778,93.048196,92.836578)">
       <g
-         id="g3209">
+         id="g3209"
+         transform="translate(-2.1428557,-1.3392849)">
         <g
            id="g3203"
            style="fill:#000000;fill-opacity:1">
