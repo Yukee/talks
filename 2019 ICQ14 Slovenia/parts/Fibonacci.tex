@@ -90,9 +90,9 @@ Gap ratios {\footnotesize [Oganesian, Huse]}
 	r_n = \min\left(\frac{g_{n+1}}{g_n}, \frac{g_n}{g_{n+1}}\right)
 \]
 \begin{itemize}
-	\item ETH: random matrix-like spectrum
+	\item \textcolor{comp}{ETH: random matrix-like spectrum}
 	$\overline{r}_\text{ETH} \simeq 0.53$
-	\item MBL: independant levels
+	\item \textcolor{BostonBlue}{MBL: independant levels}
 	
 	$\overline{r}_\text{MBL} \simeq 0.39$
 \end{itemize}
@@ -112,10 +112,10 @@ Compatible with \textbf{ETH/MBL transition}, $h^* \simeq 2.5$.
 \begin{column}{0.5\textwidth}
 Entanglement entropy:
 \begin{itemize}
-	\item ETH: coincides with thermodynamic entropy: \textbf{extensive}:
+	\item \textcolor{comp}{ETH: coincides with thermodynamic entropy: \textbf{extensive}}
 	
 	$\overline{S}_\text{ETH} \simeq L$
-	\item MBL: \textbf{sub-extensive}
+	\item \textcolor{BostonBlue}{MBL: \textbf{sub-extensive}}
 	
 	$\overline{S}_\text{MBL}/L \to 0$
 \end{itemize}
@@ -131,7 +131,7 @@ Compatible with \textbf{ETH/MBL transition}, $h^* \simeq 3.5$.
 \end{frame}
 
 \begin{frame}{The ETH/MBL transition: 3) Local observables}
-Expect: $\langle n_i \rangle_\text{ETH} = \frac{1}{2}$, $\langle n_i \rangle_\text{MBL} \simeq 0 \text{ or } 1$.
+Expect: \textcolor{comp}{$\langle n_i \rangle_\text{ETH} = \frac{1}{2}$}, \textcolor{BostonBlue}{$\langle n_i \rangle_\text{MBL} \simeq 0 \text{ or } 1$}.
 \begin{columns}
 \begin{column}{0.33\textwidth}
 \centering
@@ -197,4 +197,59 @@ Peak ingredients:
 \includegraphics[width=0.8\textwidth]{img/3_Fibonacci/sz_perturbation_theory}
 \end{column}
 \end{columns}
+\end{frame}
+
+\begin{frame}{Dynamics: Imbalance}
+\begin{columns}
+\begin{column}{0.5\textwidth}
+Imbalance experiment:
+\begin{itemize}
+	\item $\ket{\psi(t=0)}$: high energy product state
+	\item Imbalance: \textbf{distance} from initial state
+	
+	$I(t) = \frac{4}{L}\sum_i \left\langle \left(n_i(t) - \frac{1}{2}\right)\left(n_i(0) - \frac{1}{2}\right) \right\rangle$
+\end{itemize}
+
+Properties:
+\begin{itemize}
+	\item \textcolor{comp}{ETH: power-law decay} $I(t) \sim t^{-\zeta}$
+	\item \textcolor{BostonBlue}{MBL: saturation} $I(t\to \infty) = \text{cst} > 0$ 
+	
+	$\to$ \textbf{memory} of the initial state
+	
+	{\footnotesize [Luitz \emph{et at} 15]}
+\end{itemize}
+\end{column}
+%%%%%%%%%%%%%%%%
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[width=\textwidth]{img/3_Fibonacci/imbalance}
+
+$\zeta(h \geq 2.5) = 0 \to$ MBL phase transition.
+\end{column}
+%%%%%%%%%%%%%%%%
+\end{columns}
+\end{frame}
+
+\begin{frame}{Dynamics: entanglement}
+\textcolor{comp}{ETH phase}: expect $S(t) \propto t$
+
+Fibonacci: \textbf{anomalous} $S(t) \propto t^{1/z}$, $z > 1$.
+
+\begin{columns}
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[width=0.8\textwidth]{img/3_Fibonacci/entanglement_scaling_h1_shift0}
+\end{column}
+%%%%%%%%%%%%%
+\begin{column}{0.5\textwidth}
+\centering
+\includegraphics[width=0.8\textwidth]{img/3_Fibonacci/fits_entropy_h1_shift0}
+\end{column}
+\end{columns}
+Usual explanation: \textbf{rare regions} {\footnotesize[Vosk; Potter 15]}
+
+Fibonacci: no rare regions \dots 
+
+Finite size effect? {\footnotesize[Setiawan \emph{et al} 17]}, initial state fluctuations? {\footnotesize[Lüschen \emph{et al} 17]}
 \end{frame}
