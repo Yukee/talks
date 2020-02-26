@@ -73,28 +73,131 @@
 \titlepage
 \end{frame}
 
-\section{Symmetry \& structure}
+\section{Symmetry}
 \subsection{Dummy}
 
-\begin{frame}{Euclidean space}
+\begin{frame}{Continuous translation symmetry}
+
+Setup: observer $O$ in (empty) space
+
+{
+\centering
+\includegraphics[width=0.4\textwidth]{0_continuous_translation}
+
+}
+
+\begin{itemize}
+	\item Translated observer $O + \overrightarrow{t}$ makes the same observations as $O$
+	\item $\implies$ \textcolor{BostonBlue}{Continuous} translation symmetry
+	\item Formally: $\textcolor{BostonBlue}{\forall \overrightarrow{t}}, O + \overrightarrow{t} \sim O$
+\end{itemize}
 \end{frame}
 
-\section{Fractals and their geometry}
-%Each section needs a subsection for the small points on top to show up
-\subsection{Dummy}
+\begin{frame}{Symmetry breaking}
 
-\begin{frame}{Symmetry}
+Add a reference point $P$
+
+{
+\centering
+\includegraphics[width=0.4\textwidth]{1_continuous_translation_breaking}
+
+}
+
+\begin{itemize}
+	\item Observer can measure distance to $P$: $O + \overrightarrow{t} \not\sim O$
+	\item $\implies$ $P$ breaks the symmetry
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Discrete translation symmetry}
+
+Can we partially restore translation symmetry?
+
+$\to$ add a lattice of reference points
+
+{
+\centering
+\includegraphics[width=0.4\textwidth]{2_discrete_translation}
+
+}
+
+\begin{itemize}
+	\item $\textcolor{Complementary}{\exists \overrightarrow{t}}, O + \overrightarrow{t} \sim O$
+	\item $\implies$ \textcolor{Complementary}{Discrete} translation symmetry
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Continuous scaling symmetry}
+
+Back to empty space:
+
+{
+\centering
+\includegraphics[width=0.7\textwidth]{3_continuous_scaling}
+
+}
+
+\begin{itemize}
+	\item Rescaled observer $s O$ makes the same observations as $O$
+	\item \textcolor{BostonBlue}{Continuous} scaling symmetry
+	\item $\textcolor{BostonBlue}{\forall s}, s O \sim O$
+\end{itemize}
+
+Can we break \textcolor{BostonBlue}{continuous} scaling symmetry into \textcolor{Complementary}{discrete}?
+
+\end{frame}
+
+\begin{frame}{Fractals}
+
+{
+\centering
+\includegraphics[width=0.6\textwidth]{Sierpinski_carpet_rescaling}
+
+\scriptsize [Menger sponge]
+
+}
+\begin{itemize}
+	\item \textcolor{Complementary}{Discrete} scaling symmetry: $\textcolor{Complementary}{\exists s}, sO\sim O$ (Menger sponge: $s = 3$)
+	\item Fractals: discretely scale invariant objects
+	\item $\implies$ fractals: \textbf{rough} objects
+\end{itemize}
+
+{
+\centering
+\includegraphics[width=0.4\textwidth]{Lichtenberg-Figur}
+
+\scriptsize [Lichtenberg figure]
+
+}
+\end{frame}
+
+\begin{frame}{Symmetry: recap}
     \begin{itemize}
-        \item Euclidean space (continuous translational symmetry \& continuous scaling symmetry)
+        \item Empty space: continuous translation symmetry \& continuous scaling symmetry
             \begin{itemize}
-                \item Crystallographic lattice (discrete translational symmetry)
-                \item Fractal set/manifold (discrete scaling symmetry)
+                \item Lattice: discrete translational symmetry
+                \item Fractal: discrete scaling symmetry
             \end{itemize}
     \end{itemize}
     
     $\rightarrow$ fractal: infinitely divisible object
+    
+    {
+    
+    \centering
     \includegraphics[scale=1.00]{sierpinski.pdf}
+    \scriptsize
+    
+    [Sierpiński triangle]
+    
+    }
 \end{frame}
+
+\section{Geometry}
+%Each section needs a subsection for the small points on top to show up
+\subsection{Dummy}
 
 \begin{frame}{Geometric construction}{A first example: the Sierpiński triangle}
 
@@ -175,7 +278,7 @@
 \begin{frame}{Geometric construction}{``non-trivial'' fractals: Julia sets}
 \begin{itemize}
 	\item Define a recurrence $z_{n+1} = z_n^2 + c$
-	\item Julia set: boundary of the convergence domain
+	\item (filled) Julia set: set of non-escaping points
 \end{itemize}
 
 \centering
@@ -194,7 +297,7 @@
 }
 \end{frame}
 
-\section{Physics on fractals: fractal dimensions}
+\section{Physics}
 \subsection{Dummy}
 \begin{frame}{Scaling}
 
@@ -289,13 +392,13 @@
 \begin{frame}
 
 \begin{itemize}
-\item Mass dimension: spot and characterize fractals, from large scales... 
+\item Mass dimension: spot fractals, from large scales... 
 
 	{\centering
     \includegraphics[scale=.18]{combes_interstellar_medium.png}
     \scriptsize
     
-    [Taken from \textit{Astrophysical Fractals: Interstellar Medium and Galaxies}]
+    Insterstallar medium fractal over 4 to 6 orders of magnitude [Fig.\ from Combes 1999]
     
     }
 \item  ... to small ones
@@ -307,7 +410,7 @@
 \end{frame}
 
 \begin{frame}{The electric dimension}
-
+{\scriptsize [Akkermans, 2015 lectures]}
 \begin{columns}
 \newcommand{\s}{.2}
   \begin{column}{3cm}
@@ -340,8 +443,8 @@
 \[ R(L) \propto L^{d_e} \text{, with } d_e = \log ?/\log 2 \]
 
 \begin{itemize}
-	\item $d_M \neq d_e$, and they both reflect the structure of the fractal manifold.
-	\item On an Euclidean manifold $d_M$ and $d_e$ would have been independant its structure, they would have only depended on $d$, its dimension.
+	\item $d_M \neq d_e$, both reflect the structure of the fractal manifold.
+	\item On an Euclidean manifold $d_M = d_e = d$.
 \end{itemize}
 
 \end{frame}
@@ -491,18 +594,20 @@ $\rightarrow$ \textbf{log-periodic oscillations}
 \section{Summary}
 \subsection{Dummy}
 
-\begin{frame}{Summary}
-
+\begin{frame}{Fractals:}
     \begin{itemize}
-        \item Fractal manifolds and the study of discrete scaling symmetry is a fasinating mathematical topic in itself
-        \item Fractals arise in surprisingly diverse areas of physics
-        \item ... but, always, they are beautiful!
+        \item break continuous scaling symmetry into discrete
+        \item are rough objects, mathematically interesting
+        \item arise in surprisingly diverse areas of physics
+        \item ... and, always, are beautiful!
     \end{itemize}
     
      {\centering
-    	\includegraphics[scale=.15]{dragon.png}
+    	\includegraphics[scale=.14]{dragon.png}
     	
      }
+\scriptsize
+[Slides and scripts: \href{https://github.com/Yukee/talks/}{github.com/Yukee/talks}]
 \end{frame}
 
 \end{document}
