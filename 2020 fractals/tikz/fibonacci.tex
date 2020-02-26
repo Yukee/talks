@@ -1,0 +1,31 @@
+    		\newcommand{\orig}{-1.5}
+    		\newcommand{\tA}{1.6}
+    		\newcommand{\tB}{1.}
+    		\newcommand{\vertspac}{-2.}
+    	
+    		% initial chain
+    	
+    		% bonds 
+        	\draw[-] (\orig,0) -- (\orig+\tA,0) node [midway, above] {$t_A$};
+        	\draw[-,double] (\orig+\tA,0) -- (\orig+\tA+\tB,0) node [midway, above] {$t_B$};
+			\draw[-] (\orig+\tA+\tB,0) -- (\orig+2*\tA+\tB,0) node [midway, above] {$t_A$};	
+			\draw[-] (\orig+2*\tA+\tB,0) -- (\orig+3*\tA+\tB,0) node [midway, above] {$t_A$};
+			\draw[-,double] (\orig+3*\tA+\tB,0) -- (\orig+3*\tA+2*\tB,0) node [midway, above] {$t_B$};
+			\draw[-] (\orig+3*\tA+2*\tB,0) -- (\orig+4*\tA+2*\tB,0) node [midway, above] {$t_A$};
+			\draw[-,double] (\orig+4*\tA+2*\tB,0) -- (\orig+4*\tA+3*\tB,0) node [midway, above] {$t_B$};
+			\draw[-] (\orig+4*\tA+3*\tB,0) -- (\orig+5*\tA+3*\tB,0) node [midway, above] {$t_A$};
+			\draw[-] (\orig+5*\tA+3*\tB,0) -- (\orig+6*\tA+3*\tB,0) node [midway, above] {$t_A$};
+    	
+    	
+    		% sites
+		    \filldraw (\orig,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+\tA,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+\tA+\tB,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+2*\tA+\tB,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+3*\tA+\tB,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+3*\tA+2*\tB,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+4*\tA+2*\tB,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+4*\tA+3*\tB,0) circle (0.05) node [below] {};
+		    \filldraw (\orig+5*\tA+3*\tB,0) circle (0.05) node [right] {};
+		    \filldraw (\orig+6*\tA+3*\tB,0) circle (0.05) node [right] {...};
+		      

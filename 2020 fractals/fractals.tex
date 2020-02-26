@@ -1,0 +1,508 @@
+\documentclass[xcolor=x11names,compress,professionalfonts]{beamer}
+
+%% General packages %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{tikz}
+\tikzset{% change default arrow tips
+    >=latex
+}
+\usepackage{ifthen}
+
+\usepackage{amsmath}
+\usepackage{nicefrac}
+
+\usepackage{color}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% Beamer Layout %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\useoutertheme[subsection=false,shadow]{miniframes}
+\useinnertheme{rectangles}
+
+\setbeamertemplate{navigation symbols}{}%remove navigation symbols
+
+\usepackage{libertine}
+\usepackage[T1]{fontenc}
+
+\setbeamerfont{title like}{shape=\scshape}
+\setbeamerfont{frametitle}{shape=\scshape}
+
+\setbeamercolor*{lower separation line head}{bg=DeepSkyBlue4} 
+\setbeamercolor*{normal text}{fg=black,bg=white} 
+\setbeamercolor*{alerted text}{fg=red} 
+\setbeamercolor*{example text}{fg=black} 
+\setbeamercolor*{structure}{fg=black} 
+ 
+\setbeamercolor*{palette tertiary}{fg=black,bg=black!10} 
+\setbeamercolor*{palette quaternary}{fg=black,bg=black!10} 
+
+\renewcommand{\(}{\begin{columns}}
+\renewcommand{\)}{\end{columns}}
+\newcommand{\<}[1]{\begin{column}{#1}}
+\renewcommand{\>}{\end{column}}
+
+\definecolor{BostonBlue}{HTML}{00688B}
+\definecolor{Complementary}{HTML}{8B2300}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{braket}
+
+%%%My Math
+
+\newcommand{\pd}[2]{\frac{\displaystyle \partial #1}{\displaystyle\partial #2}} % for partial derivatives
+\newcommand{\dx}{\mathrm{d}x}
+\renewcommand{\d}[1]{\mathrm{d}#1}
+\newcommand{\nth}{$n^\text{th}$ }
+
+\newcommand{\mean}[1]{\langle #1 \rangle}
+\DeclareMathOperator{\Pf}{Pf}
+\DeclareMathOperator{\Tr}{Tr}
+
+\begin{document}
+
+
+\begin{frame}
+\title{Fractals in physics}
+%\subtitle{SUBTITLE}
+\author{ Nicolas Macé }
+\date{
+	February 27, 2020
+}
+\titlepage
+\end{frame}
+
+\section{Symmetry \& structure}
+\subsection{Dummy}
+
+\begin{frame}{Euclidean space}
+\end{frame}
+
+\section{Fractals and their geometry}
+%Each section needs a subsection for the small points on top to show up
+\subsection{Dummy}
+
+\begin{frame}{Symmetry}
+    \begin{itemize}
+        \item Euclidean space (continuous translational symmetry \& continuous scaling symmetry)
+            \begin{itemize}
+                \item Crystallographic lattice (discrete translational symmetry)
+                \item Fractal set/manifold (discrete scaling symmetry)
+            \end{itemize}
+    \end{itemize}
+    
+    $\rightarrow$ fractal: infinitely divisible object
+    \includegraphics[scale=1.00]{sierpinski.pdf}
+\end{frame}
+
+\begin{frame}{Geometric construction}{A first example: the Sierpiński triangle}
+
+\begin{itemize} 
+
+\begin{columns}
+\newcommand{\s}{.2}
+  \begin{column}{3cm}
+    \includegraphics[scale=\s]{sierpinski0.pdf}
+  \end{column}
+
+  \begin{column}{3cm}
+     \includegraphics[scale=\s]{sierpinski1.pdf}
+  \end{column}
+  
+  \begin{column}{3cm}
+    \includegraphics[scale=\s]{sierpinski2.pdf}
+  \end{column}
+  ...
+    \begin{column}{3cm}
+    \includegraphics[scale=\s]{sierpinskiInfty.pdf}
+  \end{column}
+\end{columns}
+
+ 	\item independant of starting shape $\rightarrow$ only determined by the geometrical transformations used.
+
+\begin{columns}
+\newcommand{\s}{.2}
+  \begin{column}{3cm}
+    \includegraphics[scale=\s]{sierpinksi_triangle_0}
+  \end{column}
+
+  \begin{column}{3cm}
+     \includegraphics[scale=\s]{sierpinksi_triangle_1}
+  \end{column}
+  
+  \begin{column}{3cm}
+    \includegraphics[scale=\s]{sierpinksi_triangle_2}
+  \end{column}
+  ...
+    \begin{column}{3cm}
+    \includegraphics[scale=\s]{sierpinksi_triangle_6}
+  \end{column}
+\end{columns}
+
+	\item The Sierpiński triangle is constructed by an Iterated Function System (IFS).
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Geometric construction}{Iterated function systems}
+
+\begin{columns}
+\newcommand{\s}{.2}
+
+  \begin{column}{1.5cm}
+  \centering
+    \includegraphics[scale=0.04]{leaf1.png}
+  \end{column}
+
+  \begin{column}{3cm}
+  \centering
+    \includegraphics[scale=0.08]{leaf.png}
+  \end{column}
+
+  \begin{column}{3cm}
+  \centering
+     \includegraphics[scale=.4]{fern.png}
+  \end{column}
+\end{columns}
+
+\begin{itemize}
+	\item Every fractal is approached by an IFS [Barnsley 1988].
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Geometric construction}{``non-trivial'' fractals: Julia sets}
+\begin{itemize}
+	\item Define a recurrence $z_{n+1} = z_n^2 + c$
+	\item Julia set: boundary of the convergence domain
+\end{itemize}
+
+\centering
+\only<1>{
+	\includegraphics[scale=0.2]{julia.png}
+	
+	\scriptsize
+	    Julia set $c = -0.77 + 0.22 i$
+}
+    
+\only<2>{
+	\includegraphics[scale=0.16]{julia2.png}
+	
+	\scriptsize
+	    Julia set $c = -0.39 - 0.59 i$
+}
+\end{frame}
+
+\section{Physics on fractals: fractal dimensions}
+\subsection{Dummy}
+\begin{frame}{Scaling}
+
+\begin{itemize}
+	\item Give a physical meaning $\rightarrow$ give a length scale
+
+\begin{columns}
+\newcommand{\s}{.2}
+  \begin{column}{3cm}
+  \centering
+    \includegraphics[scale=\s]{scale0.pdf}
+  \end{column}
+
+  \begin{column}{3cm}
+  	\centering
+     \includegraphics[scale=\s]{scale1.pdf}
+  \end{column}
+  
+  \begin{column}{1cm}
+  \centering
+  ...
+  \end{column}
+  
+    \begin{column}{3cm}
+    \centering
+    \includegraphics[scale=\s]{scaleInfty.pdf}
+  \end{column}
+\end{columns}
+
+	\item A natural way of doing it:
+	
+	{\centering 
+	\includegraphics[scale=0.4]{sierpinsky_nature.jpg}
+	\scriptsize
+	
+	Assembling molecular Sierpiński triangle fractals, Nature Chemistry (2015)
+	
+	}
+	
+	\item Scaling of physical quantities? 
+	\begin{itemize}
+		\item $M(L) \propto L^d$ on a $d$-dimensional Euclidean manifold... What happens on a fractal one?
+	\end{itemize}
+\end{itemize}
+	
+\end{frame}
+
+\begin{frame}{The mass dimension}
+
+\begin{itemize}
+	\item $M(L) \propto L^d$ on a $d$-dimensional Euclidean manifold... What happens on a fractal one?
+
+\begin{columns}
+\newcommand{\s}{.2}
+  \begin{column}{3cm}
+  	\centering
+    \includegraphics[scale=\s]{scale0.pdf}
+    \scriptsize
+    \[ M_0 \]
+  \end{column}
+
+  \begin{column}{3cm}
+  	\centering
+     \includegraphics[scale=\s]{scale1.pdf}
+     \scriptsize
+    \[ M_1= 3M_0 \]
+  \end{column}
+  
+  \begin{column}{1cm}
+  \centering
+  ...
+  \end{column}
+  
+    \begin{column}{3cm}
+    \centering
+    \includegraphics[scale=\s]{scaleInfty.pdf}
+    \scriptsize
+    \[ M_n= 3^nM_0 \]
+  \end{column}
+\end{columns}
+
+\[ M(L) \propto L^{d_M} \text{, with } d_M = \log 3/\log 2 \]
+
+	\item $d_M$ is the mass (or Hausdorff) dimension.
+	
+	\item $1 < d_M < 2$ different from $d = 1$, non-integer $\rightarrow$ signature of a fractal manifold.
+
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+
+\begin{itemize}
+\item Mass dimension: spot and characterize fractals, from large scales... 
+
+	{\centering
+    \includegraphics[scale=.18]{combes_interstellar_medium.png}
+    \scriptsize
+    
+    [Taken from \textit{Astrophysical Fractals: Interstellar Medium and Galaxies}]
+    
+    }
+\item  ... to small ones
+
+  	\centering
+    \includegraphics[scale=.3]{crumpled_paper.png}
+    \scriptsize
+\end{itemize}
+\end{frame}
+
+\begin{frame}{The electric dimension}
+
+\begin{columns}
+\newcommand{\s}{.2}
+  \begin{column}{3cm}
+  	\centering
+    \includegraphics[scale=\s]{res0.pdf}
+    \scriptsize
+    \[ R_0 \]
+  \end{column}
+
+  \begin{column}{3cm}
+  	\centering
+     \includegraphics[scale=\s]{res1.pdf}
+     \scriptsize
+    \[ R_1= ? R_0 \]
+  \end{column}
+  
+  \begin{column}{1cm}
+  \centering
+  ...
+  \end{column}
+  
+    \begin{column}{3cm}
+    \centering
+    \includegraphics[scale=\s]{resInfty.pdf}
+    \scriptsize
+    \[ R_n= ?^nR_0 \]
+  \end{column}
+\end{columns}
+
+\[ R(L) \propto L^{d_e} \text{, with } d_e = \log ?/\log 2 \]
+
+\begin{itemize}
+	\item $d_M \neq d_e$, and they both reflect the structure of the fractal manifold.
+	\item On an Euclidean manifold $d_M$ and $d_e$ would have been independant its structure, they would have only depended on $d$, its dimension.
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{The Fibonacci molecule}
+    \begin{itemize}
+    	\item The Fibonacci sequence: \\
+    \only<1>{\textcolor{Complementary}{B}\\}
+	\only<1>{\textcolor{BostonBlue}{A}\\}
+	\only<1>{\textcolor{BostonBlue}{A}\textcolor{Complementary}{B}}
+	\only<2>{\textcolor{Complementary}{A}\\}
+	\only<2>{\textcolor{BostonBlue}{AB}\\}
+	\only<2>{\textcolor{BostonBlue}{AB}\textcolor{Complementary}{A}}
+	\only<3>{\textcolor{Complementary}{AB}\\}
+	\only<3>{\textcolor{BostonBlue}{ABA}\\}
+	\only<3>{\textcolor{BostonBlue}{ABA}\textcolor{Complementary}{AB}}
+	\only<4>{\textcolor{Complementary}{ABA}\\}
+	\only<4>{\textcolor{BostonBlue}{ABAAB}\\}
+	\only<4>{\textcolor{BostonBlue}{ABAAB}\textcolor{Complementary}{ABA}}
+	\only<5>{\textcolor{Complementary}{ABAAB}\\}
+	\only<5>{\textcolor{BostonBlue}{ABAABABA}\\}
+	\only<5>{\textcolor{BostonBlue}{ABAABABA}\textcolor{Complementary}{ABAAB}}
+	\only<6>{\textcolor{Complementary}{ABAABABA}\\}
+	\only<6>{\textcolor{BostonBlue}{ABAABABAABAAB}\\}
+	\only<6>{\textcolor{BostonBlue}{ABAABABAABAAB}\textcolor{Complementary}{ABAABABA}}
+	\only<7>{\textcolor{Complementary}{ABAABABAABAAB}\\}
+	\only<7>{\textcolor{BostonBlue}{ABAABABAABAABABAABABA}\\}
+	\only<7>{\textcolor{BostonBlue}{ABAABABAABAABABAABABA}\textcolor{Complementary}{ABAABABAABAAB}}
+	
+	\item The Fibonacci molecule:
+	\begin{tikzpicture}[scale=.7]
+	\input{tikz/fibonacci}
+	\end{tikzpicture}
+	\item The molecule is \textbf{not} a fractal!
+	\item A quantity of interest: molecular spectrum
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Spectrum of Fibonacci molecules}
+	\only<1>{\tiny\textcolor{BostonBlue}{AB}\textcolor{Complementary}{AABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABAAB}}
+	\only<2>{\tiny\textcolor{BostonBlue}{ABA}\textcolor{Complementary}{ABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABAAB}}
+	\only<3>{\tiny\textcolor{BostonBlue}{ABAAB}\textcolor{Complementary}{ABAABAABABAABABAABAABABAABAABABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABAAB}}
+	\only<4>{\tiny\textcolor{BostonBlue}{ABAABABA}\textcolor{Complementary}{ABAABABAABABAABAABABAABAABABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABAAB}}
+	\only<5>{\tiny\textcolor{BostonBlue}{ABAABABAABAAB}\textcolor{Complementary}{ABAABABAABAABABAABAABABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABAAB}}
+	\only<6>{\tiny\textcolor{BostonBlue}{ABAABABAABAABABAABABA}\textcolor{Complementary}{ABAABABAABAABABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABAAB}}
+	\only<7>{\tiny\textcolor{BostonBlue}{ABAABABAABAABABAABABAABAABABAABAAB}\textcolor{Complementary}	{ABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABAAB}}
+	\only<8>{\tiny\textcolor{BostonBlue}{ABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABABA}\textcolor{Complementary}{ABAABABAABAABABAABABAABAABABAABAAB}}
+	\only<9>{\tiny\textcolor{BostonBlue}{ABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABABAABAABABAABAABABAABABAABAABABAABAAB}
+	\textcolor{Complementary}{~}
+	}
+	
+	{
+	\centering
+	\only<1>{\includegraphics[width=0.7\textwidth]{idos_3}}
+	\only<2>{\includegraphics[width=0.7\textwidth]{idos_4}}
+	\only<3>{\includegraphics[width=0.7\textwidth]{idos_5}}
+	\only<4>{\includegraphics[width=0.7\textwidth]{idos_6}}
+	\only<5>{\includegraphics[width=0.7\textwidth]{idos_7}}
+	\only<6>{\includegraphics[width=0.7\textwidth]{idos_8}}
+	\only<7>{\includegraphics[width=0.7\textwidth]{idos_9}}
+	\only<8>{\includegraphics[width=0.7\textwidth]{idos_10}}
+	\only<9>{\includegraphics[width=0.7\textwidth]{idos_11}}
+	
+	}
+\end{frame}
+	
+\begin{frame}{Hidden fractals: the Fibonacci chain}
+
+	\begin{itemize}
+	\item No obvious fractal nature, but...
+    \end{itemize}
+     {\centering
+    	\includegraphics[scale=.9]{idos.pdf}
+    	
+     }
+     ... the graph of the density of states is a fractal!
+     
+     \begin{itemize}
+     	\item What can we say about a scale invariant function?
+      \end{itemize}
+	
+\end{frame}
+
+\begin{frame}{Interlude: discrete and continuous scale invariance}
+    \begin{columns}
+\newcommand{\s}{.2}
+  \begin{column}{5cm}
+  	\begin{block}{\textcolor{BostonBlue}{Continuous} scale invariance}
+  	\begin{align*}
+		\textcolor{BostonBlue}{\forall a},~ f(ax) &= b(a) f(x) \\
+		\text{Then } f(x) &= C x^\alpha
+	\end{align*}
+  	\end{block}
+  \end{column}
+
+  \begin{column}{5cm}
+  	\begin{block}{\textcolor{Complementary}{Discrete} scale invariance}
+  	\begin{align*}
+		\textcolor{Complementary}{\exists a},~ f(ax) &= b(a) f(x) \\
+		\text{Then } f(x) &= ?
+	\end{align*}
+  	\end{block}
+  \end{column}
+\end{columns}
+
+\[
+	f(x) = G\left(\frac{\ln x}{\ln a}\right) x^\alpha~\text{\scriptsize [Saleur, Sornette 1996]}
+\]
+
+First order expansion:
+\[
+	f(x) \simeq \left[G_0 + G_1 \cos\left(2 \pi \frac{\ln x}{\ln a}\right)\right] x^\alpha
+\]
+$\rightarrow$ \textbf{log-periodic oscillations}
+\end{frame}
+
+\begin{frame}{Fibonacci and $\log$--periodic oscillations}
+		\centering
+		\begin{tikzpicture}[scale=.7]
+	\input{tikz/fibonacci}
+	\end{tikzpicture}
+
+	\begin{columns}
+	\begin{column}{0.5\textwidth}
+	{\centering
+    	\includegraphics[width=\columnwidth]{idoslog.pdf}
+    	
+    	    	    	\scriptsize
+		Spectrum of the molecule
+    	
+    }
+    \end{column}
+    \begin{column}{0.5\textwidth}
+	{\centering
+    	\includegraphics[width=\columnwidth]{harmonic_mean_transmission}
+    	
+    	    	\scriptsize
+		Transmission probability
+		[Macé \emph{et al} 2017]
+			
+    }
+    \end{column}
+    \end{columns}
+\end{frame}
+
+\section{Summary}
+\subsection{Dummy}
+
+\begin{frame}{Summary}
+
+    \begin{itemize}
+        \item Fractal manifolds and the study of discrete scaling symmetry is a fasinating mathematical topic in itself
+        \item Fractals arise in surprisingly diverse areas of physics
+        \item ... but, always, they are beautiful!
+    \end{itemize}
+    
+     {\centering
+    	\includegraphics[scale=.15]{dragon.png}
+    	
+     }
+\end{frame}
+
+\end{document}
